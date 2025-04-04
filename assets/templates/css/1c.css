@@ -1,0 +1,596 @@
+.slider-tarifs {
+  position: relative;
+  padding: 150px 0;
+  background-size: cover !important;
+  background-position: center center !important;
+  color: white;
+  margin-bottom: 0;
+  z-index: 1;
+}
+
+.slider-tarifs::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+  z-index: 1;
+}
+
+.slider-tarifs .container {
+  position: relative;
+  z-index: 2;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.slider-tarifs h2 {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0 0 15px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  line-height: 1.2;
+  color: white;
+  position: relative;
+}
+
+.slider-tarifs h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #eca305;
+  margin-top: 15px;
+  border-radius: 1.5px;
+}
+
+.slider-tarifs p {
+  font-size: 22px;
+  margin: 0 0 25px;
+  opacity: 0.95;
+  line-height: 1.4;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.slider-tarifs .btn,
+.popup-with-form.btn {
+  display: inline-block;
+  background: #eca305;
+  color: white;
+  text-decoration: none;
+  padding: 16px 32px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.slider-tarifs .btn::before,
+.popup-with-form.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease;
+  z-index: 0;
+}
+
+.slider-tarifs .btn:hover,
+.popup-with-form.btn:hover {
+  background: #d89200;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.slider-tarifs .btn:hover::before,
+.popup-with-form.btn:hover::before {
+  left: 100%;
+}
+
+/* ================ ОСНОВНАЯ СЕКЦИЯ ================ */
+.desc-service {
+  padding: 80px 0;
+  position: relative;
+  background: #fff;
+  z-index: 1;
+}
+
+.desc-service::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(236, 163, 5, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.desc-service h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0 0 25px;
+  line-height: 1.3;
+  color: #333;
+  position: relative;
+}
+
+.desc-service h1::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: #eca305;
+  margin-top: 15px;
+  border-radius: 1.5px;
+}
+
+.desc-service p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0 0 40px;
+  color: #444;
+}
+
+.img-header {
+  background: linear-gradient(to right, #eca305, #f7c242);
+  color: white;
+  padding: 10px 15px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 4px 4px 0 0;
+  margin: 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.img-responsive {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.img-responsive:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Заголовки в цвете компании */
+h3[style*="color: #eca305"] {
+  color: #eca305 !important;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 25px;
+  line-height: 1.3;
+  position: relative;
+  padding-left: 15px;
+}
+
+h3[style*="color: #eca305"]::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 5px;
+  bottom: 5px;
+  width: 4px;
+  background: #eca305;
+  border-radius: 2px;
+}
+
+/* Список преимуществ */
+.article_list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px;
+}
+
+.article_list li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 20px;
+}
+
+.article_list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 16px;
+  height: 16px;
+  background-color: rgba(236, 163, 5, 0.1);
+  border: 2px solid #eca305;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.article_list li:hover::before {
+  background-color: rgba(236, 163, 5, 0.3);
+  transform: scale(1.1);
+}
+
+.article_list h3 {
+  font-size: 16px !important;
+  font-weight: normal !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+  color: #444 !important;
+  transition: color 0.3s ease;
+}
+
+.article_list li:hover h3 {
+  color: #333 !important;
+}
+
+/* Подсветка ключевых пунктов */
+.article_list li:nth-child(4),
+.article_list li:nth-child(6) {
+  background-color: rgba(236, 163, 5, 0.05);
+  border-left: 3px solid #eca305;
+  padding: 10px 15px 10px 30px;
+  border-radius: 0 4px 4px 0;
+  margin-bottom: 25px;
+}
+
+.article_list li:nth-child(4)::before,
+.article_list li:nth-child(6)::before {
+  left: 10px;
+}
+
+/* Прогресс-бар */
+.progress-bar {
+  height: 4px;
+  background: rgba(236, 163, 5, 0.2);
+  border-radius: 2px;
+  margin-top: 10px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 300px;
+}
+
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background: #eca305;
+  border-radius: 2px;
+  animation: progress 1.5s ease-out forwards;
+}
+
+@keyframes progress {
+  0% { width: 0; }
+  100% { width: 80%; }
+}
+
+/* ================ СЕКЦИЯ ЦЕН ================ */
+.pricelist {
+  background: linear-gradient(135deg, #eca305, #f7c242);
+  padding: 60px 0;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.pricelist::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(45deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(0, 0, 0, 0.05) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 0.05) 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  z-index: 1;
+}
+
+.pricelist .container {
+  position: relative;
+  z-index: 2;
+}
+
+.pricelist h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0 0 15px;
+  line-height: 1.2;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.pricelist .calc-wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pricelist .btn {
+  display: inline-block;
+  background: white;
+  color: #eca305;
+  text-decoration: none;
+  padding: 16px 32px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  animation: pulse 2s infinite;
+}
+
+.pricelist .btn:hover {
+  background: #f5f5f5;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+/* ================ АНИМАЦИИ ================ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Кнопка наверх */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: #eca305;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.back-to-top::before {
+  content: "↑";
+  font-size: 24px;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background: #d89200;
+  transform: translateY(-3px);
+}
+
+/* ================ АДАПТИВНОСТЬ ================ */
+@media (max-width: 1199px) {
+  .slider-tarifs {
+    padding: 120px 0;
+  }
+  
+  .slider-tarifs h2 {
+    font-size: 42px;
+  }
+  
+  .slider-tarifs p {
+    font-size: 20px;
+  }
+  
+  .desc-service h1 {
+    font-size: 32px;
+  }
+  
+  h3[style*="color: #eca305"] {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 991px) {
+  .slider-tarifs {
+    padding: 100px 0;
+  }
+  
+  .slider-tarifs h2 {
+    font-size: 36px;
+  }
+  
+  .slider-tarifs p {
+    font-size: 18px;
+  }
+  
+  .col-lg-5 {
+    width: 50%;
+  }
+  
+  .desc-service {
+    padding: 60px 0;
+  }
+  
+  .desc-service h1 {
+    font-size: 28px;
+  }
+  
+  .desc-service p {
+    font-size: 16px;
+  }
+  
+  h3[style*="color: #eca305"] {
+    font-size: 20px;
+  }
+  
+  .pricelist h2 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .col-md-6,
+  .col-md-5,
+  .col-md-7,
+  .col-lg-5 {
+    width: 100%;
+  }
+  
+  .slider-tarifs {
+    padding: 80px 0;
+  }
+  
+  .justify-content-end {
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .slider-tarifs h2 {
+    font-size: 32px;
+  }
+  
+  .slider-tarifs h2::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .slider-tarifs p {
+    font-size: 17px;
+  }
+  
+  .desc-service h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .desc-service h1::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .desc-service p {
+    font-size: 15px;
+    text-align: center;
+  }
+  
+  h3[style*="color: #eca305"] {
+    font-size: 18px;
+    text-align: center;
+    padding-left: 0;
+  }
+  
+  h3[style*="color: #eca305"]::before {
+    display: none;
+  }
+  
+  .pricelist {
+    text-align: center;
+  }
+  
+  .pricelist h2 {
+    font-size: 26px;
+  }
+  
+  .pricelist .calc-wrap {
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .progress-bar {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 575px) {
+  .slider-tarifs {
+    padding: 60px 0;
+  }
+  
+  .slider-tarifs h2 {
+    font-size: 28px;
+  }
+  
+  .slider-tarifs p {
+    font-size: 16px;
+  }
+  
+  .slider-tarifs .btn,
+  .popup-with-form.btn {
+    padding: 14px 28px;
+    font-size: 16px;
+  }
+  
+  .desc-service {
+    padding: 40px 0;
+  }
+  
+  .desc-service h1 {
+    font-size: 22px;
+  }
+  
+  .article_list li {
+    padding-left: 25px;
+  }
+  
+  .article_list li::before {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .pricelist h2 {
+    font-size: 24px;
+  }
+  
+  .pricelist .btn {
+    padding: 12px 24px;
+    font-size: 15px;
+  }
+}

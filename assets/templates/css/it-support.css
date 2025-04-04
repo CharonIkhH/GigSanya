@@ -1,0 +1,2081 @@
+/* Улучшения для секции слайдера */
+.slider-tarifs {
+  position: relative;
+  padding: var(--spacing-16) 0;
+  min-height: 80vh; /* Уменьшил с 90vh для лучшей адаптивности */
+  display: flex;
+  align-items: center;
+  color: var(--color-white);
+  overflow: hidden;
+  transition: var(--transition-standard);
+  z-index: 1;
+}
+
+.slider-tarifs::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%; /* Уменьшил с 40% для более тонкого эффекта */
+  background: linear-gradient(to top, var(--trans-black-heavy), transparent);
+  z-index: 0;
+}
+
+.slider-tarifs .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: var(--gradient-orange);
+  color: var(--color-white);
+  font-weight: var(--font-weight-semibold);
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--radius-md); /* Уменьшил с radius-full для более четкого вида */
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--spacing-4);
+  box-shadow: var(--shadow-sm);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  transform: translateY(0);
+  animation: badge-float 3s ease-in-out infinite;
+}
+
+@keyframes badge-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); } /* Уменьшил с -5px для более тонкой анимации */
+}
+
+.hero-title {
+  font-size: clamp(var(--font-size-2xl), 5vw, var(--font-size-3xl)); /* Использую clamp для адаптивности */
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-4);
+  line-height: var(--line-height-tight);
+  color: var(--color-white);
+  text-shadow: 0 2px 4px var(--trans-black-medium);
+  max-width: 100%; /* Гарантирует, что заголовок не выйдет за пределы контейнера */
+}
+
+.hero-text {
+  font-size: clamp(var(--font-size-md), 4vw, var(--font-size-lg)); /* Использую clamp для адаптивности */
+  margin-bottom: var(--spacing-6);
+  max-width: 95%; /* Увеличил с 90% для лучшего использования пространства */
+  line-height: var(--line-height-relaxed);
+  color: var(--color-white-soft);
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-5);
+  width: 100%; /* Гарантирует полную ширину на мобильных устройствах */
+  max-width: 450px; /* Ограничивает ширину на больших экранах */
+}
+
+.offer-timer {
+  display: flex;
+  align-items: center;
+  background: var(--trans-white-light);
+  backdrop-filter: blur(5px);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-3) var(--spacing-4);
+  width: 100%; /* Занимает всю доступную ширину */
+  font-size: var(--font-size-sm);
+  box-shadow: var(--shadow-md);
+}
+
+.offer-timer i {
+  color: var(--color-orange-primary);
+  font-size: 1.3em; /* Уменьшил с 1.5em для лучшей пропорции */
+  margin-right: var(--spacing-3);
+  animation: pulse 2s infinite;
+  flex-shrink: 0; /* Предотвращает сжатие иконки */
+}
+
+.countdown {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-orange-primary);
+  background: var(--color-white);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  margin: 0 4px;
+  white-space: nowrap; /* Предотвращает перенос текста внутри счетчика */
+}
+
+.timer-note {
+  font-size: var(--font-size-xs);
+  margin-top: var(--spacing-1);
+  opacity: 0.9;
+}
+
+.hero-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-3); /* Уменьшил с spacing-4 для более компактного расположения */
+  margin-top: var(--spacing-6);
+  width: 100%;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  background: var(--trans-white-light);
+  backdrop-filter: blur(4px);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-2) var(--spacing-3);
+  font-size: var(--font-size-xs); /* Уменьшил с font-size-sm для мобильной адаптивности */
+  font-weight: var(--font-weight-medium);
+  transition: var(--transition-standard);
+  /* Убрал фиксированную ширину для лучшей адаптивности */
+}
+
+.trust-item:hover {
+  background: var(--trans-white-medium);
+  transform: translateY(-2px);
+}
+
+.trust-item i {
+  color: var(--color-orange-primary);
+  margin-right: var(--spacing-2);
+  flex-shrink: 0; /* Предотвращает сжатие иконки */
+}
+
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: var(--spacing-6);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  animation: bounce 2s infinite;
+  cursor: pointer;
+}
+
+.hero-scroll-indicator i {
+  color: var(--color-white);
+  font-size: var(--font-size-xl);
+  opacity: 0.8;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+  40% { transform: translateY(-10px) translateX(-50%); } /* Уменьшил с -15px для более сдержанной анимации */
+  60% { transform: translateY(-5px) translateX(-50%); } /* Уменьшил с -7px для более сдержанной анимации */
+}
+
+/* Улучшения для секции intro */
+.intro-section {
+  padding: var(--spacing-12) 0; /* Уменьшил с spacing-16 для более компактного вида */
+  background: var(--color-white);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.intro-box {
+  display: flex;
+  gap: var(--spacing-8); /* Уменьшил с spacing-10 для лучшей компактности */
+  align-items: center;
+}
+
+.intro-content {
+  flex: 1;
+  max-width: 100%; /* Гарантирует, что контент не выйдет за пределы родительского элемента */
+}
+
+.section-subtitle {
+  color: var(--color-orange-primary);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-2);
+  font-size: var(--font-size-md);
+  position: relative;
+  display: inline-block;
+  padding-left: var(--spacing-6);
+}
+
+.section-subtitle::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: var(--spacing-5);
+  height: 2px;
+  background: var(--color-orange-primary);
+  transform: translateY(-50%);
+}
+
+.intro-content h2 {
+  font-size: clamp(var(--font-size-xl), 5vw, var(--font-size-2xl)); /* Использую clamp для адаптивности */
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-5);
+  color: var(--color-dark-gray);
+  line-height: var(--line-height-tight);
+}
+
+.intro-content .accent {
+  color: var(--color-orange-primary);
+  position: relative;
+  display: inline-block;
+}
+
+.intro-content .accent::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 2px;
+  background: var(--color-orange-primary);
+  opacity: 0.5;
+}
+
+.intro-highlight {
+  font-size: clamp(var(--font-size-md), 4vw, var(--font-size-lg)); /* Использую clamp для адаптивности */
+  font-weight: var(--font-weight-medium);
+  color: var(--color-dark-gray);
+  margin-bottom: var(--spacing-4);
+  padding-left: var(--spacing-4);
+  border-left: 3px solid var(--color-orange-primary);
+}
+
+.highlight-text {
+  color: var(--color-orange-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+.intro-stats {
+  display: flex;
+  gap: var(--spacing-4); /* Уменьшил с spacing-5 для лучшей компактности */
+  margin: var(--spacing-6) 0; /* Уменьшил с spacing-8 для более компактного вида */
+  flex-wrap: wrap; /* Добавил для лучшей адаптивности */
+}
+
+.stat-box {
+  text-align: center;
+  padding: var(--spacing-4);
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  flex: 1;
+  min-width: 100px; /* Минимальная ширина для мобильных устройств */
+  transition: var(--transition-standard);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gradient-orange);
+}
+
+.stat-box:hover {
+  transform: translateY(-3px); /* Уменьшил с -5px для более сдержанной анимации */
+  box-shadow: var(--shadow-lg);
+}
+
+.stat-value {
+  font-size: clamp(var(--font-size-2xl), 5vw, var(--font-size-3xl)); /* Использую clamp для адаптивности */
+  font-weight: var(--font-weight-bold);
+  color: var(--color-orange-primary);
+  line-height: 1;
+  margin-bottom: var(--spacing-1);
+}
+
+.stat-label {
+  font-size: clamp(var(--font-size-xs), 3vw, var(--font-size-sm)); /* Использую clamp для адаптивности */
+  color: var(--color-gray);
+  font-weight: var(--font-weight-medium);
+}
+
+.intro-image {
+  flex: 1;
+  position: relative;
+  min-width: 280px; /* Минимальная ширина для предотвращения слишком малых изображений */
+  max-width: 100%; /* Предотвращает выход изображения за пределы контейнера */
+}
+
+.intro-image img {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg); /* Уменьшил с shadow-xl для более сдержанной тени */
+  transform: perspective(1000px) rotateY(-3deg); /* Уменьшил угол с -5deg для более тонкого эффекта */
+  transition: var(--transition-standard);
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Гарантирует правильное отображение изображения */
+}
+
+.intro-image:hover img {
+  transform: perspective(1000px) rotateY(0deg);
+}
+
+.image-badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: var(--color-orange-primary);
+  color: var(--color-white);
+  padding: var(--spacing-2) var(--spacing-3); /* Уменьшил с spacing-4 для мобильных устройств */
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-xs); /* Уменьшил с font-size-sm для мобильных устройств */
+  box-shadow: var(--shadow-md);
+  z-index: 2;
+  white-space: nowrap; /* Предотвращает перенос текста */
+}
+
+.premium-badge {
+  background: var(--gradient-orange);
+  animation: pulse 2s infinite;
+}
+
+/* Улучшения для секции услуг */
+.services-section {
+  padding: var(--spacing-12) 0; /* Уменьшил с spacing-16 для более компактного вида */
+  background: var(--color-white-muted);
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto var(--spacing-8); /* Уменьшил с spacing-10 для более компактного вида */
+  padding: 0 var(--spacing-4); /* Добавил отступы для мобильных устройств */
+}
+
+.section-label {
+  display: inline-block;
+  background: var(--color-orange-ultra-light);
+  color: var(--color-orange-primary);
+  font-size: var(--font-size-xs); /* Уменьшил с font-size-sm для мобильных устройств */
+  font-weight: var(--font-weight-semibold);
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--spacing-3);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.section-label  {
+  display: inline-block;
+  background: var(--color-orange-ultra-light);
+  color: var(--color-orange-primary);
+  font-size: var(--font-size-xs); /* Уменьшил с font-size-sm для мобильных устройств */
+  font-weight: var(--font-weight-semibold);
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--spacing-3);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+
+.section-header p {
+  font-size: clamp(var(--font-size-sm), 3vw, var(--font-size-md)); /* Использую clamp для адаптивности */
+  color: var(--color-gray);
+  line-height: var(--line-height-relaxed);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Увеличил минимальную ширину с 250px для лучшего отображения */
+  gap: var(--spacing-5); /* Уменьшил с spacing-6 для более компактного вида */
+  margin-bottom: var(--spacing-8); /* Уменьшил с spacing-10 для более компактного вида */
+  padding: 0 var(--spacing-3); /* Добавил отступы для мобильных устройств */
+}
+
+/* Упрощенные стили для шапки сайта */
+.slider-tarifs {
+  position: relative;
+  padding: 80px 0;
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  color: var(--color-white);
+  background-blend-mode: multiply;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-badge {
+  display: inline-block;
+  background-color: var(--color-orange-primary);
+  color: var(--color-white);
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  color: var(--color-white);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-text {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+  max-width: 90%;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.offer-timer {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  padding: 12px 16px;
+  width: fit-content;
+  font-size: 14px;
+}
+
+.offer-timer i {
+  color: var(--color-orange-primary);
+  font-size: 20px;
+  margin-right: 12px;
+}
+
+.countdown {
+  font-weight: 700;
+  color: var(--color-orange-primary);
+  background: var(--color-white);
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 4px;
+}
+
+.timer-note {
+  font-size: 12px;
+  margin-top: 4px;
+  opacity: 0.9;
+}
+
+.hero-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.trust-item:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.trust-item i {
+  color: var(--color-orange-primary);
+  margin-right: 8px;
+}
+
+/* Упрощенные стили для вступительной секции */
+.intro-section {
+  padding: 70px 0;
+  background: var(--color-white);
+}
+
+.intro-box {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.intro-content {
+  flex: 1;
+}
+
+.section-subtitle {
+  color: var(--color-orange-primary);
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 18px;
+  position: relative;
+  display: inline-block;
+  padding-left: 25px;
+}
+
+.section-subtitle::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 20px;
+  height: 2px;
+  background: var(--color-orange-primary);
+  transform: translateY(-50%);
+}
+
+.intro-content h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: var(--color-dark-gray);
+  line-height: 1.2;
+}
+
+.intro-content .accent {
+  color: var(--color-orange-primary);
+}
+
+.intro-highlight {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-dark-gray);
+  margin-bottom: 20px;
+  padding-left: 15px;
+  border-left: 3px solid var(--color-orange-primary);
+}
+
+.highlight-text {
+  color: var(--color-orange-primary);
+  font-weight: 700;
+}
+
+.intro-stats {
+  display: flex;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.stat-box {
+  text-align: center;
+  padding: 20px;
+  background: var(--color-white);
+  border-radius: 8px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  flex: 1;
+  border-top: 3px solid var(--color-orange-primary);
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-orange-primary);
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: var(--color-gray);
+  font-weight: 500;
+}
+
+.intro-image {
+  flex: 1;
+  position: relative;
+}
+
+.intro-image img {
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: auto;
+}
+
+.image-badge {
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  background: var(--color-orange-primary);
+  color: var(--color-white);
+  padding: 8px 15px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+/* Упрощенные стили для секции услуг */
+.services-section {
+  padding: 70px 0;
+  background: #f8f9fa;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px;
+}
+
+.section-label {
+  display: inline-block;
+  background: var(--color-orange-ultra-light);
+  color: var(--color-orange-primary);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 15px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.section-header h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--color-orange-light);
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: var(--color-gray);
+  line-height: 1.6;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  margin-bottom: 50px;
+}
+
+/* Упрощенные стили для преимуществ */
+.benefits-section {
+  padding: 70px 0;
+  background: var(--color-white);
+  position: relative;
+  z-index: 1;
+}
+
+.benefits-content {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 70px;
+  align-items: center;
+}
+
+.benefits-content.reverse {
+  flex-direction: row-reverse;
+}
+
+.benefits-text {
+  flex: 1;
+}
+
+.benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.benefit-item {
+  display: flex;
+  gap: 15px;
+  padding: 20px;
+  background: var(--color-white);
+  border-radius: 8px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 3px solid transparent;
+}
+
+.benefit-item:hover {
+  transform: translateX(3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-left-color: var(--color-orange-primary);
+}
+
+.benefit-icon {
+  width: 45px;
+  height: 45px;
+  min-width: 45px;
+  background: var(--color-orange-ultra-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.benefit-item:hover .benefit-icon {
+  background: var(--color-orange-primary);
+}
+
+.benefit-icon i {
+  font-size: 18px;
+  color: var(--color-orange-primary);
+  transition: color 0.3s ease;
+}
+
+.benefit-item:hover .benefit-icon i {
+  color: var(--color-white);
+}
+
+.benefit-info {
+  flex: 1;
+}
+
+.benefit-info h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--color-dark-gray);
+}
+
+.benefit-info p {
+  color: var(--color-gray);
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.benefits-image {
+  flex: 1;
+  position: relative;
+}
+
+.benefits-image img {
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: auto;
+}
+
+
+.author-name {
+  font-weight: 700;
+  color: var(--color-dark-gray);
+  font-size: 14px;
+}
+
+.author-position {
+  font-size: 12px;
+  color: var(--color-gray);
+}
+
+
+.work-process {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+.process-step {
+  background: var(--color-white);
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  flex: 1;
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 200px;
+  margin-top: 20px;
+}
+
+.process-step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.step-number {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-orange-primary);
+  color: var(--color-white);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.step-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--color-orange-ultra-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  transition: background-color 0.3s ease;
+}
+
+.process-step:hover .step-icon {
+  background: var(--color-orange-primary);
+}
+
+.step-icon i {
+  font-size: 22px;
+  color: var(--color-orange-primary);
+  transition: color 0.3s ease;
+}
+
+.process-step:hover .step-icon i {
+  color: var(--color-white);
+}
+
+.process-step h3 {
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--color-dark-gray);
+  font-size: 18px;
+}
+
+.process-step p {
+  color: var(--color-gray);
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.work-action {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Упрощенные стили для CTA блока */
+.cta-section {
+  padding: 70px 0;
+  background: var(--color-orange-ultra-light);
+}
+
+.cta-box {
+  background: var(--color-white);
+  border-radius: 8px;
+  padding: 40px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.cta-label {
+  display: inline-block;
+  background: var(--color-orange-ultra-light);
+  color: var(--color-orange-primary);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 15px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cta-box h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--color-dark-gray);
+}
+
+.cta-box p {
+  font-size: 1.1rem;
+  color: var(--color-gray);
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.cta-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 15px;
+  background: var(--color-orange-ultra-light);
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.feature-item:hover {
+  background: rgba(253, 121, 33, 0.2);
+}
+
+.feature-item .feature-icon i {
+  color: var(--color-orange-primary);
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.feature-item span {
+  font-weight: 500;
+  color: var(--color-dark-gray);
+  font-size: 14px;
+}
+
+.cta-timer {
+  display: flex;
+  align-items: center;
+  background: var(--color-orange-ultra-light);
+  border: 1px dashed var(--color-orange-primary);
+  border-radius: 6px;
+  padding: 15px;
+  margin: 0 auto 30px;
+}
+
+.cta-timer i {
+  color: var(--color-orange-primary);
+  font-size: 24px;
+  margin-right: 15px;
+}
+
+.timer-content {
+  flex: 1;
+  text-align: left;
+}
+
+.timer-label {
+  font-weight: 600;
+  color: var(--color-orange-primary);
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.timer-value {
+  color: var(--color-dark-gray);
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Улучшенные, но упрощенные стили кнопок */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  gap: 8px;
+}
+
+.btn-primary {
+  background: var(--color-orange-primary);
+  color: var(--color-white);
+  box-shadow: 0 4px 10px rgba(253, 121, 33, 0.25);
+}
+
+.btn-primary:hover {
+  background: var(--color-orange-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(253, 121, 33, 0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-orange-primary);
+  border: 1px solid var(--color-orange-primary);
+}
+
+.btn-outline:hover {
+  background: var(--color-orange-primary);
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-lg {
+  padding: 14px 30px;
+  font-size: 16px;
+}
+
+/* Адаптивность (упрощенная) */
+@media (max-width: 991px) {
+  .intro-box, .benefits-content, .benefits-content.reverse {
+    flex-direction: column;
+  }
+  
+  .intro-image, .benefits-image {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 500px;
+    align-self: center;
+  }
+  
+  .process-step {
+    flex: 0 0 calc(50% - 10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .section-header h2, .cta-box h2, .intro-content h2 {
+    font-size: 1.8rem;
+  }
+  
+  .process-step {
+    flex: 0 0 100%;
+  }
+  
+  .testimonial-card {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin-top: 20px;
+    max-width: 100%;
+  }
+  
+  .cta-timer {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .cta-timer i {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  
+  .timer-content {
+    text-align: center;
+  }
+  
+  .cta-box {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-trust, .cta-features {
+    flex-direction: column;
+  }
+  
+  .trust-item, .feature-item {
+    width: 100%;
+  }
+  
+  .cta-buttons, .services-action {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .cta-buttons .btn, .services-action .btn {
+    width: 100%;
+  }
+  
+  .intro-stats {
+    flex-direction: column;
+  }
+  
+  .hero-text {
+    font-size: 1rem;
+  }
+}
+
+
+
+.benefits-content {
+  display: flex;
+  gap: var(--spacing-8); /* Уменьшил с spacing-10 для более компактного вида */
+  margin-bottom: var(--spacing-12); /* Уменьшил с spacing-16 для более компактного вида */
+  align-items: center;
+  padding: 0 var(--spacing-3); /* Добавил отступы для мобильных устройств */
+}
+
+.benefits-content.reverse {
+  flex-direction: row-reverse;
+}
+
+.benefits-text {
+  flex: 1;
+  min-width: 280px; /* Минимальная ширина для предотвращения слишком узкого текста */
+}
+
+.benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4); /* Уменьшил с spacing-5 для более компактного вида */
+}
+
+.benefit-item {
+  display: flex;
+  gap: var(--spacing-3); /* Уменьшил с spacing-4 для более компактного вида */
+  padding: var(--spacing-4); /* Уменьшил с spacing-5 для более компактного вида */
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-standard);
+  position: relative;
+  overflow: hidden;
+}
+
+.benefit-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--gradient-orange);
+  opacity: 0;
+  transition: var(--transition-standard);
+}
+
+.benefit-item:hover {
+  transform: translateX(3px); /* Уменьшил с 5px для более сдержанной анимации */
+  box-shadow: var(--shadow-lg);
+}
+
+.benefit-item:hover::before {
+  opacity: 1;
+}
+
+.benefit-icon {
+  width: 45px; /* Уменьшил с 50px для лучшей пропорции */
+  height: 45px; /* Уменьшил с 50px для лучшей пропорции */
+  min-width: 45px; /* Уменьшил с 50px для лучшей пропорции */
+  background: var(--color-orange-ultra-light);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-standard);
+}
+
+.benefit-item:hover .benefit-icon {
+  background: var(--color-orange-primary);
+}
+
+.benefit-icon i {
+  font-size: var(--font-size-md); /* Уменьшил с font-size-lg для лучшей пропорции */
+  color: var(--color-orange-primary);
+  transition: var(--transition-standard);
+}
+
+.benefit-item:hover .benefit-icon i {
+  color: var(--color-white);
+}
+
+.benefit-info {
+  flex: 1;
+}
+
+.benefit-info h3 {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-2);
+  color: var(--color-dark-gray);
+}
+
+.benefit-info p {
+  color: var(--color-gray);
+  line-height: var(--line-height-relaxed);
+  font-size: var(--font-size-sm); /* Добавил для лучшей читаемости */
+}
+
+.benefit-action {
+  align-self: center;
+  opacity: 0;
+  transition: var(--transition-standard);
+}
+
+.benefit-item:hover .benefit-action {
+  opacity: 1;
+}
+
+.benefit-action i {
+  color: var(--color-orange-primary);
+  font-size: var(--font-size-md); /* Уменьшил с font-size-lg для лучшей пропорции */
+}
+
+.benefits-image {
+  flex: 1;
+  position: relative;
+  min-width: 280px; /* Минимальная ширина для предотвращения слишком малых изображений */
+  max-width: 100%; /* Предотвращает выход изображения за пределы контейнера */
+}
+
+.benefits-image img {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg); /* Уменьшил с shadow-xl для более сдержанной тени */
+  transition: var(--transition-standard);
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Гарантирует правильное отображение изображения */
+}
+
+.benefits-image:hover img {
+  transform: scale(1.01); /* Уменьшил с 1.02 для более сдержанной анимации */
+}
+
+
+.benefits-image:hover{
+  transform: translateY(-3px); /* Уменьшил с -5px для более сдержанной анимации */
+}
+
+
+
+.author-name {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark-gray);
+  font-size: var(--font-size-sm); /* Добавил для лучшей читаемости */
+}
+
+.author-position {
+  font-size: var(--font-size-xs);
+  color: var(--color-gray);
+}
+
+/* Улучшения для секции процесса работы */
+.how-we-work-section {
+  padding: var(--spacing-12) 0; /* Уменьшил с spacing-16 для более компактного вида */
+  background: var(--color-orange-ultra-light);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.how-we-work-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background: var(--color-orange-light);
+  border-radius: var(--radius-full);
+  opacity: 0.05;
+  filter: blur(150px);
+  z-index: 1;
+}
+
+.work-process {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-4); /* Уменьшил с spacing-5 для более компактного вида */
+  margin: var(--spacing-8) 0; /* Уменьшил с spacing-10 для более компактного вида */
+  position: relative;
+  z-index: 1;
+  flex-wrap: wrap; /* Добавил для лучшей адаптивности */
+  padding: 0 var(--spacing-3); /* Добавил отступы для мобильных устройств */
+}
+
+.process-step {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-5); /* Уменьшил с spacing-6 для более компактного вида */
+  box-shadow: var(--shadow-card);
+  flex: 1;
+  text-align: center;
+  position: relative;
+  transition: var(--transition-standard);
+  min-width: 220px; /* Минимальная ширина для предотвращения слишком узких карточек */
+  margin-top: 20px; /* Для номера шага */
+}
+
+.process-step:hover {
+  transform: translateY(-6px); /* Уменьшил с -10px для более сдержанной анимации */
+  box-shadow: var(--shadow-lg);
+}
+
+.step-number {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gradient-orange);
+  color: var(--color-white);
+  width: 32px; /* Уменьшил с 36px для лучшей пропорции */
+  height: 32px; /* Уменьшил с 36px для лучшей пропорции */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm); /* Уменьшил с font-size-md для лучшей пропорции */
+  box-shadow: var(--shadow-sm);
+}
+
+.step-icon {
+  width: 60px; /* Уменьшил с 70px для лучшей пропорции */
+  height: 60px; /* Уменьшил с 70px для лучшей пропорции */
+  background: var(--color-orange-ultra-light);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--spacing-4);
+  transition: var(--transition-standard);
+}
+
+.process-step:hover .step-icon {
+  background: var(--color-orange-primary);
+}
+
+.step-icon i {
+  font-size: var(--font-size-lg); /* Уменьшил с font-size-xl для лучшей пропорции */
+  color: var(--color-orange-primary);
+  transition: var(--transition-standard);
+}
+
+.process-step:hover .step-icon i {
+  color: var(--color-white);
+  transform: scale(1.05); /* Уменьшил с 1.1 для более сдержанной анимации */
+}
+
+.process-step h3 {
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-3);
+  color: var(--color-dark-gray);
+  font-size: var(--font-size-md); /* Добавил для лучшей читаемости */
+}
+
+.process-step p {
+  color: var(--color-gray);
+  line-height: var(--line-height-relaxed);
+  font-size: var(--font-size-sm); /* Добавил для лучшей читаемости */
+}
+
+.work-action {
+  text-align: center;
+  margin-top: var(--spacing-8); /* Уменьшил с spacing-10 для более компактного вида */
+  padding: 0 var(--spacing-3); /* Добавил отступы для мобильных устройств */
+}
+
+/* Улучшения для секции преимуществ */
+.features-section {
+  padding: var(--spacing-12) 0; /* Уменьшил с spacing-16 для более компактного вида */
+  background: var(--color-white);
+  z-index: 1;
+  position: relative;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Уменьшил с 250px для лучшей адаптивности */
+  gap: var(--spacing-4); /* Уменьшил с spacing-5 для более компактного вида */
+  margin: var(--spacing-8) 0; /* Уменьшил с spacing-10 для более компактного вида */
+  padding: 0 var(--spacing-3); /* Добавил отступы для мобильных устройств */
+}
+
+.feature-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-5); /* Уменьшил с spacing-6 для более компактного вида */
+  box-shadow: var(--shadow-card);
+  position: relative;
+  transition: var(--transition-standard);
+  overflow: hidden;
+  height: 100%; /* Гарантирует одинаковую высоту карточек */
+}
+
+.feature-card:hover {
+  transform: translateY(-5px); /* Уменьшил с -8px для более сдержанной анимации */
+  box-shadow: var(--shadow-service-hover);
+}
+
+.feature-number {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: var(--font-size-xl); /* Уменьшил с font-size-2xl для лучшей пропорции */
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-orange-primary);
+  opacity: 0.1;
+  transition: var(--transition-standard);
+}
+
+.feature-card:hover .feature-number {
+  opacity: 0.15;
+  transform: scale(1.05); /* Уменьшил с 1.1 для более сдержанной анимации */
+}
+
+.feature-icon {
+  width: 50px; /* Уменьшил с 60px для лучшей пропорции */
+  height: 50px; /* Уменьшил с 60px для лучшей пропорции */
+  background: var(--color-orange-ultra-light);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-4);
+  transition: var(--transition-standard);
+}
+
+.feature-card:hover .feature-icon {
+  background: var(--color-orange-primary);
+}
+
+.feature-icon i {
+  font-size: var(--font-size-lg); /* Уменьшил с font-size-xl для лучшей пропорции */
+  color: var(--color-orange-primary);
+  transition: var(--transition-standard);
+}
+
+.feature-card:hover .feature-icon i {
+  color: var(--color-white);
+}
+
+.feature-card h3 {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-3);
+  color: var(--color-dark-gray);
+}
+
+.feature-card p {
+  color: var(--color-gray);
+  line-height: var(--line-height-relaxed);
+  font-size: var(--font-size-sm); /* Добавил для лучшей читаемости */
+}
+
+.features-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: var(--spacing-8); /* Уменьшил с spacing-12 для более компактного вида */
+  flex-wrap: wrap; /* Добавил для лучшей адаптивности */
+  gap: var(--spacing-5); /* Добавил для лучшего распределения при переносе */
+  padding: 0 var(--spacing-3); /* Добавил отступы для мобильных устройств */
+}
+
+.stat-item {
+  text-align: center;
+  padding: var(--spacing-4); /* Уменьшил с spacing-5 для более компактного вида */
+  transition: var(--transition-standard);
+  min-width: 180px; /* Минимальная ширина для предотвращения слишком узких статистик */
+}
+
+.stat-item:hover {
+  transform: scale(1.03); /* Уменьшил с 1.05 для более сдержанной анимации */
+}
+
+.stat-item .stat-value {
+  font-size: clamp(var(--font-size-3xl), 6vw, var(--font-size-4xl)); /* Использую clamp для адаптивности */
+  font-weight: var(--font-weight-bold);
+  color: var(--color-orange-primary);
+  line-height: 1;
+  margin-bottom: var(--spacing-2);
+  background: linear-gradient(135deg, var(--color-orange-primary), var(--color-orange-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* Стандартное свойство для современных браузеров */
+  color: transparent; /* Резервное свойство для браузеров, не поддерживающих background-clip: text */
+}
+
+.stat-item .stat-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-dark); /* Изменил с color-gray для лучшей контрастности */
+  font-weight: var(--font-weight-medium);
+}
+
+/* Улучшения для CTA секции */
+.cta-section {
+  padding: var(--spacing-12) 0; /* Уменьшил с spacing-16 для более компактного вида */
+  background: var(--color-orange-ultra-light);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.cta-section::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 300px;
+  height: 300px;
+  background: var(--color-orange-primary);
+  border-radius: var(--radius-full);
+  opacity: 0.05;
+  filter: blur(100px);
+}
+
+.cta-box {
+  background: var(--color-white);
+  border-radius: var(--radius-lg); /* Уменьшил с radius-xl для лучшей согласованности */
+  padding: var(--spacing-8); /* Уменьшил с spacing-10 для более компактного вида */
+  box-shadow: var(--shadow-lg); /* Уменьшил с shadow-xl для более сдержанной тени */
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  margin: 0 var(--spacing-3); /* Добавил отступы для мобильных устройств */
+}
+
+.cta-label {
+  display: inline-block;
+  background: var(--color-orange-ultra-light);
+  color: var(--color-orange-primary);
+  font-size: var(--font-size-xs); /* Уменьшил с font-size-sm для лучшей пропорции */
+  font-weight: var(--font-weight-semibold);
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--spacing-3);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.cta-box h2 {
+  font-size: clamp(var(--font-size-xl), 5vw, var(--font-size-2xl)); /* Использую clamp для адаптивности */
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-4);
+  color: var(--color-dark-gray);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-box p {
+  font-size: clamp(var(--font-size-sm), 3vw, var(--font-size-md)); /* Использую clamp для адаптивности */
+  color: var(--color-gray);
+  max-width: 800px;
+  margin: 0 auto var(--spacing-6);
+  line-height: var(--line-height-relaxed);
+}
+
+.cta-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-4); /* Уменьшил с spacing-5 для более компактного вида */
+  margin-bottom: var(--spacing-6); /* Уменьшил с spacing-8 для более компактного вида */
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-2) var(--spacing-3); /* Уменьшил с spacing-3 spacing-4 для более компактного вида */
+  background: var(--color-orange-ultra-light);
+  border-radius: var(--radius-md);
+  transition: var(--transition-standard);
+}
+
+.feature-item:hover {
+  background: var(--color-orange-light);
+  transform: translateY(-2px); /* Уменьшил с -3px для более сдержанной анимации */
+}
+
+.feature-item:hover .feature-icon i {
+  color: var(--color-white);
+}
+
+.feature-item .feature-icon {
+  width: auto;
+  height: auto;
+  background: transparent;
+  margin-bottom: 0;
+  margin-right: var(--spacing-2);
+}
+
+.feature-item .feature-icon i {
+  color: var(--color-orange-primary);
+  font-size: var(--font-size-sm); /* Уменьшил с font-size-md для лучшей пропорции */
+}
+
+.feature-item span {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-dark-gray);
+  font-size: var(--font-size-sm); /* Добавил для лучшей читаемости */
+}
+
+.cta-timer {
+  display: flex;
+  align-items: center;
+  background: var(--color-orange-ultra-light);
+  border: 1px dashed var(--color-orange-primary);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-4);
+  margin: 0 auto var(--spacing-6); /* Уменьшил с spacing-8 для более компактного вида */
+  max-width: 800px;
+}
+
+.promo-timer {
+  position: relative;
+  overflow: hidden;
+}
+
+.promo-timer::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to right, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.3) 50%, 
+    transparent 100%
+  );
+  animation: shine 3s infinite;
+  transform: rotate(30deg);
+}
+
+@keyframes shine {
+  0% { left: -50%; }
+  100% { left: 150%; }
+}
+
+.cta-timer i {
+  color: var(--color-orange-primary);
+  font-size: var(--font-size-lg); /* Уменьшил с font-size-xl для лучшей пропорции */
+  margin-right: var(--spacing-3); /* Уменьшил с spacing-4 для более компактного вида */
+  animation: pulse 2s infinite;
+  flex-shrink: 0; /* Предотвращает сжатие иконки */
+}
+
+.timer-content {
+  flex: 1;
+  text-align: left;
+}
+
+.timer-label {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-orange-primary);
+  margin-bottom: var(--spacing-1);
+  font-size: var(--font-size-sm); /* Добавил для лучшей читаемости */
+}
+
+.timer-value {
+  color: var(--color-dark-gray);
+  line-height: var(--line-height-relaxed);
+  font-size: var(--font-size-sm); /* Добавил для лучшей читаемости */
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-4);
+  flex-wrap: wrap; /* Добавил для лучшей адаптивности */
+}
+
+/* Улучшения для секции цен */
+.price-section {
+  padding: var(--spacing-12) 0; /* Уменьшил с spacing-16 для более компактного вида */
+  background: var(--color-white);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.price-section::before {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  background: var(--color-orange-primary);
+  border-radius: var(--radius-full);
+  opacity: 0.05;
+  filter: blur(150px);
+}
+
+.price-section .row {
+  padding: 0 var(--spacing-3); /* Добавил отступы для мобильных устройств */
+}
+
+.price-content {
+  padding-right: var(--spacing-5); /* Уменьшил с spacing-8 для более компактного вида */
+}
+
+.price-title {
+  font-size: clamp(var(--font-size-xl), 5vw, var(--font-size-2xl)); /* Использую clamp для адаптивности */
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-4);
+  color: var(--color-dark-gray);
+}
+
+.price-text {
+  font-size: clamp(var(--font-size-sm), 3vw, var(--font-size-md)); /* Использую clamp для адаптивности */
+  color: var(--color-gray);
+  margin-bottom: var(--spacing-5); /* Уменьшил с spacing-6 для более компактного вида */
+  line-height: var(--line-height-relaxed);
+}
+
+.price-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-3); /* Уменьшил с spacing-4 для более компактного вида */
+  margin-top: var(--spacing-5); /* Уменьшил с spacing-6 для более компактного вида */
+}
+
+.price-badge {
+  display: flex;
+  align-items: center;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-2) var(--spacing-3); /* Уменьшил с spacing-3 spacing-4 для более компактного вида */
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-standard);
+}
+
+.price-badge:hover {
+  transform: translateY(-2px); /* Уменьшил с -3px для более сдержанной анимации */
+  box-shadow: var(--shadow-lg);
+}
+
+.badge-icon {
+  margin-right: var(--spacing-2); /* Уменьшил с spacing-3 для более компактного вида */
+}
+
+.badge-icon i {
+  color: var(--color-orange-primary);
+  font-size: var(--font-size-md); /* Уменьшил с font-size-lg для лучшей пропорции */
+}
+
+.badge-text {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-dark-gray);
+  font-size: var(--font-size-sm); /* Добавил для лучшей читаемости */
+}
+
+.price-calculator {
+  background: linear-gradient(135deg, var(--color-orange-primary), var(--color-orange-dark));
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg); /* Уменьшил с shadow-xl для более сдержанной тени */
+  position: relative;
+  height: 100%; /* Гарантирует соответствие высоте содержимого */
+}
+
+.calculator-content {
+  padding: var(--spacing-6); /* Уменьшил с spacing-8 для более компактного вида */
+  color: var(--color-white);
+  position: relative;
+  z-index: 1;
+}
+
+.calculator-title {
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-3);
+  font-size: clamp(var(--font-size-lg), 4vw, var(--font-size-xl)); /* Использую clamp для адаптивности */
+}
+
+.calculator-text {
+  opacity: 0.9;
+  margin-bottom: var(--spacing-5);
+  line-height: var(--line-height-relaxed);
+  font-size: var(--font-size-sm); /* Добавил для лучшей читаемости */
+}
+
+.open-price {
+  background: var(--color-white);
+  color: var(--color-orange-primary);
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-semibold);
+  transition: var(--transition-standard);
+  font-size: var(--font-size-sm); /* Добавил для лучшей читаемости */
+}
+
+.open-price:hover {
+  background: var(--color-white);
+  color: var(--color-orange-dark);
+  transform: translateY(-2px); /* Уменьшил с -3px для более сдержанной анимации */
+}
+
+.open-price i {
+  font-size: 1.1em;
+}
+
+.shimmer-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-effect::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to right, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.3) 50%, 
+    transparent 100%
+  );
+  animation: shimmer 2s infinite;
+  transform: rotate(30deg);
+}
+
+@keyframes shimmer {
+  0% { left: -150%; }
+  100% { left: 150%; }
+}
+
+.pulse-btn {
+  animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0 rgba(253, 121, 33, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(253, 121, 33, 0); /* Уменьшил с 10px для более сдержанной анимации */
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(253, 121, 33, 0);
+  }
+}
+
+/* Улучшенные медиа-запросы для адаптивности */
+@media (max-width: 1200px) {
+  .hero-title {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .intro-image {
+    min-width: 250px;
+  }
+  
+  .benefits-image {
+    min-width: 250px;
+  }
+}
+
+@media (max-width: 991px) {
+  .intro-box {
+    flex-direction: column;
+  }
+  
+  .intro-image {
+    margin-left: 0;
+    margin-top: var(--spacing-6); /* Уменьшил с spacing-8 для более компактного вида */
+    width: 100%;
+    max-width: 500px; /* Ограничивает максимальную ширину */
+    align-self: center;
+  }
+  
+  .benefits-content {
+    flex-direction: column;
+  }
+  
+  .benefits-content.reverse {
+    flex-direction: column;
+  }
+  
+  .benefits-image {
+    margin-top: var(--spacing-6); /* Уменьшил с spacing-8 для более компактного вида */
+    width: 100%;
+    max-width: 500px; /* Ограничивает максимальную ширину */
+    align-self: center;
+  }
+  
+  .work-process {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .process-step {
+    flex: 0 0 calc(50% - var(--spacing-4)); /* Уменьшил отступ с spacing-5 для более компактного вида */
+    margin-bottom: var(--spacing-4); /* Уменьшил с spacing-5 для более компактного вида */
+    min-width: 180px; /* Уменьшил с 220px для лучшей адаптивности */
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  
+  .offer-timer {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider-tarifs {
+    min-height: 70vh; /* Уменьшил высоту для мобильных устройств */
+    padding: var(--spacing-10) 0;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--spacing-4);
+  }
+  
+  .features-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--spacing-3);
+  }
+  
+  .features-stats {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-4);
+  }
+  
+  .cta-features {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-3);
+  }
+  
+  .feature-item {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .process-step {
+    flex: 0 0 100%;
+    min-width: 0;
+  }
+  
+  .testimonial-card {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    margin-top: var(--spacing-4);
+    max-width: 100%;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .price-content {
+    margin-bottom: var(--spacing-6);
+    padding-right: 0;
+  }
+  
+  .price-badges {
+    justify-content: center;
+  }
+  
+  .cta-box {
+    padding: var(--spacing-5);
+  }
+  
+  .cta-timer {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--spacing-3);
+  }
+  
+  .cta-timer i {
+    margin-right: 0;
+    margin-bottom: var(--spacing-2);
+  }
+  
+  .timer-content {
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .slider-tarifs {
+    min-height: 60vh; /* Еще уменьшил высоту для маленьких мобильных устройств */
+    padding: var(--spacing-8) 0;
+  }
+  
+  .hero-title {
+    font-size: var(--font-size-xl);
+  }
+  
+  .hero-text {
+    font-size: var(--font-size-md);
+    max-width: 100%;
+  }
+  
+  .hero-trust {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  
+  .trust-item {
+    width: 100%;
+  }
+  
+  .cta-box {
+    padding: var(--spacing-4);
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .cta-buttons .btn {
+    width: 100%;
+  }
+  
+  .intro-stats {
+    flex-direction: column;
+    gap: var(--spacing-3);
+  }
+  
+  .stat-box {
+    width: 100%;
+  }
+  
+  .benefit-item {
+    padding: var(--spacing-3);
+  }
+  
+  .section-header {
+    margin-bottom: var(--spacing-6);
+  }
+  
+  .services-action {
+    flex-direction: column;
+    gap: var(--spacing-3);
+    width: 100%;
+  }
+  
+  .services-action .btn {
+    width: 100%;
+  }
+  
+  .feature-card {
+    padding: var(--spacing-4);
+  }
+  
+  .process-step {
+    padding: var(--spacing-4);
+  }
+  
+  .step-icon {
+    width: 50px;
+    height: 50px;
+  }
+}

@@ -1,0 +1,1128 @@
+/* ========================================================================
+   УЛУЧШЕННЫЙ ПРОДАЮЩИЙ ДИЗАЙН (С ИСПРАВЛЕННЫМ Z-INDEX)
+   ======================================================================== */
+
+
+/* Добавим цветовые переменные для акцентов */
+:root {
+  /* Яркие акценты для привлечения внимания */
+  --accent-color-bright: #ff6b00;
+  --accent-color-hover: #ff8c33;
+  --accent-shadow: 0 8px 30px rgba(255, 107, 0, 0.35);
+  
+  /* Глубокие тени для объема */
+  --card-shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
+  --text-shadow-strong: 0 2px 10px rgba(0, 0, 0, 0.2);
+  
+  /* Переходы для плавности */
+  --smooth-transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* ========================================================================
+   ОБЩИЕ УЛУЧШЕНИЯ ДЛЯ ПОВЫШЕНИЯ ПРОДАЖНОСТИ
+   ======================================================================== */
+
+/* Убираем избыточную плавность анимаций для более четкого восприятия */
+* {
+  transition-duration: 0.3s !important;
+}
+
+/* Акцентные тексты */
+.accent-text {
+  color: var(--color-orange-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Выделение ключевых заголовков */
+h2, h3 {
+  position: relative;
+}
+
+/* Добавляем метки "Выгодно" и другие продающие бейджи */
+.sales-badge {
+  display: inline-block;
+  background: var(--color-orange-primary);
+  color: white;
+  padding: 0.3em 0.8em;
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-bold);
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 5px 15px rgba(253, 121, 33, 0.3);
+}
+
+/* Стилизация кнопок для большей конверсии */
+.btn {
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+.btn-primary, 
+.slider-tarifs .btn.popup-with-form,
+.pricelist .btn {
+  background: var(--accent-color-bright) !important;
+  box-shadow: var(--accent-shadow) !important;
+  border: none !important;
+  color: var(--color-white);
+  transform: scale(1);
+}
+
+.btn-primary:hover,
+.slider-tarifs .btn.popup-with-form:hover,
+.pricelist .btn:hover {
+  background: var(--accent-color-hover) !important;
+  transform: translateY(-3px) scale(1.03) !important;
+  box-shadow: 0 12px 35px rgba(255, 107, 0, 0.45) !important;
+}
+
+/* ========================================================================
+   УЛУЧШЕННАЯ HERO СЕКЦИЯ - МАКСИМАльНО ПРОДАЮЩАЯ
+   ======================================================================== */
+
+.slider-tarifs {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  background-attachment: fixed !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Корректируем оверлей для большей читаемости */
+.slider-tarifs:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.65) 50%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  z-index: 0;
+}
+
+/* Сдвигаем контент карточки вверх для большего акцента */
+.slider-tarifs .row {
+  position: relative;
+  z-index: 10;
+}
+
+/* Улучшаем контейнер с текстом */
+.slider-tarifs .col-lg-5 {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  padding: 2.5rem;
+  border-top: 5px solid var(--accent-color-bright);
+  position: relative;
+  z-index: 5;
+  overflow: hidden;
+}
+
+/* Добавляем выделенный бейдж для акцента */
+.slider-tarifs .col-lg-5:before {
+  content: "МАКСИМАЛЬНАЯ ЗАЩИТА";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--accent-color-bright);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 0 0 0 15px;
+  z-index: 10;
+  letter-spacing: 0.05em;
+}
+
+/* Усиливаем заголовок */
+.slider-tarifs h2 {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: white;
+  margin-bottom: 1rem;
+  text-shadow: var(--text-shadow-strong);
+  line-height: 1.1;
+  position: relative;
+}
+
+/* Добавляем подчеркивание для заголовка */
+.slider-tarifs h2:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 80px;
+  height: 5px;
+  background: var(--accent-color-bright);
+  border-radius: 5px;
+}
+
+/* Улучшаем CTA кнопку */
+.slider-tarifs .btn.popup-with-form {
+  padding: 0.9rem 2.2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 1rem;
+  letter-spacing: 1px;
+}
+
+/* Добавляем анимацию пульсации для привлечения внимания */
+@keyframes pulseBorder {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 0, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(255, 107, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 0, 0);
+  }
+}
+
+.slider-tarifs .btn.popup-with-form {
+  animation: pulseBorder 2s infinite;
+}
+
+/* ========================================================================
+   УЛУЧШЕННАЯ СЕКЦИЯ ВВЕДЕНИЯ
+   ======================================================================== */
+
+.intro-section {
+  background-color: #fff;
+  padding: 5rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Добавляем визуальный акцент верхнему блоку */
+.intro-section:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, var(--color-orange-primary), var(--accent-color-bright), var(--color-orange-primary));
+  z-index: 1;
+}
+
+.intro-box {
+  display: flex;
+  align-items: center;
+  gap: 2rem; 
+  padding: 2rem;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Добавляем акцент заголовку */
+.intro-content h2 {
+  font-family: var(--font-primary);
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  font-weight: 800;
+  color: var(--color-dark-gray);
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 15px;
+  line-height: 1.2;
+}
+
+.intro-content h2:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background: var(--accent-color-bright);
+  border-radius: 5px;
+}
+
+/* Выделяем акцентный текст */
+.intro-content .accent {
+  color: var(--accent-color-bright);
+  font-weight: 800;
+  position: relative;
+  display: inline-block;
+}
+
+.intro-content .accent:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 107, 0, 0.1);
+  z-index: -1;
+}
+
+/* Улучшаем четкость параграфов */
+.intro-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--color-dark-gray-alt);
+  margin-bottom: 1rem;
+}
+
+/* Выделяем последний параграф как ключевой */
+.intro-content p:last-of-type {
+  font-weight: 500;
+  padding: 0.8rem;
+  background-color: rgba(255, 107, 0, 0.08);
+  border-left: 3px solid var(--accent-color-bright);
+  border-radius: 0 5px 5px 0;
+}
+
+/* ========================================================================
+   УЛУЧШЕННАЯ СЕКЦИЯ ПРЕИМУЩЕСТВ
+   ======================================================================== */
+
+.benefits-section {
+  background-color: var(--color-lighter-gray-alt);
+  padding: 5rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Акцентируем заголовок секции */
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  position: relative;
+  z-index: 2;
+}
+
+.section-header h2 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 800;
+  color: var(--color-dark-gray);
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-header h2:after {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 4px;
+  background: var(--accent-color-bright);
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+}
+
+/* Добавляем акцент подзаголовку */
+.section-header p {
+  font-size: 1.2rem;
+  color: var(--color-dark-gray-alt);
+  max-width: 90%;
+  margin: 1.5rem auto 0;
+  font-weight: 500;
+}
+
+/* Улучшаем карточки преимуществ */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.benefit-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.8rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-top: 4px solid transparent;
+  border-image: linear-gradient(to right, var(--color-orange-primary), var(--accent-color-bright));
+  border-image-slice: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.benefit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+/* Улучшаем иконки в карточках */
+.benefit-icon {
+  width: 70px;
+  height: 70px;
+  background: rgba(255, 107, 0, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: var(--accent-color-bright);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.benefit-card:hover .benefit-icon {
+  background-color: var(--accent-color-bright);
+  color: white;
+  transform: scale(1.05) rotate(5deg);
+}
+
+.benefit-icon i {
+  font-size: 28px;
+  transition: all 0.3s ease;
+}
+
+.benefit-card:hover .benefit-icon i {
+  transform: scale(1.1);
+}
+
+/* Улучшаем заголовки карточек */
+.benefit-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-dark-gray);
+  margin-bottom: 0.8rem;
+  position: relative;
+}
+
+/* Улучшаем описания в карточках */
+.benefit-card p {
+  font-size: 1rem;
+  color: var(--color-dark-gray-alt);
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+/* Улучшаем дополнительные преимущества */
+.benefits-extra {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-top: 2.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.extra-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: white;
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border-left: 3px solid var(--color-green);
+}
+
+.extra-item:hover {
+  transform: translateY(-5px) translateX(5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.check-icon {
+  min-width: 32px;
+  width: 32px;
+  height: 32px;
+  background-color: var(--color-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+  box-shadow: 0 5px 10px rgba(134, 188, 66, 0.3);
+}
+
+.check-icon i {
+  font-size: 1rem;
+}
+
+.extra-item p {
+  font-size: 1rem;
+  color: var(--color-dark-gray);
+  margin: 0;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/* ========================================================================
+   УЛУЧШЕННАЯ ЦЕЛЕВАЯ СЕКЦИЯ
+   ======================================================================== */
+
+.target-section {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, white 0%, #f9f9f9 100%);
+  position: relative;
+  z-index: 1;
+}
+
+.target-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Улучшаем изображение */
+.target-image {
+  flex: 1;
+  position: relative;
+  padding: 1rem;
+  margin: 20px;
+  overflow: visible;
+  z-index: 1;
+}
+
+.target-image:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  border: 3px solid var(--accent-color-bright);
+  border-radius: 12px;
+  transform: translate(20px, 20px);
+  z-index: 0;
+  transition: transform 0.3s ease;
+}
+
+.target-image:hover:before {
+  transform: translate(15px, 15px);
+}
+
+.target-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.target-image:hover img {
+  transform: scale(1.02) translate(-5px, -5px);
+}
+
+/* Улучшаем текстовое содержимое */
+.target-text {
+  flex: 1;
+}
+
+.target-text h2 {
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  font-weight: 800;
+  color: var(--color-dark-gray);
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.target-text h2:before {
+  content: 'ИДЕАЛЬНО ДЛЯ ВАС';
+  position: absolute;
+  top: -25px;
+  left: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: white;
+  background: var(--accent-color-bright);
+  padding: 0.3rem 0.8rem;
+  border-radius: 30px;
+  letter-spacing: 0.05em;
+}
+
+.target-text h2:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: var(--accent-color-bright);
+  border-radius: 5px;
+}
+
+.target-text p {
+  font-size: 1.1rem;
+  color: var(--color-dark-gray-alt);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Улучшаем список */
+.target-list {
+  margin-bottom: 2rem;
+  padding-left: 0;
+  counter-reset: target-counter;
+}
+
+.target-list li {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  color: var(--color-dark-gray);
+  line-height: 1.5;
+  list-style: none;
+  counter-increment: target-counter;
+}
+
+.target-list li:before {
+  content: counter(target-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 28px;
+  height: 28px;
+  background-color: var(--accent-color-bright);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 3px 10px rgba(255, 107, 0, 0.3);
+}
+
+.target-list li:hover:before {
+  transform: scale(1.1);
+}
+
+/* Улучшаем выделенный текст */
+.highlight-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-dark-gray);
+  padding: 1.5rem;
+  background-color: rgba(255, 107, 0, 0.08);
+  border-left: 5px solid var(--accent-color-bright);
+  border-radius: 0 10px 10px 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.highlight-text:before {
+  content: '"';
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  font-size: 3rem;
+  color: rgba(255, 107, 0, 0.1);
+  line-height: 1;
+  font-family: Georgia, serif;
+}
+
+/* ========================================================================
+   УЛУЧШЕННАЯ СЕКЦИЯ "ПОЧЕМУ МЫ"
+   ======================================================================== */
+
+.why-us-section {
+  background-color: var(--color-white-muted);
+  padding: 5rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.why-us-section h2 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 800;
+  color: var(--color-dark-gray);
+  margin-bottom: 3rem;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.why-us-section h2:before {
+  content: 'ЭКСПЕРТНОЕ РЕШЕНИЕ';
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: white;
+  background: var(--accent-color-bright);
+  padding: 0.3rem 0.8rem;
+  border-radius: 30px;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.why-us-section h2:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--accent-color-bright);
+  border-radius: 5px;
+}
+
+/* Улучшаем карточки с преимуществами */
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.expertise-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.8rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.expertise-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.expertise-number {
+  font-family: var(--font-primary);
+  font-size: 3rem;
+  font-weight: 800;
+  color: rgba(255, 107, 0, 0.1);
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+
+.expertise-card:hover .expertise-number {
+  color: rgba(255, 107, 0, 0.15);
+  transform: scale(1.1);
+}
+
+.expertise-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-dark-gray);
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.expertise-card p {
+  font-size: 1rem;
+  color: var(--color-dark-gray-alt);
+  line-height: 1.5;
+  position: relative;
+  z-index: 1;
+  flex-grow: 1;
+}
+
+/* Улучшаем бейдж качества */
+.quality-badge {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, var(--accent-color-bright) 0%, var(--color-orange-primary) 100%);
+  border-radius: 12px;
+  padding: 1.8rem 2rem;
+  color: white;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 15px 30px rgba(255, 107, 0, 0.25);
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+/* Добавляем эффект сияния */
+.quality-badge:before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  animation: shineBadge 6s infinite linear;
+  z-index: 0;
+}
+
+@keyframes shineBadge {
+  0% {
+    transform: scale(2) translate(-100%, -100%) rotate(30deg);
+  }
+  100% {
+    transform: scale(2) translate(100%, 100%) rotate(30deg);
+  }
+}
+
+.badge-icon {
+  flex-shrink: 0;
+  width: 75px;
+  height: 75px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.badge-icon i {
+  font-size: 35px;
+  color: white;
+}
+
+.badge-text {
+  position: relative;
+  z-index: 1;
+}
+
+.badge-text h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.badge-text p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ========================================================================
+   УЛУЧШЕННАЯ СЕКЦИЯ CTA
+   ======================================================================== */
+
+.cta-section {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, white 0%, rgba(255, 107, 0, 0.08) 100%);
+  position: relative;
+  z-index: 1;
+}
+
+.cta-box {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 3rem;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  border-top: 5px solid var(--accent-color-bright);
+}
+
+/* Добавляем эффект угловой ленты */
+.cta-box:before {
+  content: 'АКЦИЯ';
+  position: absolute;
+  top: 12px;
+  right: -35px;
+  background: var(--accent-color-bright);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.5rem 3rem;
+  transform: rotate(45deg);
+  letter-spacing: 0.05em;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.cta-box h2 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 800;
+  color: var(--color-dark-gray);
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.cta-box h2:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--accent-color-bright);
+  border-radius: 5px;
+}
+
+.cta-box p {
+  font-size: 1.2rem;
+  color: var(--color-dark-gray-alt);
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Улучшаем кнопки */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cta-buttons .btn {
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin: 0.5rem;
+  min-width: 200px;
+}
+
+.cta-buttons .btn-primary {
+  animation: pulseBorder 2s infinite;
+}
+
+.cta-buttons .btn-outline {
+  border: 2px solid var(--accent-color-bright);
+  color: var(--accent-color-bright);
+  transition: all 0.3s ease;
+}
+
+.cta-buttons .btn-outline:hover {
+  background: var(--accent-color-bright);
+  color: white !important;
+  transform: translateY(-3px);
+}
+
+/* ========================================================================
+   УЛУЧШЕННАЯ СЕКЦИЯ ПРАЙСЛИСТА
+   ======================================================================== */
+
+.pricelist {
+  background-color: white;
+  padding: 4rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.pricelist .row {
+  align-items: center !important;
+  position: relative;
+  z-index: 2;
+}
+
+.pricelist h2 {
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  font-weight: 800;
+  color: var(--color-dark-gray);
+  margin-bottom: 0 !important;
+  line-height: 1.2;
+  position: relative;
+  display: inline-block;
+}
+
+.pricelist h2:before {
+  content: 'ВЫГОДНОЕ ПРЕДЛОЖЕНИЕ';
+  position: absolute;
+  top: -25px;
+  left: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: white;
+  background: var(--accent-color-bright);
+  padding: 0.3rem 0.8rem;
+  border-radius: 30px;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.pricelist .calc-wrap {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.8rem !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  text-align: center !important;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Улучшаем кнопку */
+.pricelist .btn {
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin: 0.5rem;
+  min-width: 200px;
+  animation: pulseBorder 2s infinite;
+}
+
+/* ========================================================================
+   МЕДИА-ЗАПРОСЫ ДЛЯ АДАПТИВНОСТИ
+   ======================================================================== */
+
+/* Средние экраны */
+@media (max-width: 991px) {
+  .slider-tarifs .col-lg-5 {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  
+  .target-content,
+  .intro-box {
+    flex-direction: column;
+  }
+  
+  .target-image,
+  .intro-image {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+  
+  .quality-badge {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .badge-icon {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Маленькие экраны */
+@media (max-width: 767px) {
+  .section-header h2,
+  .why-us-section h2,
+  .cta-box h2,
+  .target-text h2,
+  .intro-content h2,
+  .pricelist h2 {
+    font-size: clamp(1.5rem, 5vw, 1.8rem);
+  }
+  
+  .slider-tarifs h2 {
+    font-size: clamp(1.8rem, 5vw, 2.2rem);
+  }
+  
+  .slider-tarifs .col-lg-5 {
+    padding: 2rem;
+  }
+  
+  .intro-content,
+  .target-text {
+    padding: 1.5rem;
+  }
+  
+  .cta-box {
+    padding: 2rem 1.5rem;
+  }
+  
+  .cta-buttons,
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .cta-buttons .btn,
+  .hero-cta .btn {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+  
+  .quality-badge {
+    margin: 0 1rem;
+  }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 480px) {
+  .slider-tarifs .col-lg-5 {
+    padding: 1.5rem;
+  }
+  
+  .slider-tarifs h2 {
+    font-size: clamp(1.5rem, 5vw, 1.8rem);
+  }
+  
+  .section-header h2:before,
+  .target-text h2:before,
+  .why-us-section h2:before,
+  .pricelist h2:before {
+    position: relative;
+    top: auto;
+    left: auto;
+    display: inline-block;
+    transform: none;
+    margin-bottom: 0.5rem;
+  }
+  
+  .cta-box:before {
+    top: 15px;
+    right: -50px;
+    padding: 0.3rem 3rem;
+    font-size: 0.7rem;
+  }
+}

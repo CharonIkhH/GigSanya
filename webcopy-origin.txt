@@ -1,0 +1,712 @@
+Uri: https://api-maps.yandex.ru/2.0/?load=package.standard,package.geoObjects&lang=ru-RU
+File Name: C:\Downloaded Web Sites\gigsys.ru\2.0\index.htm
+Content Type: text/javascript
+
+Uri: https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor:2938b8f56cb439245a52705311ad2d589eca45b0d64866a246b14e9615e7c311&width=100%25&height=400&lang=ru_RU&scroll=true
+File Name: C:\Downloaded Web Sites\gigsys.ru\services\constructor\1.0\js\index.htm
+Content Type: application/javascript
+
+Uri: https://code.jivo.ru/widget/s8xWAIxVHJ
+File Name: C:\Downloaded Web Sites\gigsys.ru\widget\s8xWAIxVHJ
+Content Type: application/javascript
+
+Uri: https://code.jquery.com/ui/1.12.1/jquery-ui.js
+File Name: C:\Downloaded Web Sites\gigsys.ru\ui\1.12.1\jquery-ui.js
+Content Type: application/javascript
+
+Uri: https://code.jquery.com/ui/1.12.1/themes/base/images/ui-icons_444444_256x240.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\ui\1.12.1\themes\base\images\ui-icons_444444_256x240.png
+Content Type: image/png
+
+Uri: https://code.jquery.com/ui/1.12.1/themes/base/images/ui-icons_555555_256x240.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\ui\1.12.1\themes\base\images\ui-icons_555555_256x240.png
+Content Type: image/png
+
+Uri: https://code.jquery.com/ui/1.12.1/themes/base/images/ui-icons_777620_256x240.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\ui\1.12.1\themes\base\images\ui-icons_777620_256x240.png
+Content Type: image/png
+
+Uri: https://code.jquery.com/ui/1.12.1/themes/base/images/ui-icons_777777_256x240.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\ui\1.12.1\themes\base\images\ui-icons_777777_256x240.png
+Content Type: image/png
+
+Uri: https://code.jquery.com/ui/1.12.1/themes/base/images/ui-icons_cc0000_256x240.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\ui\1.12.1\themes\base\images\ui-icons_cc0000_256x240.png
+Content Type: image/png
+
+Uri: https://code.jquery.com/ui/1.12.1/themes/base/images/ui-icons_ffffff_256x240.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\ui\1.12.1\themes\base\images\ui-icons_ffffff_256x240.png
+Content Type: image/png
+
+Uri: https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+File Name: C:\Downloaded Web Sites\gigsys.ru\ui\1.12.1\themes\base\jquery-ui.css
+Content Type: text/css
+
+Uri: https://gigsys.ru/
+File Name: C:\Downloaded Web Sites\gigsys.ru\index.htm
+Content Type: text/html
+
+Uri: https://gigsys.ru/10-dostoinstv-programmyi-1s.html
+File Name: C:\Downloaded Web Sites\gigsys.ru\10-dostoinstv-programmyi-1s.html
+Content Type: text/html
+
+Uri: https://gigsys.ru/assets/images/1C Balans.jpg
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\images\1C Balans.jpg
+Content Type: image/jpeg
+
+Uri: https://gigsys.ru/assets/images/34556.jpg
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\images\34556.jpg
+Content Type: image/jpeg
+
+Uri: https://gigsys.ru/assets/images/4ae1a.jpg
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\images\4ae1a.jpg
+Content Type: image/jpeg
+
+Uri: https://gigsys.ru/assets/images/IPFX-contact-centres.jpg
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\images\IPFX-contact-centres.jpg
+Content Type: image/jpeg
+
+Uri: https://gigsys.ru/assets/images/it1.jpg
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\images\it1.jpg
+Content Type: image/jpeg
+
+Uri: https://gigsys.ru/assets/images/it2.jpg
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\images\it2.jpg
+Content Type: image/jpeg
+
+Uri: https://gigsys.ru/assets/images/kholodnye1.jpg
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\images\kholodnye1.jpg
+Content Type: image/jpeg
+
+Uri: https://gigsys.ru/assets/images/temp-about.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\images\temp-about.png
+Content Type: image/png
+
+Uri: https://gigsys.ru/assets/images/vi001.jpg
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\images\vi001.jpg
+Content Type: image/jpeg
+
+Uri: https://gigsys.ru/assets/images/vi002.jpg
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\images\vi002.jpg
+Content Type: image/jpeg
+
+Uri: https://gigsys.ru/assets/images/vidk1.jpg
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\images\vidk1.jpg
+Content Type: image/jpeg
+
+Uri: https://gigsys.ru/assets/images/vidk2.jpg
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\images\vidk2.jpg
+Content Type: image/jpeg
+
+Uri: https://gigsys.ru/assets/images/vidk3.jpg
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\images\vidk3.jpg
+Content Type: image/jpeg
+
+Uri: https://gigsys.ru/assets/images/woman-work-computer-happy.jpg
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\images\woman-work-computer-happy.jpg
+Content Type: image/jpeg
+
+Uri: https://gigsys.ru/assets/templates/css/fonts.css
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\css\fonts.css
+Content Type: text/css
+
+Uri: https://gigsys.ru/assets/templates/css/main.css
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\css\main.css
+Content Type: text/css
+
+Uri: https://gigsys.ru/assets/templates/css/media.css
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\css\media.css
+Content Type: text/css
+
+Uri: https://gigsys.ru/assets/templates/fonts/DINPro-Bold/DINPro-Bold.eot
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\DINPro-Bold\DINPro-Bold.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://gigsys.ru/assets/templates/fonts/DINPro-Bold/DINPro-Bold.svg
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\DINPro-Bold\DINPro-Bold.svg
+Content Type: image/svg+xml
+
+Uri: https://gigsys.ru/assets/templates/fonts/DINPro-Bold/DINPro-Bold.ttf
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\DINPro-Bold\DINPro-Bold.ttf
+Content Type: application/octet-stream
+
+Uri: https://gigsys.ru/assets/templates/fonts/DINPro-Bold/DINPro-Bold.woff
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\DINPro-Bold\DINPro-Bold.woff
+Content Type: font/woff
+
+Uri: https://gigsys.ru/assets/templates/fonts/DINPro-Regular/DINPro-Regular.eot
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\DINPro-Regular\DINPro-Regular.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://gigsys.ru/assets/templates/fonts/DINPro-Regular/DINPro-Regular.svg
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\DINPro-Regular\DINPro-Regular.svg
+Content Type: image/svg+xml
+
+Uri: https://gigsys.ru/assets/templates/fonts/DINPro-Regular/DINPro-Regular.ttf
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\DINPro-Regular\DINPro-Regular.ttf
+Content Type: application/octet-stream
+
+Uri: https://gigsys.ru/assets/templates/fonts/DINPro-Regular/DINPro-Regular.woff
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\DINPro-Regular\DINPro-Regular.woff
+Content Type: font/woff
+
+Uri: https://gigsys.ru/assets/templates/fonts/icon/css/icon.css
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\icon\css\icon.css
+Content Type: text/css
+
+Uri: https://gigsys.ru/assets/templates/fonts/icon/font/icon.eot?55966437
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\icon\font\icon.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://gigsys.ru/assets/templates/fonts/icon/font/icon.svg?55966437
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\icon\font\icon.svg
+Content Type: image/svg+xml
+
+Uri: https://gigsys.ru/assets/templates/fonts/icon/font/icon.ttf?55966437
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\icon\font\icon.ttf
+Content Type: application/octet-stream
+
+Uri: https://gigsys.ru/assets/templates/fonts/icon/font/icon.woff2?55966437
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\icon\font\icon.woff2
+Content Type: font/woff2
+
+Uri: https://gigsys.ru/assets/templates/fonts/icon/font/icon.woff?55966437
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\icon\font\icon.woff
+Content Type: font/woff
+
+Uri: https://gigsys.ru/assets/templates/fonts/PFDinDisplay/PFDinDisplay.eot
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\PFDinDisplay\PFDinDisplay.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://gigsys.ru/assets/templates/fonts/PFDinDisplay/PFDinDisplay.eot?
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\PFDinDisplay\PFDinDisplay-1.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://gigsys.ru/assets/templates/fonts/PFDinDisplay/PFDinDisplay.ttf
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\PFDinDisplay\PFDinDisplay.ttf
+Content Type: application/octet-stream
+
+Uri: https://gigsys.ru/assets/templates/fonts/PFDinDisplay/PFDinDisplay.woff
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\PFDinDisplay\PFDinDisplay.woff
+Content Type: font/woff
+
+Uri: https://gigsys.ru/assets/templates/fonts/PFDinMedium/PFDinMedium.eot
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\PFDinMedium\PFDinMedium.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://gigsys.ru/assets/templates/fonts/PFDinMedium/PFDinMedium.eot?
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\PFDinMedium\PFDinMedium-1.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://gigsys.ru/assets/templates/fonts/PFDinMedium/PFDinMedium.ttf
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\PFDinMedium\PFDinMedium.ttf
+Content Type: application/octet-stream
+
+Uri: https://gigsys.ru/assets/templates/fonts/PFDinMedium/PFDinMedium.woff
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\PFDinMedium\PFDinMedium.woff
+Content Type: font/woff
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Display-Bold/SF-UI-Display-Bold.eot
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Display-Bold\SF-UI-Display-Bold.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Display-Bold/SF-UI-Display-Bold.svg
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Display-Bold\SF-UI-Display-Bold.svg
+Content Type: image/svg+xml
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Display-Bold/SF-UI-Display-Bold.ttf
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Display-Bold\SF-UI-Display-Bold.ttf
+Content Type: application/octet-stream
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Display-Bold/SF-UI-Display-Bold.woff
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Display-Bold\SF-UI-Display-Bold.woff
+Content Type: font/woff
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Display-Light/SF-UI-Display-Light.eot
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Display-Light\SF-UI-Display-Light.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Display-Light/SF-UI-Display-Light.svg
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Display-Light\SF-UI-Display-Light.svg
+Content Type: image/svg+xml
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Display-Light/SF-UI-Display-Light.ttf
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Display-Light\SF-UI-Display-Light.ttf
+Content Type: application/octet-stream
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Display-Light/SF-UI-Display-Light.woff
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Display-Light\SF-UI-Display-Light.woff
+Content Type: font/woff
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Display-Medium/SF-UI-Display-Medium.eot
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Display-Medium\SF-UI-Display-Medium.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Display-Medium/SF-UI-Display-Medium.svg
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Display-Medium\SF-UI-Display-Medium.svg
+Content Type: image/svg+xml
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Display-Medium/SF-UI-Display-Medium.ttf
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Display-Medium\SF-UI-Display-Medium.ttf
+Content Type: application/octet-stream
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Display-Medium/SF-UI-Display-Medium.woff
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Display-Medium\SF-UI-Display-Medium.woff
+Content Type: font/woff
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Display-Regular/SF-UI-Display-Regular.eot
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Display-Regular\SF-UI-Display-Regular.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Display-Regular/SF-UI-Display-Regular.svg
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Display-Regular\SF-UI-Display-Regular.svg
+Content Type: image/svg+xml
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Display-Regular/SF-UI-Display-Regular.ttf
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Display-Regular\SF-UI-Display-Regular.ttf
+Content Type: application/octet-stream
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Display-Regular/SF-UI-Display-Regular.woff
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Display-Regular\SF-UI-Display-Regular.woff
+Content Type: font/woff
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Display-Semibold/SF-UI-Display-Semibold.eot
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Display-Semibold\SF-UI-Display-Semibold.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Display-Semibold/SF-UI-Display-Semibold.svg
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Display-Semibold\SF-UI-Display-Semibold.svg
+Content Type: image/svg+xml
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Display-Semibold/SF-UI-Display-Semibold.ttf
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Display-Semibold\SF-UI-Display-Semibold.ttf
+Content Type: application/octet-stream
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Display-Semibold/SF-UI-Display-Semibold.woff
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Display-Semibold\SF-UI-Display-Semibold.woff
+Content Type: font/woff
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Text-Bold/SF-UI-Text-Bold.eot
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Text-Bold\SF-UI-Text-Bold.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Text-Bold/SF-UI-Text-Bold.svg
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Text-Bold\SF-UI-Text-Bold.svg
+Content Type: image/svg+xml
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Text-Bold/SF-UI-Text-Bold.ttf
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Text-Bold\SF-UI-Text-Bold.ttf
+Content Type: application/octet-stream
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Text-Bold/SF-UI-Text-Bold.woff
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Text-Bold\SF-UI-Text-Bold.woff
+Content Type: font/woff
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Text-Light/SF-UI-Text-Light.eot
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Text-Light\SF-UI-Text-Light.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Text-Light/SF-UI-Text-Light.svg
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Text-Light\SF-UI-Text-Light.svg
+Content Type: image/svg+xml
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Text-Light/SF-UI-Text-Light.ttf
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Text-Light\SF-UI-Text-Light.ttf
+Content Type: application/octet-stream
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Text-Light/SF-UI-Text-Light.woff
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Text-Light\SF-UI-Text-Light.woff
+Content Type: font/woff
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Text-Regular/SF-UI-Text-Regular.eot
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Text-Regular\SF-UI-Text-Regular.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Text-Regular/SF-UI-Text-Regular.svg
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Text-Regular\SF-UI-Text-Regular.svg
+Content Type: image/svg+xml
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Text-Regular/SF-UI-Text-Regular.ttf
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Text-Regular\SF-UI-Text-Regular.ttf
+Content Type: application/octet-stream
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Text-Regular/SF-UI-Text-Regular.woff
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Text-Regular\SF-UI-Text-Regular.woff
+Content Type: font/woff
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Text-Semibold/SF-UI-Text-Semibold.eot
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Text-Semibold\SF-UI-Text-Semibold.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Text-Semibold/SF-UI-Text-Semibold.svg
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Text-Semibold\SF-UI-Text-Semibold.svg
+Content Type: image/svg+xml
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Text-Semibold/SF-UI-Text-Semibold.ttf
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Text-Semibold\SF-UI-Text-Semibold.ttf
+Content Type: application/octet-stream
+
+Uri: https://gigsys.ru/assets/templates/fonts/SF-UI-Text-Semibold/SF-UI-Text-Semibold.woff
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\fonts\SF-UI-Text-Semibold\SF-UI-Text-Semibold.woff
+Content Type: font/woff
+
+Uri: https://gigsys.ru/assets/templates/img/ban1.jpg
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\img\ban1.jpg
+Content Type: image/jpeg
+
+Uri: https://gigsys.ru/assets/templates/img/ban2.jpg
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\img\ban2.jpg
+Content Type: image/jpeg
+
+Uri: https://gigsys.ru/assets/templates/img/ban3.jpg
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\img\ban3.jpg
+Content Type: image/jpeg
+
+Uri: https://gigsys.ru/assets/templates/img/ban4.jpg
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\img\ban4.jpg
+Content Type: image/jpeg
+
+Uri: https://gigsys.ru/assets/templates/img/ban5.jpg
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\img\ban5.jpg
+Content Type: image/jpeg
+
+Uri: https://gigsys.ru/assets/templates/img/ban6.jpg
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\img\ban6.jpg
+Content Type: image/jpeg
+
+Uri: https://gigsys.ru/assets/templates/img/bg-calc.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\img\bg-calc.png
+Content Type: image/png
+
+Uri: https://gigsys.ru/assets/templates/img/bg-feedback.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\img\bg-feedback.png
+Content Type: image/png
+
+Uri: https://gigsys.ru/assets/templates/img/bg-feedback2.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\img\bg-feedback2.png
+Content Type: image/png
+
+Uri: https://gigsys.ru/assets/templates/img/bg-form-modal.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\img\bg-form-modal.png
+Content Type: image/png
+
+Uri: https://gigsys.ru/assets/templates/img/bg-main-serv-with-tarif.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\img\bg-main-serv-with-tarif.png
+Content Type: image/png
+
+Uri: https://gigsys.ru/assets/templates/img/bg-main-slide.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\img\bg-main-slide.png
+Content Type: image/png
+
+Uri: https://gigsys.ru/assets/templates/img/bg-tarifs-price.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\img\bg-tarifs-price.png
+Content Type: image/png
+
+Uri: https://gigsys.ru/assets/templates/img/blonde.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\img\blonde.png
+Content Type: image/png
+
+Uri: https://gigsys.ru/assets/templates/img/favicon/apple-touch-icon-114x114.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\img\favicon\apple-touch-icon-114x114.png
+Content Type: image/png
+
+Uri: https://gigsys.ru/assets/templates/img/favicon/apple-touch-icon-72x72.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\img\favicon\apple-touch-icon-72x72.png
+Content Type: image/png
+
+Uri: https://gigsys.ru/assets/templates/img/favicon/apple-touch-icon.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\img\favicon\apple-touch-icon.png
+Content Type: image/png
+
+Uri: https://gigsys.ru/assets/templates/img/favicon/favicon.svg
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\img\favicon\favicon.svg
+Content Type: image/svg+xml
+
+Uri: https://gigsys.ru/assets/templates/img/logo.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\img\logo.png
+Content Type: image/png
+
+Uri: https://gigsys.ru/assets/templates/img/serv-with-calc.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\img\serv-with-calc.png
+Content Type: image/png
+
+Uri: https://gigsys.ru/assets/templates/js/common.js
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\js\common.js
+Content Type: application/javascript
+
+Uri: https://gigsys.ru/assets/templates/libs/animate/animate-css.js
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\animate\animate-css.js
+Content Type: application/javascript
+
+Uri: https://gigsys.ru/assets/templates/libs/animate/animate.css
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\animate\animate.css
+Content Type: text/css
+
+Uri: https://gigsys.ru/assets/templates/libs/animateNumber/jquery.animateNumber.min.js
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\animateNumber\jquery.animateNumber.min.js
+Content Type: application/javascript
+
+Uri: https://gigsys.ru/assets/templates/libs/bootstrap4/bootstrap-grid.min.css
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\bootstrap4\bootstrap-grid.min.css
+Content Type: text/css
+
+Uri: https://gigsys.ru/assets/templates/libs/bootstrap4/bootstrap-reboot.min.css
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\bootstrap4\bootstrap-reboot.min.css
+Content Type: text/css
+
+Uri: https://gigsys.ru/assets/templates/libs/fontawesome5/web-fonts-with-css/css/fontawesome-all.min.css
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\fontawesome5\web-fonts-with-css\css\fontawesome-all.min.css
+Content Type: text/css
+
+Uri: https://gigsys.ru/assets/templates/libs/fontawesome5/web-fonts-with-css/webfonts/fa-brands-400.eot
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\fontawesome5\web-fonts-with-css\webfonts\fa-brands-400.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://gigsys.ru/assets/templates/libs/fontawesome5/web-fonts-with-css/webfonts/fa-brands-400.eot?
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\fontawesome5\web-fonts-with-css\webfonts\fa-brands-400-1.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://gigsys.ru/assets/templates/libs/fontawesome5/web-fonts-with-css/webfonts/fa-brands-400.svg
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\fontawesome5\web-fonts-with-css\webfonts\fa-brands-400.svg
+Content Type: image/svg+xml
+
+Uri: https://gigsys.ru/assets/templates/libs/fontawesome5/web-fonts-with-css/webfonts/fa-brands-400.ttf
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\fontawesome5\web-fonts-with-css\webfonts\fa-brands-400.ttf
+Content Type: application/octet-stream
+
+Uri: https://gigsys.ru/assets/templates/libs/fontawesome5/web-fonts-with-css/webfonts/fa-brands-400.woff
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\fontawesome5\web-fonts-with-css\webfonts\fa-brands-400.woff
+Content Type: font/woff
+
+Uri: https://gigsys.ru/assets/templates/libs/fontawesome5/web-fonts-with-css/webfonts/fa-brands-400.woff2
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\fontawesome5\web-fonts-with-css\webfonts\fa-brands-400.woff2
+Content Type: font/woff2
+
+Uri: https://gigsys.ru/assets/templates/libs/fontawesome5/web-fonts-with-css/webfonts/fa-regular-400.eot
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\fontawesome5\web-fonts-with-css\webfonts\fa-regular-400.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://gigsys.ru/assets/templates/libs/fontawesome5/web-fonts-with-css/webfonts/fa-regular-400.eot?
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\fontawesome5\web-fonts-with-css\webfonts\fa-regular-400-1.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://gigsys.ru/assets/templates/libs/fontawesome5/web-fonts-with-css/webfonts/fa-regular-400.svg
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\fontawesome5\web-fonts-with-css\webfonts\fa-regular-400.svg
+Content Type: image/svg+xml
+
+Uri: https://gigsys.ru/assets/templates/libs/fontawesome5/web-fonts-with-css/webfonts/fa-regular-400.ttf
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\fontawesome5\web-fonts-with-css\webfonts\fa-regular-400.ttf
+Content Type: application/octet-stream
+
+Uri: https://gigsys.ru/assets/templates/libs/fontawesome5/web-fonts-with-css/webfonts/fa-regular-400.woff
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\fontawesome5\web-fonts-with-css\webfonts\fa-regular-400.woff
+Content Type: font/woff
+
+Uri: https://gigsys.ru/assets/templates/libs/fontawesome5/web-fonts-with-css/webfonts/fa-regular-400.woff2
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\fontawesome5\web-fonts-with-css\webfonts\fa-regular-400.woff2
+Content Type: font/woff2
+
+Uri: https://gigsys.ru/assets/templates/libs/fontawesome5/web-fonts-with-css/webfonts/fa-solid-900.eot
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\fontawesome5\web-fonts-with-css\webfonts\fa-solid-900.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://gigsys.ru/assets/templates/libs/fontawesome5/web-fonts-with-css/webfonts/fa-solid-900.eot?
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\fontawesome5\web-fonts-with-css\webfonts\fa-solid-900-1.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://gigsys.ru/assets/templates/libs/fontawesome5/web-fonts-with-css/webfonts/fa-solid-900.svg
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\fontawesome5\web-fonts-with-css\webfonts\fa-solid-900.svg
+Content Type: image/svg+xml
+
+Uri: https://gigsys.ru/assets/templates/libs/fontawesome5/web-fonts-with-css/webfonts/fa-solid-900.ttf
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\fontawesome5\web-fonts-with-css\webfonts\fa-solid-900.ttf
+Content Type: application/octet-stream
+
+Uri: https://gigsys.ru/assets/templates/libs/fontawesome5/web-fonts-with-css/webfonts/fa-solid-900.woff
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\fontawesome5\web-fonts-with-css\webfonts\fa-solid-900.woff
+Content Type: font/woff
+
+Uri: https://gigsys.ru/assets/templates/libs/fontawesome5/web-fonts-with-css/webfonts/fa-solid-900.woff2
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\fontawesome5\web-fonts-with-css\webfonts\fa-solid-900.woff2
+Content Type: font/woff2
+
+Uri: https://gigsys.ru/assets/templates/libs/inputmask/jquery.inputmask.bundle.js
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\inputmask\jquery.inputmask.bundle.js
+Content Type: application/javascript
+
+Uri: https://gigsys.ru/assets/templates/libs/jquery/jquery-1.11.2.min.js
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\jquery\jquery-1.11.2.min.js
+Content Type: application/javascript
+
+Uri: https://gigsys.ru/assets/templates/libs/jVForms/jVForms.min.js
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\jVForms\jVForms.min.js
+Content Type: application/javascript
+
+Uri: https://gigsys.ru/assets/templates/libs/magnific/jquery.magnific-popup.min.js
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\magnific\jquery.magnific-popup.min.js
+Content Type: application/javascript
+
+Uri: https://gigsys.ru/assets/templates/libs/magnific/magnific-popup.css
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\magnific\magnific-popup.css
+Content Type: text/css
+
+Uri: https://gigsys.ru/assets/templates/libs/modernizr/modernizr.js
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\modernizr\modernizr.js
+Content Type: application/javascript
+
+Uri: https://gigsys.ru/assets/templates/libs/owl.carousel/owl.carousel.css
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\owl.carousel\owl.carousel.css
+Content Type: text/css
+
+Uri: https://gigsys.ru/assets/templates/libs/owl.carousel/owl.carousel.min.js
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\owl.carousel\owl.carousel.min.js
+Content Type: application/javascript
+
+Uri: https://gigsys.ru/assets/templates/libs/plugins-scroll/plugins-scroll.js
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\plugins-scroll\plugins-scroll.js
+Content Type: application/javascript
+
+Uri: https://gigsys.ru/assets/templates/libs/scrollto/jquery.scrollTo.min.js
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\scrollto\jquery.scrollTo.min.js
+Content Type: application/javascript
+
+Uri: https://gigsys.ru/assets/templates/libs/sticky/jquery.sticky.js
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\sticky\jquery.sticky.js
+Content Type: application/javascript
+
+Uri: https://gigsys.ru/assets/templates/libs/waypoints/jquery.waypoints.min.js
+File Name: C:\Downloaded Web Sites\gigsys.ru\assets\templates\libs\waypoints\jquery.waypoints.min.js
+Content Type: application/javascript
+
+Uri: https://gigsys.ru/hosting.html
+File Name: C:\Downloaded Web Sites\gigsys.ru\hosting.html
+Content Type: text/html
+
+Uri: https://gigsys.ru/it-poddergka.html
+File Name: C:\Downloaded Web Sites\gigsys.ru\it-poddergka.html
+Content Type: text/html
+
+Uri: https://gigsys.ru/it-podderzhka.html
+File Name: C:\Downloaded Web Sites\gigsys.ru\it-podderzhka.html
+Content Type: text/html
+
+Uri: https://gigsys.ru/it-support.html
+File Name: C:\Downloaded Web Sites\gigsys.ru\it-support.html
+Content Type: text/html
+
+Uri: https://gigsys.ru/kontaktyi.html
+File Name: C:\Downloaded Web Sites\gigsys.ru\kontaktyi.html
+Content Type: text/html
+
+Uri: https://gigsys.ru/logos/аматек.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\logos\аматек.png
+Content Type: image/png
+
+Uri: https://gigsys.ru/logos/березы.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\logos\березы.png
+Content Type: image/png
+
+Uri: https://gigsys.ru/logos/клик ресурс.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\logos\клик ресурс.png
+Content Type: image/png
+
+Uri: https://gigsys.ru/logos/максидент.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\logos\максидент.png
+Content Type: image/png
+
+Uri: https://gigsys.ru/logos/отель весна.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\logos\отель весна.png
+Content Type: image/png
+
+Uri: https://gigsys.ru/logos/ремэкспо.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\logos\ремэкспо.png
+Content Type: image/png
+
+Uri: https://gigsys.ru/logos/спорт макс.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\logos\спорт макс.png
+Content Type: image/png
+
+Uri: https://gigsys.ru/logos/стандарты аудита.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\logos\стандарты аудита.png
+Content Type: image/png
+
+Uri: https://gigsys.ru/logos/сэс.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\logos\сэс.png
+Content Type: image/png
+
+Uri: https://gigsys.ru/logos/тенис first.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\logos\тенис first.png
+Content Type: image/png
+
+Uri: https://gigsys.ru/logos/тхц.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\logos\тхц.png
+Content Type: image/png
+
+Uri: https://gigsys.ru/logos/Alfa-Logistic LOGO 75DPI.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\logos\Alfa-Logistic LOGO 75DPI.png
+Content Type: image/png
+
+Uri: https://gigsys.ru/logos/Etalon.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\logos\Etalon.png
+Content Type: image/png
+
+Uri: https://gigsys.ru/logos/Hotline.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\logos\Hotline.png
+Content Type: image/png
+
+Uri: https://gigsys.ru/logos/Novogorsk-2.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\logos\Novogorsk-2.png
+Content Type: image/png
+
+Uri: https://gigsys.ru/logos/VintHim.png
+File Name: C:\Downloaded Web Sites\gigsys.ru\logos\VintHim.png
+Content Type: image/png
+
+Uri: https://gigsys.ru/montazh-kompyuternykh-setey.html
+File Name: C:\Downloaded Web Sites\gigsys.ru\montazh-kompyuternykh-setey.html
+Content Type: text/html
+
+Uri: https://gigsys.ru/novosti/
+File Name: C:\Downloaded Web Sites\gigsys.ru\novosti\index.htm
+Content Type: text/html
+
+Uri: https://gigsys.ru/o-kompanii.html
+File Name: C:\Downloaded Web Sites\gigsys.ru\o-kompanii.html
+Content Type: text/html
+
+Uri: https://gigsys.ru/obsluzhivanie-serverov.html
+File Name: C:\Downloaded Web Sites\gigsys.ru\obsluzhivanie-serverov.html
+Content Type: text/html
+
+Uri: https://gigsys.ru/prostoe-reshenie-slozhnyix-zadach.html
+File Name: C:\Downloaded Web Sites\gigsys.ru\prostoe-reshenie-slozhnyix-zadach.html
+Content Type: text/html
+
+Uri: https://gigsys.ru/uslugi-1c.html
+File Name: C:\Downloaded Web Sites\gigsys.ru\uslugi-1c.html
+Content Type: text/html
+
+Uri: https://gigsys.ru/ustanovka-videonablyudeniya.html
+File Name: C:\Downloaded Web Sites\gigsys.ru\ustanovka-videonablyudeniya.html
+Content Type: text/html
+
+Uri: https://gigsys.ru/virtual-office.html
+File Name: C:\Downloaded Web Sites\gigsys.ru\virtual-office.html
+Content Type: text/html
+
+Uri: https://mc.yandex.ru/watch/49048088
+File Name: C:\Downloaded Web Sites\gigsys.ru\watch\49048088
+Content Type: image/gif
+
+Uri: https://mc.yandex.ru/watch/92579917
+File Name: C:\Downloaded Web Sites\gigsys.ru\watch\92579917
+Content Type: image/gif
+
+Uri: https://www.google.com/recaptcha/api.js
+File Name: C:\Downloaded Web Sites\gigsys.ru\recaptcha\api.js
+Content Type: text/javascript
+
+Uri: https://www.googletagmanager.com/gtag/js?id=G-5JHWCZQE3N
+File Name: C:\Downloaded Web Sites\gigsys.ru\gtag\js
+Content Type: application/javascript
+

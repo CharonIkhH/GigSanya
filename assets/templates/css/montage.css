@@ -1,0 +1,455 @@
+/* ========================================================================
+   MODERN HERO SECTION STYLES
+   ======================================================================== */
+
+   .slider-tarifs {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-attachment: fixed !important;
+    background-size: cover !important;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  /* Background elements */
+  .slider-tarifs:before,
+  .slider-tarifs:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  .slider-tarifs:before {
+    background: linear-gradient(135deg, var(--trans-black-heavy) 0%, var(--trans-black-medium) 50%, rgba(0, 0, 0, 0.4) 100%);
+  }
+  
+  .slider-tarifs:after {
+    background-image: radial-gradient(circle at 25% 25%, var(--trans-white-light) 0.5%, transparent 1%),
+                      radial-gradient(circle at 75% 50%, var(--trans-white-light) 0.5%, transparent 1%),
+                      radial-gradient(circle at 40% 80%, var(--trans-white-light) 0.5%, transparent 1%);
+    background-size: 120% 120%;
+    animation: float 15s ease infinite alternate;
+    opacity: 0.4;
+    pointer-events: none;
+  }
+  
+  /* Text container */
+  .slider-tarifs .col-lg-5 {
+    background: linear-gradient(135deg, var(--trans-black-medium) 0%, var(--trans-black-light) 100%);
+    padding: clamp(1.5rem, 4vw, 3rem);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+  }
+  
+  .slider-tarifs .col-lg-5:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150%;
+    height: 6px;
+    background: var(--gradient-orange);
+    z-index: 1;
+  }
+  
+  /* Typography - Optimized sizes */
+  .slider-tarifs h2 {
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-white);
+    margin-bottom: clamp(0.75rem, 2vw, 1.5rem);
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+    position: relative;
+  }
+  
+  .slider-tarifs h2:before {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    width: 35%;
+    height: 6px;
+    background: var(--gradient-orange);
+    border-radius: var(--radius-full);
+    box-shadow: 0 0 15px var(--color-orange-primary);
+    animation: highlight 6s ease-in-out infinite;
+    transform-origin: left center;
+    opacity: 0.8;
+  }
+  
+  .slider-tarifs p:not(:last-child) {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    color: var(--color-white);
+    margin-bottom: clamp(1rem, 4vw, 2rem);
+    opacity: 0.9;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    max-width: 95%;
+  }
+  
+  .slider-tarifs p:last-child {
+    margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  }
+  
+  /* Button styles */
+  .slider-tarifs .btn.popup-with-form {
+    font-size: clamp(0.875rem, 1.2vw, 1.1rem);
+    padding: clamp(0.7rem, 1.5vw, 1rem) clamp(1.5rem, 3vw, 2.5rem);
+    background: var(--gradient-orange);
+    border: none;
+    color: var(--color-white);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 20px rgba(253, 121, 33, 0.4);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .slider-tarifs .btn.popup-with-form:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(253, 121, 33, 0.5);
+  }
+  
+  /* Animations */
+  @keyframes float {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+  }
+  
+  @keyframes highlight {
+    0%, 100% { width: 35%; opacity: 0.8; }
+    50% { width: 60%; opacity: 1; }
+  }
+  
+  /* Improved responsive adjustments */
+  @media (max-width: 1200px) {
+    .slider-tarifs h2 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+    }
+    .slider-tarifs p:not(:last-child) {
+      font-size: clamp(1rem, 2vw, 1.3rem);
+    }
+  }
+  
+  @media (max-width: 991px) {
+    .slider-tarifs {
+      background-attachment: scroll !important;
+      min-height: 90vh;
+    }
+    .slider-tarifs .row {
+      justify-content: center;
+    }
+    .slider-tarifs .col-lg-5 {
+      max-width: 85%;
+      margin: 0 auto;
+      padding: clamp(1.5rem, 3vw, 2.5rem);
+    }
+    .slider-tarifs h2:before {
+      width: 30%;
+      height: 5px;
+    }
+    @keyframes highlight {
+      0%, 100% { width: 25%; }
+      50% { width: 45%; }
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .slider-tarifs {
+      min-height: 75vh;
+    }
+    .slider-tarifs .col-lg-5 {
+      max-width: 90%;
+      padding: 1.75rem;
+    }
+    .slider-tarifs h2 {
+      font-size: clamp(1.8rem, 6vw, 2.8rem);
+      margin-bottom: 1rem;
+    }
+    .slider-tarifs p:not(:last-child) {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
+    }
+    .slider-tarifs .btn.popup-with-form {
+      padding: 0.7rem 1.75rem;
+      font-size: 0.95rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .slider-tarifs {
+      min-height: 70vh;
+    }
+    .slider-tarifs .col-lg-5 {
+      max-width: 95%;
+      padding: 1.35rem;
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+    }
+    .slider-tarifs h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.85rem;
+    }
+    .slider-tarifs h2:before {
+      height: 4px;
+      bottom: 3px;
+    }
+    .slider-tarifs p:not(:last-child) {
+      font-size: 1rem;
+      margin-bottom: 1.1rem;
+    }
+    .slider-tarifs p:last-child {
+      margin-top: 1.25rem;
+    }
+    .slider-tarifs .btn.popup-with-form {
+      padding: 0.65rem 1.5rem;
+      font-size: 0.875rem;
+    }
+  }
+  
+  @media (max-width: 375px) {
+    .slider-tarifs h2 {
+      font-size: 1.6rem;
+    }
+    .slider-tarifs p:not(:last-child) {
+      font-size: 0.95rem;
+    }
+  }
+  /* 
+* Модернизированные стили для страницы компьютерных сетей
+* Использует существующие переменные из :root
+*/
+
+.network-service {
+    padding: var(--spacing-16) 0;
+    background-color: var(--color-white);
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Заголовок и вступление */
+  .service-header {
+    margin-bottom: var(--spacing-12);
+    text-align: center;
+  }
+  
+  .service-header h1 {
+    font-family: var(--font-primary);
+    color: var(--color-dark-gray);
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-5);
+    line-height: var(--line-height-tight);
+  }
+  
+  .service-intro {
+    font-size: var(--font-size-lg);
+    max-width: 80%;
+    margin: 0 auto;
+    color: var(--color-gray);
+    line-height: var(--line-height-normal);
+  }
+  
+  /* Секция с преимуществами */
+  .benefits-title {
+    color: var(--color-orange-primary);
+    font-family: var(--font-primary);
+    margin-bottom: var(--spacing-8);
+    text-align: center;
+    font-size: var(--font-size-xl);
+  }
+  
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-6);
+    margin-bottom: var(--spacing-16);
+  }
+  
+  .benefit-card {
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-5);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-standard);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-service-hover);
+  }
+  
+  .benefit-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-full);
+    margin-bottom: var(--spacing-3);
+    color: var(--color-white);
+  }
+  
+  .benefit-icon i {
+    font-size: 24px;
+  }
+  
+  .benefit-card h3 {
+    color: var(--color-dark-gray);
+    font-family: var(--font-primary);
+    margin-bottom: var(--spacing-2);
+    font-size: var(--font-size-md);
+  }
+  
+  .benefit-card p {
+    color: var(--color-gray);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+  }
+  
+  /* Секция "Почему выбирают нас" */
+  .why-us {
+    background-color: var(--color-white-soft);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-10);
+    margin-bottom: var(--spacing-12);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .why-us h2 {
+    color: var(--color-dark-gray);
+    font-family: var(--font-primary);
+    margin-bottom: var(--spacing-6);
+    font-size: var(--font-size-xl);
+  }
+  
+  .why-us-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .why-us-list li {
+    padding: var(--spacing-3) 0;
+    border-bottom: 1px solid var(--color-lighter-gray);
+    display: flex;
+    align-items: center;
+    font-size: var(--font-size-base);
+    color: var(--color-gray-dark);
+  }
+  
+  .why-us-list li:last-child {
+    border-bottom: none;
+  }
+  
+  .checkmark {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-color: var(--color-orange-primary);
+    border-radius: var(--radius-full);
+    margin-right: var(--spacing-3);
+    position: relative;
+    flex-shrink: 0;
+  }
+  
+  .checkmark:after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%) rotate(45deg);
+  }
+  
+  /* Секция с призывом к действию */
+  .cta-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .pricing-note {
+    margin-bottom: var(--spacing-6);
+    color: var(--color-gray);
+    font-size: var(--font-size-base);
+    max-width: 80%;
+  }
+  
+  /* Адаптивность */
+  @media (max-width: 992px) {
+    .benefits-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .service-intro,
+    .pricing-note {
+      max-width: 90%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .network-service {
+      padding: var(--spacing-10) 0;
+    }
+    
+    .service-header h1 {
+      font-size: var(--font-size-2xl);
+    }
+    
+    .service-intro {
+      font-size: var(--font-size-base);
+      max-width: 100%;
+    }
+    
+    .why-us {
+      padding: var(--spacing-6);
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .benefits-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .benefit-card {
+      max-width: 100%;
+    }
+    
+    .service-header h1 {
+      font-size: var(--font-size-xl);
+    }
+    
+    .benefits-title,
+    .why-us h2 {
+      font-size: var(--font-size-lg);
+    }
+    
+    .pricing-note {
+      max-width: 100%;
+    }
+  }

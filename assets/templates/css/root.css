@@ -1,0 +1,1667 @@
+/**
+ * ========================================================================
+ *  ██████╗ ██╗ ██████╗ ███████╗██╗   ██╗███████╗
+ * ██╔════╝ ██║██╔════╝ ██╔════╝╚██╗ ██╔╝██╔════╝
+ * ██║  ███╗██║██║  ███╗███████╗ ╚████╔╝ ███████╗
+ * ██║   ██║██║██║   ██║╚════██║  ╚██╔╝  ╚════██║
+ * ╚██████╔╝██║╚██████╔╝███████║   ██║   ███████║
+ *  ╚═════╝ ╚═╝ ╚═════╝ ╚══════╝   ╚═╝   ╚══════╝
+ * ========================================================================
+ * Последнее обновление: 2025-03-13
+ * 
+ * Этот файл содержит базовые стили для бренда,
+ * включая переменные, основные элементы и утилитарные классы.
+ * ========================================================================
+ */
+
+/* ==========================================================================
+  #КОРНЕВЫЕ ПЕРЕМЕННЫЕ  
+   ========================================================================== */
+/**
+ * Эти переменные определяют основную цветовую палитру бренда  
+ * и могут быть использованы в css через var(--имя-переменной).  Пример color: var(--color-orange-primary)
+ */
+
+ :root {
+	/**
+	 * ╔══════════════════════════════════════════════════════════════╗
+	 * ║                       ОСНОВНЫЕ ЦВЕТА                         ║
+	 * ╚══════════════════════════════════════════════════════════════╝
+	 * Основные цвета бренда, определяющие визуальный стиль  
+	 */
+	--color-orange-primary: #fd7921;
+	--color-orange-secondary: #f3761b;
+	--color-orange-tertiary: #f58220;
+	--color-orange-light: #ff9a51;
+	--color-orange-dark: #d35e0f;
+	--color-orange-ultra-light: #fff1e6;
+	
+	--color-green: #86bc42;
+	--color-green-light: #a2d45e;
+	--color-green-dark: #6a9934;
+	--color-green-ultra-light: #f2f9eb;
+	
+	/**
+	 * ╔══════════════════════════════════════════════════════════════╗
+	 * ║                   НЕЙТРАЛЬНЫЕ ЦВЕТА                          ║
+	 * ╚══════════════════════════════════════════════════════════════╝
+	 * Градации серого для текста, фонов и тонких элементов 
+	 */
+	--color-white: #fff;
+	--color-white-soft: #fafafa;
+	--color-white-muted: #f5f5f5;
+	
+	--color-black: #000;
+	--color-black-alt: #010101;
+	--color-black-soft: #111;
+	
+	--color-dark-gray: #252525; 
+	--color-dark-gray-alt: #58595b;
+	--color-dark-gray-soft: #333;
+	--color-dark-gray-hover: #303030;
+	
+	--color-gray: #666;
+	--color-gray-light: #888;
+	--color-gray-dark: #444;
+	
+	--color-light-gray: #BCBCBC;
+	--color-light-gray-alt: #ececec;
+	--color-light-gray-hover: #d1d1d1;
+	
+	--color-lighter-gray: #f0f0f0;
+	--color-lighter-gray-alt: #f8f8f8;
+	
+	--color-checkbox-gray: #CDD1DA;
+	
+	/**
+ * ╔══════════════════════════════════════════════════════════════╗  
+ * ║                      АКЦЕНТНЫЕ ЦВЕТА                         ║  
+ * ╚══════════════════════════════════════════════════════════════╝  
+	 * Дополнительные цвета для выделений, акцентов и отдельных компонентов  
+	 */
+	--color-light-blue: #b7cacf;
+	--color-light-blue-dark: #9ab5bc;
+	--color-light-blue-light: #d3e1e5;
+	
+	--color-blue: #6a91d0;
+	--color-blue-dark: #5273a9;
+	--color-blue-light: #8eaede;
+	--color-blue-ultra-light: #ecf2fa;
+	
+	--color-blue-gray: #63789a;
+	--color-blue-gray-dark: #4e5e78;
+	--color-blue-gray-light: #8495b1;
+	
+	/**
+ * ╔══════════════════════════════════════════════════════════════╗  
+ * ║                      СЕМАНТИЧЕСКИЕ ЦВЕТА                     ║  
+ * ╚══════════════════════════════════════════════════════════════╝  
+ * Контекстные цвета, передающие определённые значения  
+	 */
+	--color-success: var(--color-green);
+	--color-success-light: var(--color-green-light);
+	--color-success-dark: var(--color-green-dark);
+	--color-success-bg: var(--color-green-ultra-light);
+	
+	--color-error: #e53935;
+	--color-error-light: #ff6b67;
+	--color-error-dark: #b71c1c;
+	--color-error-bg: #fdeeee;
+	
+	--color-warning: #ffb74d;
+	--color-warning-light: #ffcc80;
+	--color-warning-dark: #f57c00;
+	--color-warning-bg: #fff8ec;
+	
+	--color-info: var(--color-blue);
+	--color-info-light: var(--color-blue-light);
+	--color-info-dark: var(--color-blue-dark);
+	--color-info-bg: var(--color-blue-ultra-light);
+	
+	--color-primary: var(--color-orange-primary);
+	--color-secondary: var(--color-blue);
+	--color-tertiary: var(--color-green);
+	
+	/**
+ * ╔══════════════════════════════════════════════════════════════╗  
+ * ║                          ТЕНИ                                ║  
+ * ╚══════════════════════════════════════════════════════════════╝  
+ * Определения box-shadow для различных элементов и состояний  
+	 */
+	--shadow-sm: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.12);
+	--shadow-md: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+	--shadow-lg: 0 0.625rem 0.9375rem rgba(0, 0, 0, 0.1);
+	--shadow-xl: 0 1.25rem 1.5625rem rgba(0, 0, 0, 0.15);
+	
+	--shadow-inner: inset 0 0.125rem 0.25rem rgba(0, 0, 0, 0.06);
+	--shadow-outline: 0 0 0 0.1875rem rgba(237, 237, 237, 0.5);
+	
+	--shadow-modal: 0 0.9375rem 1.5625rem rgba(243, 117, 26, 0.4);
+	--shadow-button: 0 0 0.625rem rgba(252, 105, 33, 0.4);
+	--shadow-button-hover: 0 0.3125rem 0.9375rem rgba(252, 105, 33, 0.5);
+	--shadow-service: 0 0 1.25rem rgba(115, 115, 115, 0.3);
+	--shadow-service-hover: 0 0 1.5625rem rgba(253, 105, 33, 0.4);
+	--shadow-mobile-menu: 0.625rem 0.9375rem 1.5625rem rgba(0, 0, 0, 0.1);
+	--shadow-card: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.08);
+	--shadow-dropdown: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.15);
+	--shadow-focus: 0 0 0 0.1875rem rgba(253, 121, 33, 0.25);
+	
+	/**
+ * ╔══════════════════════════════════════════════════════════════╗  
+ * ║                        ГРАДИЕНТЫ                             ║  
+ * ╚══════════════════════════════════════════════════════════════╝  
+ * Линейные градиенты для различных элементов UI  
+	 */
+	--gradient-divider: linear-gradient(
+	  to right, 
+	  rgba(237, 237, 237, 0) 0%, 
+	  rgba(237, 237, 237, 0.85) 14%, 
+	  rgba(237, 237, 237, 1) 50%, 
+	  rgba(237, 237, 237, 0.85) 88%, 
+	  rgba(237, 237, 237, 0) 100%
+	);
+	
+	--gradient-orange: linear-gradient(
+	  to right,
+	  var(--color-orange-primary) 0%,
+	  var(--color-orange-secondary) 100%
+	);
+	
+	--gradient-blue: linear-gradient(
+	  to right,
+	  var(--color-blue) 0%,
+	  var(--color-blue-light) 100%
+	);
+	
+	--gradient-green: linear-gradient(
+	  to right,
+	  var(--color-green-dark) 0%,
+	  var(--color-green) 100%
+	);
+	
+	--gradient-dark: linear-gradient(
+	  to bottom,
+	  var(--color-dark-gray) 0%,
+	  var(--color-black-soft) 100%
+	);
+	
+	--gradient-light: linear-gradient(
+	  to bottom,
+	  var(--color-white) 0%,
+	  var(--color-lighter-gray) 100%
+	);
+	
+	/**
+ * ╔══════════════════════════════════════════════════════════════╗  
+ * ║                     ПРОЗРАЧНОСТЬ                             ║  
+ * ╚══════════════════════════════════════════════════════════════╝  
+ * Прозрачные вариации цветов для наложений и тонких эффектов  
+	 */
+	--trans-black-light: rgba(0, 0, 0, 0.1);
+	--trans-black-medium: rgba(0, 0, 0, 0.5);
+	--trans-black-heavy: rgba(0, 0, 0, 0.8);
+	
+	--trans-white-light: rgba(255, 255, 255, 0.3);
+	--trans-white-medium: rgba(255, 255, 255, 0.7);
+	--trans-white-heavy: rgba(255, 255, 255, 0.9);
+	--trans-white-full: rgba(255, 255, 255, 1);
+	
+	--trans-orange-light: rgba(253, 121, 33, 0.2);
+	--trans-orange-medium: rgba(253, 121, 33, 0.6);
+	--trans-orange-heavy: rgba(253, 121, 33, 0.9);
+	
+	--trans-dark-gray-light: rgba(37, 37, 37, 0.3);
+	--trans-dark-gray-medium: rgba(37, 37, 37, 0.7);
+	--trans-dark-gray-heavy: rgba(37, 37, 37, 0.9);
+	
+	/**
+ * ╔══════════════════════════════════════════════════════════════╗  
+ * ║                      СКРУГЛЕНИЕ УГЛОВ                        ║  
+ * ╚══════════════════════════════════════════════════════════════╝  
+ * Единые значения border-radius для элементов UI  
+	 */
+	--radius-none: 0;
+	--radius-sm: 0.25rem;
+	--radius-md: 0.375rem;
+	--radius-lg: 0.5rem;
+	--radius-xl: clamp(0.75rem, 0.5rem + 1vw, 1rem);
+	--radius-xxl: 1.5rem;
+	--radius-full: 9999px;
+	
+	--border-radius-standard: var(--radius-md);
+	--border-radius-small: var(--radius-sm);
+	--border-radius-large: var(--radius-lg);
+	--border-radius-circle: 50%;
+	--border-radius-pill: var(--radius-full);
+	
+	/**
+ * ╔══════════════════════════════════════════════════════════════╗  
+ * ║                       ПЕРЕХОДЫ                               ║  
+ * ╚══════════════════════════════════════════════════════════════╝  
+ * Функции времени и длительность анимаций и переходов  
+	 */
+	--duration-instant: 0.1s;
+	--duration-quick: 0.2s; 
+	--duration-standard: 0.3s;
+	--duration-slow: 0.5s;
+	--duration-slower: 0.8s;
+	
+	--ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+	--ease-out: cubic-bezier(0, 0, 0.2, 1);
+	--ease-in: cubic-bezier(0.4, 0, 1, 1);
+	
+	--transition-standard: all var(--duration-standard) var(--ease-in-out);
+	--transition-fast: all var(--duration-quick) var(--ease-out);
+	--transition-slow: all var(--duration-slow) var(--ease-in-out);
+	--transition-bounce: all var(--duration-standard) cubic-bezier(0.68, -0.55, 0.27, 1.55);
+	
+	/**
+ * ╔══════════════════════════════════════════════════════════════╗  
+ * ║                       ТИПОГРАФИКА                            ║  
+ * ╚══════════════════════════════════════════════════════════════╝  
+ * Шрифты, размеры, насыщенность и высота строк  
+	 */
+	--font-primary: 'DINPro-Bold', sans-serif;
+	--font-secondary: 'SF-UI-Text-Light', sans-serif;
+	--font-monospace: 'SF Mono', 'Consolas', 'Liberation Mono', monospace;
+	
+	--font-weight-light: 300;
+	--font-weight-regular: 400;
+	--font-weight-medium: 500;
+	--font-weight-semibold: 600;
+	--font-weight-bold: 700;
+	--font-weight-extrabold: 800;
+	
+	--font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+	--font-size-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+	--font-size-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+	--font-size-md: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+	--font-size-lg: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+	--font-size-xl: clamp(1.5rem, 1.25rem + 1.25vw, 1.875rem);
+	--font-size-2xl: clamp(1.875rem, 1.5rem + 1.875vw, 2.25rem);
+	--font-size-3xl: clamp(2.25rem, 1.75rem + 2.5vw, 3rem);
+	--font-size-4xl: clamp(3rem, 2.25rem + 3.75vw, 3.75rem);
+	
+	--line-height-none: 1;
+	--line-height-tight: 1.2;
+	--line-height-snug: 1.33;
+	--line-height-normal: 1.5;
+	--line-height-relaxed: 1.75;
+	--line-height-loose: 2;
+	
+	--letter-spacing-tighter: -0.05em;
+	--letter-spacing-tight: -0.025em;
+	--letter-spacing-normal: 0;
+	--letter-spacing-wide: 0.025em;
+	--letter-spacing-wider: 0.05em;
+	--letter-spacing-widest: 0.1em;
+	
+	/**
+ * ╔══════════════════════════════════════════════════════════════╗  
+ * ║                     ВЕРСТКА И ОТСТУПЫ                        ║  
+ * ╚══════════════════════════════════════════════════════════════╝  
+ * Размеры, отступы и переменные, связанные с макетом  
+	 */
+	--container-max-width: 75rem; /* 1200px / 16px = 75rem */
+	--container-padding: clamp(0.75rem, 0.5rem + 1vw, 0.9375rem); /* 15px → responsive */
+	--container-sm: 33.75rem; /* 540px / 16px = 33.75rem */
+	--container-md: 45rem; /* 720px / 16px = 45rem */
+	--container-lg: 60rem; /* 960px / 16px = 60rem */
+	--container-xl: 71.25rem; /* 1140px / 16px = 71.25rem */
+	
+	--spacing-base: 0.25rem;
+	--spacing-1: var(--spacing-base);
+	--spacing-2: calc(var(--spacing-base) * 2);
+	--spacing-3: calc(var(--spacing-base) * 3);
+	--spacing-4: calc(var(--spacing-base) * 4);
+	--spacing-5: clamp(1.25rem, 1rem + 1vw, 1.5rem);
+	--spacing-6: clamp(1.5rem, 1.25rem + 1.25vw, 1.75rem);
+	--spacing-8: clamp(2rem, 1.5rem + 2vw, 2.5rem);
+	--spacing-10: clamp(2.5rem, 2rem + 2.5vw, 3.25rem);
+	--spacing-12: clamp(3rem, 2.5rem + 2.5vw, 4rem);
+	--spacing-16: clamp(4rem, 3rem + 5vw, 6rem);
+	--spacing-20: clamp(5rem, 4rem + 5vw, 7.5rem);
+	
+	--section-spacing: 6rem;
+	--section-spacing-lg: 8rem;
+	--section-spacing-xl: 12rem;
+	
+	--element-spacing: 2rem;
+	--element-spacing-sm: 1.2rem;
+	--element-spacing-lg: 3.2rem;
+
+/* Высота хедера для разных устройств -*/
+--header-height-desktop: clamp(5.5rem, 6vw + 3rem, 6.5rem);
+--header-height-tablet: clamp(4.25rem, 4.5vw + 2.25rem, 5rem);
+--header-height-mobile: clamp(4rem, 3.5vw + 3rem, 4.5rem); 
+
+/* Размеры бургер-меню */
+--burger-size-desktop: clamp(3rem, 2.5vw + 2rem, 3.5rem); 
+--burger-size-tablet: clamp(2.75rem, 2vw + 2rem, 3rem);
+--burger-size-mobile: clamp(2.5rem, 1.5vw + 2rem, 2.75rem);
+
+/* Размеры линий бургер-меню */
+--burger-line-height: clamp(0.1875rem, 0.15vw + 0.15rem, 0.25rem); /* 3-4px */
+--burger-width: clamp(1.5rem, 1.25vw + 1.25rem, 1.75rem);
+--burger-height: clamp(1.25rem, 1vw + 1rem, 1.5rem);
+
+/* Отступы в хедере */
+--header-padding-x: clamp(1rem, 3vw, 2rem);
+--header-padding-small-x: clamp(0.75rem, 1.5vw, 1.25rem);
+--header-padding-mobile-x: clamp(0.625rem, 1vw, 1rem);
+
+	
+	/* Navigation text */
+	--nav-font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+	--nav-line-height: 1.4;
+	--nav-padding-x: clamp(0.5rem, 0.4rem + 0.5vw, 0.75rem);
+	--nav-padding-y: clamp(0.375rem, 0.3rem + 0.375vw, 0.5rem);
+	
+	/* Mega menu */
+	--mega-menu-width: clamp(50rem, 85vw, 62.5rem);
+	--mega-menu-padding: clamp(1rem, 1.5vw + 0.5rem, 1.5rem);
+	
+	/* Contact info */
+	--contact-font-size: clamp(0.825rem, 0.75rem + 0.375vw, 0.9375rem);
+	--contact-icon-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+	
+	/* Button sizing */
+	--btn-padding-x: clamp(0.75rem, 0.6rem + 0.75vw, 1rem);
+	--btn-padding-y: clamp(0.375rem, 0.3rem + 0.375vw, 0.5rem);
+	--btn-font-size: clamp(0.825rem, 0.75rem + 0.375vw, 0.9375rem);
+	
+	/* Модификаторы хедера для разных типов страниц */
+    --header-padding-top: 0;
+    --header-padding-bottom: 0;
+    --header-transparency: 0.98;
+    --header-inner-page-transparency: 1;
+    
+    /* Цвета и тени хедера */
+    --header-bg-color: rgba(255, 255, 255, var(--header-transparency));
+    --header-bg-color-scrolled: rgba(255, 255, 255, 0.97);
+    --header-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
+    --header-shadow-scrolled: 0 0.25rem 1rem rgba(0, 0, 0, 0.12);
+    
+    /* Размеры хедера */
+    --header-z-index: 100;
+    --header-top-ratio: 0.42;
+    --header-bottom-ratio: 0.58;
+    
+	--header-default-transparency: 0.98;
+	--header-inner-transparency: 1;
+	--header-scrolled-opacity: 0.97;
+	
+	/* Цвета фона с вынесенными значениями прозрачности */
+	--header-bg-color-base: 255, 255, 255;
+	--header-bg-color: rgba(var(--header-bg-color-base), var(--header-transparency, var(--header-default-transparency)));
+	--header-bg-color-scrolled: rgba(var(--header-bg-color-base), var(--header-scrolled-opacity));
+	
+	/* Тени с переопределенными значениями */
+	--header-shadow-color: 0, 0, 0;
+	--header-shadow: 0 0.125rem 0.625rem rgba(var(--header-shadow-color), 0.1);
+	--header-shadow-scrolled: 0 0.25rem 1rem rgba(var(--header-shadow-color), 0.12);
+	
+	/* Анимации и переходы */
+	--header-transition-duration: 0.3s;
+	--header-transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+	--header-transition: transform var(--header-transition-duration) var(--header-transition-timing),
+						background-color var(--header-transition-duration) var(--header-transition-timing),
+						box-shadow var(--header-transition-duration) var(--header-transition-timing);
+	
+    /* Анимации и переходы */
+    --header-transition: all 0.3s ease;
+
+	--btn-min-width: 7.5rem; /* Было 8.75rem, уменьшаем */
+	--btn-height: 2.25rem; /* Было 2.5rem, уменьшаем */
+	--btn-font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem); /* Уменьшаем размер шрифта */
+	--btn-padding-x: clamp(0.625rem, 0.5rem + 0.5vw, 0.875rem); /* Уменьшаем горизонтальный отступ */
+	--btn-padding-y: clamp(0.325rem, 0.25rem + 0.25vw, 0.425rem); /* Уменьшаем вертикальный отступ */
+	--btn-icon-gap: 0.3125rem; /* Было 0.375rem, делаем чуть меньше */
+	--btn-icon-gap: 0.375rem; /* Отступ между иконкой и текстом */
+	--btn-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+	--header-btn-min-width: 7rem; /* Меньше чем основная переменная */
+	--header-btn-height: 2.125rem; /* Меньше стандартной высоты */
+	--header-btn-font-size: 0.8125rem; /* Фиксированный меньший размер шрифта */
+	--header-btn-icon-size: 0.9375rem; /* Меньший размер иконок */
+	
+	/* Переменные для hero кнопок */
+	--hero-btn-min-width: 8rem;
+	--hero-btn-height: 2.375rem;
+	--hero-btn-font-size: 0.875rem;
+	--hero-btn-padding-x: 1.125rem;
+	--hero-btn-padding-y: 0.5rem;
+	
+	/**
+ * ╔══════════════════════════════════════════════════════════════╗  
+ * ║                     СЛОИ Z-INDEX                             ║  
+ * ╚══════════════════════════════════════════════════════════════╝  
+ * Единые значения z-index для управления слоями  
+	 */
+	--z-negative: -1;
+	--z-base: 0;
+	--z-dropdown: 1000;
+	--z-sticky: 1020;
+	--z-fixed: 1030;
+	--z-modal-backdrop: 1040;
+	--z-modal: 1050;
+	--z-popover: 1060;
+	--z-tooltip: 1070;
+	
+	/**
+ * ╔══════════════════════════════════════════════════════════════╗  
+ * ║                      ТОЧКИ ПРЕЛОМЛЕНИЯ                       ║  
+ * ╚══════════════════════════════════════════════════════════════╝  
+ * Breakpoints для адаптивного дизайна
+ * Значения в em для большей гибкости при изменении корневого размера шрифта
+	 */
+	--breakpoint-xs: 30em; /* 480px / 16px = 30em */
+	--breakpoint-sm: 36em; /* 576px / 16px = 36em */
+	--breakpoint-md: 48em; /* 768px / 16px = 48em */
+	--breakpoint-lg: 62em; /* 992px / 16px = 62em */
+	--breakpoint-xl: 75em; /* 1200px / 16px = 75em */
+	--breakpoint-xxl: 87.5em; /* 1400px / 16px = 87.5em */
+	
+	/**
+ * ╔══════════════════════════════════════════════════════════════╗  
+ * ║                       СИСТЕМА СЕТКИ                          ║  
+ * ╚══════════════════════════════════════════════════════════════╝  
+ * Переменные для создания единой системы сетки  
+	 */
+	--grid-columns: 12;
+	--grid-gutter-width: clamp(1.25rem, 1rem + 1vw, 1.875rem); /* 30px → responsive */
+	--grid-gutter-half: calc(var(--grid-gutter-width) / 2);
+  }
+  
+	/**
+ * ╔══════════════════════════════════════════════════════════════╗  
+ * ║                       СБРОС СТИЛЕЙ                           ║  
+ * ╚══════════════════════════════════════════════════════════════╝  
+ * Избежание конфликтов, сброс стилей и оптимизация.
+	 */
+  *,
+  *::before,
+  *::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+  }
+  
+  html {
+	font-size: 100%; /* 16px по умолчанию */
+	scroll-behavior: smooth;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+  }
+  
+  @media (max-width: 87.5em) { /* 1400px */
+	html {
+	  font-size: 93.75%; /* 15px */
+	}
+  }
+  
+  @media (max-width: 62em) { /* 992px */
+	html {
+	  font-size: 87.5%; /* 14px */
+	}
+  }
+  
+  @media (max-width: 36em) { /* 576px */
+	html {
+	  font-size: 81.25%; /* 13px */
+	}
+  }
+
+  body {
+	font-family: var(--font-secondary);
+	font-size: var(--font-size-base);
+	line-height: 1.5;
+	color: var(--color-black-alt);
+	background-color: var(--color-white);
+	min-height: 100vh;
+	overflow-x: hidden;
+  }
+  
+  img, 
+  picture, 
+  video, 
+  canvas, 
+  svg {
+	display: block;
+	max-width: 100%;
+	height: auto;
+  }
+  
+  input,
+  button,
+  textarea,
+  select {
+	font: inherit;
+	color: inherit;
+  }
+  
+  a {
+	color: var(--color-orange-primary);
+	text-decoration: none;
+	transition: var(--transition-standard);
+  }
+  
+  a:hover,
+  a:focus {
+	color: var(--color-orange-secondary);
+  }
+  
+  button {
+	background: none;
+	border: none;
+	cursor: pointer;
+  }
+  
+  ul, ol {
+	list-style: none;
+  }
+  
+	/**
+ * ╔══════════════════════════════════════════════════════════════╗  
+ * ║                       КОНТЕЙНЕРЫ                             ║  
+ * ╚══════════════════════════════════════════════════════════════╝  
+ * Адаптивная система контейнеров с различными модификаторами  
+ * .container - Стандартный центрированный контейнер с максимальной шириной  
+ * .container-fluid - Контейнер на всю ширину с внутренними отступами  
+ */
+  
+  .container {
+	width: 100%;
+	max-width: var(--container-max-width);
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: var(--container-padding);
+	padding-right: var(--container-padding);
+  }
+  
+  .container-fluid {
+	width: 100%;
+	padding-left: var(--container-padding);
+	padding-right: var(--container-padding);
+  }
+  
+
+
+/* ========================================================================
+   ОБЩИЕ СТИЛИ 
+   ======================================================================== */
+
+  /* Кастомный скроллбар для современного вида */
+  ::-webkit-scrollbar {
+	width: 0.625rem; /* 10px */
+	height: 0.625rem; /* 10px */
+  }
+  ::-webkit-scrollbar-track {
+	background: var(--color-white-muted);
+  }
+  ::-webkit-scrollbar-thumb {
+	background: var(--color-orange-primary);
+	border-radius: var(--radius-full);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+	background: var(--color-orange-dark);
+  }
+  
+  /* Общие стили для контейнеров */
+  .container {
+	width: 100%;
+	max-width: var(--container-max-width);
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: var(--container-padding);
+	padding-right: var(--container-padding);
+	position: relative;
+	z-index: 2;
+  }
+  
+  /* Прелоадер */
+  .preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background-color: var(--color-white);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  }
+  
+  .preloader-content {
+	text-align: center;
+  }
+  
+  .preloader-spinner {
+	position: relative;
+  }
+  
+  .loader-logo {
+	width: clamp(6.25rem, 5rem + 6.25vw, 9.375rem); /* 100-150px */
+	margin: 0 auto 1.25rem;
+	animation: pulse 1.5s infinite;
+  }
+  
+  .loader-logo img {
+	max-width: 100%;
+	height: auto;
+  }
+  
+  .loader-progress {
+	width: clamp(10rem, 8rem + 10vw, 12.5rem); /* 160-200px */
+	height: 0.25rem; /* 4px */
+	background-color: var(--color-white-muted);
+	border-radius: var(--radius-full);
+	overflow: hidden;
+	margin: 0 auto;
+  }
+  
+  .loader-progress span {
+	display: block;
+	width: 0;
+	height: 100%;
+	background: linear-gradient(to right, var(--color-orange-primary), var(--color-orange-dark));
+	border-radius: var(--radius-full);
+	animation: progress 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulse {
+	0% {
+	  transform: scale(1);
+	}
+	50% {
+	  transform: scale(1.05);
+	}
+	100% {
+	  transform: scale(1);
+	}
+  }
+  
+  @keyframes progress {
+	0% {
+	  width: 0;
+	}
+	100% {
+	  width: 100%;
+	}
+  }
+  
+  /* ========================================================================
+	 КНОПКИ 
+	 ======================================================================== */
+  .btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: clamp(0.75rem, 0.5rem + 1vw, 0.9rem) clamp(1.25rem, 1rem + 1.25vw, 1.8rem);
+	font-weight: var(--font-weight-medium);
+	font-size: var(--font-size-base);
+	border-radius: var(--radius-md);
+	transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+	text-decoration: none;
+	border: none;
+	outline: none;
+	white-space: nowrap;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+	gap: 0.5rem;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	border: 0.0625rem solid transparent; /* 1px */
+  }
+  
+  .btn i {
+	font-size: 1.1em;
+	transition: transform 0.3s ease;
+  }
+  
+  .btn:hover i {
+	transform: translateX(0.25em); /* 4px */
+  }
+  
+  .btn:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.1);
+	transform: translateX(-100%);
+	transition: transform 0.4s ease;
+	z-index: 1;
+  }
+  
+  .btn:hover:before {
+	transform: translateX(0);
+  }
+  
+  .btn span {
+	position: relative;
+	z-index: 2;
+  }
+  
+  .btn i {
+	position: relative;
+	z-index: 2;
+  }
+  
+  .btn-primary {
+	background: linear-gradient(135deg, var(--color-orange-primary), var(--color-orange-dark));
+	color: var(--color-white);
+	box-shadow: 0 0.25rem 0.9375rem rgba(253, 121, 33, 0.25); /* 4px 15px */
+  }
+  
+  .btn-primary:hover {
+	background: linear-gradient(135deg, var(--color-orange-dark), var(--color-orange-primary));
+	box-shadow: 0 0.375rem 1.25rem rgba(253, 121, 33, 0.35); /* 6px 20px */
+	transform: translateY(-0.1875rem); /* -3px */
+	color: white;
+  }
+  
+  .btn-outline {
+	background: transparent;
+	color: var(--color-orange-primary);
+	border: 0.0625rem solid var(--color-orange-primary); /* 1px */
+	box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.05); /* 4px 15px */
+  }
+  
+  .btn-outline:hover {
+	background: var(--color-orange-primary);
+	color: var(--color-white);
+	box-shadow: 0 0.375rem 1.25rem rgba(253, 121, 33, 0.25); /* 6px 20px */
+	transform: translateY(-0.1875rem); /* -3px */
+  }
+  
+  .btn-lg {
+	padding: clamp(1rem, 0.8rem + 1vw, 1.2rem) clamp(1.8rem, 1.5rem + 1.5vw, 2.2rem);
+	font-size: var(--font-size-md);
+  }
+  
+  .btn-block {
+	display: block;
+	width: 100%;
+  }
+  
+/* ========================================================================
+   АДАПТИВНОСТЬ
+   ======================================================================== */
+
+/**
+ * ╔══════════════════════════════════════════════════════════════╗  
+ * ║                 АДАПТИВНЫЕ КОНТЕЙНЕРЫ                        ║  
+ * ╚══════════════════════════════════════════════════════════════╝  
+ * Изменение размеров контейнеров на разных устройствах
+ */
+
+/* Экстра маленькие устройства (телефоны, менее 576px) */
+@media (max-width: 35.999em) { /* 575.98px */
+	.container {
+	  max-width: 100%;
+	}
+	
+	html {
+	  font-size: 58%; /* Немного уменьшаем базовый размер шрифта */
+	}
+	
+	.btn {
+	  padding: 0.8rem 1.6rem;
+	  font-size: var(--font-size-sm);
+	}
+  }
+  
+  /* Маленькие устройства (ландшафтные телефоны, 576px и выше) */
+  @media (min-width: 36em) and (max-width: 47.999em) { /* 576px to 767.98px */
+	.container {
+	  max-width: var(--container-sm);
+	}
+  }
+  
+  /* Средние устройства (планшеты, 768px и выше) */
+  @media (min-width: 48em) and (max-width: 61.999em) { /* 768px to 991.98px */
+	.container {
+	  max-width: var(--container-md);
+	}
+  }
+  
+  /* Большие устройства (десктопы, 992px и выше) */
+  @media (min-width: 62em) and (max-width: 74.999em) { /* 992px to 1199.98px */
+	.container {
+	  max-width: var(--container-lg);
+	}
+  }
+  
+  /* Экстра большие устройства (большие десктопы, 1200px и выше) */
+  @media (min-width: 75em) { /* 1200px */
+	.container {
+	  max-width: var(--container-xl);
+	}
+  }
+  
+  /* Супер большие устройства (очень большие десктопы, 1400px и выше) */
+  @media (min-width: 87.5em) { /* 1400px */
+	.container {
+	  max-width: var(--container-max-width);
+	}
+  }
+  
+  /**
+   * ╔══════════════════════════════════════════════════════════════╗  
+   * ║                 АДАПТИВНАЯ ТИПОГРАФИКА                       ║  
+   * ╚══════════════════════════════════════════════════════════════╝  
+   * Изменение размеров шрифтов для разных устройств
+   */
+  
+  /* Маленькие устройства и ниже */
+  @media (max-width: 47.999em) { /* 767.98px */
+	h1, .h1 {
+	  font-size: var(--font-size-3xl);
+	}
+	
+	h2, .h2 {
+	  font-size: var(--font-size-2xl);
+	}
+	
+	h3, .h3 {
+	  font-size: var(--font-size-xl);
+	}
+	
+	h4, .h4 {
+	  font-size: var(--font-size-lg);
+	}
+	
+	h5, .h5 {
+	  font-size: var(--font-size-md);
+	}
+  }
+  
+  /* Экстра маленькие устройства */
+  @media (max-width: 35.999em) { /* 575.98px */
+	h1, .h1 {
+	  font-size: var(--font-size-2xl);
+	}
+	
+	h2, .h2 {
+	  font-size: var(--font-size-xl);
+	}
+	
+	.section-spacing {
+	  padding-top: calc(var(--section-spacing) * 0.5);
+	  padding-bottom: calc(var(--section-spacing) * 0.5);
+	}
+  }
+  
+  /**
+   * ╔══════════════════════════════════════════════════════════════╗  
+   * ║                 АДАПТИВНАЯ СЕТКА                             ║  
+   * ╚══════════════════════════════════════════════════════════════╝  
+   * Адаптивная сетка для различных элементов
+   */
+  
+  .row {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: calc(-1 * var(--grid-gutter-half));
+	margin-right: calc(-1 * var(--grid-gutter-half));
+  }
+  
+  .col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, 
+  .col-7, .col-8, .col-9, .col-10, .col-11, .col-12,
+  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-6, .col-sm-12,
+  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-6, .col-md-12,
+  .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-6, .col-lg-12,
+  .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-6, .col-xl-12 {
+	position: relative;
+	width: 100%;
+	padding-left: var(--grid-gutter-half);
+	padding-right: var(--grid-gutter-half);
+  }
+  
+  /* Базовые колонки (всегда) */
+  .col {
+	flex-basis: 0;
+	flex-grow: 1;
+	max-width: 100%;
+  }
+  
+  .col-1 { flex: 0 0 8.333333%; max-width: 8.333333%; }
+  .col-2 { flex: 0 0 16.666667%; max-width: 16.666667%; }
+  .col-3 { flex: 0 0 25%; max-width: 25%; }
+  .col-4 { flex: 0 0 33.333333%; max-width: 33.333333%; }
+  .col-5 { flex: 0 0 41.666667%; max-width: 41.666667%; }
+  .col-6 { flex: 0 0 50%; max-width: 50%; }
+  .col-7 { flex: 0 0 58.333333%; max-width: 58.333333%; }
+  .col-8 { flex: 0 0 66.666667%; max-width: 66.666667%; }
+  .col-9 { flex: 0 0 75%; max-width: 75%; }
+  .col-10 { flex: 0 0 83.333333%; max-width: 83.333333%; }
+  .col-11 { flex: 0 0 91.666667%; max-width: 91.666667%; }
+  .col-12 { flex: 0 0 100%; max-width: 100%; }
+  
+  /* Маленькие устройства (телефоны, 576px и выше) */
+  @media (min-width: 36em) { /* 576px */
+	.col-sm-1 { flex: 0 0 8.333333%; max-width: 8.333333%; }
+	.col-sm-2 { flex: 0 0 16.666667%; max-width: 16.666667%; }
+	.col-sm-3 { flex: 0 0 25%; max-width: 25%; }
+	.col-sm-4 { flex: 0 0 33.333333%; max-width: 33.333333%; }
+	.col-sm-6 { flex: 0 0 50%; max-width: 50%; }
+	.col-sm-12 { flex: 0 0 100%; max-width: 100%; }
+  }
+  
+  /* Средние устройства (планшеты, 768px и выше) */
+  @media (min-width: 48em) { /* 768px */
+	.col-md-1 { flex: 0 0 8.333333%; max-width: 8.333333%; }
+	.col-md-2 { flex: 0 0 16.666667%; max-width: 16.666667%; }
+	.col-md-3 { flex: 0 0 25%; max-width: 25%; }
+	.col-md-4 { flex: 0 0 33.333333%; max-width: 33.333333%; }
+	.col-md-6 { flex: 0 0 50%; max-width: 50%; }
+	.col-md-12 { flex: 0 0 100%; max-width: 100%; }
+  }
+  
+  /* Большие устройства (десктопы, 992px и выше) */
+  @media (min-width: 62em) { /* 992px */
+	.col-lg-1 { flex: 0 0 8.333333%; max-width: 8.333333%; }
+	.col-lg-2 { flex: 0 0 16.666667%; max-width: 16.666667%; }
+	.col-lg-3 { flex: 0 0 25%; max-width: 25%; }
+	.col-lg-4 { flex: 0 0 33.333333%; max-width: 33.333333%; }
+	.col-lg-6 { flex: 0 0 50%; max-width: 50%; }
+	.col-lg-12 { flex: 0 0 100%; max-width: 100%; }
+  }
+  
+  /* Экстра большие устройства (большие десктопы, 1200px и выше) */
+  @media (min-width: 75em) { /* 1200px */
+	.col-xl-1 { flex: 0 0 8.333333%; max-width: 8.333333%; }
+	.col-xl-2 { flex: 0 0 16.666667%; max-width: 16.666667%; }
+	.col-xl-3 { flex: 0 0 25%; max-width: 25%; }
+	.col-xl-4 { flex: 0 0 33.333333%; max-width: 33.333333%; }
+	.col-xl-6 { flex: 0 0 50%; max-width: 50%; }
+	.col-xl-12 { flex: 0 0 100%; max-width: 100%; }
+  }
+  
+  /**
+   * ╔══════════════════════════════════════════════════════════════╗  
+   * ║                 АДАПТИВНЫЕ УТИЛИТЫ                           ║  
+   * ╚══════════════════════════════════════════════════════════════╝  
+   * Вспомогательные классы для адаптивной верстки
+   */
+  
+  .d-none { display: none !important; }
+  .d-block { display: block !important; }
+  .d-flex { display: flex !important; }
+  .d-inline { display: inline !important; }
+  .d-inline-block { display: inline-block !important; }
+  
+  /* Адаптивные утилиты для мобильных устройств */
+  @media (max-width: 35.999em) { /* 575.98px */
+	.d-xs-none { display: none !important; }
+	.d-xs-block { display: block !important; }
+	.d-xs-flex { display: flex !important; }
+	
+	.text-xs-center { text-align: center !important; }
+	.text-xs-left { text-align: left !important; }
+	.text-xs-right { text-align: right !important; }
+	
+	.mx-xs-auto { margin-left: auto !important; margin-right: auto !important; }
+  }
+  
+  /* Адаптивные утилиты для маленьких устройств */
+  @media (min-width: 36em) and (max-width: 47.999em) { /* 576px to 767.98px */
+	.d-sm-none { display: none !important; }
+	.d-sm-block { display: block !important; }
+	.d-sm-flex { display: flex !important; }
+	
+	.text-sm-center { text-align: center !important; }
+	.text-sm-left { text-align: left !important; }
+	.text-sm-right { text-align: right !important; }
+	
+	.mx-sm-auto { margin-left: auto !important; margin-right: auto !important; }
+  }
+  
+  /* Адаптивные утилиты для средних устройств */
+  @media (min-width: 48em) and (max-width: 61.999em) { /* 768px to 991.98px */
+	.d-md-none { display: none !important; }
+	.d-md-block { display: block !important; }
+	.d-md-flex { display: flex !important; }
+	
+	.text-md-center { text-align: center !important; }
+	.text-md-left { text-align: left !important; }
+	.text-md-right { text-align: right !important; }
+	
+	.mx-md-auto { margin-left: auto !important; margin-right: auto !important; }
+  }
+  
+  /* Адаптивные утилиты для больших устройств */
+  @media (min-width: 62em) and (max-width: 74.999em) { /* 992px to 1199.98px */
+	.d-lg-none { display: none !important; }
+	.d-lg-block { display: block !important; }
+	.d-lg-flex { display: flex !important; }
+	
+	.text-lg-center { text-align: center !important; }
+	.text-lg-left { text-align: left !important; }
+	.text-lg-right { text-align: right !important; }
+	
+	.mx-lg-auto { margin-left: auto !important; margin-right: auto !important; }
+  }
+  
+  /* Адаптивные утилиты для экстра больших устройств */
+  @media (min-width: 75em) { /* 1200px */
+	.d-xl-none { display: none !important; }
+	.d-xl-block { display: block !important; }
+	.d-xl-flex { display: flex !important; }
+	
+	.text-xl-center { text-align: center !important; }
+	.text-xl-left { text-align: left !important; }
+	.text-xl-right { text-align: right !important; }
+	
+	.mx-xl-auto { margin-left: auto !important; margin-right: auto !important; }
+  }
+  
+  /* ========================================================================
+	 ПЕЧАТЬ
+	 ======================================================================== */
+  
+  /**
+   * ╔══════════════════════════════════════════════════════════════╗  
+   * ║                 МЕДИА-ЗАПРОС ДЛЯ ПЕЧАТИ                      ║  
+   * ╚══════════════════════════════════════════════════════════════╝  
+   * Стили, применяемые при печати документа
+   */
+  
+  @media print {
+	/* Общие настройки для печати */
+	@page {
+	  size: A4;
+	  margin: 1.5cm;
+	}
+	
+	html, body {
+	  width: 210mm;
+	  height: 297mm;
+	  font-size: 11pt;
+	  background: var(--color-white) !important;
+	  color: var(--color-black) !important;
+	}
+	
+	/* Скрываем элементы, ненужные при печати */
+	.preloader,
+	nav,
+	.navigation,
+	.sidebar,
+	.footer,
+	.no-print,
+	button:not(.print-btn),
+	.social-links,
+	.banner,
+	.cookie-notice,
+	.video-container,
+	iframe,
+	#comments,
+	.ads,
+	.share-buttons {
+	  display: none !important;
+	}
+	
+	/* Стилизация ссылок для печати */
+	a {
+	  color: var(--color-black) !important;
+	  text-decoration: none !important;
+	}
+	
+	/* Добавление URL ссылок после текста ссылки */
+	a[href^="http"]:after {
+	  content: " (" attr(href) ")";
+	  font-size: 90%;
+	  color: var(--color-gray) !important;
+	}
+	
+	/* Исключаем добавление URL для некоторых ссылок */
+	a[href^="#"]:after,
+	a[href^="javascript:"]:after,
+	a.no-print-link:after {
+	  content: "";
+	}
+	
+	/* Улучшение контрастности */
+	h1, h2, h3, h4, h5, h6 {
+	  color: var(--color-black) !important;
+	  page-break-after: avoid;
+	  page-break-inside: avoid;
+	}
+	
+	/* Предотвращение разрывов внутри важных элементов */
+	img, table, figure, blockquote {
+	  page-break-inside: avoid;
+	}
+	
+	/* Управление разрывами страниц */
+	p, h2, h3 {
+	  orphans: 3; /* Минимум строк внизу */
+	  widows: 3; /* Минимум строк вверху */
+	}
+	
+	/* Принудительные разрывы перед заголовками */
+	h1, h2, h3 {
+	  page-break-before: auto;
+	}
+	
+	/* Предотвращение пустых страниц */
+	@page :left {
+	  margin-left: 1.5cm;
+	}
+	
+	@page :right {
+	  margin-right: 1.5cm;
+	}
+	
+	/* Стили для оптимизации таблиц при печати */
+	table {
+	  border-collapse: collapse !important;
+	  width: 100% !important;
+	}
+	
+	table, th, td {
+	  border: 0.0625rem solid var(--color-dark-gray) !important; /* 1px */
+	}
+	
+	th, td {
+	  padding: 0.5rem !important; /* 8px */
+	  text-align: left !important;
+	}
+	
+	thead {
+	  display: table-header-group;
+	}
+	
+	/* Адаптация изображений для печати */
+	img {
+	  max-width: 100% !important;
+	  max-height: 200mm !important;
+	}
+	
+	/* Цвета элементов в градациях серого для лучшей печати */
+	.btn-primary, 
+	.btn-outline, 
+	.card, 
+	.alert, 
+	.bg-primary, 
+	.bg-secondary {
+	  background: white !important;
+	  box-shadow: none !important;
+	  border: 0.0625rem solid var(--color-gray-light) !important; /* 1px */
+	  color: var(--color-black) !important;
+	}
+	
+	/* Сброс всех CSS-анимаций и переходов */
+	* {
+	  animation: none !important;
+	  transition: none !important;
+	}
+	
+	/* Специальные стили для печати */
+	.print-header {
+	  display: block !important;
+	  text-align: center;
+	  margin-bottom: 2cm;
+	}
+	
+	.print-footer {
+	  display: block !important;
+	  text-align: center;
+	  margin-top: 2cm;
+	  font-size: 9pt;
+	}
+	
+	/* Добавляем URL сайта в конце документа */
+	body:after {
+	  content: "gigsfoundation.ru";
+	  display: block;
+	  text-align: center;
+	  font-size: 10pt;
+	  margin-top: 2cm;
+	}
+  }
+  
+  /* Классы для управления видимостью при печати */
+  .print-only {
+	display: none;
+  }
+  
+  @media print {
+	.print-only {
+	  display: block !important;
+	}
+	
+	.no-print {
+	  display: none !important;
+	}
+	
+	/* Контролируемые разрывы страниц */
+	.page-break-before {
+	  page-break-before: always;
+	}
+	
+	.page-break-after {
+	  page-break-after: always;
+	}
+	
+	.no-page-break {
+	  page-break-inside: avoid;
+	}
+  }
+
+  /* ==========================================================================
+   CROSS-BROWSER COMPATIBILITY ADDITIONS
+   ========================================================================== */
+
+/**
+ * ╔══════════════════════════════════════════════════════════════╗  
+ * ║                ВЕНДОРНЫЕ ПРЕФИКСЫ                            ║  
+ * ╚══════════════════════════════════════════════════════════════╝  
+ * Добавление вендорных префиксов для кросс-браузерной совместимости
+ */
+
+/* Глобальные настройки для всех браузеров */
+html {
+	/* Включаем сглаживание текста для всех браузеров */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-ms-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	
+	/* Поддержка для старых Edge/IE */
+	-ms-text-size-adjust: 100%;
+	
+	/* Устранение возможного мерцания текста при анимациях */
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	
+	/* Улучшенное сглаживание для мобильных устройств */
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  
+  /* Улучшенный сброс стилей с учётом Firefox и Safari */
+  *,
+  *::before,
+  *::after {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+  }
+  
+  /* Скроллбар для Firefox */
+  * {
+	scrollbar-width: thin;
+	scrollbar-color: var(--color-orange-primary) var(--color-white-muted);
+  }
+  
+  /* Дополнительные определения для скроллбара в Edge и IE */
+  @supports (-ms-overflow-style: none) {
+	html {
+	  scrollbar-face-color: var(--color-orange-primary);
+	  scrollbar-track-color: var(--color-white-muted);
+	  scrollbar-arrow-color: var(--color-orange-dark);
+	  scrollbar-shadow-color: var(--color-orange-dark);
+	}
+  }
+  
+  /* Улучшенные свойства для анимаций с кросс-браузерной поддержкой */
+  @keyframes pulse {
+	0% {
+	  transform: scale(1);
+	  -webkit-transform: scale(1);
+	  -moz-transform: scale(1);
+	  -ms-transform: scale(1);
+	  -o-transform: scale(1);
+	}
+	50% {
+	  transform: scale(1.05);
+	  -webkit-transform: scale(1.05);
+	  -moz-transform: scale(1.05);
+	  -ms-transform: scale(1.05);
+	  -o-transform: scale(1.05);
+	}
+	100% {
+	  transform: scale(1);
+	  -webkit-transform: scale(1);
+	  -moz-transform: scale(1);
+	  -ms-transform: scale(1);
+	  -o-transform: scale(1);
+	}
+  }
+  
+  @-webkit-keyframes pulse {
+	0% { -webkit-transform: scale(1); }
+	50% { -webkit-transform: scale(1.05); }
+	100% { -webkit-transform: scale(1); }
+  }
+  
+  @-moz-keyframes pulse {
+	0% { -moz-transform: scale(1); }
+	50% { -moz-transform: scale(1.05); }
+	100% { -moz-transform: scale(1); }
+  }
+  
+  @-o-keyframes pulse {
+	0% { -o-transform: scale(1); }
+	50% { -o-transform: scale(1.05); }
+	100% { -o-transform: scale(1); }
+  }
+  
+  @keyframes progress {
+	0% {
+	  width: 0;
+	  -webkit-width: 0;
+	  -moz-width: 0;
+	}
+	100% {
+	  width: 100%;
+	  -webkit-width: 100%;
+	  -moz-width: 100%;
+	}
+  }
+  
+  @-webkit-keyframes progress {
+	0% { width: 0; }
+	100% { width: 100%; }
+  }
+  
+  @-moz-keyframes progress {
+	0% { width: 0; }
+	100% { width: 100%; }
+  }
+  
+  /* Доработка кнопок для лучшей совместимости */
+  .btn {
+	/* Добавляем поддержку для старых версий браузеров */
+	display: -webkit-inline-flex;
+	display: -moz-inline-flex;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	-ms-align-items: center;
+	align-items: center;
+	
+	-webkit-justify-content: center;
+	-moz-justify-content: center;
+	-ms-justify-content: center;
+	justify-content: center;
+	
+	/* Префиксы для transition */
+	-webkit-transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+	-moz-transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+	-o-transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+	transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+	
+	/* Оптимизация для мобильных устройств */
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	
+	/* Устранение проблем с выделением текста при тапах */
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+  }
+  
+  .btn:before {
+	-webkit-transform: translateX(-100%);
+	-moz-transform: translateX(-100%);
+	-ms-transform: translateX(-100%);
+	-o-transform: translateX(-100%);
+	transform: translateX(-100%);
+	
+	-webkit-transition: transform 0.4s ease;
+	-moz-transition: transform 0.4s ease;
+	-o-transition: transform 0.4s ease;
+	transition: transform 0.4s ease;
+  }
+  
+  .btn:hover:before {
+	-webkit-transform: translateX(0);
+	-moz-transform: translateX(0);
+	-ms-transform: translateX(0);
+	-o-transform: translateX(0);
+	transform: translateX(0);
+  }
+  
+  .btn:hover {
+	-webkit-transform: translateY(-0.1875rem); /* -3px */
+	-moz-transform: translateY(-0.1875rem);
+	-ms-transform: translateY(-0.1875rem);
+	-o-transform: translateY(-0.1875rem);
+	transform: translateY(-0.1875rem);
+  }
+  
+  .btn-primary {
+	background: -webkit-linear-gradient(135deg, var(--color-orange-primary), var(--color-orange-dark));
+	background: -moz-linear-gradient(135deg, var(--color-orange-primary), var(--color-orange-dark));
+	background: -o-linear-gradient(135deg, var(--color-orange-primary), var(--color-orange-dark));
+	background: linear-gradient(135deg, var(--color-orange-primary), var(--color-orange-dark));
+	
+	-webkit-box-shadow: 0 0.25rem 0.9375rem rgba(253, 121, 33, 0.25); /* 4px 15px */
+	-moz-box-shadow: 0 0.25rem 0.9375rem rgba(253, 121, 33, 0.25);
+	box-shadow: 0 0.25rem 0.9375rem rgba(253, 121, 33, 0.25);
+  }
+  
+  .btn-primary:hover {
+	background: -webkit-linear-gradient(135deg, var(--color-orange-dark), var(--color-orange-primary));
+	background: -moz-linear-gradient(135deg, var(--color-orange-dark), var(--color-orange-primary));
+	background: -o-linear-gradient(135deg, var(--color-orange-dark), var(--color-orange-primary));
+	background: linear-gradient(135deg, var(--color-orange-dark), var(--color-orange-primary));
+	
+	-webkit-box-shadow: 0 0.375rem 1.25rem rgba(253, 121, 33, 0.35); /* 6px 20px */
+	-moz-box-shadow: 0 0.375rem 1.25rem rgba(253, 121, 33, 0.35);
+	box-shadow: 0 0.375rem 1.25rem rgba(253, 121, 33, 0.35);
+  }
+  
+  /**
+   * ╔══════════════════════════════════════════════════════════════╗  
+   * ║                ПОДДЕРЖКА СПЕЦИФИЧНЫХ БРАУЗЕРОВ               ║  
+   * ╚══════════════════════════════════════════════════════════════╝  
+   * Отдельные исправления для конкретных браузеров
+   */
+  
+  /* Исправления для Internet Explorer */
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	/* IE10+ */
+	/* Для IE добавляем поддержку CSS-переменных через фоллбэк */
+	body {
+	  /* Основные цвета для IE */
+	  color: #010101; /* Фоллбэк для var(--color-black-alt) */
+	}
+	
+	.btn-primary {
+	  /* IE не поддерживает CSS переменные, поэтому указываем явные цвета */
+	  background: linear-gradient(135deg, #fd7921, #d35e0f);
+	  color: #fff;
+	}
+	
+	/* Исправление flex для IE */
+	.row {
+	  display: block;
+	}
+	
+	.row:after {
+	  content: "";
+	  display: table;
+	  clear: both;
+	}
+	
+	[class*="col-"] {
+	  float: left;
+	}
+  }
+  
+  /* Исправления для Edge */
+  @supports (-ms-ime-align: auto) {
+	/* Edge специфичные стили */
+	.container {
+	  max-width: 75rem; /* 1200px / 16px = 75rem */
+	}
+  }
+  
+  /* Исправления для Safari */
+  @supports (-webkit-overflow-scrolling: touch) {
+	/* Safari-specific styles */
+	/* Исправление проблем с закруглениями в Safari */
+	.btn {
+	  -webkit-border-radius: 0.375rem; /* 6px */
+	  border-radius: 0.375rem;
+	}
+	
+	/* Исправление для корректного отображения градиентов в Safari */
+	.loader-progress span {
+	  background: -webkit-linear-gradient(left, #fd7921, #d35e0f);
+	}
+  }
+  
+  /* Исправления для Firefox */
+  @-moz-document url-prefix() {
+	/* Исправление для текста в Firefox */
+	body {
+	  font-weight: normal;
+	}
+	
+	/* Улучшение отображения кнопок в Firefox */
+	.btn {
+	  overflow: hidden;
+	}
+  }
+  
+  /**
+   * ╔══════════════════════════════════════════════════════════════╗  
+   * ║                   ОПТИМИЗАЦИИ ПРОИЗВОДИТЕЛЬНОСТИ              ║  
+   * ╚══════════════════════════════════════════════════════════════╝  
+   * Улучшения для оптимальной производительности на всех устройствах
+   */
+  
+  /* Оптимизация для устройств с высоким DPI */
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+	body {
+	  /* Улучшенное сглаживание текста для retina-дисплеев */
+	  -webkit-font-smoothing: subpixel-antialiased;
+	}
+  }
+  
+  /* Оптимизация перерисовки и композитинга для анимаций */
+  .btn,
+  .preloader,
+  .loader-progress span,
+  .loader-logo {
+	/* Повышаем производительность анимаций */
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+	
+	/* Ускорение графического процессора для IE и Edge */
+	-ms-transform: translate3d(0, 0, 0);
+	
+	/* Оптимизация слоев отрисовки */
+	will-change: transform, opacity;
+  }
+  
+  /**
+   * ╔══════════════════════════════════════════════════════════════╗  
+   * ║                   ДОПОЛНИТЕЛЬНЫЕ УЛУЧШЕНИЯ                    ║  
+   * ╚══════════════════════════════════════════════════════════════╝  
+   * Дополнительные улучшения и исправления для максимальной совместимости
+   */
+  
+  /* Нормализация для смешанного режима отображения */
+  html {
+	/* Устанавливаем значение по умолчанию для всех браузеров */
+	line-height: 1.15;
+	/* Устраняет проблемы с текстом в iOS и Safari */
+	-webkit-text-size-adjust: 100%;
+  }
+  
+  /* Улучшения для мобильных устройств */
+  input,
+  textarea {
+	/* Исправляет отображение на iOS */
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border-radius: 0;
+	
+	/* Убирает стандартные стили для полей ввода */
+	-webkit-border-radius: var(--radius-md);
+	-moz-border-radius: var(--radius-md);
+	border-radius: var(--radius-md);
+  }
+  
+  /* Улучшения для сенсорных устройств */
+  body {
+	/* Оптимизация скролла на iOS */
+	-webkit-overflow-scrolling: touch;
+	
+	/* Отключает выделение текста при тапах */
+	-webkit-touch-callout: none;
+  }
+  
+  /* Фикс проблемы с объектами SVG для IE */
+  svg:not(:root) {
+	overflow: hidden;
+  }
+  
+  /* Улучшения доступности */
+  button, 
+  input, 
+  select, 
+  textarea {
+	/* Для скринридеров и клавиатурной навигации */
+	outline-offset: 0.125rem; /* 2px */
+  }
+  
+  button:focus,
+  input:focus,
+  select:focus,
+  textarea:focus {
+	outline: 0.1875rem solid rgba(253, 121, 33, 0.3); /* 3px */
+  }
+  
+  /* Улучшения фокуса для улучшения доступности */
+  a:focus {
+	outline: 0.1875rem solid rgba(253, 121, 33, 0.3); /* 3px */
+	outline-offset: 0.125rem; /* 2px */
+  }
+  
+  /* Оптимизация для редукции движения (предпочтения для людей с вестибулярными расстройствами) */
+  @media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+	  animation-duration: 0.01ms !important;
+	  animation-iteration-count: 1 !important;
+	  transition-duration: 0.01ms !important;
+	  scroll-behavior: auto !important;
+	}
+  }
+  
+  /* Поддержка режима высокой контрастности Windows */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	.btn {
+	  border: 0.0625rem solid currentColor; /* 1px */
+	}
+	
+	.btn-primary {
+	  background: #fd7921;
+	  color: white;
+	}
+  }

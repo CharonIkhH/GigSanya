@@ -1,0 +1,144 @@
+﻿
+@font-face {
+    font-family: 'SF-UI-Display-Black';
+    src: url('../fonts/SF-UI-Display-Black/SF-UI-Display-Black.eot');
+    src: local('☺'), url('../fonts/SF-UI-Display-Black/SF-UI-Display-Black.woff') format('woff'), url('../fonts/SF-UI-Display-Black/SF-UI-Display-Black.ttf') format('truetype'), url('../fonts/SF-UI-Display-Black/SF-UI-Display-Black.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF-UI-Display-Bold';
+    src: url('../fonts/SF-UI-Display-Bold/SF-UI-Display-Bold.eot');
+    src: local('☺'), url('../fonts/SF-UI-Display-Bold/SF-UI-Display-Bold.woff') format('woff'), url('../fonts/SF-UI-Display-Bold/SF-UI-Display-Bold.ttf') format('truetype'), url('../fonts/SF-UI-Display-Bold/SF-UI-Display-Bold.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF-UI-Display-Heavy';
+    src: url('../fonts/SF-UI-Display-HeavySF-UI-Display-Heavy.eot');
+    src: local('☺'), url('../fonts/SF-UI-Display-HeavySF-UI-Display-Heavy.woff') format('woff'), url('../fonts/SF-UI-Display-HeavySF-UI-Display-Heavy.ttf') format('truetype'), url('../fonts/SF-UI-Display-HeavySF-UI-Display-Heavy.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF-UI-Display-Light';
+    src: url('../fonts/SF-UI-Display-Light/SF-UI-Display-Light.eot');
+    src: local('☺'), url('../fonts/SF-UI-Display-Light/SF-UI-Display-Light.woff') format('woff'), url('../fonts/SF-UI-Display-Light/SF-UI-Display-Light.ttf') format('truetype'), url('../fonts/SF-UI-Display-Light/SF-UI-Display-Light.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF-UI-Display-Medium';
+    src: url('../fonts/SF-UI-Display-Medium/SF-UI-Display-Medium.eot');
+    src: local('☺'), url('../fonts/SF-UI-Display-Medium/SF-UI-Display-Medium.woff') format('woff'), url('../fonts/SF-UI-Display-Medium/SF-UI-Display-Medium.ttf') format('truetype'), url('../fonts/SF-UI-Display-Medium/SF-UI-Display-Medium.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF-UI-Display-Regular';
+    src: url('../fonts/SF-UI-Display-Regular/SF-UI-Display-Regular.eot');
+    src: local('☺'), url('../fonts/SF-UI-Display-Regular/SF-UI-Display-Regular.woff') format('woff'), url('../fonts/SF-UI-Display-Regular/SF-UI-Display-Regular.ttf') format('truetype'), url('../fonts/SF-UI-Display-Regular/SF-UI-Display-Regular.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF-UI-Display-Semibold';
+    src: url('../fonts/SF-UI-Display-Semibold/SF-UI-Display-Semibold.eot');
+    src: local('☺'), url('../fonts/SF-UI-Display-Semibold/SF-UI-Display-Semibold.woff') format('woff'), url('../fonts/SF-UI-Display-Semibold/SF-UI-Display-Semibold.ttf') format('truetype'), url('../fonts/SF-UI-Display-Semibold/SF-UI-Display-Semibold.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF-UI-Display-Thin';
+    src: url('../fonts/SF-UI-Display-Thin/SF-UI-Display-Thin.eot');
+    src: local('☺'), url('../fonts/SF-UI-Display-Thin/SF-UI-Display-Thin.woff') format('woff'), url('../fonts/SF-UI-Display-Thin/SF-UI-Display-Thin.ttf') format('truetype'), url('../fonts/SF-UI-Display-Thin/SF-UI-Display-Thin.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF-UI-Display-Ultralight';
+    src: url('../fonts/SF-UI-Display-Ultralight/SF-UI-Display-Ultralight.eot');
+    src: local('☺'), url('../fonts/SF-UI-Display-Ultralight/SF-UI-Display-Ultralight.woff') format('woff'), url('../fonts/SF-UI-Display-Ultralight/SF-UI-Display-Ultralight.ttf') format('truetype'), url('../fonts/SF-UI-Display-Ultralight/SF-UI-Display-Ultralight.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+            font-family: "PFDinDisplay";
+            src: url("../fonts/PFDinDisplay/PFDinDisplay.eot");
+            src: url("../fonts/PFDinDisplay/PFDinDisplay-1.eot")format("embedded-opentype"),
+            url("../fonts/PFDinDisplay/PFDinDisplay.woff") format("woff"),
+            url("../fonts/PFDinDisplay/PFDinDisplay.ttf") format("truetype");
+            font-style: normal;
+            font-weight: normal;
+    }
+
+    @font-face {
+            font-family: "PFDinMedium";
+            src: url("../fonts/PFDinMedium/PFDinMedium.eot");
+            src: url("../fonts/PFDinMedium/PFDinMedium-1.eot")format("embedded-opentype"),
+            url("../fonts/PFDinMedium/PFDinMedium.woff") format("woff"),
+            url("../fonts/PFDinMedium/PFDinMedium.ttf") format("truetype");
+            font-style: normal;
+            font-weight: normal;
+    }
+
+
+    @font-face {
+    font-family: 'SF-UI-Text-Regular';
+    src: url('../fonts/SF-UI-Text-Regular/SF-UI-Text-Regular.eot');
+    src: local('☺'), url('../fonts/SF-UI-Text-Regular/SF-UI-Text-Regular.woff') format('woff'), url('../fonts/SF-UI-Text-Regular/SF-UI-Text-Regular.ttf') format('truetype'), url('../fonts/SF-UI-Text-Regular/SF-UI-Text-Regular.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF-UI-Text-Semibold';
+    src: url('../fonts/SF-UI-Text-Semibold/SF-UI-Text-Semibold.eot');
+    src: local('☺'), url('../fonts/SF-UI-Text-Semibold/SF-UI-Text-Semibold.woff') format('woff'), url('../fonts/SF-UI-Text-Semibold/SF-UI-Text-Semibold.ttf') format('truetype'), url('../fonts/SF-UI-Text-Semibold/SF-UI-Text-Semibold.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF-UI-Text-Bold';
+    src: url('../fonts/SF-UI-Text-Bold/SF-UI-Text-Bold.eot');
+    src: local('☺'), url('../fonts/SF-UI-Text-Bold/SF-UI-Text-Bold.woff') format('woff'), url('../fonts/SF-UI-Text-Bold/SF-UI-Text-Bold.ttf') format('truetype'), url('../fonts/SF-UI-Text-Bold/SF-UI-Text-Bold.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF-UI-Text-Light';
+    src: url('../fonts/SF-UI-Text-Light/SF-UI-Text-Light.eot');
+    src: local('☺'), url('../fonts/SF-UI-Text-Light/SF-UI-Text-Light.woff') format('woff'), url('../fonts/SF-UI-Text-Light/SF-UI-Text-Light.ttf') format('truetype'), url('../fonts/SF-UI-Text-Light/SF-UI-Text-Light.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'DINPro-Bold';
+    src: url('../fonts/DINPro-Bold/DINPro-Bold.eot');
+    src: local('☺'), url('../fonts/DINPro-Bold/DINPro-Bold.woff') format('woff'), url('../fonts/DINPro-Bold/DINPro-Bold.ttf') format('truetype'), url('../fonts/DINPro-Bold/DINPro-Bold.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'DINPro-Regular';
+    src: url('../fonts/DINPro-Regular/DINPro-Regular.eot');
+    src: local('☺'), url('../fonts/DINPro-Regular/DINPro-Regular.woff') format('woff'), url('../fonts/DINPro-Regular/DINPro-Regular.ttf') format('truetype'), url('../fonts/DINPro-Regular/DINPro-Regular.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

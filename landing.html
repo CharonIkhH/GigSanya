@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Как защитить бизнес в 2025 году: антикризисные меры | Бесплатный вебинар</title>
+    <link rel="stylesheet" href="assets\templates\css\landing.css">
+    <link rel="stylesheet" href="assets\templates\css\root.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Бесплатный вебинар для предпринимателей о защите бизнеса в 2025 году. Узнайте практические инструменты антикризисного управления от ведущих экспертов.">
+</head>
+<body>
+    <script>
+        // Прелоадер
+document.addEventListener('DOMContentLoaded', function() {
+    // Симуляция загрузки
+    setTimeout(function() {
+        document.querySelector('.preloader').classList.add('loaded');
+    }, 1500);
+
+    // Header Scroll Effect
+    const header = document.querySelector('.event-header');
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            header.style.backgroundColor = 'rgba(255, 255, 255, 0.97)';
+            header.style.boxShadow = '0 0.25rem 1rem rgba(0, 0, 0, 0.12)';
+        } else {
+            header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+            header.style.boxShadow = '0 0.125rem 0.625rem rgba(0, 0, 0, 0.1)';
+        }
+    });
+
+    // Анимация появления контента при скролле
+    const animateElements = document.querySelectorAll('.learn-item, .audience-card, .advice-card, .benefit-item, .bonus-card, .expert-card');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+    
+    animateElements.forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(30px)';
+        element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        observer.observe(element);
+    });
+
+    // Accordion functionality
+    const accordionButtons = document.querySelectorAll('.accordion-button');
+    
+    accordionButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            this.classList.toggle('collapsed');
+            const target = document.querySelector(this.getAttribute('data-bs-target'));
+            if (target) {
+                target.classList.toggle('collapse');
+                target.classList.toggle('show');
+            }
+        });
+    });
+
+    // Timer for limited spots
+    let spotsLeft = 47;
+    const spotsCounters = document.querySelectorAll('.spots-counter-text strong, .form-note strong');
+    
+    // Random decrease of spots every few minutes to create urgency
+    const decreaseSpots = () => {
+        if (spotsLeft > 3) {
+            const decrease = Math.floor(Math.random() * 2) + 1; // Decrease by 1 or 2
+            spotsLeft -= decrease;
+            
+            spotsCounters.forEach(counter => {
+                counter.textContent = spotsLeft;
+            });
+        }
+        
+        // Set next decrease interval (between 3-6 minutes)
+        const nextInterval = (Math.floor(Math.random() * 4) + 3) * 60 * 1000;
+        setTimeout(decreaseSpots, nextInterval);
+    };
+    
+    // Initial delay before first decrease
+    setTimeout(decreaseSpots, 180000); // 3 minutes
+
+    // Form validation and submission
+    const registrationForm = document.getElementById('registrationForm');
+    
+    if (registrationForm) {
+        registrationForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const region = document.getElementById('region').value;
+            
+            if (!name || !email || !phone || !region) {
+                alert('Пожалуйста, заполните все поля формы');
+                return;
+            }
+            
+            // Validate email format
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Пожалуйста, введите корректный email');
+                return;
+            }
+            
+            // Here would be the actual form submission logic
+            // For this example, we'll just show a success message
+            alert('Спасибо за регистрацию! Информация о подключении к вебинару отправлена на вашу почту.');
+            
+            // Reset form
+            registrationForm.reset();
+        });
+    }
+
+    // Smooth scroll for anchor links
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    
+    anchorLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+});
+    </script>
+    <!-- Прелоадер -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-spinner">
+                <div class="loader-logo">
+                    <img src="https://via.placeholder.com/150x70" alt="Логотип">
+                </div>
+                <div class="loader-progress">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Хедер -->
+    <header class="event-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="/">
+                        <img src="https://via.placeholder.com/150x50" alt="Логотип компании">
+                    </a>
+                </div>
+                <div class="header-cta">
+                    <a href="#registration" class="btn btn-primary">Зарегистрироваться</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Секция Герой -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row hero-content">
+                <div class="col-lg-6 hero-text">
+                    <div class="event-badge">
+                        <span class="event-badge-text">Бесплатный вебинар</span>
+                    </div>
+                    <h1 class="hero-title">Как защитить бизнес в 2025 году: антикризисные меры</h1>
+                    <p class="hero-description">Практические инструменты и стратегии, которые помогут сохранить и развивать ваш бизнес даже в условиях нестабильности рынка.</p>
+                    
+                    <div class="event-details">
+                        <div class="event-detail">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>27 марта 2025</span>
+                        </div>
+                        <div class="event-detail">
+                            <i class="fas fa-clock"></i>
+                            <span>19:00 МСК</span>
+                        </div>
+                        <div class="event-detail">
+                            <i class="fas fa-video"></i>
+                            <span>Онлайн-трансляция</span>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-cta">
+                        <a href="#registration" class="btn btn-primary btn-lg">Забронировать место</a>
+                        <div class="spots-counter">
+                            <span class="spots-counter-text">Осталось <strong>47</strong> мест</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-image">
+                    <img src="https://via.placeholder.com/600x400" alt="Вебинар о защите бизнеса">
+                    <div class="hero-image-shapes">
+                        <div class="shape shape-1"></div>
+                        <div class="shape shape-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция Описание -->
+    <section class="description-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">О чем этот вебинар</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="description-content">
+                <div class="row align-items-center">
+                    <div class="col-lg-5">
+                        <div class="description-image">
+                            <img src="https://via.placeholder.com/500x350" alt="О вебинаре">
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="description-text">
+                            <h3>Основная цель</h3>
+                            <p>Вооружить вас практическими инструментами для защиты и развития бизнеса в условиях экономической нестабильности 2025 года. Вы получите проверенные стратегии, которые уже помогли сотням компаний не только выжить, но и вырасти в кризис.</p>
+                            <div class="key-points">
+                                <div class="key-point">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Актуальные методы оптимизации налогов</span>
+                                </div>
+                                <div class="key-point">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Защита активов от рисков и претензий</span>
+                                </div>
+                                <div class="key-point">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Стратегии сохранения ликвидности</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция Для кого -->
+    <section class="for-whom-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Для кого этот вебинар</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="audience-cards">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="audience-card">
+                            <div class="audience-card-icon">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h3 class="audience-card-title">Директоров и собственников</h3>
+                            <p class="audience-card-text">Которые хотят защитить свой бизнес и личные активы от рисков экономической нестабильности</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="audience-card">
+                            <div class="audience-card-icon">
+                                <i class="fas fa-sitemap"></i>
+                            </div>
+                            <h3 class="audience-card-title">Руководителей</h3>
+                            <p class="audience-card-text">Которые отвечают за стратегическое планирование и антикризисные меры в компании</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="audience-card">
+                            <div class="audience-card-icon">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <h3 class="audience-card-title">Бухгалтеров</h3>
+                            <p class="audience-card-text">Которые ищут легальные способы оптимизации налогообложения и минимизации финансовых рисков</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция Что узнаете -->
+    <section class="what-you-learn-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">На трансляции вы узнаете</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="learn-content">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="learn-item">
+                            <div class="learn-item-number">01</div>
+                            <div class="learn-item-content">
+                                <h3>Актуальные изменения законодательства 2025 года</h3>
+                                <p>Подробный обзор ключевых изменений в налоговом и корпоративном законодательстве, которые влияют на ваш бизнес прямо сейчас</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="learn-item">
+                            <div class="learn-item-number">02</div>
+                            <div class="learn-item-content">
+                                <h3>5 проверенных антикризисных инструментов</h3>
+                                <p>Конкретные методики, которые успешно работают в текущих экономических условиях и помогут сохранить и приумножить ваш капитал</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="learn-item">
+                            <div class="learn-item-number">03</div>
+                            <div class="learn-item-content">
+                                <h3>Стратегии защиты активов от возможных рисков</h3>
+                                <p>Как структурировать бизнес и личные активы так, чтобы минимизировать риски их потери в случае кризисных ситуаций</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="learn-item">
+                            <div class="learn-item-number">04</div>
+                            <div class="learn-item-content">
+                                <h3>Оптимизация налогообложения на 100% легально</h3>
+                                <p>Законные способы снижения налоговой нагрузки, о которых не говорят широкой публике, но которые успешно используют крупнейшие компании</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-cta">
+                    <a href="#registration" class="btn btn-primary">Зарегистрироваться на эфир</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция Практические советы -->
+    <section class="practical-advice-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">На трансляции разберем</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="practical-advice-content">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="advice-card">
+                            <div class="advice-card-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3 class="advice-card-title">Защита от субсидиарной ответственности</h3>
+                            <p class="advice-card-text">Пошаговый алгоритм действий для защиты директора и собственника от личной ответственности по долгам компании</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="advice-card">
+                            <div class="advice-card-icon">
+                                <i class="fas fa-file-contract"></i>
+                            </div>
+                            <h3 class="advice-card-title">Безопасное дробление бизнеса</h3>
+                            <p class="advice-card-text">Как правильно структурировать бизнес для минимизации налогов без рисков претензий со стороны ФНС</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="advice-card">
+                            <div class="advice-card-icon">
+                                <i class="fas fa-hand-holding-usd"></i>
+                            </div>
+                            <h3 class="advice-card-title">Управление денежными потоками</h3>
+                            <p class="advice-card-text">Стратегии сохранения ликвидности в периоды экономической нестабильности и кассовых разрывов</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция После трансляции -->
+    <section class="after-webinar-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">После трансляции вы сможете</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="benefits-list">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h3>Внедрить проверенные инструменты защиты</h3>
+                                <p>Сразу применить полученные знания для защиты своего бизнеса от налоговых и юридических рисков</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h3>Оптимизировать налоговые платежи</h3>
+                                <p>Законно снизить налоговую нагрузку, используя проверенные схемы, которые не вызывают вопросов у контролирующих органов</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h3>Защитить личные активы</h3>
+                                <p>Структурировать владение активами так, чтобы они были защищены от возможных претензий кредиторов и налоговых органов</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h3>Подготовиться к проверкам</h3>
+                                <p>Знать, как правильно подготовиться к налоговым и другим проверкам, чтобы минимизировать риски доначислений и штрафов</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция Эксперты -->
+    <section class="experts-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ведущие эксперты</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="experts-content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="expert-card">
+                            <div class="expert-image">
+                                <img src="https://via.placeholder.com/300x400" alt="Алексей Иванов">
+                            </div>
+                            <div class="expert-info">
+                                <h3 class="expert-name">Алексей Иванов</h3>
+                                <p class="expert-position">Налоговый консультант, к.э.н.</p>
+                                <div class="expert-credentials">
+                                    <div class="credential-item">
+                                        <i class="fas fa-award"></i>
+                                        <span>15+ лет опыта в структурировании бизнеса</span>
+                                    </div>
+                                    <div class="credential-item">
+                                        <i class="fas fa-briefcase"></i>
+                                        <span>Более 200 успешных кейсов по защите от налоговых претензий</span>
+                                    </div>
+                                    <div class="credential-item">
+                                        <i class="fas fa-users"></i>
+                                        <span>Автор методик, сохранивших клиентам более 500 млн рублей</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="expert-card">
+                            <div class="expert-image">
+                                <img src="https://via.placeholder.com/300x400" alt="Елена Петрова">
+                            </div>
+                            <div class="expert-info">
+                                <h3 class="expert-name">Елена Петрова</h3>
+                                <p class="expert-position">Юрист по корпоративному праву</p>
+                                <div class="expert-credentials">
+                                    <div class="credential-item">
+                                        <i class="fas fa-award"></i>
+                                        <span>Более 12 лет опыта в защите бизнеса</span>
+                                    </div>
+                                    <div class="credential-item">
+                                        <i class="fas fa-briefcase"></i>
+                                        <span>Спикер крупнейших юридических конференций</span>
+                                    </div>
+                                    <div class="credential-item">
+                                        <i class="fas fa-users"></i>
+                                        <span>Автор книги "Правовая защита бизнеса в кризис"</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция Бонусы -->
+    <section class="bonuses-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Каждый участник получит</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="bonuses-content">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="bonus-card">
+                            <div class="bonus-icon">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <h3 class="bonus-title">Комплект материалов</h3>
+                            <p class="bonus-text">Презентация вебинара, чек-листы и шаблоны документов для защиты бизнеса</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="bonus-card">
+                            <div class="bonus-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h3 class="bonus-title">Бесплатную консультацию</h3>
+                            <p class="bonus-text">30-минутная персональная консультация с экспертом по вашей ситуации</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="bonus-card">
+                            <div class="bonus-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h3 class="bonus-title">Бесплатную диагностику</h3>
+                            <p class="bonus-text">Анализ текущей структуры бизнеса и выявление потенциальных рисков</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bonus-offer">
+                    <div class="bonus-offer-content">
+                        <div class="bonus-offer-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <div class="bonus-offer-text">
+                            <h3>Специальное предложение для участников вебинара</h3>
+                            <p>Скидка 30% на комплексную программу защиты бизнеса при подключении в течение 48 часов после трансляции</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция Регистрация -->
+    <section id="registration" class="registration-section">
+        <div class="container">
+            <div class="registration-container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="registration-info">
+                            <h2 class="registration-title">Зарегистрируйтесь на вебинар сейчас</h2>
+                            <p class="registration-subtitle">Количество мест ограничено</p>
+                            <div class="registration-event-details">
+                                <div class="reg-event-detail">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>27 марта 2025</span>
+                                </div>
+                                <div class="reg-event-detail">
+                                    <i class="fas fa-clock"></i>
+                                    <span>19:00 МСК</span>
+                                </div>
+                                <div class="reg-event-detail">
+                                    <i class="fas fa-hourglass-half"></i>
+                                    <span>Продолжительность: 1,5 часа</span>
+                                </div>
+                            </div>
+                            <div class="registration-benefits">
+                                <h3>Успейте зарегистрироваться и получите:</h3>
+                                <ul>
+                                    <li><i class="fas fa-check"></i> Доступ к записи вебинара</li>
+                                    <li><i class="fas fa-check"></i> Комплект материалов по теме</li>
+                                    <li><i class="fas fa-check"></i> Возможность задать вопросы экспертам</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="registration-form-container">
+                            <h3 class="form-title">Заполните форму для участия</h3>
+                            <form class="registration-form" id="registrationForm">
+                                <div class="form-group">
+                                    <label for="name">Ваше имя</label>
+                                    <input type="text" id="name" name="name" placeholder="Иван Иванов" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" placeholder="ivan@example.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Телефон</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="+7 (999) 123-45-67" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="region">Регион</label>
+                                    <input type="text" id="region" name="region" placeholder="Москва" required>
+                                </div>
+                                <div class="form-group">
+                                    <div class="checkbox-container">
+                                        <input type="checkbox" id="agree" name="agree" required>
+                                        <label for="agree">Я согласен на обработку персональных данных</label>
+                                    </div>
+                                </div>
+                                <div class="form-submit">
+                                    <button type="submit" class="btn btn-primary btn-lg btn-block">Забронировать место</button>
+                                    <p class="form-note">Осталось всего <strong>47</strong> мест</p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Часто задаваемые вопросы</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="faq-content">
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header" id="faqHeading1">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1">
+                                Сколько длится вебинар?
+                            </button>
+                        </div>
+                        <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Продолжительность вебинара составляет 1,5 часа. В конце мы выделим время для ответов на вопросы участников.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header" id="faqHeading2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+                                Будет ли доступна запись вебинара?
+                            </button>
+                        </div>
+                        <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Да, запись вебинара будет доступна всем зарегистрированным участникам в течение 7 дней после трансляции.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header" id="faqHeading3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+                                Как я получу доступ к вебинару?
+                            </button>
+                        </div>
+                        <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                После регистрации на указанный вами email придет письмо с ссылкой на трансляцию. Также мы отправим напоминание за 1 день и за 1 час до начала вебинара.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header" id="faqHeading4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
+                                Могу ли я задать свой вопрос эксперту?
+                            </button>
+                        </div>
+                        <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faqHeading4" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Конечно! Во время вебинара будет доступен чат, где вы сможете задать свои вопросы. Наши эксперты ответят на самые популярные вопросы в конце трансляции.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="event-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="footer-logo">
+                            <img src="https://via.placeholder.com/150x50" alt="Логотип компании">
+                        </div>
+                        <div class="footer-description">
+                            <p>Эксперты в области защиты бизнеса и оптимизации налогообложения с 2010 года</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="footer-contacts">
+                            <h3>Контакты</h3>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <a href="tel:+78001234567">8 (800) 123-45-67</a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:info@example.com">info@example.com</a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Москва, ул. Примерная, д. 123</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="footer-social">
+                            <h3>Мы в соцсетях</h3>
+                            <div class="social-links">
+                                <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>© 2025 Все права защищены</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Условия использования</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Скрипты -->
+    <script src="script.js"></script>
+</body>
+</html>

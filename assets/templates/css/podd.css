@@ -1,0 +1,176 @@
+.content.news-full {
+    padding: var(--spacing-8) 0;
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(to right, var(--color-white), var(--color-white-soft));
+  }
+  
+  .content.news-full::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    background: var(--color-orange-ultra-light);
+    opacity: 0.4;
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+    z-index: 0;
+  }
+  
+  .content-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: var(--header-height-desktop); /* Отступ, учитывающий высоту хедера */
+  }
+  
+  .page-title {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-dark-gray);
+    margin-bottom: var(--spacing-6);
+    position: relative;
+    padding-bottom: var(--spacing-4);
+  }
+  
+  .page-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, var(--color-orange-primary), var(--color-orange-secondary));
+    border-radius: 4px;
+  }
+  
+  .intro-text {
+    font-size: var(--font-size-md);
+    color: var(--color-gray);
+    margin-bottom: var(--spacing-6);
+    line-height: var(--line-height-relaxed);
+  }
+  
+  .section-title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-dark-gray);
+    margin: var(--spacing-6) 0 var(--spacing-4);
+    display: flex;
+    align-items: center;
+  }
+  
+  .section-title::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: var(--color-orange-primary);
+    margin-right: var(--spacing-3);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  
+  .article_list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--spacing-6);
+  }
+  
+  .article_list li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: var(--spacing-3);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+  }
+  
+  .article_list li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 0.25rem;
+    color: var(--color-orange-primary);
+  }
+  
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: var(--spacing-5);
+    margin: var(--spacing-4) 0 var(--spacing-6);
+  }
+  
+  .benefit-card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-5);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-standard);
+    border-left: 3px solid var(--color-orange-primary);
+  }
+  
+  .benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-service-hover);
+  }
+  
+  .benefit-card h3 {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-dark-gray);
+    margin-top: 0;
+    margin-bottom: var(--spacing-3);
+  }
+  
+  .benefit-card p {
+    color: var(--color-gray);
+    margin: 0;
+  }
+  
+  .conclusion {
+    font-size: var(--font-size-md);
+    color: var(--color-dark-gray);
+    padding: var(--spacing-4);
+    background: var(--color-orange-ultra-light);
+    border-radius: var(--radius-md);
+    margin-top: var(--spacing-6);
+    line-height: var(--line-height-relaxed);
+    border-left: 4px solid var(--color-orange-primary);
+  }
+  
+  /* Адаптивные стили */
+  @media (max-width: 768px) {
+    .content-inner {
+      padding-top: var(--header-height-tablet);
+    }
+    
+    .benefits-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .page-title {
+      font-size: var(--font-size-xl);
+    }
+    
+    .section-title {
+      font-size: var(--font-size-lg);
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .content-inner {
+      padding-top: var(--header-height-mobile);
+    }
+    
+    .page-title::after {
+      width: 60px;
+    }
+    
+    .benefit-card {
+      padding: var(--spacing-4);
+    }
+  }
