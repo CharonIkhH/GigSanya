@@ -1,30 +1,57 @@
-/* Улучшения для секции слайдера */
+/* Улучшенная секция слайдера IT-поддержки с универсальной адаптивностью */
 .slider-tarifs {
   position: relative;
-  padding: var(--spacing-16) 0;
-  min-height: 80vh; /* Уменьшил с 90vh для лучшей адаптивности */
+  padding: clamp(2rem, 8vh, 4rem) 0;
+  min-height: clamp(60vh, 85vh, 90vh);
+  margin-top: clamp(2rem, 5vw, 4rem);
   display: flex;
   align-items: center;
+  justify-content: center;
   color: var(--color-white);
   overflow: hidden;
-  transition: var(--transition-standard);
   z-index: 1;
+  background: linear-gradient(120deg, #172b4d, #0f1b33);
+  width: 100%;
 }
 
-.slider-tarifs::after {
+/* Сетка на фоне - адаптивный размер */
+.slider-tarifs::before {
   content: "";
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   width: 100%;
-  height: 30%; /* Уменьшил с 40% для более тонкого эффекта */
-  background: linear-gradient(to top, var(--trans-black-heavy), transparent);
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: clamp(10px, 2vw, 20px) clamp(10px, 2vw, 20px);
+  z-index: 0;
+  opacity: 0.4;
+}
+
+/* Адаптивный фоновый эффект */
+.slider-bg-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 70% 30%, rgba(253, 121, 33, 0.1), transparent 50%);
   z-index: 0;
 }
 
 .slider-tarifs .container {
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  text-align: center;
+  width: 90%;
+  max-width: min(800px, 90%);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-badge {
@@ -32,138 +59,393 @@
   background: var(--gradient-orange);
   color: var(--color-white);
   font-weight: var(--font-weight-semibold);
-  padding: var(--spacing-2) var(--spacing-4);
-  border-radius: var(--radius-md); /* Уменьшил с radius-full для более четкого вида */
-  font-size: var(--font-size-sm);
-  margin-bottom: var(--spacing-4);
+  padding: clamp(0.25rem, 1vw, 0.5rem) clamp(0.5rem, 2vw, 1rem);
+  border-radius: var(--radius-md);
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+  margin-bottom: clamp(1rem, 3vh, 1.5rem);
   box-shadow: var(--shadow-sm);
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing-wide);
-  transform: translateY(0);
-  animation: badge-float 3s ease-in-out infinite;
+  animation: float 3s ease-in-out infinite;
+  text-align: center;
 }
 
-@keyframes badge-float {
+@keyframes float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-3px); } /* Уменьшил с -5px для более тонкой анимации */
+  50% { transform: translateY(min(-5px, -0.5vh)); }
 }
 
 .hero-title {
-  font-size: clamp(var(--font-size-2xl), 5vw, var(--font-size-3xl)); /* Использую clamp для адаптивности */
+  font-size: clamp(1.75rem, 5vw, 3.5rem);
   font-weight: var(--font-weight-bold);
-  margin-bottom: var(--spacing-4);
-  line-height: var(--line-height-tight);
+  margin: 0 auto clamp(1rem, 3vh, 1.5rem);
+  line-height: 1.2;
   color: var(--color-white);
-  text-shadow: 0 2px 4px var(--trans-black-medium);
-  max-width: 100%; /* Гарантирует, что заголовок не выйдет за пределы контейнера */
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  padding: 0 clamp(0.5rem, 3vw, 1.5rem);
 }
 
 .hero-text {
-  font-size: clamp(var(--font-size-md), 4vw, var(--font-size-lg)); /* Использую clamp для адаптивности */
-  margin-bottom: var(--spacing-6);
-  max-width: 95%; /* Увеличил с 90% для лучшего использования пространства */
-  line-height: var(--line-height-relaxed);
-  color: var(--color-white-soft);
+  font-size: clamp(0.875rem, 2vw, 1.25rem);
+  margin: 0 auto clamp(1.5rem, 4vh, 2rem);
+  width: 100%;
+  max-width: min(90%, 600px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  padding: 0 clamp(0.5rem, 2vw, 1rem);
 }
 
 .hero-actions {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-4);
-  margin-bottom: var(--spacing-5);
-  width: 100%; /* Гарантирует полную ширину на мобильных устройствах */
-  max-width: 450px; /* Ограничивает ширину на больших экранах */
-}
-
-.offer-timer {
-  display: flex;
   align-items: center;
-  background: var(--trans-white-light);
-  backdrop-filter: blur(5px);
-  border-radius: var(--radius-md);
-  padding: var(--spacing-3) var(--spacing-4);
-  width: 100%; /* Занимает всю доступную ширину */
-  font-size: var(--font-size-sm);
-  box-shadow: var(--shadow-md);
-}
-
-.offer-timer i {
-  color: var(--color-orange-primary);
-  font-size: 1.3em; /* Уменьшил с 1.5em для лучшей пропорции */
-  margin-right: var(--spacing-3);
-  animation: pulse 2s infinite;
-  flex-shrink: 0; /* Предотвращает сжатие иконки */
-}
-
-.countdown {
-  font-weight: var(--font-weight-bold);
-  color: var(--color-orange-primary);
-  background: var(--color-white);
-  padding: 2px 8px;
-  border-radius: var(--radius-sm);
-  margin: 0 4px;
-  white-space: nowrap; /* Предотвращает перенос текста внутри счетчика */
-}
-
-.timer-note {
-  font-size: var(--font-size-xs);
-  margin-top: var(--spacing-1);
-  opacity: 0.9;
-}
-
-.hero-trust {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-3); /* Уменьшил с spacing-4 для более компактного расположения */
-  margin-top: var(--spacing-6);
+  gap: clamp(0.75rem, 2vh, 1rem);
+  margin-bottom: clamp(1.5rem, 4vh, 2rem);
   width: 100%;
 }
 
-.trust-item {
+.cta-button {
+  padding: clamp(0.5rem, 1.5vh, 0.75rem) clamp(1rem, 4vw, 2rem);
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  font-weight: var(--font-weight-semibold);
+  background: var(--gradient-orange);
+  color: var(--color-white);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: max(1px, 0.05em);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(253, 121, 33, 0.3);
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: min(250px, 80%);
+  max-width: 100%;
+  text-align: center;
+}
+
+/* Стили только для устройств с hover */
+@media (hover: hover) {
+  .cta-button:hover {
+    transform: translateY(-2px);
+    color: var(--color-white);
+    box-shadow: 0 6px 20px rgba(253, 121, 33, 0.4);
+  }
+  
+  .cta-button:hover::after {
+    left: 100%;
+  }
+  
+  .benefit-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Стили для устройств без hover */
+@media (hover: none) {
+  .cta-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 10px rgba(253, 121, 33, 0.3);
+  }
+  
+  .benefit-card:active {
+    background: rgba(255, 255, 255, 0.12);
+  }
+}
+
+.cta-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(0.5rem, 2vw, 1rem);
+  margin: clamp(1.5rem, 4vh, 2rem) auto; /* auto margins для центрирования */
+  width: 100%;
+  max-width: 1200px; /* ограничение максимальной ширины */
+  justify-content: center; /* центрирование содержимого грида */
+}
+
+.benefit-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-md);
+  padding: clamp(0.75rem, 2vw, 1rem);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* Удаляем height: 100% и задаём min-height вместо него */
+  min-height: 150px;
+  /* Добавляем aspect-ratio для поддержки браузерами */
+  aspect-ratio: 16/9;
+}
+
+.benefit-icon {
+  width: clamp(40px, 8vw, 50px);
+  height: clamp(40px, 8vw, 50px);
   display: flex;
   align-items: center;
-  background: var(--trans-white-light);
-  backdrop-filter: blur(4px);
-  border-radius: var(--radius-md);
-  padding: var(--spacing-2) var(--spacing-3);
-  font-size: var(--font-size-xs); /* Уменьшил с font-size-sm для мобильной адаптивности */
-  font-weight: var(--font-weight-medium);
-  transition: var(--transition-standard);
-  /* Убрал фиксированную ширину для лучшей адаптивности */
-}
-
-.trust-item:hover {
-  background: var(--trans-white-medium);
-  transform: translateY(-2px);
-}
-
-.trust-item i {
-  color: var(--color-orange-primary);
-  margin-right: var(--spacing-2);
-  flex-shrink: 0; /* Предотвращает сжатие иконки */
-}
-
-.hero-scroll-indicator {
-  position: absolute;
-  bottom: var(--spacing-6);
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 5;
-  animation: bounce 2s infinite;
-  cursor: pointer;
-}
-
-.hero-scroll-indicator i {
+  justify-content: center;
+  background: var(--gradient-orange);
+  border-radius: 50%;
+  margin-bottom: clamp(0.25rem, 1vh, 0.5rem);
   color: var(--color-white);
-  font-size: var(--font-size-xl);
-  opacity: 0.8;
+  font-size: clamp(1rem, 4vw, 1.5rem);
 }
 
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
-  40% { transform: translateY(-10px) translateX(-50%); } /* Уменьшил с -15px для более сдержанной анимации */
-  60% { transform: translateY(-5px) translateX(-50%); } /* Уменьшил с -7px для более сдержанной анимации */
+.benefit-title {
+  font-weight: var(--font-weight-bold);
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+  margin-bottom: clamp(0.2rem, 0.5vh, 0.25rem);
+  color: var(--color-white);
 }
+
+.benefit-desc {
+  font-size: clamp(0.7rem, 1.2vw, 0.8rem);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.special-offer {
+  background: linear-gradient(90deg, rgba(253, 121, 33, 0.2), rgba(253, 121, 33, 0.1));
+  border-radius: var(--radius-md);
+  padding: clamp(0.5rem, 2vh, 0.75rem) clamp(0.75rem, 3vw, 1rem);
+  margin-top: clamp(1.25rem, 3vh, 1.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(253, 121, 33, 0.3);
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.offer-text {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: min(200px, 100%);
+  justify-content: center;
+}
+
+.offer-text i {
+  color: var(--color-orange-primary);
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  margin-right: clamp(0.25rem, 1vw, 0.5rem);
+}
+
+.offer-badge {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--color-orange-dark);
+  font-weight: var(--font-weight-bold);
+  padding: clamp(0.1rem, 0.5vh, 0.25rem) clamp(0.5rem, 1.5vw, 0.75rem);
+  border-radius: var(--radius-full);
+  font-size: clamp(0.65rem, 1.2vw, 0.75rem);
+  white-space: nowrap;
+  margin: 0.5rem 0;
+}
+
+/* Адаптивность для устройств разных размеров */
+/* Большие настольные экраны и телевизоры */
+@media (min-width: 1800px) {
+  .slider-tarifs {
+    padding: max(4rem, 5vh) 0;
+  }
+  
+  .hero-title {
+    font-size: clamp(3rem, 3.5vw, 4.5rem);
+  }
+  
+  .hero-text {
+    font-size: clamp(1.25rem, 1.5vw, 1.5rem);
+    max-width: 70%;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 90%;
+  }
+  
+  .benefit-icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* Планшеты и средние экраны */
+@media (max-width: 62em) and (min-width: 48em) {
+  .slider-tarifs {
+    min-height: clamp(60vh, 70vh, 80vh);
+    padding: clamp(2rem, 5vh, 3rem) 0;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(0.75rem, 2vw, 1rem);
+  }
+  
+  .special-offer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: clamp(0.5rem, 2vh, 1rem);
+    justify-content: center;
+  }
+  
+  .offer-text, .offer-badge {
+    margin: 0.25rem;
+  }
+}
+
+/* Мобильные устройства */
+@media (max-width: 48em) {
+  .slider-tarifs {
+    min-height: clamp(70vh, 90vh, 100vh);
+    padding: clamp(1.5rem, 4vh, 2rem) clamp(1rem, 5vw, 1.5rem);
+  }
+  
+  .hero-title {
+    font-size: clamp(1.5rem, 7vw, 2.2rem);
+  }
+  
+  .hero-text {
+    font-size: clamp(0.875rem, 4vw, 1rem);
+    max-width: 100%;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: clamp(0.75rem, 2vh, 1rem);
+  }
+  
+  .cta-button {
+    width: 100%;
+    min-width: unset;
+  }
+  
+  .special-offer {
+    flex-direction: column;
+    text-align: center;
+    padding: clamp(0.75rem, 3vh, 1rem);
+  }
+  
+  .offer-text {
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Очень маленькие устройства (смарт-часы) */
+@media (max-width: 320px) {
+  .slider-tarifs {
+    min-height: auto;
+    padding: 1rem 0.5rem;
+  }
+  
+  .hero-badge {
+    font-size: 0.6rem;
+    padding: 0.2rem 0.4rem;
+  }
+  
+  .hero-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .hero-text {
+    font-size: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  .cta-button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.7rem;
+  }
+  
+  .benefit-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+  
+  .benefit-title {
+    font-size: 0.7rem;
+  }
+  
+  .benefit-desc {
+    font-size: 0.6rem;
+  }
+}
+
+/* Устройства с необычным соотношением сторон (квадратные или вертикальные) */
+@media (max-aspect-ratio: 1/1) {
+  .slider-tarifs {
+    padding-top: clamp(2rem, 10vh, 4rem);
+    padding-bottom: clamp(2rem, 10vh, 4rem);
+  }
+  
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Устройства с высоким DPI (retina и т.д.) */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .slider-tarifs::before {
+    background-size: clamp(15px, 2.5vw, 30px) clamp(15px, 2.5vw, 30px);
+  }
+}
+
+/* Для печати */
+@media print {
+  .slider-tarifs {
+    background: white !important;
+    color: black !important;
+    min-height: auto;
+    padding: 1cm;
+  }
+  
+  .slider-tarifs::before,
+  .slider-bg-effect {
+    display: none;
+  }
+  
+  .hero-title,
+  .hero-text,
+  .benefit-title,
+  .benefit-desc {
+    color: black !important;
+  }
+  
+  .hero-badge,
+  .cta-button {
+    background: white !important;
+    color: black !important;
+    border: 1px solid black;
+    box-shadow: none;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 
 /* Улучшения для секции intro */
 .intro-section {
@@ -382,13 +664,477 @@
   line-height: var(--line-height-relaxed);
 }
 
+/* ==========================================================================
+   КАРТОЧКИ УСЛУГ
+   ========================================================================== */
+
+/* Контейнер для сетки услуг */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Увеличил минимальную ширину с 250px для лучшего отображения */
-  gap: var(--spacing-5); /* Уменьшил с spacing-6 для более компактного вида */
-  margin-bottom: var(--spacing-8); /* Уменьшил с spacing-10 для более компактного вида */
-  padding: 0 var(--spacing-3); /* Добавил отступы для мобильных устройств */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-6);
+  margin-top: var(--spacing-8);
+  margin-bottom: var(--spacing-8);
+  position: relative; /* Добавлено для позиционирования декоративного фона */
 }
+
+/* Стили для заголовка секции */
+.section-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto var(--spacing-8);
+  position: relative; /* Для правильного отображения на фоне */
+  z-index: 2;
+}
+
+.section-label {
+  display: inline-block;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  color: var(--color-orange-primary);
+  padding: 0.5rem 1.25rem;
+  background-color: var(--color-orange-ultra-light);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--spacing-3);
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.section-header h2 {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-2xl);
+  color: var(--color-dark-gray);
+  margin-bottom: var(--spacing-3);
+}
+
+.section-header p {
+  font-size: var(--font-size-md);
+  color: var(--color-gray);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Стили для карточки услуги */
+.service-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-6);
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-standard);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  border: 1px solid var(--color-white-muted);
+  z-index: 2; /* Выше фоновых элементов */
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-service-hover);
+  border-color: transparent;
+}
+
+/* Иконка услуги */
+.service-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.75rem;
+  height: 3.75rem;
+  background-color: var(--color-orange-ultra-light);
+  color: var(--color-orange-primary);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-4);
+  transition: var(--transition-standard);
+}
+
+.service-card:hover .service-icon {
+  background-color: var(--color-orange-primary);
+  color: var(--color-white);
+}
+
+.service-icon i {
+  font-size: 1.5rem;
+}
+
+/* Выделенная иконка */
+.highlight-icon {
+  background-color: var(--color-orange-primary);
+  color: var(--color-white);
+}
+
+.service-card:hover .highlight-icon {
+  background-color: var(--color-orange-dark);
+}
+
+/* Заголовок услуги */
+.service-card h3 {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-lg);
+  color: var(--color-dark-gray);
+  margin-bottom: var(--spacing-3);
+  transition: var(--transition-standard);
+}
+
+.service-card:hover h3 {
+  color: var(--color-orange-primary);
+}
+
+/* Описание услуги */
+.service-card p {
+  font-size: var(--font-size-base);
+  color: var(--color-gray);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-4);
+  flex-grow: 1;
+}
+
+/* Список характеристик услуги */
+.service-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: var(--spacing-4);
+}
+
+.service-features li {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-dark);
+  gap: 0.5rem;
+}
+
+.service-features li i {
+  color: var(--color-orange-primary);
+  font-size: 0.875rem;
+}
+
+/* Ссылка "Подробнее" */
+.service-more {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-orange-primary);
+  margin-top: auto;
+  cursor: pointer;
+  transition: var(--transition-standard);
+  gap: 0.5rem;
+}
+
+.service-more:hover {
+  color: var(--color-orange-dark);
+}
+
+.service-more i {
+  transition: transform 0.3s ease;
+}
+
+.service-more:hover i {
+  transform: translateX(4px);
+}
+
+/* Блок с кнопками */
+.services-action {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-4);
+  margin-top: var(--spacing-8);
+  position: relative;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   ФОН СЕКЦИИ УСЛУГ
+   ========================================================================== */
+
+/* Основной фон секции */
+.services-section {
+  padding: var(--spacing-12) 0;
+  background: linear-gradient(135deg, var(--color-white) 0%, var(--color-orange-ultra-light) 50%, var(--color-white) 100%);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Декоративный элемент - большой градиентный круг в правом верхнем углу */
+.services-section::before {
+  content: "";
+  position: absolute;
+  top: -150px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  background: var(--color-blue-ultra-light);
+  border-radius: var(--radius-full);
+  opacity: 0.4;
+  filter: blur(80px);
+  z-index: 0;
+}
+
+/* Декоративный элемент - градиентный круг в левом нижнем углу */
+.services-section::after {
+  content: "";
+  position: absolute;
+  bottom: -200px;
+  left: -150px;
+  width: 600px;
+  height: 600px;
+  background: var(--color-orange-primary);
+  border-radius: var(--radius-full);
+  opacity: 0.06;
+  filter: blur(120px);
+  z-index: 0;
+}
+
+/* Декоративная волнистая линия в верхней части */
+.services-section .container {
+  position: relative;
+}
+
+.services-section .container::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background-image: url("data:image/svg+xml,%3Csvg width='1440' height='120' viewBox='0 0 1440 120' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 60C240 0 480 120 720 60C960 0 1200 120 1440 60V120H0V60Z' fill='%23fd792105'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  z-index: 0;
+  opacity: 0.8;
+}
+
+/* Декоративный паттерн точек */
+.services-section .container::after {
+  content: "";
+  position: absolute;
+  top: 5%;
+  right: -5%;
+  width: 300px;
+  height: 300px;
+  background-image: radial-gradient(var(--color-orange-primary) 1px, transparent 1px);
+  background-size: 25px 25px;
+  opacity: 0.2;
+  z-index: 0;
+  border-radius: var(--radius-full);
+}
+
+/* Дополнительный декоративный элемент - сетка */
+.services-grid::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(to right, var(--trans-orange-light) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--trans-orange-light) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Плавающие формы */
+.floating-shape {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(45deg, var(--color-orange-primary) 0%, var(--color-orange-light) 100%);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  opacity: 0.06;
+  filter: blur(3px);
+  z-index: 0;
+}
+
+.floating-shape:nth-child(1) {
+  top: 15%;
+  left: 10%;
+  animation: float 8s ease-in-out infinite;
+}
+
+.floating-shape:nth-child(2) {
+  bottom: 20%;
+  right: 15%;
+  width: 150px;
+  height: 150px;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation: float 10s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+/* Полупрозрачные полосы */
+.stripe {
+  position: absolute;
+  height: 200px;
+  width: 40px;
+  background: var(--color-orange-light);
+  opacity: 0.05;
+  transform: skewX(-30deg);
+  z-index: 0;
+}
+
+.stripe:nth-child(1) {
+  top: -50px;
+  left: 10%;
+}
+
+.stripe:nth-child(2) {
+  bottom: 0;
+  right: 20%;
+  height: 300px;
+  width: 60px;
+}
+
+/* Анимации для карточек */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.pulse-animation {
+  animation: pulse 0.6s ease-in-out;
+}
+
+.service-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.service-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-card:nth-child(even) {
+  transition-delay: 0.15s;
+}
+
+.service-card:nth-child(3n) {
+  transition-delay: 0.3s;
+}
+
+/* Анимация для секции */
+.services-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--color-orange-primary), var(--color-orange-secondary), var(--color-orange-primary));
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.services-section.visible::before {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 62em) { /* 992px */
+  .services-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: var(--spacing-5);
+  }
+  
+  .service-card {
+    padding: var(--spacing-5);
+  }
+  
+  .services-section::before {
+    width: 400px;
+    height: 400px;
+  }
+  
+  .services-section::after {
+    width: 450px;
+    height: 450px;
+  }
+  
+  .services-section .container::after {
+    width: 250px;
+    height: 250px;
+    background-size: 20px 20px;
+  }
+}
+
+@media (max-width: 48em) { /* 768px */
+  .services-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+  
+  .services-action {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .services-action .btn {
+    width: 100%;
+    max-width: 320px;
+  }
+  
+  .services-section {
+    padding: var(--spacing-10) 0;
+  }
+  
+  .services-section::before,
+  .services-section::after {
+    filter: blur(60px);
+  }
+}
+
+@media (max-width: 36em) { /* 576px */
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-header h2 {
+    font-size: var(--font-size-xl);
+  }
+  
+  .section-header p {
+    font-size: var(--font-size-base);
+  }
+  
+  .service-icon {
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+  
+  .service-card h3 {
+    font-size: var(--font-size-md);
+  }
+  
+  .services-section .container::before {
+    top: -40px;
+    height: 80px;
+  }
+}
+
+
 
 /* Упрощенные стили для шапки сайта */
 .slider-tarifs {
@@ -661,207 +1407,369 @@
   margin-bottom: 50px;
 }
 
-/* Упрощенные стили для преимуществ */
+/* Новое оформление для секции преимуществ */
 .benefits-section {
-  padding: 70px 0;
-  background: var(--color-white);
+  padding: 100px 0;
+  background-color: var(--color-white);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Фоновый узор */
+.benefits-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(var(--color-orange-ultra-light) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+/* Заголовок секции */
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 70px;
   position: relative;
   z-index: 1;
 }
 
+.section-label {
+  display: inline-block;
+  background: var(--gradient-orange);
+  color: var(--color-white);
+  font-size: 14px;
+  font-weight: var(--font-weight-semibold);
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 3px 10px rgba(253, 121, 33, 0.2);
+}
+
+.section-header h2 {
+  font-size: 36px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark-gray);
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.section-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--gradient-orange);
+  border-radius: var(--radius-full);
+}
+
+.section-header p {
+  color: var(--color-gray);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Контейнер с преимуществами */
 .benefits-content {
-  display: flex;
-  gap: 40px;
-  margin-bottom: 70px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
   align-items: center;
+  margin-bottom: 100px;
+  position: relative;
+  z-index: 1;
 }
 
-.benefits-content.reverse {
-  flex-direction: row-reverse;
+.benefits-content:last-child {
+  margin-bottom: 0;
 }
 
+/* Обычный порядок: текст слева, изображение справа */
 .benefits-text {
-  flex: 1;
+  order: 1;
 }
 
+.benefits-image {
+  order: 2;
+}
+
+/* Обратный порядок: изображение слева, текст справа */
+.benefits-content.reverse .benefits-text {
+  order: 2;
+}
+
+.benefits-content.reverse .benefits-image {
+  order: 1;
+}
+
+/* Список преимуществ */
 .benefits-list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 25px;
 }
 
+/* Отдельный пункт преимуществ */
 .benefit-item {
   display: flex;
-  gap: 15px;
-  padding: 20px;
+  gap: 20px;
+  padding: 25px;
   background: var(--color-white);
-  border-radius: 8px;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-left: 3px solid transparent;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s var(--ease-out);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--color-white-muted);
+}
+
+.benefit-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: var(--gradient-orange);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s var(--ease-out);
 }
 
 .benefit-item:hover {
-  transform: translateX(3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  border-left-color: var(--color-orange-primary);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  border-color: transparent;
 }
 
+.benefit-item:hover::before {
+  transform: scaleY(1);
+}
+
+/* Иконка преимущества */
 .benefit-icon {
-  width: 45px;
-  height: 45px;
-  min-width: 45px;
+  flex-shrink: 0;
+  width: 55px;
+  height: 55px;
   background: var(--color-orange-ultra-light);
-  border-radius: 50%;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s var(--ease-out);
+  position: relative;
+  overflow: hidden;
 }
 
-.benefit-item:hover .benefit-icon {
-  background: var(--color-orange-primary);
+.benefit-icon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-orange);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease-out);
+  z-index: 0;
 }
 
 .benefit-icon i {
-  font-size: 18px;
+  font-size: 22px;
   color: var(--color-orange-primary);
-  transition: color 0.3s ease;
+  transition: color 0.3s var(--ease-out);
+  position: relative;
+  z-index: 1;
+}
+
+.benefit-item:hover .benefit-icon::after {
+  opacity: 1;
 }
 
 .benefit-item:hover .benefit-icon i {
   color: var(--color-white);
 }
 
+/* Текст преимущества */
 .benefit-info {
   flex: 1;
 }
 
 .benefit-info h3 {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: var(--font-weight-bold);
   color: var(--color-dark-gray);
+  margin-bottom: 12px;
+  transition: color 0.3s var(--ease-out);
 }
 
 .benefit-info p {
   color: var(--color-gray);
-  line-height: 1.6;
-  font-size: 14px;
+  line-height: 1.7;
+  font-size: 16px;
 }
 
-.benefits-image {
-  flex: 1;
-  position: relative;
+.benefit-item:hover .benefit-info h3 {
+  color: var(--color-orange-primary);
 }
 
-.benefits-image img {
-  border-radius: 8px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  height: auto;
+.highlight-text {
+  color: var(--color-orange-primary);
+  font-weight: var(--font-weight-bold);
 }
 
-
-.author-name {
-  font-weight: 700;
-  color: var(--color-dark-gray);
-  font-size: 14px;
-}
-
-.author-position {
-  font-size: 12px;
-  color: var(--color-gray);
-}
-
-
-.work-process {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  margin: 40px 0;
-  flex-wrap: wrap;
-}
-
-.process-step {
-  background: var(--color-white);
-  border-radius: 8px;
-  padding: 25px;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
-  flex: 1;
-  text-align: center;
-  position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  min-width: 200px;
-  margin-top: 20px;
-}
-
-.process-step:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-}
-
-.step-number {
+/* Стрелка действия */
+.benefit-action {
+  opacity: 0;
   position: absolute;
-  top: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--color-orange-primary);
-  color: var(--color-white);
+  right: 20px;
+  bottom: 20px;
   width: 30px;
   height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  font-weight: 700;
-  font-size: 14px;
-}
-
-.step-icon {
-  width: 60px;
-  height: 60px;
   background: var(--color-orange-ultra-light);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 20px;
-  transition: background-color 0.3s ease;
+  transform: translateY(10px);
+  transition: all 0.3s var(--ease-out);
 }
 
-.process-step:hover .step-icon {
-  background: var(--color-orange-primary);
-}
-
-.step-icon i {
-  font-size: 22px;
+.benefit-action i {
   color: var(--color-orange-primary);
-  transition: color 0.3s ease;
+  font-size: 12px;
 }
 
-.process-step:hover .step-icon i {
+.benefit-item:hover .benefit-action {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Изображение */
+.benefits-image {
+  position: relative;
+  z-index: 1;
+}
+
+.benefits-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  transition: transform 0.4s var(--ease-out);
+}
+
+.benefits-content:hover .benefits-image img {
+  transform: translateY(-8px);
+}
+
+/* Бейдж на изображении */
+.image-badge {
+  position: absolute;
+  top: -15px;
+  right: 30px;
+  padding: 10px 20px;
+  background: var(--gradient-orange);
   color: var(--color-white);
-}
-
-.process-step h3 {
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: var(--color-dark-gray);
-  font-size: 18px;
-}
-
-.process-step p {
-  color: var(--color-gray);
-  line-height: 1.5;
+  font-weight: var(--font-weight-bold);
   font-size: 14px;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(253, 121, 33, 0.3);
+  z-index: 2;
 }
 
-.work-action {
-  text-align: center;
-  margin-top: 40px;
+/* Адаптивность */
+@media (max-width: 992px) {
+  .benefits-section {
+    padding: 80px 0;
+  }
+  
+  .benefits-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 70px;
+  }
+  
+  /* В мобильной версии изображение всегда сверху, текст снизу */
+  .benefits-content .benefits-text,
+  .benefits-content.reverse .benefits-text {
+    order: 2;
+  }
+  
+  .benefits-content .benefits-image,
+  .benefits-content.reverse .benefits-image {
+    order: 1;
+  }
+  
+  .section-header {
+    margin-bottom: 50px;
+  }
+  
+  .section-header h2 {
+    font-size: 28px;
+  }
+  
+  .section-header p {
+    font-size: 16px;
+  }
+  
+  .benefit-item {
+    padding: 20px;
+  }
+  
+  .benefit-icon {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .benefit-icon i {
+    font-size: 18px;
+  }
+  
+  .benefit-info h3 {
+    font-size: 18px;
+  }
+  
+  .benefit-info p {
+    font-size: 14px;
+  }
 }
 
+@media (max-width: 576px) {
+  .benefits-section {
+    padding: 60px 0;
+  }
+  
+  .section-header h2 {
+    font-size: 24px;
+  }
+  
+  .benefit-item {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .benefit-icon {
+    margin-bottom: 0;
+  }
+  
+  .image-badge {
+    font-size: 12px;
+    padding: 8px 15px;
+    right: 15px;
+  }
+}
 /* Упрощенные стили для CTA блока */
 .cta-section {
   padding: 70px 0;
@@ -1262,8 +2170,8 @@
 
 /* Улучшения для секции процесса работы */
 .how-we-work-section {
-  padding: var(--spacing-12) 0; /* Уменьшил с spacing-16 для более компактного вида */
-  background: var(--color-orange-ultra-light);
+  padding: var(--spacing-12) 0;
+  background: linear-gradient(120deg, var(--color-white) 0%, var(--color-orange-ultra-light) 100%);
   position: relative;
   z-index: 1;
   overflow: hidden;
@@ -1272,15 +2180,64 @@
 .how-we-work-section::before {
   content: "";
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 300px;
-  height: 300px;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
   background: var(--color-orange-light);
   border-radius: var(--radius-full);
+  opacity: 0.1;
+  filter: blur(70px);
+  z-index: 0;
+}
+
+/* Декоративный элемент - круг в левом нижнем углу */
+.how-we-work-section::after {
+  content: "";
+  position: absolute;
+  bottom: -150px;
+  left: -150px;
+  width: 500px;
+  height: 500px;
+  background: var(--color-orange-primary);
+  border-radius: var(--radius-full);
   opacity: 0.05;
-  filter: blur(150px);
-  z-index: 1;
+  filter: blur(100px);
+  z-index: 0;
+}
+
+.how-we-work-section .container {
+  position: relative;
+}
+
+.how-we-work-section .container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(to right, var(--trans-orange-light) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--trans-orange-light) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.how-we-work-section .container::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  width: 200px;
+  height: 200px;
+  background-image: radial-gradient(var(--color-orange-primary) 2px, transparent 2px);
+  background-size: 20px 20px;
+  opacity: 0.2;
+  z-index: 0;
+  border-radius: var(--radius-full);
 }
 
 .work-process {
@@ -1292,6 +2249,27 @@
   z-index: 1;
   flex-wrap: wrap; /* Добавил для лучшей адаптивности */
   padding: 0 var(--spacing-3); /* Добавил отступы для мобильных устройств */
+}
+
+.work-process {
+  min-height: 300px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Декоративный луч света */
+.work-process::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%) rotate(15deg);
+  width: 120px;
+  height: 400px;
+  background: linear-gradient(to bottom, transparent, var(--color-orange-primary), transparent);
+  opacity: 0.03;
+  filter: blur(20px);
+  z-index: 0;
 }
 
 .process-step {
@@ -1503,37 +2481,93 @@
 }
 
 /* Улучшения для CTA секции */
+/* Улучшения для CTA секции */
 .cta-section {
-  padding: var(--spacing-12) 0; /* Уменьшил с spacing-16 для более компактного вида */
-  background: var(--color-orange-ultra-light);
+  padding: var(--spacing-12) 0;
+  background: linear-gradient(120deg, var(--color-white) 0%, var(--color-orange-ultra-light) 100%);
   position: relative;
   overflow: hidden;
   z-index: 1;
 }
 
+/* Декоративный элемент - круг в правом верхнем углу */
 .cta-section::before {
   content: "";
   position: absolute;
-  top: -50px;
-  right: -50px;
-  width: 300px;
-  height: 300px;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: var(--color-orange-light);
+  border-radius: var(--radius-full);
+  opacity: 0.1;
+  filter: blur(70px);
+  z-index: 0;
+}
+
+/* Декоративный элемент - круг в левом нижнем углу */
+.cta-section::after {
+  content: "";
+  position: absolute;
+  bottom: -150px;
+  left: -150px;
+  width: 500px;
+  height: 500px;
   background: var(--color-orange-primary);
   border-radius: var(--radius-full);
   opacity: 0.05;
   filter: blur(100px);
+  z-index: 0;
+}
+
+/* Декоративная сетка */
+.cta-section .container {
+  position: relative;
+}
+
+.cta-section .container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(to right, var(--trans-orange-light) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--trans-orange-light) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Декоративные точки */
+.cta-section .container::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  width: 200px;
+  height: 200px;
+  background-image: radial-gradient(var(--color-orange-primary) 2px, transparent 2px);
+  background-size: 20px 20px;
+  opacity: 0.2;
+  z-index: 0;
+  border-radius: var(--radius-full);
 }
 
 .cta-box {
   background: var(--color-white);
-  border-radius: var(--radius-lg); /* Уменьшил с radius-xl для лучшей согласованности */
-  padding: var(--spacing-8); /* Уменьшил с spacing-10 для более компактного вида */
-  box-shadow: var(--shadow-lg); /* Уменьшил с shadow-xl для более сдержанной тени */
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-8);
+  box-shadow: var(--shadow-lg);
   text-align: center;
   position: relative;
   z-index: 1;
-  margin: 0 var(--spacing-3); /* Добавил отступы для мобильных устройств */
+  margin: 0 var(--spacing-3);
+  border: 1px solid rgba(253, 121, 33, 0.1);
 }
+
 
 .cta-label {
   display: inline-block;

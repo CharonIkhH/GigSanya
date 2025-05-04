@@ -27,8 +27,10 @@
 	<link rel="stylesheet" href="assets/templates/libs/animate/animate.css">
 	<link rel="stylesheet" href="assets/templates/libs/magnific/magnific-popup.css">
 	<link rel="stylesheet" href="assets/templates/libs/owl.carousel/owl.carousel.css">
-	<link rel="stylesheet" href="assets/templates/libs/fontawesome5/web-fonts-with-css/css/fontawesome-all.min.css">
-	<link rel="stylesheet" href="assets/templates/fonts/icon/css/icon.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" 
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer">	<link rel="stylesheet" href="assets/templates/fonts/icon/css/icon.css">
 	<!--<link rel="stylesheet" href="assets/templates/fonts/icons2/css/fontello.css">-->
 	
 	<link rel="stylesheet" href="/core/components/font-awesome/css/font-awesome.min.css">
@@ -38,6 +40,10 @@
 	<link rel="stylesheet" href="assets/templates/css/voffice.css">
 	<link rel="stylesheet" href="assets/templates/css/root.css">
 	<link rel="stylesheet" href="assets/templates/css/header.css">
+  <script src="app.js"></script>
+    <script src="amo-form.js"></script>
+    <script src="modal.js"></script>
+    <script src="amocrm_token.js"></script>
 
 	<script src="assets/templates/libs/modernizr/modernizr.js"></script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -94,774 +100,1763 @@
     	 <!-- ============================================= -->
     <!-- HEADER SECTION                                -->
     <!-- ============================================= -->
-<div class="container">
-  <header class="header-modern" id="main-header">
+ <!-- Структура хедера с улучшенной семантикой и микроразметкой -->
+ <div class="container">
+  <header class="header-modern" id="main-header" itemscope itemtype="http://schema.org/WPHeader">
     <div class="header-wrapper">
-      <!-- Логотип -->
-      <div class="logo-box">
-        <a href="index.htm" class="logo-link">
-          <img src="assets/templates/img/logo.png" alt="GigSys Logo">
+      <!-- Логотип с улучшенными атрибутами -->
+      <div class="logo-box" itemscope itemtype="http://schema.org/Organization">
+        <a href="index.htm" class="logo-link" title="GigSys - IT аутсорсинг и поддержка бизнеса">
+          <img src="assets/templates/img/logo2.webp" alt="GigSys - IT-аутсорсинг и поддержка" width="180" height="50" itemprop="logo" loading="eager">
+          <meta itemprop="name" content="GigSys">
+          <meta itemprop="url" content="https://gigsys.ru">
         </a>
       </div>
       
-      <!-- Главная навигация (десктоп) -->
-      <nav class="desktop-nav">
-        <ul class="main-menu">
-          <li class="active"><a href="index.htm">Главная</a></li>
-          <li><a href="o-kompanii.html">О компании</a></li>
-          <li><a href="novosti/index.htm">Новости</a></li>
-          <li class="menu-item-has-children">
-              <a href="#" class="services-toggle">
-                <span class="toggle-icon"><i class="fa fa-th-large"></i></span>
-                <span class="toggle-text">Услуги</span>
-                <span class="toggle-arrow"><i class="fa fa-chevron-down"></i></span>
-              </a>
+      <!-- Главная навигация (десктоп) с микроразметкой -->
+      <nav class="desktop-nav" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="Основная навигация">
+        <ul class="main-menu" role="menubar">
+          <li class="active" role="menuitem"><a href="index.htm" itemprop="url"><span itemprop="name">Главная</span></a></li>
+          <li role="menuitem"><a href="o-kompanii.html" itemprop="url"><span itemprop="name">О компании</span></a></li>
+          <li role="menuitem"><a href="landing.html" itemprop="url"><span itemprop="name">Мероприятия</span></a></li>
+          <li class="menu-item-has-children" role="menuitem">
+            <a href="#" class="services-toggle" 
+               aria-haspopup="true" 
+               aria-expanded="false"
+               aria-controls="mega-menu-services"
+               itemprop="url">
+              <span class="toggle-icon"><i class="fas fa-th-large" aria-hidden="true"></i></span>
+              <span class="toggle-text" itemprop="name">Услуги</span>
+              <span class="toggle-arrow"><i class="fas fa-chevron-down" aria-hidden="true"></i></span>
+            </a>
+            
+            <!-- Мега-меню с улучшенной семантикой -->
+            <div class="mega-menu" id="mega-menu-services" role="region" aria-label="Меню услуг">
+              <!-- Мобильная кнопка закрытия -->
+              <button class="mega-menu-close d-md-none" aria-label="Закрыть меню">
+                <i class="fas fa-times" aria-hidden="true"></i>
+              </button>
               
-              <div class="mega-menu">
-                <!-- Мобильная кнопка закрытия -->
-                <button class="mega-menu-close d-md-none">
-                  <i class="fa fa-times"></i>
-                </button>
-                
-                <!-- Верхняя навигация по меню -->
-                <div class="mega-menu-header">
-                  <div class="container">
-                    <div class="menu-categories">
-                      <button class="menu-category active" data-category="it">ИТ-услуги</button>
-                      <button class="menu-category" data-category="infra">Инфраструктура</button>
-                      <button class="menu-category" data-category="security">Безопасность</button>
-                      <button class="menu-category" data-category="software">ПО и разработка</button>
-                    </div>
+              <!-- Верхняя навигация по меню с микроразметкой и улучшенной доступностью -->
+              <div class="mega-menu-header">
+                <div class="container">
+                  <div class="menu-categories" role="tablist" aria-label="Категории услуг">
+                    <button class="menu-category active" 
+                            data-category="it" 
+                            role="tab" 
+                            id="tab-it" 
+                            aria-selected="true" 
+                            aria-controls="panel-it">ИТ-услуги</button>
+                    <button class="menu-category" 
+                            data-category="infra" 
+                            role="tab" 
+                            id="tab-infra" 
+                            aria-selected="false" 
+                            aria-controls="panel-infra">Инфраструктура</button>
+                    <button class="menu-category" 
+                            data-category="security" 
+                            role="tab" 
+                            id="tab-security" 
+                            aria-selected="false" 
+                            aria-controls="panel-security">Безопасность</button>
+                    <button class="menu-category" 
+                            data-category="software" 
+                            role="tab" 
+                            id="tab-software" 
+                            aria-selected="false" 
+                            aria-controls="panel-software">ПО и сервисы</button>
                   </div>
                 </div>
-                
-                <!-- Основной контент меню -->
-                <div class="mega-menu-content">
-                  <div class="container">
-                    <!-- ИТ-услуги -->
-                    <div class="menu-panel active" data-panel="it">
-                      <div class="menu-panel-grid">
-                        <div class="menu-column">
-                          <div class="menu-group">
-                            <h4 class="menu-group-title">
-                              <i class="fa fa-headset"></i>
-                              Поддержка и аутсорсинг
-                            </h4>
-                            <ul class="menu-list">
-                              <li>
-                                <a href="it-support.html">
-                                  <span class="link-icon"><i class="fa fa-user-headset"></i></span>
-                                  <span class="link-content">
-                                    <span class="link-title">IT-поддержка 24/7</span>
-                                    <span class="link-desc">Круглосуточная техническая поддержка</span>
-                                  </span>
-                                </a>
-                              </li>
-                              <li>
-                                <a href="it-autsorsing.html">
-                                  <span class="link-icon"><i class="fa fa-users-cog"></i></span>
-                                  <span class="link-content">
-                                    <span class="link-title">IT-аутсорсинг</span>
-                                    <span class="link-desc">Комплексное обслуживание инфраструктуры</span>
-                                  </span>
-                                </a>
-                              </li>
-                              <li>
-                                <a href="specialists.html">
-                                  <span class="link-icon"><i class="fa fa-user-tie"></i></span>
-                                  <span class="link-content">
-                                    <span class="link-title">Специалисты на аутсорсинг</span>
-                                    <span class="link-desc">Привлечение экспертов под задачи</span>
-                                  </span>
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                        
-                        <div class="menu-column">
-                          <div class="menu-group">
-                            <h4 class="menu-group-title">
-                              <i class="fa fa-tools"></i>
-                              Обслуживание техники
-                            </h4>
-                            <ul class="menu-list">
-                              <li>
-                                <a href="computer-repair.html">
-                                  <span class="link-icon"><i class="fa fa-desktop"></i></span>
-                                  <span class="link-content">
-                                    <span class="link-title">Ремонт компьютеров</span>
-                                    <span class="link-desc">Диагностика и устранение неисправностей</span>
-                                  </span>
-                                </a>
-                              </li>
-                              <li>
-                                <a href="office-equipment.html">
-                                  <span class="link-icon"><i class="fa fa-print"></i></span>
-                                  <span class="link-content">
-                                    <span class="link-title">Оргтехника</span>
-                                    <span class="link-desc">Обслуживание принтеров и МФУ</span>
-                                  </span>
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                        
-                        <div class="menu-panel-highlight">
-                          <div class="highlight-content">
-                            <div class="highlight-badge">Популярное</div>
-                            <h3>Комплексный IT-аутсорсинг</h3>
-                            <p>Полное обслуживание IT-инфраструктуры вашей компании. Экономия до 30% на IT-затратах.</p>
-                            <a href="it-outsourcing-plus.html" class="highlight-btn">
-                              Подробнее
-                              <i class="fa fa-long-arrow-right"></i>
-                            </a>
-                          </div>
+              </div>
+
+              <!-- Основной контент меню с микроразметкой для каждой услуги -->
+              <div class="mega-menu-content">
+                <div class="container">
+                  <!-- ИТ-услуги -->
+                  <div class="menu-panel active" 
+                       data-panel="it" 
+                       role="tabpanel" 
+                       id="panel-it" 
+                       aria-labelledby="tab-it">
+                    <div class="menu-panel-grid">
+                      <div class="menu-column">
+                        <div class="menu-group">
+                          <h4 class="menu-group-title">
+                            <i class="fas fa-hands-helping" aria-hidden="true"></i>
+                            Поддержка и аутсорсинг
+                          </h4>
+                          <ul class="menu-list" role="menu">
+                            <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                              <a href="it-support.html">
+                                <span class="link-icon"><i class="fas fa-headset" aria-hidden="true"></i></span>
+                                <span class="link-content">
+                                  <span class="link-title" itemprop="name">IT-поддержка</span>
+                                  <span class="link-desc" itemprop="description">Профессиональная поддержка вашего бизнеса</span>
+                                  <meta itemprop="serviceType" content="IT Support">
+                                </span>
+                              </a>
+                            </li>
+                            <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                              <a href="it-podderzhka.html">
+                                <span class="link-icon"><i class="fas fa-users-cog" aria-hidden="true"></i></span>
+                                <span class="link-content">
+                                  <span class="link-title" itemprop="name">IT-аутсорсинг</span>
+                                  <span class="link-desc" itemprop="description">Комплексное обслуживание инфраструктуры</span>
+                                  <meta itemprop="serviceType" content="IT Outsourcing">
+                                </span>
+                              </a>
+                            </li>
+                            <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                              <a href="virtual-office.html">
+                                <span class="link-icon"><i class="fas fa-laptop-house" aria-hidden="true"></i></span>
+                                <span class="link-content">
+                                  <span class="link-title" itemprop="name">Виртуальный офис</span>
+                                  <span class="link-desc" itemprop="description">Защищенное рабочее пространство</span>
+                                  <meta itemprop="serviceType" content="Virtual Office">
+                                </span>
+                              </a>
+                            </li>
+                          </ul>
                         </div>
                       </div>
-                    </div>
-                    
-                    <!-- Инфраструктура -->
-                    <div class="menu-panel" data-panel="infra">
-                      <div class="menu-panel-grid">
-                        <div class="menu-column">
-                          <div class="menu-group">
-                            <h4 class="menu-group-title">
-                              <i class="fa fa-server"></i>
-                              Серверы и системы
-                            </h4>
-                            <ul class="menu-list">
-                              <li>
-                                <a href="server-configuration.html">
-                                  <span class="link-icon"><i class="fa fa-cogs"></i></span>
-                                  <span class="link-content">
-                                    <span class="link-title">Настройка серверов</span>
-                                    <span class="link-desc">Установка и конфигурация серверного ПО</span>
-                                  </span>
-                                </a>
-                              </li>
-                              <li>
-                                <a href="server-maintenance.html">
-                                  <span class="link-icon"><i class="fa fa-wrench"></i></span>
-                                  <span class="link-content">
-                                    <span class="link-title">Обслуживание серверов</span>
-                                    <span class="link-desc">Техническая поддержка и мониторинг</span>
-                                  </span>
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                        
-                        <div class="menu-column">
-                          <div class="menu-group">
-                            <h4 class="menu-group-title">
-                              <i class="fa fa-hdd"></i>
-                              Хранение данных
-                            </h4>
-                            <ul class="menu-list">
-                              <li>
-                                <a href="data-storage.html">
-                                  <span class="link-icon"><i class="fa fa-database"></i></span>
-                                  <span class="link-content">
-                                    <span class="link-title">Системы хранения данных</span>
-                                    <span class="link-desc">Надежные решения для хранения информации</span>
-                                  </span>
-                                </a>
-                              </li>
-                              <li>
-                                <a href="backup-solutions.html">
-                                  <span class="link-icon"><i class="fa fa-copy"></i></span>
-                                  <span class="link-content">
-                                    <span class="link-title">Резервное копирование</span>
-                                    <span class="link-desc">Защита от потери данных</span>
-                                  </span>
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                        
-                        <div class="menu-panel-highlight infra-highlight">
-                          <div class="highlight-content">
-                            <div class="highlight-badge">Выгодно</div>
-                            <h3>Виртуальный сервер</h3>
-                            <p>Мощные облачные серверы для ваших бизнес-задач с гарантией отказоустойчивости 99.9%</p>
-                            <a href="virtual-server.html" class="highlight-btn">
-                              Подробнее
-                              <i class="fa fa-long-arrow-right"></i>
-                            </a>
-                          </div>
+                      
+                      <div class="menu-column">
+                        <div class="menu-group">
+                          <h4 class="menu-group-title">
+                            <i class="fas fa-info-circle" aria-hidden="true"></i>
+                            О компании
+                          </h4>
+                          <ul class="menu-list" role="menu">
+                            <li role="menuitem">
+                              <a href="o-kompanii.html">
+                                <span class="link-icon"><i class="fas fa-building" aria-hidden="true"></i></span>
+                                <span class="link-content">
+                                  <span class="link-title">О нас</span>
+                                  <span class="link-desc">История и ценности компании</span>
+                                </span>
+                              </a>
+                            </li>
+                            <li role="menuitem">
+                              <a href="kontaktyi.html">
+                                <span class="link-icon"><i class="fas fa-address-card" aria-hidden="true"></i></span>
+                                <span class="link-content">
+                                  <span class="link-title">Контакты</span>
+                                  <span class="link-desc">Свяжитесь с нашими специалистами</span>
+                                </span>
+                              </a>
+                            </li>
+                            <li role="menuitem">
+                              <a href="landing.html">
+                                <span class="link-icon"><i class="fas fa-newspaper" aria-hidden="true"></i></span>
+                                <span class="link-content">
+                                  <span class="link-title">Мероприятияspan>
+                                  <span class="link-desc">Актуальные события</span>
+                                </span>
+                              </a>
+                            </li>
+                          </ul>
                         </div>
                       </div>
-                    </div>
-                    
-                    <!-- Безопасность -->
-                    <div class="menu-panel" data-panel="security">
-                      <div class="menu-panel-grid">
-                        <div class="menu-column">
-                          <div class="menu-group">
-                            <h4 class="menu-group-title">
-                              <i class="fa fa-shield-alt"></i>
-                              Кибербезопасность
-                            </h4>
-                            <ul class="menu-list">
-                              <li>
-                                <a href="information-security.html">
-                                  <span class="link-icon"><i class="fa fa-lock"></i></span>
-                                  <span class="link-content">
-                                    <span class="link-title">Информационная безопасность</span>
-                                    <span class="link-desc">Комплексная защита IT-систем</span>
-                                  </span>
-                                </a>
-                              </li>
-                              <li>
-                                <a href="antivirus-protection.html">
-                                  <span class="link-icon"><i class="fa fa-virus-slash"></i></span>
-                                  <span class="link-content">
-                                    <span class="link-title">Антивирусная защита</span>
-                                    <span class="link-desc">Эффективные решения против вредоносного ПО</span>
-                                  </span>
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                        
-                        <div class="menu-column">
-                          <div class="menu-group">
-                            <h4 class="menu-group-title">
-                              <i class="fa fa-video"></i>
-                              Физическая безопасность
-                            </h4>
-                            <ul class="menu-list">
-                              <li>
-                                <a href="video-surveillance.html">
-                                  <span class="link-icon"><i class="fa fa-camera"></i></span>
-                                  <span class="link-content">
-                                    <span class="link-title">Видеонаблюдение</span>
-                                    <span class="link-desc">Системы видеонаблюдения для офисов</span>
-                                  </span>
-                                </a>
-                              </li>
-                              <li>
-                                <a href="access-control.html">
-                                  <span class="link-icon"><i class="fa fa-key"></i></span>
-                                  <span class="link-content">
-                                    <span class="link-title">Контроль доступа</span>
-                                    <span class="link-desc">СКУД для вашего бизнеса</span>
-                                  </span>
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                        
-                        <div class="menu-panel-highlight security-highlight">
-                          <div class="highlight-content">
-                            <div class="highlight-badge">Новинка</div>
-                            <h3>Защита от DDoS-атак</h3>
-                            <p>Непрерывная защита вашего сайта и онлайн-сервисов от распределенных атак</p>
-                            <a href="ddos-protection.html" class="highlight-btn">
-                              Подробнее
-                              <i class="fa fa-long-arrow-right"></i>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <!-- ПО и разработка -->
-                    <div class="menu-panel" data-panel="software">
-                      <div class="menu-panel-grid">
-                        <div class="menu-column">
-                          <div class="menu-group">
-                            <h4 class="menu-group-title">
-                              <i class="fa fa-laptop-code"></i>
-                              Разработка
-                            </h4>
-                            <ul class="menu-list">
-                              <li>
-                                <a href="website-development.html">
-                                  <span class="link-icon"><i class="fa fa-globe"></i></span>
-                                  <span class="link-content">
-                                    <span class="link-title">Разработка сайтов</span>
-                                    <span class="link-desc">Создание современных веб-сайтов</span>
-                                  </span>
-                                </a>
-                              </li>
-                              <li>
-                                <a href="software-development.html">
-                                  <span class="link-icon"><i class="fa fa-code"></i></span>
-                                  <span class="link-content">
-                                    <span class="link-title">Разработка ПО</span>
-                                    <span class="link-desc">Программное обеспечение под заказ</span>
-                                  </span>
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                        
-                        <div class="menu-column">
-                          <div class="menu-group">
-                            <h4 class="menu-group-title">
-                              <i class="fa fa-calculator"></i>
-                              Бизнес-приложения
-                            </h4>
-                            <ul class="menu-list">
-                              <li>
-                                <a href="1c-services.html">
-                                  <span class="link-icon"><i class="fa fa-calculator"></i></span>
-                                  <span class="link-content">
-                                    <span class="link-title">Услуги 1С</span>
-                                    <span class="link-desc">Внедрение и поддержка 1С</span>
-                                  </span>
-                                </a>
-                              </li>
-                              <li>
-                                <a href="crm-systems.html">
-                                  <span class="link-icon"><i class="fa fa-users"></i></span>
-                                  <span class="link-content">
-                                    <span class="link-title">CRM-системы</span>
-                                    <span class="link-desc">Автоматизация работы с клиентами</span>
-                                  </span>
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                        
-                        <div class="menu-panel-highlight software-highlight">
-                          <div class="highlight-content">
-                            <div class="highlight-badge">Акция</div>
-                            <h3>1С в облаке</h3>
-                            <p>Аренда 1С с доступом из любой точки мира. Первый месяц бесплатно!</p>
-                            <a href="1c-cloud.html" class="highlight-btn">
-                              Подробнее
-                              <i class="fa fa-long-arrow-right"></i>
-                            </a>
-                          </div>
+                      
+                      <!-- Выделенное предложение с микроразметкой -->
+                      <div class="menu-panel-highlight" itemscope itemtype="http://schema.org/Offer">
+                        <div class="highlight-content">
+                          <div class="highlight-badge">Популярное</div>
+                          <h3 itemprop="name">Выгодный IT-аутсорсинг</h3>
+                          <p itemprop="description">Альтернатива штатным специалистам. Экономия до 30% на IT-затратах.</p>
+                          <a href="it-poddergka.html" class="highlight-btn" itemprop="url">
+                            Подробнее
+                            <i class="fas fa-long-arrow-right" aria-hidden="true"></i>
+                          </a>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                
-                <!-- Футер меню -->
-                <div class="mega-menu-footer">
-                  <div class="container">
-                    <div class="mm-footer-content">
-                      <div class="mm-footer-cta">
-                        <p>Нужна консультация специалиста?</p>
-                        <a href="consultation.html" class="mm-cta-btn">
-                          <i class="fa fa-phone-alt"></i>
-                          Получить консультацию
-                        </a>
+                  
+                  <!-- Инфраструктура -->
+                  <div class="menu-panel" 
+                       data-panel="infra" 
+                       role="tabpanel" 
+                       id="panel-infra" 
+                       aria-labelledby="tab-infra">
+                    <div class="menu-panel-grid">
+                      <div class="menu-column">
+                        <div class="menu-group">
+                          <h4 class="menu-group-title">
+                            <i class="fas fa-server" aria-hidden="true"></i>
+                            Серверы и сети
+                          </h4>
+                          <ul class="menu-list" role="menu">
+                            <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                              <a href="obsluzhivanie-serverov.html">
+                                <span class="link-icon"><i class="fas fa-wrench" aria-hidden="true"></i></span>
+                                <span class="link-content">
+                                  <span class="link-title" itemprop="name">Обслуживание серверов</span>
+                                  <span class="link-desc" itemprop="description">Техническая поддержка и мониторинг</span>
+                                  <meta itemprop="serviceType" content="Server Maintenance">
+                                </span>
+                              </a>
+                            </li>
+                            <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                              <a href="montazh-kompyuternykh-setey.html">
+                                <span class="link-icon"><i class="fas fa-network-wired" aria-hidden="true"></i></span>
+                                <span class="link-content">
+                                  <span class="link-title" itemprop="name">Монтаж компьютерных сетей</span>
+                                  <span class="link-desc" itemprop="description">Проектирование и развертывание сетей</span>
+                                  <meta itemprop="serviceType" content="Network Installation">
+                                </span>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
                       </div>
-                      <div class="mm-footer-links">
-                        <a href="all-services.html">Все услуги</a>
-                        <a href="price-list.html">Прайс-лист</a>
-                        <a href="service-packages.html">Пакеты услуг</a>
+                      
+                      <div class="menu-column">
+                        <div class="menu-group">
+                          <h4 class="menu-group-title">
+                            <i class="fas fa-cloud" aria-hidden="true"></i>
+                            Облачные решения
+                          </h4>
+                          <ul class="menu-list" role="menu">
+                            <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                              <a href="hosting.html">
+                                <span class="link-icon"><i class="fas fa-server" aria-hidden="true"></i></span>
+                                <span class="link-content">
+                                  <span class="link-title" itemprop="name">Хостинг</span>
+                                  <span class="link-desc" itemprop="description">Надежный хостинг для ваших проектов</span>
+                                  <meta itemprop="serviceType" content="Hosting">
+                                </span>
+                              </a>
+                            </li>
+                            <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                              <a href="virtual-office.html">
+                                <span class="link-icon"><i class="fas fa-desktop" aria-hidden="true"></i></span>
+                                <span class="link-content">
+                                  <span class="link-title" itemprop="name">Виртуальный офис</span>
+                                  <span class="link-desc" itemprop="description">Работа из любой точки мира</span>
+                                  <meta itemprop="serviceType" content="Virtual Office">
+                                </span>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      
+                      <!-- Выделенное предложение с микроразметкой -->
+                      <div class="menu-panel-highlight infra-highlight" itemscope itemtype="http://schema.org/Offer">
+                        <div class="highlight-content">
+                          <div class="highlight-badge">Выгодно</div>
+                          <h3 itemprop="name">Обслуживание серверов</h3>
+                          <p itemprop="description">Профессиональное администрирование и мониторинг с гарантией 99.9% работоспособности</p>
+                          <a href="obsluzhivanie-serverov.html" class="highlight-btn" itemprop="url">
+                            Подробнее
+                            <i class="fas fa-long-arrow-right" aria-hidden="true"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Безопасность -->
+                  <div class="menu-panel" 
+                       data-panel="security" 
+                       role="tabpanel" 
+                       id="panel-security" 
+                       aria-labelledby="tab-security">
+                    <div class="menu-panel-grid">
+                      <div class="menu-column">
+                        <div class="menu-group">
+                          <h4 class="menu-group-title">
+                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                            Кибербезопасность
+                          </h4>
+                          <ul class="menu-list" role="menu">
+                            <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                              <a href="it-podderzhka.html#security">
+                                <span class="link-icon"><i class="fas fa-lock" aria-hidden="true"></i></span>
+                                <span class="link-content">
+                                  <span class="link-title" itemprop="name">Информационная безопасность</span>
+                                  <span class="link-desc" itemprop="description">Комплексная защита IT-систем</span>
+                                  <meta itemprop="serviceType" content="Information Security">
+                                </span>
+                              </a>
+                            </li>
+                            <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                              <a href="virtual-office.html">
+                                <span class="link-icon"><i class="fas fa-virus-slash" aria-hidden="true"></i></span>
+                                <span class="link-content">
+                                  <span class="link-title" itemprop="name">Защищенный офис</span>
+                                  <span class="link-desc" itemprop="description">Безопасное рабочее пространство</span>
+                                  <meta itemprop="serviceType" content="Secure Office">
+                                </span>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      
+                      <div class="menu-column">
+                        <div class="menu-group">
+                          <h4 class="menu-group-title">
+                            <i class="fas fa-video" aria-hidden="true"></i>
+                            Физическая безопасность
+                          </h4>
+                          <ul class="menu-list" role="menu">
+                            <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                              <a href="ustanovka-videonablyudeniya.html">
+                                <span class="link-icon"><i class="fas fa-camera" aria-hidden="true"></i></span>
+                                <span class="link-content">
+                                  <span class="link-title" itemprop="name">Видеонаблюдение</span>
+                                  <span class="link-desc" itemprop="description">Установка камер в офисы</span>
+                                  <meta itemprop="serviceType" content="Video Surveillance">
+                                </span>
+                              </a>
+                            </li>
+                            <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                              <a href="montazh-kompyuternykh-setey.html#security">
+                                <span class="link-icon"><i class="fas fa-key" aria-hidden="true"></i></span>
+                                <span class="link-content">
+                                  <span class="link-title" itemprop="name">Защита сетей</span>
+                                  <span class="link-desc" itemprop="description">Безопасность сетевой инфраструктуры</span>
+                                  <meta itemprop="serviceType" content="Network Security">
+                                </span>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      
+                      <!-- Выделенное предложение с микроразметкой -->
+                      <div class="menu-panel-highlight security-highlight" itemscope itemtype="http://schema.org/Offer">
+                        <div class="highlight-content">
+                          <div class="highlight-badge">Рекомендуем</div>
+                          <h3 itemprop="name">Установка видеонаблюдения</h3>
+                          <p itemprop="description">Современные системы видеонаблюдения для вашего офиса с удаленным доступом</p>
+                          <a href="ustanovka-videonablyudeniya.html" class="highlight-btn" itemprop="url">
+                            Подробнее
+                            <i class="fas fa-long-arrow-right" aria-hidden="true"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- ПО и сервисы -->
+                  <div class="menu-panel" 
+                       data-panel="software" 
+                       role="tabpanel" 
+                       id="panel-software" 
+                       aria-labelledby="tab-software">
+                    <div class="menu-panel-grid">
+                      <div class="menu-column">
+                        <div class="menu-group">
+                          <h4 class="menu-group-title">
+                            <i class="fas fa-laptop-code" aria-hidden="true"></i>
+                            Разработка
+                          </h4>
+                          <ul class="menu-list" role="menu">
+                            <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                              <a href="landing.html">
+                                <span class="link-icon"><i class="fas fa-globe" aria-hidden="true"></i></span>
+                                <span class="link-content">
+                                  <span class="link-title" itemprop="name">Разработка лендингов</span>
+                                  <span class="link-desc" itemprop="description">Создание продающих страниц</span>
+                                  <meta itemprop="serviceType" content="Landing Page Development">
+                                </span>
+                              </a>
+                            </li>
+                            <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                              <a href="virtual-office.html#solutions">
+                                <span class="link-icon"><i class="fas fa-code" aria-hidden="true"></i></span>
+                                <span class="link-content">
+                                  <span class="link-title" itemprop="name">Облачные решения</span>
+                                  <span class="link-desc" itemprop="description">Программные продукты для бизнеса</span>
+                                  <meta itemprop="serviceType" content="Cloud Solutions">
+                                </span>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      
+                      <div class="menu-column">
+                        <div class="menu-group">
+                          <h4 class="menu-group-title">
+                            <i class="fas fa-calculator" aria-hidden="true"></i>
+                            Бизнес-приложения
+                          </h4>
+                          <ul class="menu-list" role="menu">
+                            <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                              <a href="uslugi-1c.html">
+                                <span class="link-icon"><i class="fas fa-calculator" aria-hidden="true"></i></span>
+                                <span class="link-content">
+                                  <span class="link-title" itemprop="name">Услуги 1С</span>
+                                  <span class="link-desc" itemprop="description">Внедрение и поддержка 1С</span>
+                                  <meta itemprop="serviceType" content="1C Services">
+                                </span>
+                              </a>
+                            </li>
+                            <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                              <a href="prostoe-reshenie-slozhnyix-zadach.html">
+                                <span class="link-icon"><i class="fas fa-cloud-download-alt" aria-hidden="true"></i></span>
+                                <span class="link-content">
+                                  <span class="link-title" itemprop="name">1С ФРЕШ</span>
+                                  <span class="link-desc" itemprop="description">Преимущества облачной 1С</span>
+                                  <meta itemprop="serviceType" content="1C Fresh">
+                                </span>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      
+                      <!-- Выделенное предложение с микроразметкой -->
+                      <div class="menu-panel-highlight software-highlight" itemscope itemtype="http://schema.org/Offer">
+                        <div class="highlight-content">
+                          <div class="highlight-badge">Акция</div>
+                          <h3 itemprop="name">1С ФРЕШ в облаке</h3>
+                          <p itemprop="description">Простое решение сложных задач. Преимущества облачной версии 1С.</p>
+                          <a href="prostoe-reshenie-slozhnyix-zadach.html" class="highlight-btn" itemprop="url">
+                            Подробнее
+                            <i class="fas fa-long-arrow-right" aria-hidden="true"></i>
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </li>
-          <li><a href="kontaktyi.html">Контакты</a></li>
+              
+              <!-- Футер меню с микроразметкой -->
+              <div class="mega-menu-footer">
+                <div class="container">
+                  <div class="mm-footer-content">
+                    <div class="mm-footer-cta">
+                      <p>Нужна консультация специалиста?</p>
+                      <a href="kontaktyi.html" class="mm-cta-btn" itemscope itemtype="http://schema.org/ContactPoint">
+                        <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                        <span itemprop="name">Получить консультацию</span>
+                        <meta itemprop="contactType" content="customer support">
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li role="menuitem"><a href="kontaktyi.html" itemprop="url"><span itemprop="name">Контакты</span></a></li>
         </ul>
       </nav>
       
-      <!-- Контактная информация - в один столбец и с обновленным дизайном -->
-      <div class="header-contacts">
+      <!-- Контактная информация с микроразметкой -->
+      <div class="header-contacts" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="GigSys">
         <div class="contact-item">
           <a href="#map-modal" class="popup-with-form contact-link">
             <div class="contact-icon">
-              <i class="fa fa-map-marker-alt"></i>
+              <i class="fa fa-map-marker-alt" aria-hidden="true"></i>
             </div>
             <div class="contact-text">
               <div class="contact-label">Адрес офиса</div>
-              <div class="contact-info">г. Москва, Ракетный бульвар, д.15</div>
+              <div class="contact-info" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                <span itemprop="addressLocality">г. Москва</span>, 
+                <span itemprop="streetAddress">Ракетный бульвар, д.15, оф.31</span>
+              </div>
             </div>
           </a>
         </div>
         
         <div class="contact-item">
-          <a href="tel:88003501160" class="contact-link">
+          <a href="tel:88003501160" class="contact-link" itemprop="telephone">
             <div class="contact-icon">
-              <i class="fa fa-phone-alt"></i>
+              <i class="fa fa-phone-alt" aria-hidden="true"></i>
             </div>
             <div class="contact-text">
               <div class="contact-label">Телефон</div>
-              <div class="contact-info">8 (800) 350-11-60</div>
+              <div class="contact-info">8 (499) 350-11-60</div>
             </div>
           </a>
         </div>
+        
+        <!-- Добавление скрытых полей для SEO -->
+        <meta itemprop="email" content="it@gigsys.ru">
+        <meta itemprop="url" content="https://gigsys.ru">
+        <meta itemprop="foundingDate" content="2010">
       </div>
       
       <!-- CTA Buttons с вертикальным расположением -->
       <div class="header-actions vertical">
-        <a href="#callback" class="btn btn-primary popup-with-form">
-          <i class="fa fa-headset"></i>
+        <a href="#callback" class="btn btn-primary popup-with-form" rel="nofollow">
+          <i class="fas fa-headset" aria-hidden="true"></i>
           <span>Заказать звонок</span>
         </a>
         
-        <a href="http://lk.gigsys.ru/hd/customer.pl" target="_blank" class="btn btn-outline">
-          <i class="fa fa-user-circle"></i>
+        <a href="http://lk.gigsys.ru/hd/customer.pl" target="_blank" class="btn btn-outline" rel="noopener">
+          <i class="fas fa-user-circle" aria-hidden="true"></i>
           <span>Личный кабинет</span>
         </a>
       </div>
       
       <!-- Мобильное меню (бургер) -->
-      <div class="mobile-menu-toggle">
+      <button class="mobile-menu-toggle" 
+              aria-label="Открыть меню" 
+              aria-expanded="false" 
+              aria-controls="mobile-menu">
         <div class="hamburger">
           <span></span>
           <span></span>
           <span></span>
         </div>
-      </div>
+      </button>
     </div>
     
-    <!-- Мобильное меню (выпадающее) -->
-    <div class="mobile-menu">
+    <!-- Мобильное меню (выпадающее) с улучшенной доступностью -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
       <div class="mobile-menu-header">
         <div class="mobile-logo">
-          <a href="index.htm"><img src="assets/templates/img/logo.png" alt="GigSys Logo"></a>
+          <a href="index.htm">
+            <img src="assets/templates/img/logo.png" alt="GigSys - IT аутсорсинг" width="140" height="35" loading="lazy">
+          </a>
         </div>
-        <div class="mobile-menu-close">
-          <i class="fa fa-times"></i>
-        </div>
+        <button class="mobile-menu-close" aria-label="Закрыть меню">
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
       </div>
       
       <div class="mobile-menu-content">
         <div class="mobile-search">
-          <form action="">
-            <input type="text" placeholder="Поиск...">
-            <button type="submit"><i class="fa fa-search"></i></button>
+          <form action="search.html" method="get" role="search">
+            <input type="text" name="q" placeholder="Поиск..." aria-label="Поиск">
+            <button type="submit" aria-label="Искать"><i class="fa fa-search" aria-hidden="true"></i></button>
           </form>
         </div>
         
-        <nav class="mobile-nav">
+        <!-- Мобильная навигация с микроразметкой -->
+        <nav class="mobile-nav" itemscope itemtype="http://schema.org/SiteNavigationElement">
           <ul>
-            <li class="active"><a href="index.htm">Главная</a></li>
-            <li><a href="o-kompanii.html">О компании</a></li>
-            <li><a href="novosti/index.htm">Новости</a></li>
+            <li class="active"><a href="index.htm" itemprop="url"><span itemprop="name">Главная</span></a></li>
+            <li><a href="o-kompanii.html" itemprop="url"><span itemprop="name">О компании</span></a></li>
+            <li><a href="landing.html" itemprop="url"><span itemprop="name">Мероприятия</span></a></li>
             <li class="has-dropdown">
-              <a href="#">Услуги <i class="fa fa-chevron-down"></i></a>
+              <a href="#" aria-expanded="false" aria-haspopup="true">
+                <span itemprop="name">Услуги</span> <i class="fas fa-chevron-down" aria-hidden="true"></i>
+              </a>
               <ul class="mobile-submenu">
-                <li><a href="it-support.html"><i class="fa fa-headset"></i> IT-поддержка</a></li>
-                <li><a href="it-podderzhka.html"><i class="fa fa-tasks"></i> IT-аутсорсинг</a></li>
-                <li><a href="virtual-office.html"><i class="fa fa-shield-alt"></i> Защищенный офис</a></li>
-                <li><a href="obsluzhivanie-serverov.html"><i class="fa fa-server"></i> Серверы</a></li>
-                <li><a href="montazh-kompyuternykh-setey.html"><i class="fa fa-network-wired"></i> Офисные сети</a></li>
-                <li><a href="ustanovka-videonablyudeniya.html"><i class="fa fa-video"></i> Видеонаблюдение</a></li>
-                <li><a href="uslugi-1c.html"><i class="fa fa-calculator"></i> Услуги 1С</a></li>
-                <li><a href="hosting.html"><i class="fa fa-cloud"></i> Хостинг</a></li>
+                <li itemscope itemtype="http://schema.org/Service">
+                  <a href="it-support.html" itemprop="url">
+                    <i class="fas fa-hands-helping" aria-hidden="true"></i> 
+                    <span itemprop="name">IT-поддержка</span>
+                  </a>
+                </li>
+                <li itemscope itemtype="http://schema.org/Service">
+                  <a href="it-autsorsing.html" itemprop="url">
+                    <i class="fas fa-tasks" aria-hidden="true"></i> 
+                    <span itemprop="name">IT-аутсорсинг</span>
+                  </a>
+                </li>
+                <li itemscope itemtype="http://schema.org/Service">
+                  <a href="virtual-office.html" itemprop="url">
+                    <i class="fas fa-shield-alt" aria-hidden="true"></i> 
+                    <span itemprop="name">Защищенный офис</span>
+                  </a>
+                </li>
+                <li itemscope itemtype="http://schema.org/Service">
+                  <a href="obsluzhivanie-serverov.html" itemprop="url">
+                    <i class="fas fa-server" aria-hidden="true"></i> 
+                    <span itemprop="name">Серверы</span>
+                  </a>
+                </li>
+                <li itemscope itemtype="http://schema.org/Service">
+                  <a href="montazh-kompyuternykh-setey.html" itemprop="url">
+                    <i class="fas fa-network-wired" aria-hidden="true"></i> 
+                    <span itemprop="name">Офисные сети</span>
+                  </a>
+                </li>
+                <li itemscope itemtype="http://schema.org/Service">
+                  <a href="ustanovka-videonablyudeniya.html" itemprop="url">
+                    <i class="fas fa-video" aria-hidden="true"></i> 
+                    <span itemprop="name">Видеонаблюдение</span>
+                  </a>
+                </li>
+                <li itemscope itemtype="http://schema.org/Service">
+                  <a href="uslugi-1c.html" itemprop="url">
+                    <i class="fas fa-calculator" aria-hidden="true"></i> 
+                    <span itemprop="name">Услуги 1С</span>
+                  </a>
+                </li>
+                <li itemscope itemtype="http://schema.org/Service">
+                  <a href="hosting.html" itemprop="url">
+                    <i class="fas fa-cloud" aria-hidden="true"></i> 
+                    <span itemprop="name">Хостинг</span>
+                  </a>
+                </li>
               </ul>
             </li>
-            <li><a href="kontaktyi.html">Контакты</a></li>
+            <li><a href="kontaktyi.html" itemprop="url"><span itemprop="name">Контакты</span></a></li>
           </ul>
         </nav>
         
-        <div class="mobile-contacts">
+        <!-- Контактная информация для мобильного меню с микроразметкой -->
+        <div class="mobile-contacts" itemscope itemtype="http://schema.org/Organization">
+          <meta itemprop="name" content="GigSys">
           <div class="mobile-contact-item">
-            <i class="fa fa-phone"></i>
-            <a href="tel:88003501160">8 (800) 350-11-60</a>
+            <i class="fa fa-phone" aria-hidden="true"></i>
+            <a href="tel:88003501160" itemprop="telephone">8(499)350-11-60</a>
           </div>
           <div class="mobile-contact-item">
-            <i class="fa fa-envelope"></i>
-            <a href="mailto:it@gigsys.ru">it@gigsys.ru</a>
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+            <a href="mailto:it@gigsys.ru" itemprop="email">it@gigsys.ru</a>
           </div>
           <div class="mobile-contact-item">
-            <i class="fa fa-map-marker"></i>
-            <address>г. Москва, Ракетный бульвар, д.15, оф.31</address>
+            <i class="fa fa-map-marker" aria-hidden="true"></i>
+            <address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+              <span itemprop="addressLocality">г. Москва</span>, 
+              <span itemprop="streetAddress">Ракетный бульвар, д.15, оф.31</span>
+            </address>
           </div>
         </div>
         
+        <!-- Кнопки действий в мобильном меню -->
         <div class="mobile-actions">
-          <a href="#callback" class="btn btn-primary popup-with-form">
-            <i class="fa fa-headset"></i>
+          <a href="#callback" class="btn btn-primary popup-with-form" rel="nofollow">
+            <i class="fas fa-hands-helping" aria-hidden="true"></i>
             <span>Заказать звонок</span>
           </a>
           
-          <a href="http://lk.gigsys.ru/hd/customer.pl" target="_blank" class="btn btn-outline">
-            <i class="fa fa-user-circle"></i>
+          <a href="http://lk.gigsys.ru/hd/customer.pl" target="_blank" class="btn btn-outline" rel="noopener">
+            <i class="fas fa-user-circle" aria-hidden="true"></i>
             <span>Личный кабинет</span>
           </a>
         </div>
       </div>
     </div>
     
-    <script src="widget/s8xWAIxVHJ" async></script>
+    <!-- Roistat script с async и defer для ускорения загрузки -->
+    <script src="https://widget.roistat.com/widget/s8xWAIxVHJ" async defer></script>
   </header>
 </div>
-<!-- JavaScript для хедера -->
-<script>
+
+<!-- Добавлены JSON-LD данные для поисковых систем -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "GigSys",
+  "url": "https://gigsys.ru",
+  "logo": "https://gigsys.ru/assets/templates/img/logo.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+84993501160",
+    "contactType": "customer service",
+    "areaServed": "RU",
+    "availableLanguage": "Russian"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Москва",
+    "addressRegion": "Москва",
+    "streetAddress": "Ракетный бульвар, д.15, оф.31",
+    "addressCountry": "RU"
+  },
+  "sameAs": [
+    "https://vk.com/gigsys",
+    "https://www.facebook.com/gigsys"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https://gigsys.ru/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://gigsys.ru/search.html?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+  <!-- JavaScript для хедера - Оптимизирован -->
+  <script>
+  /**
+* Оптимизированный JavaScript для хедера и мега-меню
+* - Исправлено открытие/закрытие меню по клику на кнопку
+* - Улучшена производительность
+* - Убраны все ховеры, активация строго по клику
+*/
+
 document.addEventListener('DOMContentLoaded', function() {
-  // Элементы хедера
+  // === БАЗОВЫЕ ЭЛЕМЕНТЫ ===
+  // Хедер и мобильное меню
   const header = document.getElementById('main-header');
   const menuToggle = document.querySelector('.mobile-menu-toggle');
   const mobileMenu = document.querySelector('.mobile-menu');
   const mobileMenuClose = document.querySelector('.mobile-menu-close');
   const dropdowns = document.querySelectorAll('.has-dropdown');
   
-  // Эффект при скролле
-  function handleScroll() {
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
+  // Мега-меню
+  const servicesToggle = document.querySelector('.services-toggle');
+  const megaMenu = document.querySelector('.mega-menu');
+  let megaMenuClose = document.querySelector('.mega-menu-close');
+  const menuCategories = document.querySelectorAll('.menu-category');
+  const menuPanels = document.querySelectorAll('.menu-panel');
+  
+  // Дополнительные элементы
+  const anchorLinks = document.querySelectorAll('.mega-menu a[href*="#"]');
+  const actionButtons = document.querySelectorAll('.highlight-btn, .mm-cta-btn');
+  
+  // === СОСТОЯНИЕ ===
+  let isMegaMenuOpen = false;
+  let isAnimating = false;
+  
+  // === ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ===
+  // Анимация с проверкой на поддержку
+  function animateElement(element, isOpening, callback) {
+      if (!element) return;
+      
+      isAnimating = true;
+      
+      // Сбрасываем предыдущие анимации
+      element.style.animation = '';
+      
+      // Применяем анимацию
+      setTimeout(() => {
+          element.style.animation = isOpening 
+              ? 'fadeIn 300ms forwards' 
+              : 'fadeOut 250ms forwards';
+          
+          // Ждем завершения анимации
+          setTimeout(() => {
+              isAnimating = false;
+              if (callback) callback();
+          }, isOpening ? 300 : 250);
+      }, 10);
   }
   
-  // Инициализация состояния при загрузке
-  handleScroll();
+  // Добавление стилей анимации
+  function addAnimationStyles() {
+      if (document.getElementById('mega-menu-animations')) return;
+      
+      const style = document.createElement('style');
+      style.id = 'mega-menu-animations';
+      style.textContent = `
+          @keyframes fadeIn {
+              from { opacity: 0; transform: translateY(10px); }
+              to { opacity: 1; transform: translateY(0); }
+          }
+          @keyframes fadeOut {
+              from { opacity: 1; transform: translateY(0); }
+              to { opacity: 0; transform: translateY(10px); }
+          }
+          .btn-pressed {
+              transform: scale(0.95) !important;
+              transition: transform 0.2s !important;
+          }
+      `;
+      document.head.appendChild(style);
+  }
   
-  // Слушатель события скролла
-  window.addEventListener('scroll', handleScroll);
+  // === ОСНОВНЫЕ ФУНКЦИИ ===
+  // Переключатель мега-меню
+  function toggleMegaMenu(forceState) {
+      if (!megaMenu || isAnimating) return;
+      
+      // Определяем новое состояние
+      const willOpen = forceState !== undefined ? forceState : !isMegaMenuOpen;
+      
+      console.log('Toggle mega menu:', willOpen ? 'opening' : 'closing'); // отладка
+      
+      if (willOpen) {
+          // Открываем меню
+          megaMenu.classList.add('active');
+          document.body.classList.add('mega-menu-open');
+          
+          if (servicesToggle) {
+              servicesToggle.setAttribute('aria-expanded', 'true');
+          }
+          
+          animateElement(megaMenu, true, function() {
+              // Фокус на первую категорию для доступности
+              const activeCategory = document.querySelector('.menu-category.active');
+              if (activeCategory) activeCategory.focus();
+          });
+          
+          // Закрываем мобильное меню если оно открыто
+          if (mobileMenu && mobileMenu.classList.contains('active')) {
+              mobileMenu.classList.remove('active');
+              menuToggle.classList.remove('active');
+              document.body.classList.remove('menu-open');
+          }
+      } else {
+          // Закрываем меню
+          animateElement(megaMenu, false, function() {
+              megaMenu.classList.remove('active');
+              document.body.classList.remove('mega-menu-open');
+              
+              if (servicesToggle) {
+                  servicesToggle.setAttribute('aria-expanded', 'false');
+                  servicesToggle.focus();
+              }
+          });
+      }
+      
+      // Устанавливаем новое состояние
+      isMegaMenuOpen = willOpen;
+  }
   
-  // Мобильное меню
+  // Создание кнопки закрытия
+  function createCloseButton() {
+      if (megaMenu && !megaMenuClose) {
+          const closeButton = document.createElement('button');
+          closeButton.className = 'mega-menu-close';
+          closeButton.setAttribute('aria-label', 'Закрыть меню');
+          closeButton.innerHTML = '<i class="fas fa-times"></i>';
+          megaMenu.prepend(closeButton);
+          
+          // Обновляем ссылку
+          megaMenuClose = closeButton;
+          
+          // Добавляем обработчик
+          megaMenuClose.addEventListener('click', function(e) {
+              e.preventDefault();
+              e.stopPropagation();
+              toggleMegaMenu(false);
+          });
+      }
+  }
+  
+  // Обработка скролла
+  function setupScrollHandler() {
+      if (!header) return;
+      
+      function handleScroll() {
+          if (window.scrollY > 50) {
+              header.classList.add('scrolled');
+          } else {
+              header.classList.remove('scrolled');
+          }
+      }
+      
+      // Инициализация
+      handleScroll();
+      
+      // Оптимизированный обработчик
+      let scrollTimeout;
+      window.addEventListener('scroll', function() {
+          if (!scrollTimeout) {
+              scrollTimeout = setTimeout(function() {
+                  handleScroll();
+                  scrollTimeout = null;
+              }, 100);
+          }
+      }, { passive: true });
+  }
+  
+  // === ИНИЦИАЛИЗАЦИЯ ===
+  // Добавляем стили анимаций
+  addAnimationStyles();
+  
+  // Настраиваем хедер
+  setupScrollHandler();
+  
+  // Создаем кнопку закрытия для мега-меню
+  createCloseButton();
+  
+  // === ОБРАБОТЧИКИ СОБЫТИЙ ===
+  // Обработчик кнопки "Услуги" для открытия/закрытия мега-меню
+  if (servicesToggle && megaMenu) {
+      servicesToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          toggleMegaMenu(); // Переключаем состояние
+      });
+      
+      // Устанавливаем начальные атрибуты для доступности
+      servicesToggle.setAttribute('aria-haspopup', 'true');
+      servicesToggle.setAttribute('aria-expanded', 'false');
+  }
+  
+  // Закрытие мега-меню при клике вне
+  document.addEventListener('click', function(e) {
+      if (isMegaMenuOpen && 
+          megaMenu && 
+          !megaMenu.contains(e.target) && 
+          !servicesToggle.contains(e.target)) {
+          toggleMegaMenu(false);
+      }
+  });
+  
+  // Закрытие по Escape
+  document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && isMegaMenuOpen) {
+          toggleMegaMenu(false);
+      }
+  });
+  
+  // Обработка кнопок внутри мега-меню
+  actionButtons.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+          // Эффект нажатия
+          btn.classList.add('btn-pressed');
+          
+          setTimeout(function() {
+              btn.classList.remove('btn-pressed');
+              
+              // Закрываем мега-меню
+              if (isMegaMenuOpen) {
+                  setTimeout(function() {
+                      toggleMegaMenu(false);
+                  }, 100);
+              }
+          }, 200);
+      });
+  });
+  
+  // Обработка ссылок с якорями
+  anchorLinks.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (!href) return;
+          
+          const isAnchor = href.indexOf('#') === 0 || href.indexOf('/#') !== -1;
+          
+          if (isAnchor) {
+              // Закрываем мега-меню после клика на якорную ссылку
+              toggleMegaMenu(false);
+          }
+      });
+  });
+  
+  // Обработка мобильного меню
   if (menuToggle && mobileMenu) {
-    menuToggle.addEventListener('click', function() {
-      menuToggle.classList.toggle('active');
-      mobileMenu.classList.toggle('active');
-      document.body.classList.toggle('menu-open');
+      menuToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          // Закрываем мега-меню, если оно открыто
+          if (isMegaMenuOpen) {
+              toggleMegaMenu(false);
+          }
+          
+          // Переключаем мобильное меню
+          menuToggle.classList.toggle('active');
+          mobileMenu.classList.toggle('active');
+          document.body.classList.toggle('menu-open');
+      });
+      
+      // Закрытие мобильного меню
+      if (mobileMenuClose) {
+          mobileMenuClose.addEventListener('click', function(e) {
+              e.preventDefault();
+              menuToggle.classList.remove('active');
+              mobileMenu.classList.remove('active');
+              document.body.classList.remove('menu-open');
+          });
+      }
+      
+      // Закрытие при клике вне меню
+      document.addEventListener('click', function(e) {
+          if (mobileMenu.classList.contains('active') && 
+              !mobileMenu.contains(e.target) && 
+              !menuToggle.contains(e.target)) {
+              menuToggle.classList.remove('active');
+              mobileMenu.classList.remove('active');
+              document.body.classList.remove('menu-open');
+          }
+      });
+  }
+  
+  // Обработка выпадающих списков
+  dropdowns.forEach(function(dropdown) {
+      const link = dropdown.querySelector('a');
+      
+      if (link) {
+          link.addEventListener('click', function(e) {
+              // Предотвращаем переход для выпадающих меню
+              e.preventDefault();
+              
+              // Закрываем другие открытые дропдауны
+              dropdowns.forEach(function(otherDropdown) {
+                  if (otherDropdown !== dropdown && otherDropdown.classList.contains('active')) {
+                      otherDropdown.classList.remove('active');
+                  }
+              });
+              
+              // Переключаем текущий дропдаун
+              dropdown.classList.toggle('active');
+          });
+      }
+  });
+  
+  // Обработка категорий в мега-меню
+  if (menuCategories.length > 0 && menuPanels.length > 0) {
+      menuCategories.forEach(function(category) {
+          category.addEventListener('click', function(e) {
+              e.preventDefault();
+              
+              // Пропускаем если категория уже активна
+              if (category.classList.contains('active')) return;
+              
+              const targetPanel = category.getAttribute('data-category');
+              
+              // Активация категории
+              menuCategories.forEach(function(cat) {
+                  cat.classList.remove('active');
+              });
+              category.classList.add('active');
+              
+              // Активация панели
+              menuPanels.forEach(function(panel) {
+                  panel.classList.remove('active');
+                  if (panel.getAttribute('data-panel') === targetPanel) {
+                      panel.classList.add('active');
+                      // Анимация новой панели
+                      panel.style.animation = 'fadeIn 300ms forwards';
+                  }
+              });
+          });
+          
+          // Навигация с клавиатуры
+          category.addEventListener('keydown', function(e) {
+              const index = Array.from(menuCategories).indexOf(category);
+              let nextIndex;
+              
+              switch(e.key) {
+                  case 'ArrowRight':
+                      e.preventDefault();
+                      nextIndex = index + 1 >= menuCategories.length ? 0 : index + 1;
+                      menuCategories[nextIndex].focus();
+                      menuCategories[nextIndex].click();
+                      break;
+                  case 'ArrowLeft':
+                      e.preventDefault();
+                      nextIndex = index - 1 < 0 ? menuCategories.length - 1 : index - 1;
+                      menuCategories[nextIndex].focus();
+                      menuCategories[nextIndex].click();
+                      break;
+              }
+          });
+      });
+      
+      // Активация первой панели и категории по умолчанию
+      if (!document.querySelector('.menu-panel.active')) {
+          const firstCategory = menuCategories[0];
+          const firstPanel = menuPanels[0];
+          
+          if (firstCategory && firstPanel) {
+              firstCategory.classList.add('active');
+              firstPanel.classList.add('active');
+          }
+      }
+  }
+  
+  // Обработка якорей в URL
+  if (window.location.hash) {
+      const targetElement = document.querySelector(window.location.hash);
+      if (targetElement) {
+          setTimeout(function() {
+              targetElement.scrollIntoView({ behavior: 'smooth' });
+          }, 500);
+      }
+  }
+});
+  </script>
+<!-- HERO SECTION: Модернизированная с более сильными продающими элементами -->
+<section class="hero-section">
+  <div class="container">
+    <div class="row hero-row">
+      <div class="col-lg-6 col-md-10 mx-auto">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fas fa-shield-check"></i> IT-РЕШЕНИЕ
+          </div>
+          <h1 class="hero-title">Защищенный виртуальный офис для эффективного контроля над бизнесом</h1>
+          <p class="hero-description">Переносим все данные из офиса на защищенные серверы <span class="highlight-days">за 5 дней</span>. Используйте передовые технологии как у компаний-лидеров мирового рынка.</p>
+          
+          <div class="hero-features">
+            <div class="feature-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Полная защита данных</span>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Контроль сотрудников 24/7</span>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Доступ с любых устройств</span>
+            </div>
+          </div>
+          
+          <div class="hero-actions">
+            <a href="#price" class="btn btn-primary btn-lg popup-with-form">
+              <span>Узнать стоимость</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="#tour" class="btn btn-outline btn-lg">
+              <span>Записаться на онлайн-тур</span>
+              <i class="fas fa-play-circle"></i>
+            </a>
+          </div>
+          
+          <div class="hero-clients">
+            <span>Нам доверяют:</span>
+            <div class="clients-count"><span>5600+</span> рабочих мест</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 d-none d-lg-block">
+        <div class="hero-image">
+          <img src="assets/images/virtual-office-secure.jpg" alt="Безопасный виртуальный офис" class="img-fluid">
+          <div class="hero-image-badge">
+            <i class="fas fa-lock"></i>
+            <span>Цифровой суверенитет</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  
+<!-- ПРОБЛЕМЫ SECTION: Новая секция, подчеркивающая боли клиентов -->
+<section class="problems-section">
+  <div class="container">
+    <div class="section-header text-center">
+      <div class="badge-container">
+        <span class="sales-badge">ЗАЩИТИТЕ СВОЙ БИЗНЕС</span>
+      </div>
+      <h2>От каких проблем вы будете защищены</h2>
+      <p>Не ждите, пока случится непоправимое. Избавьтесь от цифровых рисков прямо сейчас!</p>
+    </div>
+    
+    <div class="problems-grid">
+      <div class="problem-card">
+        <div class="problem-icon">
+          <i class="fas fa-folder-minus"></i>
+        </div>
+        <h3>Утечка данных и разглашение коммерческой тайны</h3>
+        <p>Сотрудники больше не смогут скопировать или переслать важные документы конкурентам</p>
+      </div>
+      
+      <div class="problem-card">
+        <div class="problem-icon">
+          <i class="fas fa-link-slash"></i>
+        </div>
+        <h3>Отсутствие цифровых следов, отчетность с разных IP-адресов и MAC-адресов</h3>
+        <p>Исключите аффилированность юрлиц, риски субсидиарной и бенефициарной ответственности</p>
+      </div>
+      
+      <div class="problem-card">
+        <div class="problem-icon">
+          <i class="fas fa-user-secret"></i>
+        </div>
+        <h3>Нелояльное поведение сотрудников</h3>
+        <p>Все действия контролируются. Удаленщики не смогут подрабатывать в ваше рабочее время</p>
+      </div>
+      
+      <div class="problem-card">
+        <div class="problem-icon">
+          <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        <h3>Проверки и изъятие техники</h3>
+        <p>В офисе ничего нет, а доступ к серверам можно экстренно отключить одной кнопкой</p>
+      </div>
+      
+      <div class="problem-card">
+        <div class="problem-icon">
+          <i class="fas fa-virus-slash"></i>
+        </div>
+        <h3>Вирусы, сбои и потеря данных</h3>
+        <p>Данные хранятся в защищенных дата-центрах с шестикратным резервированием</p>
+      </div>
+      
+      <div class="problem-card">
+        <div class="problem-icon">
+          <i class="fas fa-business-time"></i>
+        </div>
+        <h3>Остановка бизнеса</h3>
+        <p>Просто нечему ломаться. Работайте из любой точки мира даже в случае закрытия офиса, пандемии или переезда</p>
+      </div>
+    </div>
+    
+    <div class="emergency-button">
+      <div class="emergency-icon">
+        <i class="fas fa-power-off"></i>
+      </div>
+      <div class="emergency-content">
+        <h3>Тревожная кнопка</h3>
+        <p>В случае опасности мгновенно отключите и зашифруйте все данные. Все данные исчезнут и установить расположение сервера будет невозможно. Включить обратно возможно только по вашему паролю.</p>
+      </div>
+    </div>
+  </div>
+</section>
+  
+<section class="intro-section">
+  <div class="container">
+    <div class="intro-box">
+      <div class="intro-content">
+        <div class="badge-container">
+          <span class="sales-badge">ЗАЩИЩЕННЫЙ ОФИС</span>
+        </div>
+        <h2>Что такое <span class="accent">защищенный офис</span>?</h2>
+        <p>Это новая концепция организации работы компании, где все данные обрабатываются и хранятся на промышленных защищенных серверах третьего поколения.</p>
+        <p>Физические компьютеры в офисе работают в режиме "телевизоров" — они только передают картинку рабочего стола через интернет, но не хранят никаких данных.</p>
+        <p>Вам больше не нужен системный администратор и сервер в офисе. Вы получаете полный контроль над всеми данными компании и работой сотрудников.</p>
+        <p class="highlight-text">Это тот же компьютер с Windows только в защищенном облаке, с другим именем и IP-адресом. Все данные и программы переносятся с локального компьютера на виртуальный так, что вы не заметите разницы.</p>
+      </div>
+      <div class="intro-image">
+        <div class="intro-image-grid">
+          <img src="https://windowstune.ru/wp-content/uploads/2017/12/skolko-vesit-ocherednaya-sistema-windows-10-ot-microsoft.jpg" alt="Windows в облаке" class="intro-image-1">
+          <img src="https://img.freepik.com/premium-vector/remote-connection-icon-volumetric-monitor-icon-personal-computer_599062-4501.jpg" alt="Удаленное подключение" class="intro-image-2">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  
+<!-- BENEFITS SECTION: Улучшенная с акцентом на преимуществах -->
+<section class="benefits-section" id="benefits">
+  <div class="container">
+    <div class="section-header">
+      <div class="badge-container">
+        <span class="sales-badge">ГЛАВНЫЕ ПРЕИМУЩЕСТВА</span>
+      </div>
+      <h2>Какие преимущества над конкурентами вы получите?</h2>
+      <p>Получите все преимущества современной цифровой инфраструктуры по цене обычного ИТ-обслуживания</p>
+    </div>
+    
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <i class="fa fa-shield-alt"></i>
+        </div>
+        <h3>Цифровой суверенитет</h3>
+        <p>Полный контроль над данными с уникальным мастер-паролем, известным только вам. Тревожная кнопка для мгновенного отключения.</p>
+      </div>
+      
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <i class="fa fa-user-shield"></i>
+        </div>
+        <h3>Абсолютный контроль</h3>
+        <p>Мониторинг действий всех сотрудников, защита от утечек данных и предотвращение нелояльного поведения персонала.</p>
+      </div>
+      
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <i class="fa fa-expand-arrows-alt"></i>
+        </div>
+        <h3>Гибкое масштабирование</h3>
+        <p>Мгновенное добавление новых рабочих мест. Легкое объединение филиалов и представительств в единое пространство.</p>
+      </div>
+      
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <i class="fa fa-globe"></i>
+        </div>
+        <h3>Работа из любой точки</h3>
+        <p>Полноценный доступ к рабочему месту из дома, командировки или другой страны — нужен только интернет.</p>
+      </div>
+      
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <i class="fa fa-tachometer-alt"></i>
+        </div>
+        <h3>Мощная производительность</h3>
+        <p>Все тяжелые задачи выполняются на мощных серверах — даже старые компьютеры будут работать быстро.</p>
+      </div>
+      
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <i class="fa fa-cogs"></i>
+        </div>
+        <h3>Эффективность работы</h3>
+        <p>В услугу включена ИТ-команда специалистов, осуществляющих поддержку всех пользователей.</p>
+      </div>
+    </div>
+    
+    <div class="benefits-extra">
+      <div class="extra-item">
+        <span class="check-icon"><i class="fa fa-check"></i></span>
+        <p>Решаем запросы в течение 15 минут, в экстренной ситуации приедем в офис в течение 1 часа</p>
+      </div>
+      <div class="extra-item">
+        <span class="check-icon"><i class="fa fa-check"></i></span>
+        <p>IP-адреса в льготных регионах с УСН 1%</p>
+      </div>
+      <div class="extra-item">
+        <span class="check-icon"><i class="fa fa-check"></i></span>
+        <p>Занимаемся усилением информационной безопасности и расследованием инцидентов</p>
+      </div>
+      <div class="extra-item">
+        <span class="check-icon"><i class="fa fa-check"></i></span>
+        <p>В случае экстренной ситуации осуществим юридическую поддержку и выезд ГБР от ЧОП</p>
+      </div>
+      <div class="extra-item">
+        <span class="check-icon"><i class="fa fa-check"></i></span>
+        <p>Лицензии Microsoft уже включены в стоимость</p>
+      </div>
+      <div class="extra-item">
+        <span class="check-icon"><i class="fa fa-check"></i></span>
+        <p>Отсутствие крупных капитальных затрат и перевод затрат в операционные</p>
+      </div>
+      <div class="extra-item">
+        <span class="check-icon"><i class="fa fa-check"></i></span>
+        <p>Экономия на аренде офиса и организации рабочих мест</p>
+      </div>
+      <div class="extra-item">
+        <span class="check-icon"><i class="fa fa-check"></i></span>
+        <p>Повышение мотивации сотрудников, которые не тратят свое время на дорогу в офис</p>
+      </div>
+    </div>
+  </div>
+</section>
+  
+<!-- TARGET SECTION: Фокус на целевой аудитории -->
+<section class="target-section">
+  <div class="container">
+    <div class="target-content">
+      <div class="target-image">
+        <img src="assets/images/vi002.jpg" alt="Для быстрорастущих компаний">
+      </div>
+      <div class="target-text">
+        <h2>Для кого это решение</h2>
+        <p>Виртуальный офис идеально подходит для компаний, которым важно:</p>
+        <ul class="target-list">
+          <li>✓ Организовать безопасную совместную работу филиалов и представительств</li>
+          <li>✓ Обеспечить эффективную работу сотрудников из любой точки мира</li>
+          <li>✓ Гарантировать сохранность коммерческой информации и клиентских баз</li>
+          <li>✓ Защитить бизнес от рисков проверок и изъятия техники</li>
+          <li>✓ Минимизировать расходы на ИТ-инфраструктуру</li>
+        </ul>
+        
+        <div class="industries">
+          <h4>Подходит для компаний из сфер:</h4>
+          <div class="industry-tags">
+            <span class="industry-tag">Торговля</span>
+            <span class="industry-tag">Строительство</span>
+            <span class="industry-tag">Финансы</span>
+            <span class="industry-tag">Услуги B2B</span>
+            <span class="industry-tag">Производство</span>
+            <span class="industry-tag">Услуги B2C</span>
+            <span class="industry-tag">Образование</span>
+            <span class="industry-tag">Медицина</span>
+            <span class="industry-tag">Логистика</span>
+            <span class="industry-tag">Реклама</span>
+          </div>
+        </div>
+        
+        <p class="highlight-text">Компании, использующие виртуальный офис, отмечают сокращение текучести кадров и увеличение производительности на 30% благодаря эффективной организации работы.</p>
+      </div>
+    </div>
+  </div>
+</section>
+  
+<!-- HOW IT WORKS: Новая секция о процессе внедрения -->
+<section class="process-section">
+  <div class="container">
+    <div class="section-header text-center">
+      <div class="badge-container">
+        <span class="sales-badge">БЕСШОВНЫЙ ПЕРЕХОД</span>
+      </div>
+      <h2>Переезд без остановки работы за 5 дней</h2>
+      <p>Проведем миграцию поэтапно, сохраняя все настройки и данные</p>
+    </div>
+    
+    <div class="process-timeline">
+      <div class="timeline-item">
+        <div class="timeline-number">1</div>
+        <div class="timeline-content">
+          <h3>Диагностика и планирование</h3>
+          <p>Проверим все компьютеры, программы и данные. Составим детальный план миграции без остановки работы.</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-number">2</div>
+        <div class="timeline-content">
+          <h3>Перенос данных и настройка</h3>
+          <p>Создаем виртуальные копии всех рабочих компьютеров с сохранением всех программ, файлов и настроек.</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-number">3</div>
+        <div class="timeline-content">
+          <h3>Подключение пользователей</h3>
+          <p>Помогаем каждому сотруднику безопасно войти в систему и продолжить работу без перерывов и переобучения.</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-number">4</div>
+        <div class="timeline-content">
+          <h3>Передача контроля</h3>
+          <p>Вы получаете мастер-пароль и тревожную кнопку. Теперь вы полностью контролируете все данные компании.</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-number">5</div>
+        <div class="timeline-content">
+          <h3>Техническая поддержка 24/7</h3>
+          <p>Обеспечиваем круглосуточную поддержку и решаем 90% обращений в течение 15 минут.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  
+<!-- WHY US SECTION: Улучшенная секция о компании -->
+<section class="why-us-section">
+  <div class="container">
+    <h2 class="text-center">Нам доверяют с 2013 года</h2>
+    
+    <div class="expertise-grid">
+      <div class="expertise-card">
+        <div class="expertise-number">01</div>
+        <h3>12+ лет на рынке</h3>
+        <p>Мы занимаемся защищенными виртуальными офисами более 12 лет и успешно обслуживаем более 5600+ рабочих мест</p>
+      </div>
+      
+      <div class="expertise-card">
+        <div class="expertise-number">02</div>
+        <h3>Техническая экспертиза</h3>
+        <p>Используем современные технологии и промышленные серверы в дата-центрах высшей категории надежности (Tier III)</p>
+      </div>
+      
+      <div class="expertise-card">
+        <div class="expertise-number">03</div>
+        <h3>Работа 24/7</h3>
+        <p>Круглосуточный мониторинг и техническая поддержка без выходных. Реагируем на 90% запросов в течение 15 минут</p>
+      </div>
+      
+      <div class="expertise-card">
+        <div class="expertise-number">04</div>
+        <h3>Прозрачная отчетность</h3>
+        <p>Предоставляем детальные ежемесячные отчеты по работам и полную документацию обо всех действиях в системе</p>
+      </div>
+      
+      <div class="expertise-card">
+        <div class="expertise-number">05</div>
+        <h3>Осуществляем весь комплекс ИТ-услуг</h3>
+        <p>Предоставляем полный спектр ИТ-услуг, а также юридическое и бухгалтерское сопровождение</p>
+      </div>
+      
+      <div class="expertise-card">
+        <div class="expertise-number">06</div>
+        <h3>Команда экспертов</h3>
+        <p>У нас работают разнопрофильные специалисты, эксперты в своей области, говорящие с бизнесом на одном языке</p>
+      </div>
+    </div>
+    
+    <div class="quality-badge">
+      <div class="badge-icon">
+        <i class="fa fa-award"></i>
+      </div>
+      <div class="badge-text">
+        <h3>Ни один клиент не ушел от нас к конкурентам</h3>
+        <p>LTV 12+ лет. Ни одного суда с клиентами за всю историю компании</p>
+      </div>
+    </div>
+  </div>
+</section>
+  
+<!-- PRICE SECTION: Улучшенная секция с ценами -->
+<section class="price-section" id="price">
+  <div class="container">
+    <div class="section-header text-center">
+      <div class="badge-container">
+        <span class="sales-badge">ВЫГОДНОЕ ПРЕДЛОЖЕНИЕ</span>
+      </div>
+      <h2>Сколько стоит виртуальный офис?</h2>
+      <p>Полностью укомплектованное защищенное рабочее место по цене обычного ИТ-обслуживания</p>
+    </div>
+    
+    <div class="price-comparison">
+      <div class="price-table">
+        <div class="price-traditional">
+          <h3>Традиционный подход</h3>
+          <div class="price-item">
+            <span class="price-title">Сервер</span>
+            <span class="price-value">от 150 000 ₽</span>
+          </div>
+          <div class="price-item">
+            <span class="price-title">Системный администратор</span>
+            <span class="price-value">от 80 000 ₽/мес</span>
+          </div>
+          <div class="price-item">
+            <span class="price-title">Обновление компьютеров</span>
+            <span class="price-value">40 000 ₽/шт</span>
+          </div>
+          <div class="price-item">
+            <span class="price-title">Аренда офисных помещений, включая серверную (min 4 кв.м)</span>
+            <span class="price-value">от 20 000 руб./кв.м</span>
+          </div>
+          <div class="price-item">
+            <span class="price-title">Содержание и обслуживание офисных помещений и офисного оборудования</span>
+            <span class="price-value">от 8 000 руб./кв.м</span>
+          </div>
+          <div class="price-item">
+            <span class="price-title">Лицензии</span>
+            <span class="price-value">от 80 000 руб./шт.</span>
+          </div>
+          <div class="price-item">
+            <span class="price-title">Амортизация оборудования 3-5 лет</span>
+            <span class="price-value"></span>
+          </div>
+          <div class="price-item highlight">
+            <span class="price-title">Риски для бизнеса</span>
+            <span class="price-value">Неизмеримы</span>
+          </div>
+        </div>
+        
+        <div class="price-virtual">
+          <h3>Виртуальный офис</h3>
+          <div class="price-range">
+            <div class="price-value-big">1 800 - 9 000 ₽</div>
+            <div class="price-period">за место в месяц</div>
+          </div>
+          <p class="price-note">Стоимость зависит от конфигурации рабочего места, объема данных, уровня безопасности, количества рабочих мест</p>
+          
+          <div class="price-includes">
+            <h4>Включено в стоимость:</h4>
+            <ul>
+              <li><i class="fa fa-check"></i> Виртуальный компьютер</li>
+              <li><i class="fa fa-check"></i> Лицензии</li>
+              <li><i class="fa fa-check"></i> Техподдержка 24/7</li>
+              <li><i class="fa fa-check"></i> Тревожная кнопка</li>
+              <li><i class="fa fa-check"></i> Резервное копирование</li>
+              <li><i class="fa fa-check"></i> Контроль сотрудников</li>
+            </ul>
+          </div>
+          
+          <a href="#price-calc" class="btn btn-primary btn-lg popup-with-form">
+            <span>Рассчитать стоимость</span>
+            <i class="fa fa-calculator"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  
+<!-- CTA SECTION: Улучшенный призыв к действию -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-box">
+      <h2>Получите защиту данных и полный контроль над Вашим бизнесом</h2>
+      <p>Свяжитесь с нами сегодня, чтобы получить бесплатный онлайн-тур по виртуальному офису</p>
+      <div class="cta-buttons">
+        <a href="#contact" class="btn btn-primary btn-lg">
+          <span>Получить онлайн-тур</span>
+          <i class="fa fa-play-circle"></i>
+        </a>
+        <a href="#callback" class="btn btn-outline btn-lg popup-with-form">
+          <span>Заказать звонок</span>
+          <i class="fa fa-phone"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+  
+<!-- FAQ SECTION: Добавляем часто задаваемые вопросы -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="section-header text-center">
+      <h2>Часто задаваемые вопросы</h2>
+      <p>Ответы на самые распространенные вопросы о виртуальном офисе</p>
+    </div>
+    
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Где будет храниться информация? Вдруг она пропадёт?</h3>
+          <span class="faq-toggle"><i class="fa fa-plus"></i></span>
+        </div>
+        <div class="faq-answer">
+          <p>Информация хранится в промышленных дата-центрах высшей категории надежности (Tier III). Данные шестикратно дублируются в реальном времени на кластере серверов. Поломка оборудования не влияет на работу. Дополнительно резервная копия хранится у вас для максимальной защиты.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Какие гарантии, что третьи лица не получат доступ?</h3>
+          <span class="faq-toggle"><i class="fa fa-plus"></i></span>
+        </div>
+        <div class="faq-answer">
+          <p>Пробраться на промышленный сервер намного сложнее, чем на офисный компьютер. Все данные и каналы связи шифруются. Информацию из хранилища можно изъять только по решению суда, но даже в этом случае содержимое зашифровано, а пароль знаете только вы. Персонал дата-центра не видит вашу информацию.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Раньше зависели от сисадмина, а теперь будем от вас?</h3>
+          <span class="faq-toggle"><i class="fa fa-plus"></i></span>
+        </div>
+        <div class="faq-answer">
+          <p>Нет, у вас будет полный цифровой суверенитет. В любой момент вы можете отключить все тревожной кнопкой. Виртуальные компьютеры зашифруются вашим мастер-паролем, и никто не сможет получить к ним доступ, включая нас. Резервная копия всегда хранится у вас, и вы можете развернуть её самостоятельно где угодно.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>А если придёт запрос от госорганов?</h3>
+          <span class="faq-toggle"><i class="fa fa-plus"></i></span>
+        </div>
+        <div class="faq-answer">
+          <p>Мы работаем в правовом поле и соблюдаем законодательство, поэтому выдаем информацию по официальному запросу. Однако мы не знаем ваш пароль шифрования, поэтому вскрыть виртуальные компьютеры можно только при вашем личном участии. Вы можете воспользоваться 51 статьей Конституции РФ.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Вдруг что-то случится с вашей компанией?</h3>
+          <span class="faq-toggle"><i class="fa fa-plus"></i></span>
+        </div>
+        <div class="faq-answer">
+          <p>Данные никуда не пропадут. Автоматическая резервная копия хранится у вас. Вы получите подробную инструкцию, как её развернуть своими силами в случае форс-мажора. Наша профессиональная ответственность застрахована в Сбер-Страховании, что дает дополнительные гарантии.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>А если интернет отключится?</h3>
+          <span class="faq-toggle"><i class="fa fa-plus"></i></span>
+        </div>
+        <div class="faq-answer">
+          <p>Без интернета работа современного офиса в любом случае невозможна. Но для работы виртуального офиса достаточно даже мобильного 3G/4G интернета. Вы можете использовать смартфон как точку доступа или LTE-модем в случае проблем с основным подключением.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>document.addEventListener('DOMContentLoaded', function() {
+  const faqItems = document.querySelectorAll('.faq-item');
+  
+  // Добавляем случайные задержки для эффекта каскадной анимации
+  faqItems.forEach((item, index) => {
+    item.style.animationDelay = `${index * 0.1}s`;
+    item.classList.add('fade-in');
+  });
+  
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+    const toggle = item.querySelector('.faq-toggle');
+    const icon = toggle.querySelector('i');
+    
+    question.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Создаем эффект волны при клике
+      createRippleEffect(e, question);
+      
+      // Закрываем другие открытые элементы
+      faqItems.forEach(otherItem => {
+        if (otherItem !== item && otherItem.classList.contains('active')) {
+          closeItem(otherItem);
+        }
+      });
+      
+      // Переключаем текущий элемент
+      if (item.classList.contains('active')) {
+        closeItem(item);
+      } else {
+        openItem(item);
+      }
+    });
+  });
+  
+  // Функция для открытия элемента FAQ
+  function openItem(item) {
+    const answer = item.querySelector('.faq-answer');
+    const toggle = item.querySelector('.faq-toggle');
+    const icon = toggle.querySelector('i');
+    
+    item.classList.add('active');
+    
+    // Добавляем внутренние элементы с задержкой для эффекта каскада
+    answer.style.display = 'block';
+    answer.style.height = 'auto';
+    const answerHeight = answer.offsetHeight;
+    answer.style.height = '0';
+    
+    // Триггерим перерисовку DOM
+    void answer.offsetHeight;
+    
+    // Применяем анимацию
+    answer.style.height = answerHeight + 'px';
+    toggle.classList.add('rotate');
+    
+    // Добавляем эффект "сияния"
+    toggle.classList.add('glow');
+    setTimeout(() => {
+      toggle.classList.remove('glow');
+    }, 1000);
+    
+    // Плавно проявляем текст ответа
+    const paragraphs = answer.querySelectorAll('p');
+    paragraphs.forEach((p, i) => {
+      p.style.opacity = '0';
+      p.style.transform = 'translateY(20px)';
+      setTimeout(() => {
+        p.style.opacity = '1';
+        p.style.transform = 'translateY(0)';
+      }, 300 + (i * 100));
     });
     
-    // Закрытие мобильного меню
-    if (mobileMenuClose) {
-      mobileMenuClose.addEventListener('click', function() {
-        menuToggle.classList.remove('active');
-        mobileMenu.classList.remove('active');
-        document.body.classList.remove('menu-open');
-      });
-    }
+    // Добавляем эффект "всплеска" после открытия
+    setTimeout(() => {
+      item.classList.add('bounce');
+      setTimeout(() => {
+        item.classList.remove('bounce');
+      }, 300);
+    }, 300);
   }
   
-  // Мобильные выпадающие списки
-  dropdowns.forEach(function(dropdown) {
-    const link = dropdown.querySelector('a');
+  // Функция для закрытия элемента FAQ
+  function closeItem(item) {
+    const answer = item.querySelector('.faq-answer');
+    const toggle = item.querySelector('.faq-toggle');
     
-    if (link) {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        dropdown.classList.toggle('active');
-      });
-    }
-  });
-});
-</script>
+    toggle.classList.remove('rotate');
+    answer.style.height = '0';
     
-	<section class="slider slider-tarifs" style="background: url(assets/templates/img/ban1.jpg) no-repeat center top;">
-		<div class="container">
-			<div class="row justify-content-end align-items-center">
-				<div class="col-lg-5">
-					<h2>Будь в безопасности. Чувствуй себя свободно и уверенно</h2>
-					<p><a class="btn popup-with-form" href="#price">Узнать цены</a></p>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	
-	<section class="intro-section">
-		<div class="container">
-			<div class="intro-box">
-				<div class="intro-content">
-					<h2>Что такое <span class="accent">защищенный офис</span>?</h2>
-					<p>Это новый эффективный способ организации работы компании, где все данные обрабатываются и хранятся на надежных удаленных серверах.</p>
-					<p>Облачная среда объединяет сотрудников и позволяет им работать так же, как в обычном офисе, находясь при этом в любой точке планеты.</p>
-				</div>
-				<div class="intro-image">
-					<img src="assets/images/vi001.jpg" alt="Защищенный офис - единое рабочее пространство">
-				</div>
-			</div>
-		</div>
-	</section>
-	
-	<section class="benefits-section" id="benefits">
-		<div class="container">
-			<div class="section-header">
-				<h2>Преимущества защищенного офиса</h2>
-				<p>Общайтесь, проводите совещания, обменивайтесь файлами и просматривайте рабочие материалы с максимальной безопасностью</p>
-			</div>
-			
-			<div class="benefits-grid">
-				<div class="benefit-card">
-					<div class="benefit-icon">
-						<i class="fa fa-shield-alt"></i>
-					</div>
-					<h3>Полная безопасность</h3>
-					<p>Отсутствие данных в офисе, защищенное подключение и шифрование всех данных</p>
-				</div>
-				
-				<div class="benefit-card">
-					<div class="benefit-icon">
-						<i class="fa fa-sliders-h"></i>
-					</div>
-					<h3>Тотальный контроль</h3>
-					<p>Контроль за действиями сотрудников, разграничение прав доступа</p>
-				</div>
-				
-				<div class="benefit-card">
-					<div class="benefit-icon">
-						<i class="fa fa-balance-scale"></i>
-					</div>
-					<h3>Масштабируемость</h3>
-					<p>Единое пространство для всех филиалов с возможностью гибкого масштабирования</p>
-				</div>
-				
-				<div class="benefit-card">
-					<div class="benefit-icon">
-						<i class="fa fa-globe"></i>
-					</div>
-					<h3>Работа отовсюду</h3>
-					<p>Возможность работы из дома, машины и любой точки планеты</p>
-				</div>
-				
-				<div class="benefit-card">
-					<div class="benefit-icon">
-						<i class="fa fa-tachometer-alt"></i>
-					</div>
-					<h3>Высокая скорость</h3>
-					<p>Отличная производительность даже на старых ПК и мобильных устройствах</p>
-				</div>
-				
-				<div class="benefit-card">
-					<div class="benefit-icon">
-						<i class="fa fa-piggy-bank"></i>
-					</div>
-					<h3>Экономия средств</h3>
-					<p>Сокращение затрат на оборудование, ИТ-персонал и офисные помещения</p>
-				</div>
-			</div>
-			
-			<div class="benefits-extra">
-				<div class="extra-item">
-					<span class="check-icon"><i class="fa fa-check"></i></span>
-					<p>Лицензии Microsoft уже включены в стоимость</p>
-				</div>
-				<div class="extra-item">
-					<span class="check-icon"><i class="fa fa-check"></i></span>
-					<p>Надежность и отказоустойчивость серверов HP</p>
-				</div>
-				<div class="extra-item">
-					<span class="check-icon"><i class="fa fa-check"></i></span>
-					<p>Экстренное отключение соединений в случае необходимости</p>
-				</div>
-			</div>
-		</div>
-	</section>
-	
-	<section class="target-section">
-		<div class="container">
-			<div class="target-content">
-				<div class="target-image">
-					<img src="assets/images/vi002.jpg" alt="Для быстрорастущих компаний">
-				</div>
-				<div class="target-text">
-					<h2>Для кого это решение</h2>
-					<p>Облачное решение актуально в первую очередь для быстрорастущих компаний, которым важно:</p>
-					<ul class="target-list">
-						<li>Организовать совместную работу филиалов и представительств</li>
-						<li>Обеспечить эффективную работу удаленных сотрудников</li>
-						<li>Минимизировать риски потери или утечки данных</li>
-						<li>Иметь возможность оперативно и гибко масштабироваться</li>
-					</ul>
-					<p class="highlight-text">Компании, использующие виртуальный офис, отмечают сокращение текучести кадров, что говорит о заинтересованности сотрудников в такой форме организации совместной работы.</p>
-				</div>
-			</div>
-		</div>
-	</section>
-	
-	<section class="why-us-section">
-		<div class="container">
-			<h2>Почему стоит выбрать нас</h2>
-			
-			<div class="expertise-grid">
-				<div class="expertise-card">
-					<div class="expertise-number">01</div>
-					<h3>15+ лет опыта</h3>
-					<p>Мы занимаемся ИТ-поддержкой больше 15 лет и знаем все нюансы этой работы</p>
-				</div>
-				
-				<div class="expertise-card">
-					<div class="expertise-number">02</div>
-					<h3>Стандарты ITIL</h3>
-					<p>Оказываем услуги в соответствии с международным стандартом – ITIL</p>
-				</div>
-				
-				<div class="expertise-card">
-					<div class="expertise-number">03</div>
-					<h3>Техническая экспертиза</h3>
-					<p>В курсе всех новинок, последних разработок и технологий</p>
-				</div>
-				
-				<div class="expertise-card">
-					<div class="expertise-number">04</div>
-					<h3>Работа 24/7</h3>
-					<p>Работаем без отпусков, больничных и выходных круглосуточно</p>
-				</div>
-				
-				<div class="expertise-card">
-					<div class="expertise-number">05</div>
-					<h3>Прозрачная отчетность</h3>
-					<p>Предоставляем ежемесячные отчеты по работам и ведем полную документацию</p>
-				</div>
-				
-				<div class="expertise-card">
-					<div class="expertise-number">06</div>
-					<h3>Гарантия результата</h3>
-					<p>Выполняем задачи в установленные сроки или возвращаем деньги (SPLA)</p>
-				</div>
-			</div>
-			
-			<div class="quality-badge">
-				<div class="badge-icon">
-					<i class="fa fa-award"></i>
-				</div>
-				<div class="badge-text">
-					<h3>Только лучшее оборудование</h3>
-					<p>Используем оборудование только Enterprise-уровня: HP, Cisco, Juniper</p>
-				</div>
-			</div>
-		</div>
-	</section>
-	
-	<section class="cta-section">
-		<div class="container">
-			<div class="cta-box">
-				<h2>Готовы обеспечить безопасность ваших данных?</h2>
-				<p>Свяжитесь с нами сегодня, чтобы получить индивидуальное предложение для вашей компании</p>
-				<div class="cta-buttons">
-					<a href="#contact" class="btn btn-primary btn-lg">Связаться с нами</a>
-					<a href="#price" class="btn btn-outline btn-lg popup-with-form">Узнать цены</a>
-				</div>
-			</div>
-		</div>
-	</section>
-	
-	<!-- Секция с ценами (не модифицируется согласно требованию) -->
-	<section class="pricelist">
-		<div class="container">
-			<div class="row justify-content-end align-items-center">
-				<div class="col-md-7">
-					<h2>Цены на услуги</h2>
-				</div>
-				<div class="col-md-5">
-					 <form id=""calculator"">
-						<div class="calc-wrap">
-							<div class="text-center">
-								<a href="#price" class="popup-with-form btn">Узнать цены</a>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</section>
+    // Удаляем класс active после завершения анимации
+    setTimeout(() => {
+      item.classList.remove('active');
+      answer.style.display = 'none';
+    }, 400);
+  }
+  
+  // Функция для создания эффекта волны при клике
+  function createRippleEffect(event, element) {
+    const ripple = document.createElement('span');
+    ripple.classList.add('ripple');
+    
+    const rect = element.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    
+    ripple.style.width = ripple.style.height = `${size}px`;
+    ripple.style.left = `${event.clientX - rect.left - size / 2}px`;
+    ripple.style.top = `${event.clientY - rect.top - size / 2}px`;
+    
+    element.appendChild(ripple);
+    
+    setTimeout(() => {
+      ripple.remove();
+    }, 600);
+  }
+  
+  // Добавляем эффект "случайного" открытия одного вопроса при загрузке страницы
+  setTimeout(() => {
+    const randomIndex = Math.floor(Math.random() * Math.min(faqItems.length, 3));
+    openItem(faqItems[randomIndex]);
+  }, 1500);
+});</script>
 	<!--<section class="gallery-slider">
 	    <div class="container">
 	        <div class="row">
@@ -877,168 +1872,162 @@ document.addEventListener('DOMContentLoaded', function() {
     	  <!-- ============================================= -->
     <!-- CONTACT SECTION                               -->
     <!-- ============================================= -->
-    <section class="contact-section">
+    <section class="ind-contact-section">
+      <div class="ind-contact-overlay"></div>
+      <div class="ind-contact-main">
+          <div class="ind-contact-container">
+              <div class="ind-contact-form">
+                  <h2 class="ind-contact-form-title">Наши контакты</h2>
+                  <p class="ind-contact-form-description">Остались вопросы? Задайте их нашему менеджеру, и мы свяжемся с вами в ближайшее время</p>
+                  <form id="telegramForm"> <!-- Добавляем тег form с id -->
+                    <div class="ind-contact-inputs">
+                        <input type="text" id="userName" placeholder="Ваше имя" required>
+                        <input type="email" id="userEmail" placeholder="E-mail" required>
+                        <input type="tel" id="userPhone" placeholder="Телефон" required>
+                        <textarea id="userMessage" placeholder="Ваш вопрос" required></textarea>
+                        <!-- Блок reCAPTCHA временно удален -->
+                        <button type="submit" class="ind-contact-submit">Отправить</button>
+                    </div>
+                  </form>
+                  <div class="ind-contact-social-links">
+                      <a href="javascript:void(0)" class="ind-contact-social-link">
+                          <i class="fab fa-telegram"></i>
+                      </a>
+                      <a href="javascript:void(0)" class="ind-contact-social-link">
+                          <i class="fab fa-vk"></i>
+                      </a>
+                      <a href="javascript:void(0)" class="ind-contact-social-link">
+                          <i class="fab fa-whatsapp"></i>
+                      </a>
+                  </div>
+              </div>
+              <div class="ind-contact-map">
+                  <iframe
+                      src="https://yandex.ru/map-widget/v1/?ll=37.653694%2C55.819090&z=16&mode=search&oid=1252968732&ol=biz&source=main_page"
+                      width="560"
+                      height="400"
+                      frameborder="1"
+                      allowfullscreen="true">
+                  </iframe>
+              </div>
+          </div>
+      </div>
+    </section>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=&lang=ru_RU"></script>
+  <!-- ============================================= -->
+<!-- FOOTER SECTION (SEO OPTIMIZED)                -->
+<!-- ============================================= -->
+<footer class="site-footer" itemscope itemtype="http://schema.org/Organization">
+  <div class="footer-widgets">
       <div class="container">
           <div class="row">
-              <div class="col-lg-6 col-md-8 offset-lg-6 offset-md-4">
-                  <div class="contact-form-container">
-                      <div class="contact-form-header">
-                          <div class="form-icon">
-                              <i class="fa fa-envelope"></i>
-                          </div>
-                          <h3>Остались вопросы?</h3>
-                          <p>Задайте их нашему менеджеру, и мы свяжемся с вами в ближайшее время</p>
+              
+              <!-- ========== БЛОК О КОМПАНИИ ========== -->
+              <div class="col-lg-4 col-md-6">
+                  <div class="footer-widget about-widget">
+                      <div class="footer-logo" itemprop="logo">
+                          <img src="assets/templates/img/logo.png" 
+                               alt="GigSys - IT аутсорсинг и поддержка бизнеса" 
+                               width="180" 
+                               height="50"
+                               loading="lazy">
                       </div>
+                      <p itemprop="description">Комплексное ИТ-обслуживание для бизнеса любого масштаба. 
+                      Предоставляем полный спектр услуг по внедрению и поддержке ИТ-инфраструктуры.</p>
                       
-                      <form action="req/bottg.php" class="contact-form form1" autocomplete="off" method='post'>
-                          <div class="form-group">
-                              <div class="form-field">
-                                  <input type="text" name="named" placeholder="Ваше имя" required="required">
-                                  <i class="fa fa-user"></i>
-                              </div>
-                          </div>
-                          
-                          <div class="form-group">
-                              <div class="form-field">
-                                  <input type="email" name="mail" placeholder="E-mail" required="required">
-                                  <i class="fa fa-envelope"></i>
-                              </div>
-                          </div>
-                          
-                          <div class="form-group">
-                              <div class="form-field">
-                                  <input type="text" name="tel" placeholder="Ваш телефон" class="tel-input" required="required">
-                                  <i class="fa fa-phone"></i>
-                              </div>
-                          </div>
-                          
-                          <div class="form-group">
-                              <div class="form-field">
-                                  <textarea rows="3" cols="50" placeholder="Ваш вопрос" name="message"></textarea>
-                                  <i class="fa fa-comment"></i>
-                              </div>
-                          </div>
-                          
-                          <div class="form-group check">
-                              <label class="checkbox-container">
-                                  <input type="checkbox" required="required">
-                                  <span class="checkmark"></span>
-                                  <span class="checkbox-text">Согласен на обработку персональных данных</span>
-                              </label>
-                          </div>
-                          
-                          <div class="form-group">
-                              <div class="g-recaptcha" data-sitekey="6Ld_cIgUAAAAAFef3iod62k40VsXS18VAp7pYNXh"></div>
-                          </div>
-                          
-                          <div class="form-group">
-                              <button class="btn btn-primary btn-block btn33" type='submit'>
-                                  <span>Отправить</span>
-                                  <i class="fa fa-paper-plane"></i>
-                              </button>
-                          </div>
-                          
-                          <div class="text-danger" id="recaptchaError"></div>
-                      </form>
+                      <!-- СОЦИАЛЬНЫЕ СЕТИ С MICRODATA -->
+                      <div class="footer-social" aria-label="Социальные сети">
+                          <a href="https://t.me/GigSys" itemprop="sameAs" aria-label="Telegram">
+                              <i class="fab fa-telegram"></i>
+                          </a>
+                          <a href="https://vk.com/gigsys" itemprop="sameAs" aria-label="ВКонтакте">
+                              <i class="fab fa-vk"></i>
+                          </a>
+                          <a href="https://wa.me/79255853075" itemprop="sameAs" aria-label="WhatsApp">
+                              <i class="fab fa-whatsapp"></i>
+                          </a>
+                          <a href="mailto:it@gigsys.ru" itemprop="sameAs" aria-label="Email">
+                              <i class="fas fa-envelope"></i>
+                          </a>
+                      </div>
                   </div>
               </div>
-          </div>
-      </div>
-      
-      <div class="contact-overlay"></div>
-  </section>
 
-  <!-- ============================================= -->
-  <!-- FOOTER SECTION                                -->
-  <!-- ============================================= -->
-  <footer class="site-footer">
-      <div class="footer-widgets">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-4 col-md-6">
-                      <div class="footer-widget about-widget">
-                          <div class="footer-logo">
-                              <img src="assets/templates/img/logo.png" alt="GigSys">
-                          </div>
-                          <p>Комплексное ИТ-обслуживание для бизнеса любого масштаба. Предоставляем полный спектр услуг по внедрению и поддержке ИТ-инфраструктуры.</p>
-                          <div class="footer-social">
-                              <a href="#"><i class="fa fa-facebook"></i></a>
-                              <a href="#"><i class="fa fa-twitter"></i></a>
-                              <a href="#"><i class="fa fa-linkedin"></i></a>
-                              <a href="#"><i class="fa fa-instagram"></i></a>
-                          </div>
-                      </div>
+              <!-- ========== НАВИГАЦИОННЫЕ ССЫЛКИ ========== -->
+              <div class="col-lg-2 col-md-6">
+                  <nav class="footer-widget links-widget" aria-label="Дополнительная навигация">
+                      <h4 class="widget-title">Компания</h4>
+                      <ul>
+                          <li><a href="index.html" itemprop="url">Главная</a></li>
+                          <li><a href="o-kompanii.html">О компании</a></li>
+                          <li><a href="novosti/index.html">Новости</a></li>
+                          <li><a href="kontaktyi.html">Контакты</a></li>
+                      </ul>
+                  </nav>
+              </div>
+
+              <!-- ========== СПИСОК УСЛУГ ========== -->
+              <div class="col-lg-3 col-md-6">
+                  <div class="footer-widget services-widget">
+                      <h4 class="widget-title">Услуги</h4>
+                      <ul>
+                          <li><a href="it-support.html">IT-поддержка</a></li>
+                          <li><a href="it-autsorsing.html">IT-аутсорсинг</a></li>
+                          <li><a href="virtual-office.html">Защищенный офис</a></li>
+                          <li><a href="obsluzhivanie-serverov.html">Серверы</a></li>
+                      </ul>
                   </div>
-                  
-                  <div class="col-lg-2 col-md-6">
-                      <div class="footer-widget links-widget">
-                          <h4 class="widget-title">Компания</h4>
-                          <ul>
-                              <li><a href="index.htm">Главная</a></li>
-                              <li><a href="o-kompanii.html">О компании</a></li>
-                              <li><a href="novosti/index.htm">Новости</a></li>
-                              <li><a href="kontaktyi.html">Контакты</a></li>
-                          </ul>
-                      </div>
-                  </div>
-                  
-                  <div class="col-lg-3 col-md-6">
-                      <div class="footer-widget services-widget">
-                          <h4 class="widget-title">Услуги</h4>
-                          <ul>
-                              <li><a href="it-support.html">IT-поддержка</a></li>
-                              <li><a href="it-podderzhka.html">IT-аутсорсинг</a></li>
-                              <li><a href="virtual-office.html">Защищенный офис</a></li>
-                              <li><a href="obsluzhivanie-serverov.html">Серверы</a></li>
-                          </ul>
-                      </div>
-                  </div>
-                  
-                  <div class="col-lg-3 col-md-6">
-                      <div class="footer-widget contact-widget">
-                          <h4 class="widget-title">Контакты</h4>
-                          <ul class="contact-list">
-                              <li>
-                                  <i class="fa fa-map-marker-alt"></i>
-                                  <span>г. Москва, Ракетный бульвар, д.15, оф.31</span>
-                              </li>
-                              <li>
-                                  <i class="fa fa-phone-alt"></i>
-                                  <a href="tel:88003501160">8 (800) 350-11-60</a>
-                              </li>
-                              <li>
-                                  <i class="fa fa-envelope"></i>
-                                  <a href="mailto:it@gigsys.ru">it@gigsys.ru</a>
-                              </li>
-                              <li>
-                                  <i class="fa fa-clock-o"></i>
-                                  <span>Пн-Пт: 9:00 - 18:00</span>
-                              </li>
-                          </ul>
-                      </div>
+              </div>
+
+              <!-- ========== КОНТАКТЫ С MICRODATA ========== -->
+              <div class="col-lg-3 col-md-6">
+                  <div class="footer-widget contact-widget" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                      <h4 class="widget-title">Контакты</h4>
+                      <ul class="contact-list">
+                          <li>
+                              <i class="fa fa-map-marker-alt"></i>
+                              <span itemprop="streetAddress">Ракетный бульвар, д.15, оф.31</span>, 
+                              <span itemprop="addressLocality">Москва</span>
+                          </li>
+                          <li>
+                              <i class="fas fa-phone-alt"></i>
+                              <a href="tel:88003501160" itemprop="telephone">8(499)350-11-60</a>
+                          </li>
+                          <li>
+                              <i class="fa fa-envelope"></i>
+                              <a href="mailto:it@gigsys.ru" itemprop="email">it@gigsys.ru</a>
+                          </li>
+                          <li>
+                              <i class="fa fa-clock"></i>
+                              <span itemprop="openingHours">Пн-Пт: 9:00 - 18:00</span>
+                          </li>
+                      </ul>
                   </div>
               </div>
           </div>
       </div>
-      
-      <div class="footer-bottom">
-          <div class="container">
-              <div class="row align-items-center">
-                  <div class="col-lg-6">
-                      <div class="copyright">
-                          <p>© 2025 GigSys IT-solutions. Все права защищены</p>
-                      </div>
+  </div>
+
+  <!-- ========== КОПИРАЙТ И ЮРИДИЧЕСКИЕ ССЫЛКИ ========== -->
+  <div class="footer-bottom">
+      <div class="container">
+          <div class="row align-items-center">
+              <div class="col-lg-6">
+                  <div class="copyright">
+                      <p>&copy; <span itemprop="copyrightYear">2025</span> 
+                      <span itemprop="name">GigSys IT-solutions</span>. Все права защищены</p>
                   </div>
-                  <div class="col-lg-6">
-                      <div class="footer-bottom-links text-lg-right">
-                          <a href="#">Политика конфиденциальности</a>
-                          <a href="#">Пользовательское соглашение</a>
-                      </div>
-                  </div>
+              </div>
+              <div class="col-lg-6">
+                  <nav class="footer-bottom-links text-lg-right" aria-label="Юридическая информация">
+                      <a href="privacy-policy.html">Политика конфиденциальности</a>
+                      <a href="terms.html">Пользовательское соглашение</a>
+                  </nav>
               </div>
           </div>
       </div>
-  </footer>
+  </div>
+</footer>
 
   <!-- Кнопка "Наверх" -->
   <a href="#" class="back-to-top">
@@ -1060,7 +2049,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <!-- Заголовок -->
       <div class="simple-modal-header">
           <div class="simple-modal-icon">
-              <i class="fa fa-headset"></i>
+              <i class="fas fa-hands-helping"></i>
           </div>
           <h3>ЗАКАЗАТЬ ЗВОНОК</h3>
           <p>Оставьте свои контактные данные, и мы свяжемся с вами в ближайшее время</p>
@@ -1413,6 +2402,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	
 	<script src="assets/templates/js/index.js"></script>
 	<script src="assets/templates/js/voffice.js"></script>
+  <script src="yandex.js"></script>
+
 
     <!-- Yandex.Metrika counter -->
 <script type="text/javascript">

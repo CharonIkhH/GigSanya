@@ -1,0 +1,265 @@
+[2025-04-28 10:03:36] Получен запрос
+Array
+(
+    [method] => POST
+    [is_ajax] => Да
+    [input] => Array
+        (
+            [name] => 213321321321
+            [email] => 3213@321321.com
+            [phone] => 1423142314231423
+            [comment] => 4213412314314321432
+            [source] => http://localhost:3000/index.htm
+        )
+
+    [post] => Array
+        (
+        )
+
+    [headers] => Array
+        (
+            [Host] => localhost:3000
+            [Connection] => keep-alive
+            [Content-Length] => 151
+            [sec-ch-ua-platform] => "Windows"
+            [X-Requested-With] => XMLHttpRequest
+            [User-Agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36
+            [Accept] => application/json
+            [sec-ch-ua] => "Google Chrome";v="135", "Not-A.Brand";v="8", "Chromium";v="135"
+            [Content-Type] => application/json
+            [sec-ch-ua-mobile] => ?0
+            [Origin] => http://localhost:3000
+            [Sec-Fetch-Site] => same-origin
+            [Sec-Fetch-Mode] => cors
+            [Sec-Fetch-Dest] => empty
+            [Referer] => http://localhost:3000/index.htm
+            [Accept-Encoding] => gzip, deflate, br, zstd
+            [Accept-Language] => ru-LV,ru;q=0.9,lv-LV;q=0.8,lv;q=0.7,ru-RU;q=0.6,en-US;q=0.5,en;q=0.4
+            [Cookie] => Webstorm-cd6e6113=bc21e6f1-fa52-4377-8cb1-af98a2a8f7e6; _ga=GA1.1.832830069.1745570498; _ga_5JHWCZQE3N=GS1.1.1745823637.2.0.1745823640.57.0.0
+        )
+
+)
+
+
+[2025-04-28 10:03:36] Значение поля комментария
+Array
+(
+    [raw_comment] => 4213412314314321432
+    [raw_userMessage] => не определено
+    [raw_Комментарий] => не определено
+    [processed_message] => 4213412314314321432
+)
+
+
+[2025-04-28 10:04:44] Получен запрос
+Array
+(
+    [method] => POST
+    [is_ajax] => Да
+    [input] => Array
+        (
+            [name] => 213213213213213
+            [email] => 12321332121@123213321.com
+            [phone] => 2213434212134
+            [comment] => 2314214312433214
+            [source] => http://localhost:3000/index.htm
+        )
+
+    [post] => Array
+        (
+        )
+
+    [headers] => Array
+        (
+            [Host] => localhost:3000
+            [Connection] => keep-alive
+            [Content-Length] => 158
+            [sec-ch-ua-platform] => "Windows"
+            [X-Requested-With] => XMLHttpRequest
+            [User-Agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36
+            [Accept] => application/json
+            [sec-ch-ua] => "Google Chrome";v="135", "Not-A.Brand";v="8", "Chromium";v="135"
+            [Content-Type] => application/json
+            [sec-ch-ua-mobile] => ?0
+            [Origin] => http://localhost:3000
+            [Sec-Fetch-Site] => same-origin
+            [Sec-Fetch-Mode] => cors
+            [Sec-Fetch-Dest] => empty
+            [Referer] => http://localhost:3000/index.htm
+            [Accept-Encoding] => gzip, deflate, br, zstd
+            [Accept-Language] => ru-LV,ru;q=0.9,lv-LV;q=0.8,lv;q=0.7,ru-RU;q=0.6,en-US;q=0.5,en;q=0.4
+            [Cookie] => Webstorm-cd6e6113=bc21e6f1-fa52-4377-8cb1-af98a2a8f7e6; _ga=GA1.1.832830069.1745570498; _ga_5JHWCZQE3N=GS1.1.1745823637.2.0.1745823640.57.0.0
+        )
+
+)
+
+
+[2025-04-28 10:04:44] Значение поля комментария
+Array
+(
+    [raw_comment] => 2314214312433214
+    [raw_userMessage] => не определено
+    [raw_Комментарий] => не определено
+    [processed_message] => 2314214312433214
+)
+
+
+[2025-04-28 10:05:20] Получен запрос
+Array
+(
+    [method] => POST
+    [is_ajax] => Да
+    [input] => Array
+        (
+            [name] => 123123321
+            [email] => asdsda@dasdsa.com
+            [phone] => 2123123123
+            [comment] => dsaasd
+            [source] => http://localhost:3000/index.htm
+        )
+
+    [post] => Array
+        (
+        )
+
+    [headers] => Array
+        (
+            [Host] => localhost:3000
+            [Connection] => keep-alive
+            [Content-Length] => 131
+            [sec-ch-ua-platform] => "Windows"
+            [X-Requested-With] => XMLHttpRequest
+            [User-Agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36
+            [Accept] => application/json
+            [sec-ch-ua] => "Google Chrome";v="135", "Not-A.Brand";v="8", "Chromium";v="135"
+            [Content-Type] => application/json
+            [sec-ch-ua-mobile] => ?0
+            [Origin] => http://localhost:3000
+            [Sec-Fetch-Site] => same-origin
+            [Sec-Fetch-Mode] => cors
+            [Sec-Fetch-Dest] => empty
+            [Referer] => http://localhost:3000/index.htm
+            [Accept-Encoding] => gzip, deflate, br, zstd
+            [Accept-Language] => ru-LV,ru;q=0.9,lv-LV;q=0.8,lv;q=0.7,ru-RU;q=0.6,en-US;q=0.5,en;q=0.4
+            [Cookie] => Webstorm-cd6e6113=bc21e6f1-fa52-4377-8cb1-af98a2a8f7e6; _ga=GA1.1.832830069.1745570498; _ga_5JHWCZQE3N=GS1.1.1745823637.2.0.1745823640.57.0.0
+        )
+
+)
+
+
+[2025-04-28 10:05:20] Значение поля комментария
+Array
+(
+    [raw_comment] => dsaasd
+    [raw_userMessage] => не определено
+    [raw_Комментарий] => не определено
+    [processed_message] => dsaasd
+)
+
+
+[2025-04-28 10:07:01] Получен запрос
+Array
+(
+    [method] => POST
+    [is_ajax] => Да
+    [input] => Array
+        (
+            [name] => 123123213123
+            [email] => 123321213213@232.com
+            [phone] => 213231213
+            [comment] => 2133211213213
+            [source] => http://localhost:3000/index.php
+        )
+
+    [post] => Array
+        (
+        )
+
+    [headers] => Array
+        (
+            [Host] => localhost:3000
+            [Connection] => keep-alive
+            [Content-Length] => 143
+            [sec-ch-ua-platform] => "Windows"
+            [X-Requested-With] => XMLHttpRequest
+            [User-Agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36
+            [Accept] => application/json
+            [sec-ch-ua] => "Google Chrome";v="135", "Not-A.Brand";v="8", "Chromium";v="135"
+            [Content-Type] => application/json
+            [sec-ch-ua-mobile] => ?0
+            [Origin] => http://localhost:3000
+            [Sec-Fetch-Site] => same-origin
+            [Sec-Fetch-Mode] => cors
+            [Sec-Fetch-Dest] => empty
+            [Referer] => http://localhost:3000/index.php
+            [Accept-Encoding] => gzip, deflate, br, zstd
+            [Accept-Language] => ru-LV,ru;q=0.9,lv-LV;q=0.8,lv;q=0.7,ru-RU;q=0.6,en-US;q=0.5,en;q=0.4
+            [Cookie] => Webstorm-cd6e6113=bc21e6f1-fa52-4377-8cb1-af98a2a8f7e6; _ga=GA1.1.832830069.1745570498; _ga_5JHWCZQE3N=GS1.1.1745823637.2.0.1745823640.57.0.0
+        )
+
+)
+
+
+[2025-04-28 10:07:01] Значение поля комментария
+Array
+(
+    [raw_comment] => 2133211213213
+    [raw_userMessage] => не определено
+    [raw_Комментарий] => не определено
+    [processed_message] => 2133211213213
+)
+
+
+[2025-04-28 10:07:03] Получен запрос
+Array
+(
+    [method] => POST
+    [is_ajax] => Да
+    [input] => Array
+        (
+            [name] => 123123213123
+            [email] => 123321213213@232.com
+            [phone] => 213231213321
+            [comment] => 2133211213213
+            [source] => http://localhost:3000/index.php
+        )
+
+    [post] => Array
+        (
+        )
+
+    [headers] => Array
+        (
+            [Host] => localhost:3000
+            [Connection] => keep-alive
+            [Content-Length] => 146
+            [sec-ch-ua-platform] => "Windows"
+            [X-Requested-With] => XMLHttpRequest
+            [User-Agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36
+            [Accept] => application/json
+            [sec-ch-ua] => "Google Chrome";v="135", "Not-A.Brand";v="8", "Chromium";v="135"
+            [Content-Type] => application/json
+            [sec-ch-ua-mobile] => ?0
+            [Origin] => http://localhost:3000
+            [Sec-Fetch-Site] => same-origin
+            [Sec-Fetch-Mode] => cors
+            [Sec-Fetch-Dest] => empty
+            [Referer] => http://localhost:3000/index.php
+            [Accept-Encoding] => gzip, deflate, br, zstd
+            [Accept-Language] => ru-LV,ru;q=0.9,lv-LV;q=0.8,lv;q=0.7,ru-RU;q=0.6,en-US;q=0.5,en;q=0.4
+            [Cookie] => Webstorm-cd6e6113=bc21e6f1-fa52-4377-8cb1-af98a2a8f7e6; _ga=GA1.1.832830069.1745570498; _ga_5JHWCZQE3N=GS1.1.1745823637.2.0.1745823640.57.0.0
+        )
+
+)
+
+
+[2025-04-28 10:07:03] Значение поля комментария
+Array
+(
+    [raw_comment] => 2133211213213
+    [raw_userMessage] => не определено
+    [raw_Комментарий] => не определено
+    [processed_message] => 2133211213213
+)
+
+

@@ -22,22 +22,23 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-	<link rel="stylesheet" href="assets/templates/libs/bootstrap4/bootstrap-grid.min.css">
-	<link rel="stylesheet" href="assets/templates/libs/bootstrap4/bootstrap-reboot.min.css">
-	<link rel="stylesheet" href="assets/templates/libs/animate/animate.css">
-	<link rel="stylesheet" href="assets/templates/libs/magnific/magnific-popup.css">
-	<link rel="stylesheet" href="assets/templates/libs/owl.carousel/owl.carousel.css">
-	<link rel="stylesheet" href="assets/templates/libs/fontawesome5/web-fonts-with-css/css/fontawesome-all.min.css">
-	<link rel="stylesheet" href="assets/templates/fonts/icon/css/icon.css">
-	<!--<link rel="stylesheet" href="assets/templates/fonts/icons2/css/fontello.css">-->
-	
-	<link rel="stylesheet" href="/core/components/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/templates/libs/bootstrap4/bootstrap-grid.min.css" media="all">
+    <link rel="stylesheet" href="assets/templates/libs/bootstrap4/bootstrap-reboot.min.css" media="all">
+    <link rel="stylesheet" href="assets/templates/libs/magnific/magnific-popup.css" media="all">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" 
+          integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer">
 	
 	<link rel="stylesheet" href="assets/templates/css/fonts.css">
-	<link rel="stylesheet" href="/assets/templates/css/root.css">
-    <link rel="stylesheet" href="/assets/templates/css/main.css">
+	<link rel="stylesheet" href="assets/templates/css/root.css">
+    <link rel="stylesheet" href="assets/templates/css/main.css">
 	<link rel="stylesheet" href="assets/templates/css/podd.css">
-    <link rel="stylesheet" href="/assets/templates/css/header.css">
+    <link rel="stylesheet" href="assets/templates/css/header.css">
+    <script src="app.js"></script>
+    <script src="modal.js"></script>
+    <script src="amo-form.js"></script>
+    <script src="amocrm_token.js"></script>
 
 	<script src="assets/templates/libs/modernizr/modernizr.js"></script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -73,10 +74,9 @@
         webvisor:true
    });
 </script>
-<noscript><div><img src="watch/92579917" style="position:absolute; left:-9999px;" alt=""></div></noscript>
-<!-- /Yandex.Metrika counter -->
 
 <script src='recaptcha/api.js' async="" defer=""></script>
+<link rel="canonical" href="hosting.html">
 </head>
 
 <body>
@@ -90,85 +90,119 @@
 			</div>
 		</div>
 	</section>-->
-    <!-- Структура хедера -->
-<div class="container">
-  <header class="header-modern" id="main-header">
-    <div class="header-wrapper">
-      <!-- Логотип -->
-      <div class="logo-box">
-        <a href="index.htm" class="logo-link">
-          <img src="assets/templates/img/logo.png" alt="GigSys Logo">
-        </a>
-      </div>
-      
-      <!-- Главная навигация (десктоп) -->
-      <nav class="desktop-nav">
-        <ul class="main-menu">
-          <li class="active"><a href="index.htm">Главная</a></li>
-          <li><a href="o-kompanii.html">О компании</a></li>
-          <li><a href="novosti/index.htm">Новости</a></li>
-          <li class="menu-item-has-children">
-              <a href="#" class="services-toggle">
-                <span class="toggle-icon"><i class="fas fa-th-large"></i></span>
-                <span class="toggle-text">Услуги</span>
-                <span class="toggle-arrow"><i class="fas fa-chevron-down"></i></span>
+ <!-- Структура хедера с улучшенной семантикой и микроразметкой -->
+ <div class="container">
+    <header class="header-modern" id="main-header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-wrapper">
+        <!-- Логотип с улучшенными атрибутами -->
+        <div class="logo-box" itemscope itemtype="http://schema.org/Organization">
+          <a href="index.htm" class="logo-link" title="GigSys - IT аутсорсинг и поддержка бизнеса">
+            <img src="assets/templates/img/logo2.webp" alt="GigSys - IT-аутсорсинг и поддержка" width="180" height="50" itemprop="logo" loading="eager">
+            <meta itemprop="name" content="GigSys">
+            <meta itemprop="url" content="https://gigsys.ru">
+          </a>
+        </div>
+        
+        <!-- Главная навигация (десктоп) с микроразметкой -->
+        <nav class="desktop-nav" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="Основная навигация">
+          <ul class="main-menu" role="menubar">
+            <li class="active" role="menuitem"><a href="index.htm" itemprop="url"><span itemprop="name">Главная</span></a></li>
+            <li role="menuitem"><a href="o-kompanii.html" itemprop="url"><span itemprop="name">О компании</span></a></li>
+            <li role="menuitem"><a href="landing.html" itemprop="url"><span itemprop="name">Мероприятия</span></a></li>
+            <li class="menu-item-has-children" role="menuitem">
+              <a href="#" class="services-toggle" 
+                 aria-haspopup="true" 
+                 aria-expanded="false"
+                 aria-controls="mega-menu-services"
+                 itemprop="url">
+                <span class="toggle-icon"><i class="fas fa-th-large" aria-hidden="true"></i></span>
+                <span class="toggle-text" itemprop="name">Услуги</span>
+                <span class="toggle-arrow"><i class="fas fa-chevron-down" aria-hidden="true"></i></span>
               </a>
               
-              <div class="mega-menu">
+              <!-- Мега-меню с улучшенной семантикой -->
+              <div class="mega-menu" id="mega-menu-services" role="region" aria-label="Меню услуг">
                 <!-- Мобильная кнопка закрытия -->
-                <button class="mega-menu-close d-md-none">
-                  <i class="fas fa-times"></i>
+                <button class="mega-menu-close d-md-none" aria-label="Закрыть меню">
+                  <i class="fas fa-times" aria-hidden="true"></i>
                 </button>
                 
-                <!-- Верхняя навигация по меню -->
+                <!-- Верхняя навигация по меню с микроразметкой и улучшенной доступностью -->
                 <div class="mega-menu-header">
                   <div class="container">
-                    <div class="menu-categories">
-                      <button class="menu-category active" data-category="it">ИТ-услуги</button>
-                      <button class="menu-category" data-category="infra">Инфраструктура</button>
-                      <button class="menu-category" data-category="security">Безопасность</button>
-                      <button class="menu-category" data-category="software">ПО и разработка</button>
+                    <div class="menu-categories" role="tablist" aria-label="Категории услуг">
+                      <button class="menu-category active" 
+                              data-category="it" 
+                              role="tab" 
+                              id="tab-it" 
+                              aria-selected="true" 
+                              aria-controls="panel-it">ИТ-услуги</button>
+                      <button class="menu-category" 
+                              data-category="infra" 
+                              role="tab" 
+                              id="tab-infra" 
+                              aria-selected="false" 
+                              aria-controls="panel-infra">Инфраструктура</button>
+                      <button class="menu-category" 
+                              data-category="security" 
+                              role="tab" 
+                              id="tab-security" 
+                              aria-selected="false" 
+                              aria-controls="panel-security">Безопасность</button>
+                      <button class="menu-category" 
+                              data-category="software" 
+                              role="tab" 
+                              id="tab-software" 
+                              aria-selected="false" 
+                              aria-controls="panel-software">ПО и сервисы</button>
                     </div>
                   </div>
                 </div>
-                
-                <!-- Основной контент меню -->
+
+                <!-- Основной контент меню с микроразметкой для каждой услуги -->
                 <div class="mega-menu-content">
                   <div class="container">
                     <!-- ИТ-услуги -->
-                    <div class="menu-panel active" data-panel="it">
+                    <div class="menu-panel active" 
+                         data-panel="it" 
+                         role="tabpanel" 
+                         id="panel-it" 
+                         aria-labelledby="tab-it">
                       <div class="menu-panel-grid">
                         <div class="menu-column">
                           <div class="menu-group">
                             <h4 class="menu-group-title">
-                              <i class="fas fa-headset"></i>
+                              <i class="fas fa-headset" aria-hidden="true"></i>
                               Поддержка и аутсорсинг
                             </h4>
-                            <ul class="menu-list">
-                              <li>
+                            <ul class="menu-list" role="menu">
+                              <li role="menuitem" itemscope itemtype="http://schema.org/Service">
                                 <a href="it-support.html">
-                                  <span class="link-icon"><i class="fas fa-user-headset"></i></span>
+                                  <span class="link-icon"><i class="fas fa-user-headset" aria-hidden="true"></i></span>
                                   <span class="link-content">
-                                    <span class="link-title">IT-поддержка 24/7</span>
-                                    <span class="link-desc">Круглосуточная техническая поддержка</span>
+                                    <span class="link-title" itemprop="name">IT-поддержка</span>
+                                    <span class="link-desc" itemprop="description">Профессиональная поддержка вашего бизнеса</span>
+                                    <meta itemprop="serviceType" content="IT Support">
                                   </span>
                                 </a>
                               </li>
-                              <li>
-                                <a href="it-autsorsing.html">
-                                  <span class="link-icon"><i class="fas fa-users-cog"></i></span>
+                              <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                                <a href="it-podderzhka.html">
+                                  <span class="link-icon"><i class="fas fa-users-cog" aria-hidden="true"></i></span>
                                   <span class="link-content">
-                                    <span class="link-title">IT-аутсорсинг</span>
-                                    <span class="link-desc">Комплексное обслуживание инфраструктуры</span>
+                                    <span class="link-title" itemprop="name">IT-аутсорсинг</span>
+                                    <span class="link-desc" itemprop="description">Комплексное обслуживание инфраструктуры</span>
+                                    <meta itemprop="serviceType" content="IT Outsourcing">
                                   </span>
                                 </a>
                               </li>
-                              <li>
-                                <a href="specialists.html">
-                                  <span class="link-icon"><i class="fas fa-user-tie"></i></span>
+                              <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                                <a href="virtual-office.html">
+                                  <span class="link-icon"><i class="fas fa-laptop-house" aria-hidden="true"></i></span>
                                   <span class="link-content">
-                                    <span class="link-title">Специалисты на аутсорсинг</span>
-                                    <span class="link-desc">Привлечение экспертов под задачи</span>
+                                    <span class="link-title" itemprop="name">Виртуальный офис</span>
+                                    <span class="link-desc" itemprop="description">Защищенное рабочее пространство</span>
+                                    <meta itemprop="serviceType" content="Virtual Office">
                                   </span>
                                 </a>
                               </li>
@@ -179,25 +213,34 @@
                         <div class="menu-column">
                           <div class="menu-group">
                             <h4 class="menu-group-title">
-                              <i class="fas fa-tools"></i>
-                              Обслуживание техники
+                              <i class="fas fa-info-circle" aria-hidden="true"></i>
+                              О компании
                             </h4>
-                            <ul class="menu-list">
-                              <li>
-                                <a href="computer-repair.html">
-                                  <span class="link-icon"><i class="fas fa-desktop"></i></span>
+                            <ul class="menu-list" role="menu">
+                              <li role="menuitem">
+                                <a href="o-kompanii.html">
+                                  <span class="link-icon"><i class="fas fa-building" aria-hidden="true"></i></span>
                                   <span class="link-content">
-                                    <span class="link-title">Ремонт компьютеров</span>
-                                    <span class="link-desc">Диагностика и устранение неисправностей</span>
+                                    <span class="link-title">О нас</span>
+                                    <span class="link-desc">История и ценности компании</span>
                                   </span>
                                 </a>
                               </li>
-                              <li>
-                                <a href="office-equipment.html">
-                                  <span class="link-icon"><i class="fas fa-print"></i></span>
+                              <li role="menuitem">
+                                <a href="kontaktyi.html">
+                                  <span class="link-icon"><i class="fas fa-address-card" aria-hidden="true"></i></span>
                                   <span class="link-content">
-                                    <span class="link-title">Оргтехника</span>
-                                    <span class="link-desc">Обслуживание принтеров и МФУ</span>
+                                    <span class="link-title">Контакты</span>
+                                    <span class="link-desc">Свяжитесь с нашими специалистами</span>
+                                  </span>
+                                </a>
+                              </li>
+                              <li role="menuitem">
+                                <a href="landing.html">
+                                  <span class="link-icon"><i class="fas fa-newspaper" aria-hidden="true"></i></span>
+                                  <span class="link-content">
+                                    <span class="link-title">Мероприятияspan>
+                                    <span class="link-desc">Актуальные события</span>
                                   </span>
                                 </a>
                               </li>
@@ -205,14 +248,15 @@
                           </div>
                         </div>
                         
-                        <div class="menu-panel-highlight">
+                        <!-- Выделенное предложение с микроразметкой -->
+                        <div class="menu-panel-highlight" itemscope itemtype="http://schema.org/Offer">
                           <div class="highlight-content">
                             <div class="highlight-badge">Популярное</div>
-                            <h3>Комплексный IT-аутсорсинг</h3>
-                            <p>Полное обслуживание IT-инфраструктуры вашей компании. Экономия до 30% на IT-затратах.</p>
-                            <a href="it-outsourcing-plus.html" class="highlight-btn">
+                            <h3 itemprop="name">Выгодный IT-аутсорсинг</h3>
+                            <p itemprop="description">Альтернатива штатным специалистам. Экономия до 30% на IT-затратах.</p>
+                            <a href="it-poddergka.html" class="highlight-btn" itemprop="url">
                               Подробнее
-                              <i class="fas fa-long-arrow-right"></i>
+                              <i class="fas fa-long-arrow-right" aria-hidden="true"></i>
                             </a>
                           </div>
                         </div>
@@ -220,30 +264,36 @@
                     </div>
                     
                     <!-- Инфраструктура -->
-                    <div class="menu-panel" data-panel="infra">
+                    <div class="menu-panel" 
+                         data-panel="infra" 
+                         role="tabpanel" 
+                         id="panel-infra" 
+                         aria-labelledby="tab-infra">
                       <div class="menu-panel-grid">
                         <div class="menu-column">
                           <div class="menu-group">
                             <h4 class="menu-group-title">
-                              <i class="fas fa-server"></i>
-                              Серверы и системы
+                              <i class="fas fa-server" aria-hidden="true"></i>
+                              Серверы и сети
                             </h4>
-                            <ul class="menu-list">
-                              <li>
-                                <a href="server-configuration.html">
-                                  <span class="link-icon"><i class="fas fa-cogs"></i></span>
+                            <ul class="menu-list" role="menu">
+                              <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                                <a href="obsluzhivanie-serverov.html">
+                                  <span class="link-icon"><i class="fas fa-wrench" aria-hidden="true"></i></span>
                                   <span class="link-content">
-                                    <span class="link-title">Настройка серверов</span>
-                                    <span class="link-desc">Установка и конфигурация серверного ПО</span>
+                                    <span class="link-title" itemprop="name">Обслуживание серверов</span>
+                                    <span class="link-desc" itemprop="description">Техническая поддержка и мониторинг</span>
+                                    <meta itemprop="serviceType" content="Server Maintenance">
                                   </span>
                                 </a>
                               </li>
-                              <li>
-                                <a href="server-maintenance.html">
-                                  <span class="link-icon"><i class="fas fa-wrench"></i></span>
+                              <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                                <a href="montazh-kompyuternykh-setey.html">
+                                  <span class="link-icon"><i class="fas fa-network-wired" aria-hidden="true"></i></span>
                                   <span class="link-content">
-                                    <span class="link-title">Обслуживание серверов</span>
-                                    <span class="link-desc">Техническая поддержка и мониторинг</span>
+                                    <span class="link-title" itemprop="name">Монтаж компьютерных сетей</span>
+                                    <span class="link-desc" itemprop="description">Проектирование и развертывание сетей</span>
+                                    <meta itemprop="serviceType" content="Network Installation">
                                   </span>
                                 </a>
                               </li>
@@ -254,25 +304,27 @@
                         <div class="menu-column">
                           <div class="menu-group">
                             <h4 class="menu-group-title">
-                              <i class="fas fa-hdd"></i>
-                              Хранение данных
+                              <i class="fas fa-cloud" aria-hidden="true"></i>
+                              Облачные решения
                             </h4>
-                            <ul class="menu-list">
-                              <li>
-                                <a href="data-storage.html">
-                                  <span class="link-icon"><i class="fas fa-database"></i></span>
+                            <ul class="menu-list" role="menu">
+                              <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                                <a href="hosting.html">
+                                  <span class="link-icon"><i class="fas fa-server" aria-hidden="true"></i></span>
                                   <span class="link-content">
-                                    <span class="link-title">Системы хранения данных</span>
-                                    <span class="link-desc">Надежные решения для хранения информации</span>
+                                    <span class="link-title" itemprop="name">Хостинг</span>
+                                    <span class="link-desc" itemprop="description">Надежный хостинг для ваших проектов</span>
+                                    <meta itemprop="serviceType" content="Hosting">
                                   </span>
                                 </a>
                               </li>
-                              <li>
-                                <a href="backup-solutions.html">
-                                  <span class="link-icon"><i class="fas fa-copy"></i></span>
+                              <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                                <a href="virtual-office.html">
+                                  <span class="link-icon"><i class="fas fa-desktop" aria-hidden="true"></i></span>
                                   <span class="link-content">
-                                    <span class="link-title">Резервное копирование</span>
-                                    <span class="link-desc">Защита от потери данных</span>
+                                    <span class="link-title" itemprop="name">Виртуальный офис</span>
+                                    <span class="link-desc" itemprop="description">Работа из любой точки мира</span>
+                                    <meta itemprop="serviceType" content="Virtual Office">
                                   </span>
                                 </a>
                               </li>
@@ -280,14 +332,15 @@
                           </div>
                         </div>
                         
-                        <div class="menu-panel-highlight infra-highlight">
+                        <!-- Выделенное предложение с микроразметкой -->
+                        <div class="menu-panel-highlight infra-highlight" itemscope itemtype="http://schema.org/Offer">
                           <div class="highlight-content">
                             <div class="highlight-badge">Выгодно</div>
-                            <h3>Виртуальный сервер</h3>
-                            <p>Мощные облачные серверы для ваших бизнес-задач с гарантией отказоустойчивости 99.9%</p>
-                            <a href="virtual-server.html" class="highlight-btn">
+                            <h3 itemprop="name">Обслуживание серверов</h3>
+                            <p itemprop="description">Профессиональное администрирование и мониторинг с гарантией 99.9% работоспособности</p>
+                            <a href="obsluzhivanie-serverov.html" class="highlight-btn" itemprop="url">
                               Подробнее
-                              <i class="fas fa-long-arrow-right"></i>
+                              <i class="fas fa-long-arrow-right" aria-hidden="true"></i>
                             </a>
                           </div>
                         </div>
@@ -295,30 +348,36 @@
                     </div>
                     
                     <!-- Безопасность -->
-                    <div class="menu-panel" data-panel="security">
+                    <div class="menu-panel" 
+                         data-panel="security" 
+                         role="tabpanel" 
+                         id="panel-security" 
+                         aria-labelledby="tab-security">
                       <div class="menu-panel-grid">
                         <div class="menu-column">
                           <div class="menu-group">
                             <h4 class="menu-group-title">
-                              <i class="fas fa-shield-alt"></i>
+                              <i class="fas fa-shield-alt" aria-hidden="true"></i>
                               Кибербезопасность
                             </h4>
-                            <ul class="menu-list">
-                              <li>
-                                <a href="information-security.html">
-                                  <span class="link-icon"><i class="fas fa-lock"></i></span>
+                            <ul class="menu-list" role="menu">
+                              <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                                <a href="it-podderzhka.html#security">
+                                  <span class="link-icon"><i class="fas fa-lock" aria-hidden="true"></i></span>
                                   <span class="link-content">
-                                    <span class="link-title">Информационная безопасность</span>
-                                    <span class="link-desc">Комплексная защита IT-систем</span>
+                                    <span class="link-title" itemprop="name">Информационная безопасность</span>
+                                    <span class="link-desc" itemprop="description">Комплексная защита IT-систем</span>
+                                    <meta itemprop="serviceType" content="Information Security">
                                   </span>
                                 </a>
                               </li>
-                              <li>
-                                <a href="antivirus-protection.html">
-                                  <span class="link-icon"><i class="fas fa-virus-slash"></i></span>
+                              <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                                <a href="virtual-office.html">
+                                  <span class="link-icon"><i class="fas fa-virus-slash" aria-hidden="true"></i></span>
                                   <span class="link-content">
-                                    <span class="link-title">Антивирусная защита</span>
-                                    <span class="link-desc">Эффективные решения против вредоносного ПО</span>
+                                    <span class="link-title" itemprop="name">Защищенный офис</span>
+                                    <span class="link-desc" itemprop="description">Безопасное рабочее пространство</span>
+                                    <meta itemprop="serviceType" content="Secure Office">
                                   </span>
                                 </a>
                               </li>
@@ -329,25 +388,27 @@
                         <div class="menu-column">
                           <div class="menu-group">
                             <h4 class="menu-group-title">
-                              <i class="fas fa-video"></i>
+                              <i class="fas fa-video" aria-hidden="true"></i>
                               Физическая безопасность
                             </h4>
-                            <ul class="menu-list">
-                              <li>
-                                <a href="video-surveillance.html">
-                                  <span class="link-icon"><i class="fas fa-camera"></i></span>
+                            <ul class="menu-list" role="menu">
+                              <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                                <a href="ustanovka-videonablyudeniya.html">
+                                  <span class="link-icon"><i class="fas fa-camera" aria-hidden="true"></i></span>
                                   <span class="link-content">
-                                    <span class="link-title">Видеонаблюдение</span>
-                                    <span class="link-desc">Системы видеонаблюдения для офисов</span>
+                                    <span class="link-title" itemprop="name">Видеонаблюдение</span>
+                                    <span class="link-desc" itemprop="description">Установка камер в офисы</span>
+                                    <meta itemprop="serviceType" content="Video Surveillance">
                                   </span>
                                 </a>
                               </li>
-                              <li>
-                                <a href="access-control.html">
-                                  <span class="link-icon"><i class="fas fa-key"></i></span>
+                              <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                                <a href="montazh-kompyuternykh-setey.html#security">
+                                  <span class="link-icon"><i class="fas fa-key" aria-hidden="true"></i></span>
                                   <span class="link-content">
-                                    <span class="link-title">Контроль доступа</span>
-                                    <span class="link-desc">СКУД для вашего бизнеса</span>
+                                    <span class="link-title" itemprop="name">Защита сетей</span>
+                                    <span class="link-desc" itemprop="description">Безопасность сетевой инфраструктуры</span>
+                                    <meta itemprop="serviceType" content="Network Security">
                                   </span>
                                 </a>
                               </li>
@@ -355,45 +416,52 @@
                           </div>
                         </div>
                         
-                        <div class="menu-panel-highlight security-highlight">
+                        <!-- Выделенное предложение с микроразметкой -->
+                        <div class="menu-panel-highlight security-highlight" itemscope itemtype="http://schema.org/Offer">
                           <div class="highlight-content">
-                            <div class="highlight-badge">Новинка</div>
-                            <h3>Защита от DDoS-атак</h3>
-                            <p>Непрерывная защита вашего сайта и онлайн-сервисов от распределенных атак</p>
-                            <a href="ddos-protection.html" class="highlight-btn">
+                            <div class="highlight-badge">Рекомендуем</div>
+                            <h3 itemprop="name">Установка видеонаблюдения</h3>
+                            <p itemprop="description">Современные системы видеонаблюдения для вашего офиса с удаленным доступом</p>
+                            <a href="ustanovka-videonablyudeniya.html" class="highlight-btn" itemprop="url">
                               Подробнее
-                              <i class="fas fa-long-arrow-right"></i>
+                              <i class="fas fa-long-arrow-right" aria-hidden="true"></i>
                             </a>
                           </div>
                         </div>
                       </div>
                     </div>
                     
-                    <!-- ПО и разработка -->
-                    <div class="menu-panel" data-panel="software">
+                    <!-- ПО и сервисы -->
+                    <div class="menu-panel" 
+                         data-panel="software" 
+                         role="tabpanel" 
+                         id="panel-software" 
+                         aria-labelledby="tab-software">
                       <div class="menu-panel-grid">
                         <div class="menu-column">
                           <div class="menu-group">
                             <h4 class="menu-group-title">
-                              <i class="fas fa-laptop-code"></i>
+                              <i class="fas fa-laptop-code" aria-hidden="true"></i>
                               Разработка
                             </h4>
-                            <ul class="menu-list">
-                              <li>
-                                <a href="website-development.html">
-                                  <span class="link-icon"><i class="fas fa-globe"></i></span>
+                            <ul class="menu-list" role="menu">
+                              <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                                <a href="landing.html">
+                                  <span class="link-icon"><i class="fas fa-globe" aria-hidden="true"></i></span>
                                   <span class="link-content">
-                                    <span class="link-title">Разработка сайтов</span>
-                                    <span class="link-desc">Создание современных веб-сайтов</span>
+                                    <span class="link-title" itemprop="name">Разработка лендингов</span>
+                                    <span class="link-desc" itemprop="description">Создание продающих страниц</span>
+                                    <meta itemprop="serviceType" content="Landing Page Development">
                                   </span>
                                 </a>
                               </li>
-                              <li>
-                                <a href="software-development.html">
-                                  <span class="link-icon"><i class="fas fa-code"></i></span>
+                              <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                                <a href="virtual-office.html#solutions">
+                                  <span class="link-icon"><i class="fas fa-code" aria-hidden="true"></i></span>
                                   <span class="link-content">
-                                    <span class="link-title">Разработка ПО</span>
-                                    <span class="link-desc">Программное обеспечение под заказ</span>
+                                    <span class="link-title" itemprop="name">Облачные решения</span>
+                                    <span class="link-desc" itemprop="description">Программные продукты для бизнеса</span>
+                                    <meta itemprop="serviceType" content="Cloud Solutions">
                                   </span>
                                 </a>
                               </li>
@@ -404,25 +472,27 @@
                         <div class="menu-column">
                           <div class="menu-group">
                             <h4 class="menu-group-title">
-                              <i class="fas fa-calculator"></i>
+                              <i class="fas fa-calculator" aria-hidden="true"></i>
                               Бизнес-приложения
                             </h4>
-                            <ul class="menu-list">
-                              <li>
-                                <a href="1c-services.html">
-                                  <span class="link-icon"><i class="fas fa-calculator"></i></span>
+                            <ul class="menu-list" role="menu">
+                              <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                                <a href="uslugi-1c.html">
+                                  <span class="link-icon"><i class="fas fa-calculator" aria-hidden="true"></i></span>
                                   <span class="link-content">
-                                    <span class="link-title">Услуги 1С</span>
-                                    <span class="link-desc">Внедрение и поддержка 1С</span>
+                                    <span class="link-title" itemprop="name">Услуги 1С</span>
+                                    <span class="link-desc" itemprop="description">Внедрение и поддержка 1С</span>
+                                    <meta itemprop="serviceType" content="1C Services">
                                   </span>
                                 </a>
                               </li>
-                              <li>
-                                <a href="crm-systems.html">
-                                  <span class="link-icon"><i class="fas fa-users"></i></span>
+                              <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                                <a href="prostoe-reshenie-slozhnyix-zadach.html">
+                                  <span class="link-icon"><i class="fas fa-cloud-download-alt" aria-hidden="true"></i></span>
                                   <span class="link-content">
-                                    <span class="link-title">CRM-системы</span>
-                                    <span class="link-desc">Автоматизация работы с клиентами</span>
+                                    <span class="link-title" itemprop="name">1С ФРЕШ</span>
+                                    <span class="link-desc" itemprop="description">Преимущества облачной 1С</span>
+                                    <meta itemprop="serviceType" content="1C Fresh">
                                   </span>
                                 </a>
                               </li>
@@ -430,14 +500,15 @@
                           </div>
                         </div>
                         
-                        <div class="menu-panel-highlight software-highlight">
+                        <!-- Выделенное предложение с микроразметкой -->
+                        <div class="menu-panel-highlight software-highlight" itemscope itemtype="http://schema.org/Offer">
                           <div class="highlight-content">
                             <div class="highlight-badge">Акция</div>
-                            <h3>1С в облаке</h3>
-                            <p>Аренда 1С с доступом из любой точки мира. Первый месяц бесплатно!</p>
-                            <a href="1c-cloud.html" class="highlight-btn">
+                            <h3 itemprop="name">1С ФРЕШ в облаке</h3>
+                            <p itemprop="description">Простое решение сложных задач. Преимущества облачной версии 1С.</p>
+                            <a href="prostoe-reshenie-slozhnyix-zadach.html" class="highlight-btn" itemprop="url">
                               Подробнее
-                              <i class="fas fa-long-arrow-right"></i>
+                              <i class="fas fa-long-arrow-right" aria-hidden="true"></i>
                             </a>
                           </div>
                         </div>
@@ -446,210 +517,990 @@
                   </div>
                 </div>
                 
-                <!-- Футер меню -->
+                <!-- Футер меню с микроразметкой -->
                 <div class="mega-menu-footer">
                   <div class="container">
                     <div class="mm-footer-content">
                       <div class="mm-footer-cta">
                         <p>Нужна консультация специалиста?</p>
-                        <a href="consultation.html" class="mm-cta-btn">
-                          <i class="fas fa-phone-alt"></i>
-                          Получить консультацию
+                        <a href="kontaktyi.html" class="mm-cta-btn" itemscope itemtype="http://schema.org/ContactPoint">
+                          <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                          <span itemprop="name">Получить консультацию</span>
+                          <meta itemprop="contactType" content="customer support">
                         </a>
-                      </div>
-                      <div class="mm-footer-links">
-                        <a href="all-services.html">Все услуги</a>
-                        <a href="price-list.html">Прайс-лист</a>
-                        <a href="service-packages.html">Пакеты услуг</a>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </li>
-          <li><a href="kontaktyi.html">Контакты</a></li>
-        </ul>
-      </nav>
-      
-      <!-- Контактная информация - в один столбец и с обновленным дизайном -->
-      <div class="header-contacts">
-        <div class="contact-item">
-          <a href="#map-modal" class="popup-with-form contact-link">
-            <div class="contact-icon">
-              <i class="fa fa-map-marker-alt"></i>
-            </div>
-            <div class="contact-text">
-              <div class="contact-label">Адрес офиса</div>
-              <div class="contact-info">г. Москва, Ракетный бульвар, д.15</div>
-            </div>
-          </a>
-        </div>
-        
-        <div class="contact-item">
-          <a href="tel:88003501160" class="contact-link">
-            <div class="contact-icon">
-              <i class="fa fa-phone-alt"></i>
-            </div>
-            <div class="contact-text">
-              <div class="contact-label">Телефон</div>
-              <div class="contact-info">8 (800) 350-11-60</div>
-            </div>
-          </a>
-        </div>
-      </div>
-      
-      <!-- CTA Buttons с вертикальным расположением -->
-      <div class="header-actions vertical">
-        <a href="#callback" class="btn btn-primary popup-with-form">
-          <i class="fas fa-headset"></i>
-          <span>Заказать звонок</span>
-        </a>
-        
-        <a href="http://lk.gigsys.ru/hd/customer.pl" target="_blank" class="btn btn-outline">
-          <i class="fas fa-user-circle"></i>
-          <span>Личный кабинет</span>
-        </a>
-      </div>
-      
-      <!-- Мобильное меню (бургер) -->
-      <div class="mobile-menu-toggle">
-        <div class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Мобильное меню (выпадающее) -->
-    <div class="mobile-menu">
-      <div class="mobile-menu-header">
-        <div class="mobile-logo">
-          <a href="index.htm"><img src="assets/templates/img/logo.png" alt="GigSys Logo"></a>
-        </div>
-        <div class="mobile-menu-close">
-          <i class="fas fa-times"></i>
-        </div>
-      </div>
-      
-      <div class="mobile-menu-content">
-        <div class="mobile-search">
-          <form action="">
-            <input type="text" placeholder="Поиск...">
-            <button type="submit"><i class="fa fa-search"></i></button>
-          </form>
-        </div>
-        
-        <nav class="mobile-nav">
-          <ul>
-            <li class="active"><a href="index.htm">Главная</a></li>
-            <li><a href="o-kompanii.html">О компании</a></li>
-            <li><a href="novosti/index.htm">Новости</a></li>
-            <li class="has-dropdown">
-              <a href="#">Услуги <i class="fas fa-chevron-down"></i></a>
-              <ul class="mobile-submenu">
-                <li><a href="it-support.html"><i class="fas fa-headset"></i> IT-поддержка</a></li>
-                <li><a href="it-podderzhka.html"><i class="fas fa-tasks"></i> IT-аутсорсинг</a></li>
-                <li><a href="virtual-office.html"><i class="fas fa-shield-alt"></i> Защищенный офис</a></li>
-                <li><a href="obsluzhivanie-serverov.html"><i class="fas fa-server"></i> Серверы</a></li>
-                <li><a href="montazh-kompyuternykh-setey.html"><i class="fas fa-network-wired"></i> Офисные сети</a></li>
-                <li><a href="ustanovka-videonablyudeniya.html"><i class="fas fa-video"></i> Видеонаблюдение</a></li>
-                <li><a href="uslugi-1c.html"><i class="fas fa-calculator"></i> Услуги 1С</a></li>
-                <li><a href="hosting.html"><i class="fas fa-cloud"></i> Хостинг</a></li>
-              </ul>
-            </li>
-            <li><a href="kontaktyi.html">Контакты</a></li>
+            <li role="menuitem"><a href="kontaktyi.html" itemprop="url"><span itemprop="name">Контакты</span></a></li>
           </ul>
         </nav>
         
-        <div class="mobile-contacts">
-          <div class="mobile-contact-item">
-            <i class="fa fa-phone"></i>
-            <a href="tel:88003501160">8 (800) 350-11-60</a>
+        <!-- Контактная информация с микроразметкой -->
+        <div class="header-contacts" itemscope itemtype="http://schema.org/Organization">
+          <meta itemprop="name" content="GigSys">
+          <div class="contact-item">
+            <a href="#map-modal" class="popup-with-form contact-link">
+              <div class="contact-icon">
+                <i class="fa fa-map-marker-alt" aria-hidden="true"></i>
+              </div>
+              <div class="contact-text">
+                <div class="contact-label">Адрес офиса</div>
+                <div class="contact-info" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                  <span itemprop="addressLocality">г. Москва</span>, 
+                  <span itemprop="streetAddress">Ракетный бульвар, д.15, оф.31</span>
+                </div>
+              </div>
+            </a>
           </div>
-          <div class="mobile-contact-item">
-            <i class="fa fa-envelope"></i>
-            <a href="mailto:it@gigsys.ru">it@gigsys.ru</a>
+          
+          <div class="contact-item">
+            <a href="tel:88003501160" class="contact-link" itemprop="telephone">
+              <div class="contact-icon">
+                <i class="fa fa-phone-alt" aria-hidden="true"></i>
+              </div>
+              <div class="contact-text">
+                <div class="contact-label">Телефон</div>
+                <div class="contact-info">8 (499) 350-11-60</div>
+              </div>
+            </a>
           </div>
-          <div class="mobile-contact-item">
-            <i class="fa fa-map-marker"></i>
-            <address>г. Москва, Ракетный бульвар, д.15, оф.31</address>
-          </div>
+          
+          <!-- Добавление скрытых полей для SEO -->
+          <meta itemprop="email" content="it@gigsys.ru">
+          <meta itemprop="url" content="https://gigsys.ru">
+          <meta itemprop="foundingDate" content="2010">
         </div>
-        
-        <div class="mobile-actions">
-          <a href="#callback" class="btn btn-primary popup-with-form">
-            <i class="fas fa-headset"></i>
+        <script>
+          // Настраиваем систему логирования
+          const Logger = {
+              styles: {
+                  info: 'color: #0066cc; background: #e6f2ff; padding: 2px 4px; border-radius: 2px; font-weight: bold;',
+                  success: 'color: #008800; background: #e6ffe6; padding: 2px 4px; border-radius: 2px; font-weight: bold;',
+                  warning: 'color: #cc7700; background: #fff2cc; padding: 2px 4px; border-radius: 2px; font-weight: bold;',
+                  error: 'color: #cc0000; background: #ffe6e6; padding: 2px 4px; border-radius: 2px; font-weight: bold;',
+                  event: 'color: #6600cc; background: #f2e6ff; padding: 2px 4px; border-radius: 2px; font-weight: bold;',
+                  modal: 'color: #007777; background: #e6ffff; padding: 2px 4px; border-radius: 2px; font-weight: bold;',
+                  network: 'color: #cc00cc; background: #ffe6ff; padding: 2px 4px; border-radius: 2px; font-weight: bold;'
+              },
+              getTime() {
+                  const now = new Date();
+                  return `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}.${now.getMilliseconds().toString().padStart(3, '0')}`;
+              },
+              info(message, data) {
+                  console.log(`%c[ИНФО ${this.getTime()}] ${message}`, this.styles.info, data || '');
+              },
+              success(message, data) {
+                  console.log(`%c[УСПЕХ ${this.getTime()}] ${message}`, this.styles.success, data || '');
+              },
+              warning(message, data) {
+                  console.log(`%c[ПРЕДУПРЕЖДЕНИЕ ${this.getTime()}] ${message}`, this.styles.warning, data || '');
+              },
+              error(message, data) {
+                  console.error(`%c[ОШИБКА ${this.getTime()}] ${message}`, this.styles.error, data || '');
+              },
+              event(message, data) {
+                  console.log(`%c[СОБЫТИЕ ${this.getTime()}] ${message}`, this.styles.event, data || '');
+              },
+              modal(message, data) {
+                  console.log(`%c[МОДАЛ ${this.getTime()}] ${message}`, this.styles.modal, data || '');
+              },
+              network(message, data) {
+                  console.log(`%c[СЕТЬ ${this.getTime()}] ${message}`, this.styles.network, data || '');
+              },
+              groupStart(title) {
+                  console.group(`%c[ГРУППА ${this.getTime()}] ${title}`, this.styles.info);
+              },
+              groupEnd() {
+                  console.groupEnd();
+              }
+          };
+          
+          // Дожидаемся полной загрузки DOM
+          Logger.info('Скрипт формы обратного звонка инициализирован');
+          document.addEventListener('DOMContentLoaded', function() {
+              Logger.event('Событие DOMContentLoaded активировано');
+              Logger.groupStart('Инициализация формы обратного звонка');
+              
+              // Находим форму по ID
+              Logger.info('Поиск формы по ID "simple-callback-form"');
+              const form = document.getElementById('simple-callback-form');
+              
+              if (form) {
+                  Logger.success('Форма успешно найдена', {
+                      id: form.id,
+                      classes: form.className,
+                      элементов: form.elements ? form.elements.length : 'не определено'
+                  });
+                  
+                  // Добавляем обработчик события submit для формы
+                  Logger.info('Добавление обработчика submit к форме');
+                  form.addEventListener('submit', function(e) {
+                      Logger.event('Событие отправки формы активировано');
+                      e.preventDefault();
+                      Logger.info('Стандартная отправка формы предотвращена');
+                      
+                      Logger.groupStart('Обработка данных формы');
+                      
+                      // Получаем значения полей формы
+                      Logger.info('Получение значений полей формы');
+                      
+                      const nameField = this.querySelector('input[name="Имя"]');
+                      const emailField = this.querySelector('input[name="Email"]');
+                      const phoneField = this.querySelector('input[name="Телефон"]');
+                      const messageField = this.querySelector('textarea[name="Комментарий"]');
+                      
+                      // Проверяем наличие полей
+                      if (!nameField || !phoneField) {
+                          Logger.error('Обязательные поля формы не найдены', {
+                              nameField: !!nameField,
+                              phoneField: !!phoneField
+                          });
+                          alert('Ошибка структуры формы: не найдены обязательные поля');
+                          return;
+                      }
+                      
+                      const name = nameField.value.trim();
+                      const email = emailField ? emailField.value.trim() : '';
+                      const phone = phoneField.value.trim();
+                      const message = messageField ? messageField.value.trim() : '';
+                      
+                      Logger.info('Получены данные формы', {
+                          имя: name || '[пусто]',
+                          email: email || '[пусто]',
+                          телефон: phone || '[пусто]',
+                          сообщение: message ? (message.length > 30 ? message.substring(0, 30) + '...' : message) : '[пусто]'
+                      });
+                      
+                      // Проверка заполнения обязательных полей
+                      if (!name || !phone) {
+                          Logger.warning('Не заполнены обязательные поля', {
+                              имя: !!name,
+                              телефон: !!phone
+                          });
+                          alert('Пожалуйста, заполните обязательные поля (имя и телефон)');
+                          return;
+                      }
+                      
+                      Logger.success('Валидация формы пройдена успешно');
+                      
+                      // Формируем текст сообщения для Telegram
+                      Logger.info('Формирование текста сообщения для Telegram');
+                      const telegramMessage = `🔔 Заказ звонка с сайта!\n\n👤 Имя: ${name}\n📧 Email: ${email || 'Не указан'}\n📞 Телефон: ${phone}\n\n💬 Комментарий: ${message || 'Без комментария'}`;
+                      
+                      Logger.info('Сообщение сформировано', {
+                          длина: telegramMessage.length,
+                          содержание: telegramMessage.substring(0, 100) + (telegramMessage.length > 100 ? '...' : '')
+                      });
+                      
+                      // Токен бота и ID чата
+                      const botToken = '7813140158:AAHm1-JG4KDjHTb83zNieLAyqy8-MEu6FwY';
+                      const chatId = '-1001940374630';
+                      
+                      Logger.info('Используемые учетные данные Telegram', {
+                          botToken: botToken.substring(0, 5) + '...' + botToken.substring(botToken.length - 5),
+                          chatId
+                      });
+                      
+                      // Изменяем состояние кнопки на время отправки
+                      Logger.info('Изменение состояния кнопки отправки');
+                      const submitButton = this.querySelector('.simple-submit-button');
+                      
+                      if (!submitButton) {
+                          Logger.warning('Кнопка отправки не найдена по селектору .simple-submit-button');
+                      } else {
+                          const originalButtonText = submitButton.innerHTML;
+                          Logger.info('Оригинальный текст кнопки сохранен', { текст: originalButtonText });
+                          
+                          Logger.info('Блокировка кнопки отправки и изменение текста');
+                          submitButton.disabled = true;
+                          submitButton.innerHTML = '<span>Отправка...</span><i class="fa fa-spinner fa-spin"></i>';
+                      }
+                      
+                      Logger.groupEnd(); // Закрываем группу обработки данных формы
+                      
+                      // Отправляем сообщение в Telegram через API
+                      Logger.groupStart('Отправка запроса в Telegram');
+                      
+                      Logger.network('Подготовка запроса к Telegram API', {
+                          url: `https://api.telegram.org/bot${botToken.substring(0, 5)}***/sendMessage`,
+                          метод: 'POST',
+                          тип_данных: 'application/json'
+                      });
+                      
+                      const startTime = performance.now();
+                      
+                      fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+                          method: 'POST',
+                          headers: {
+                              'Content-Type': 'application/json'
+                          },
+                          body: JSON.stringify({
+                              chat_id: chatId,
+                              text: telegramMessage
+                          })
+                      })
+                      .then(response => {
+                          const endTime = performance.now();
+                          const requestTime = (endTime - startTime).toFixed(2);
+                          
+                          Logger.network(`Получен ответ от сервера (${requestTime} мс)`, {
+                              статус: response.status,
+                              статус_текст: response.statusText,
+                              ok: response.ok
+                          });
+                          
+                          if (!response.ok) {
+                              Logger.warning('Получен неуспешный HTTP-статус, обработка ответа');
+                              return response.json().then(errorData => {
+                                  Logger.error('Детали ошибки Telegram API', errorData);
+                                  throw new Error(`Ошибка HTTP: ${response.status}, Описание: ${errorData.description || 'Неизвестная ошибка'}`);
+                              });
+                          }
+                          
+                          Logger.success('Успешный HTTP-статус, парсинг JSON-ответа');
+                          return response.json();
+                      })
+                      .then(data => {
+                          Logger.success('Успешный разбор JSON-ответа', data);
+                          
+                          if (data.ok) {
+                              Logger.success('Сообщение успешно отправлено в Telegram', {
+                                  message_id: data.result?.message_id,
+                                  chat_id: data.result?.chat?.id
+                              });
+                              
+                              // Успешная отправка
+                              alert('Сообщение успешно отправлено! Мы свяжемся с вами в ближайшее время.');
+                              
+                              Logger.info('Сброс формы');
+                              form.reset();
+                              
+                              Logger.modal('Закрытие модального окна после успешной отправки');
+                              closeSimpleModal(); // Закрываем модальное окно после успешной отправки
+                          } else {
+                              Logger.error('API вернул ошибку в JSON-ответе', data);
+                              throw new Error('Ошибка бота Telegram: ' + (data.description || 'Неизвестная ошибка'));
+                          }
+                      })
+                      .catch(error => {
+                          Logger.error(`Произошла ошибка при отправке: ${error.message}`, {
+                              стек: error.stack
+                          });
+                          
+                          alert('Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте позже или свяжитесь с нами другим способом.');
+                      })
+                      .finally(() => {
+                          Logger.info('Завершение отправки (блок finally)');
+                          
+                          // Восстанавливаем кнопку в любом случае
+                          if (submitButton) {
+                              Logger.info('Восстановление состояния кнопки отправки');
+                              submitButton.disabled = false;
+                              submitButton.innerHTML = originalButtonText;
+                          }
+                          
+                          Logger.groupEnd(); // Закрываем группу отправки запроса
+                      });
+                  });
+                  
+                  Logger.success('Обработчик отправки формы успешно настроен');
+              } else {
+                  Logger.error('Форма с ID "simple-callback-form" не найдена на странице');
+              }
+              
+              Logger.groupEnd(); // Закрываем группу инициализации формы
+          });
+          
+          // Функции для работы с модальным окном
+          function closeSimpleModal() {
+              Logger.modal('Вызвана функция закрытия модального окна');
+              
+              const modal = document.getElementById('simple-callback');
+              const overlay = document.getElementById('simple-modal-overlay');
+              
+              Logger.modal('Поиск элементов модального окна', {
+                  modal: !!modal,
+                  overlay: !!overlay
+              });
+              
+              if (modal) {
+                  Logger.modal('Скрытие модального окна');
+                  modal.style.display = 'none';
+              } else {
+                  Logger.error('Элемент модального окна не найден (#simple-callback)');
+              }
+              
+              if (overlay) {
+                  Logger.modal('Скрытие оверлея модального окна');
+                  overlay.style.display = 'none';
+              } else {
+                  Logger.error('Элемент оверлея не найден (#simple-modal-overlay)');
+              }
+              
+              Logger.modal('Модальное окно закрыто');
+          }
+          
+          function openSimpleModal() {
+              Logger.modal('Вызвана функция открытия модального окна');
+              
+              const modal = document.getElementById('simple-callback');
+              const overlay = document.getElementById('simple-modal-overlay');
+              
+              Logger.modal('Поиск элементов модального окна', {
+                  modal: !!modal,
+                  overlay: !!overlay
+              });
+              
+              if (modal) {
+                  Logger.modal('Отображение модального окна');
+                  modal.style.display = 'block';
+              } else {
+                  Logger.error('Элемент модального окна не найден (#simple-callback)');
+              }
+              
+              if (overlay) {
+                  Logger.modal('Отображение оверлея модального окна');
+                  overlay.style.display = 'block';
+              } else {
+                  Logger.error('Элемент оверлея не найден (#simple-modal-overlay)');
+              }
+              
+              Logger.modal('Модальное окно открыто');
+          }
+          
+          // Поиск и настройка всех кнопок, которые открывают модальное окно
+          document.addEventListener('DOMContentLoaded', function() {
+              Logger.groupStart('Настройка кнопок открытия модального окна');
+              
+              const modalTriggers = document.querySelectorAll('[data-modal="simple-callback"]');
+              Logger.info(`Найдено ${modalTriggers.length} триггеров модального окна`);
+              
+              modalTriggers.forEach((trigger, index) => {
+                  Logger.info(`Настройка триггера #${index + 1}`, {
+                      элемент: trigger.tagName,
+                      классы: trigger.className,
+                      текст: trigger.textContent?.trim() || '[без текста]'
+                  });
+                  
+                  trigger.addEventListener('click', function(e) {
+                      Logger.event(`Нажата кнопка открытия модального окна #${index + 1}`);
+                      e.preventDefault();
+                      openSimpleModal();
+                  });
+              });
+              
+              // Настройка закрытия модального окна при клике на оверлей
+              const overlay = document.getElementById('simple-modal-overlay');
+              if (overlay) {
+                  Logger.info('Настройка закрытия модального окна при клике на оверлей');
+                  
+                  overlay.addEventListener('click', function(e) {
+                      if (e.target === overlay) {
+                          Logger.event('Зафиксирован клик по оверлею, закрытие модального окна');
+                          closeSimpleModal();
+                      }
+                  });
+              }
+              
+              // Настройка закрытия модального окна по Escape
+              Logger.info('Настройка закрытия модального окна по клавише Escape');
+              document.addEventListener('keydown', function(e) {
+                  if (e.key === 'Escape') {
+                      const modal = document.getElementById('simple-callback');
+                      if (modal && modal.style.display === 'block') {
+                          Logger.event('Нажата клавиша Escape, закрытие модального окна');
+                          closeSimpleModal();
+                      }
+                  }
+              });
+              
+              Logger.groupEnd(); // Закрываем группу настройки кнопок
+          });
+          </script>
+          
+        <!-- CTA Buttons с вертикальным расположением -->
+        <div class="header-actions vertical">
+          <a href="#callback" class="btn btn-primary popup-with-form" rel="nofollow">
+            <i class="fas fa-headset" aria-hidden="true"></i>
             <span>Заказать звонок</span>
           </a>
           
-          <a href="http://lk.gigsys.ru/hd/customer.pl" target="_blank" class="btn btn-outline">
-            <i class="fas fa-user-circle"></i>
+          <a href="http://lk.gigsys.ru/hd/customer.pl" target="_blank" class="btn btn-outline" rel="noopener">
+            <i class="fas fa-user-circle" aria-hidden="true"></i>
             <span>Личный кабинет</span>
           </a>
         </div>
+        
+        <!-- Мобильное меню (бургер) -->
+        <button class="mobile-menu-toggle" 
+                aria-label="Открыть меню" 
+                aria-expanded="false" 
+                aria-controls="mobile-menu">
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
       </div>
-    </div>
-    
-    <script src="widget/s8xWAIxVHJ" async></script>
-  </header>
-</div>
-<!-- JavaScript для хедера -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Элементы хедера
-  const header = document.getElementById('main-header');
-  const menuToggle = document.querySelector('.mobile-menu-toggle');
-  const mobileMenu = document.querySelector('.mobile-menu');
-  const mobileMenuClose = document.querySelector('.mobile-menu-close');
-  const dropdowns = document.querySelectorAll('.has-dropdown');
+      
+      <!-- Мобильное меню (выпадающее) с улучшенной доступностью -->
+      <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu-header">
+          <div class="mobile-logo">
+            <a href="index.htm">
+              <img src="assets/templates/img/logo.png" alt="GigSys - IT аутсорсинг" width="140" height="35" loading="lazy">
+            </a>
+          </div>
+          <button class="mobile-menu-close" aria-label="Закрыть меню">
+            <i class="fas fa-times" aria-hidden="true"></i>
+          </button>
+        </div>
+        
+        <div class="mobile-menu-content">
+          <div class="mobile-search">
+            <form action="search.html" method="get" role="search">
+              <input type="text" name="q" placeholder="Поиск..." aria-label="Поиск">
+              <button type="submit" aria-label="Искать"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </form>
+          </div>
+          
+          <!-- Мобильная навигация с микроразметкой -->
+          <nav class="mobile-nav" itemscope itemtype="http://schema.org/SiteNavigationElement">
+            <ul>
+              <li class="active"><a href="index.htm" itemprop="url"><span itemprop="name">Главная</span></a></li>
+              <li><a href="o-kompanii.html" itemprop="url"><span itemprop="name">О компании</span></a></li>
+              <li><a href="landing.html" itemprop="url"><span itemprop="name">Мероприятия</span></a></li>
+              <li class="has-dropdown">
+                <a href="#" aria-expanded="false" aria-haspopup="true">
+                  <span itemprop="name">Услуги</span> <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </a>
+                <ul class="mobile-submenu">
+                  <li itemscope itemtype="http://schema.org/Service">
+                    <a href="it-support.html" itemprop="url">
+                      <i class="fas fa-headset" aria-hidden="true"></i> 
+                      <span itemprop="name">IT-поддержка</span>
+                    </a>
+                  </li>
+                  <li itemscope itemtype="http://schema.org/Service">
+                    <a href="it-autsorsing.html" itemprop="url">
+                      <i class="fas fa-tasks" aria-hidden="true"></i> 
+                      <span itemprop="name">IT-аутсорсинг</span>
+                    </a>
+                  </li>
+                  <li itemscope itemtype="http://schema.org/Service">
+                    <a href="virtual-office.html" itemprop="url">
+                      <i class="fas fa-shield-alt" aria-hidden="true"></i> 
+                      <span itemprop="name">Защищенный офис</span>
+                    </a>
+                  </li>
+                  <li itemscope itemtype="http://schema.org/Service">
+                    <a href="obsluzhivanie-serverov.html" itemprop="url">
+                      <i class="fas fa-server" aria-hidden="true"></i> 
+                      <span itemprop="name">Серверы</span>
+                    </a>
+                  </li>
+                  <li itemscope itemtype="http://schema.org/Service">
+                    <a href="montazh-kompyuternykh-setey.html" itemprop="url">
+                      <i class="fas fa-network-wired" aria-hidden="true"></i> 
+                      <span itemprop="name">Офисные сети</span>
+                    </a>
+                  </li>
+                  <li itemscope itemtype="http://schema.org/Service">
+                    <a href="ustanovka-videonablyudeniya.html" itemprop="url">
+                      <i class="fas fa-video" aria-hidden="true"></i> 
+                      <span itemprop="name">Видеонаблюдение</span>
+                    </a>
+                  </li>
+                  <li itemscope itemtype="http://schema.org/Service">
+                    <a href="uslugi-1c.html" itemprop="url">
+                      <i class="fas fa-calculator" aria-hidden="true"></i> 
+                      <span itemprop="name">Услуги 1С</span>
+                    </a>
+                  </li>
+                  <li itemscope itemtype="http://schema.org/Service">
+                    <a href="hosting.html" itemprop="url">
+                      <i class="fas fa-cloud" aria-hidden="true"></i> 
+                      <span itemprop="name">Хостинг</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="kontaktyi.html" itemprop="url"><span itemprop="name">Контакты</span></a></li>
+            </ul>
+          </nav>
+          
+          <!-- Контактная информация для мобильного меню с микроразметкой -->
+          <div class="mobile-contacts" itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop="name" content="GigSys">
+            <div class="mobile-contact-item">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <a href="tel:88003501160" itemprop="telephone">8(499)350-11-60</a>
+            </div>
+            <div class="mobile-contact-item">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <a href="mailto:it@gigsys.ru" itemprop="email">it@gigsys.ru</a>
+            </div>
+            <div class="mobile-contact-item">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                <span itemprop="addressLocality">г. Москва</span>, 
+                <span itemprop="streetAddress">Ракетный бульвар, д.15, оф.31</span>
+              </address>
+            </div>
+          </div>
+          
+          <!-- Кнопки действий в мобильном меню -->
+          <div class="mobile-actions">
+            <a href="#callback" class="btn btn-primary popup-with-form" rel="nofollow">
+              <i class="fas fa-headset" aria-hidden="true"></i>
+              <span>Заказать звонок</span>
+            </a>
+            
+            <a href="http://lk.gigsys.ru/hd/customer.pl" target="_blank" class="btn btn-outline" rel="noopener">
+              <i class="fas fa-user-circle" aria-hidden="true"></i>
+              <span>Личный кабинет</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Roistat script с async и defer для ускорения загрузки -->
+      <script src="https://widget.roistat.com/widget/s8xWAIxVHJ" async defer></script>
+    </header>
+  </div>
   
-  // Эффект при скролле
-  function handleScroll() {
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
+  <!-- Добавлены JSON-LD данные для поисковых систем -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "GigSys",
+    "url": "https://gigsys.ru",
+    "logo": "https://gigsys.ru/assets/templates/img/logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+84993501160",
+      "contactType": "customer service",
+      "areaServed": "RU",
+      "availableLanguage": "Russian"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Москва",
+      "addressRegion": "Москва",
+      "streetAddress": "Ракетный бульвар, д.15, оф.31",
+      "addressCountry": "RU"
+    },
+    "sameAs": [
+      "https://vk.com/gigsys",
+      "https://www.facebook.com/gigsys"
+    ]
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://gigsys.ru/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://gigsys.ru/search.html?q={search_term_string}",
+      "query-input": "required name=search_term_string"
     }
   }
-  
-  // Инициализация состояния при загрузке
-  handleScroll();
-  
-  // Слушатель события скролла
-  window.addEventListener('scroll', handleScroll);
-  
-  // Мобильное меню
-  if (menuToggle && mobileMenu) {
-    menuToggle.addEventListener('click', function() {
-      menuToggle.classList.toggle('active');
-      mobileMenu.classList.toggle('active');
-      document.body.classList.toggle('menu-open');
+  </script>
+    <!-- JavaScript для хедера - Оптимизирован -->
+    <script>
+    
+/**
+ * Оптимизированный JavaScript для хедера и мега-меню
+ * - Исправлено открытие/закрытие меню по клику на кнопку
+ * - Улучшена производительность
+ * - Убраны все ховеры, активация строго по клику
+ */
+
+document.addEventListener('DOMContentLoaded', function() {
+    // === БАЗОВЫЕ ЭЛЕМЕНТЫ ===
+    // Хедер и мобильное меню
+    const header = document.getElementById('main-header');
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileMenuClose = document.querySelector('.mobile-menu-close');
+    const dropdowns = document.querySelectorAll('.has-dropdown');
+    
+    // Мега-меню
+    const servicesToggle = document.querySelector('.services-toggle');
+    const megaMenu = document.querySelector('.mega-menu');
+    let megaMenuClose = document.querySelector('.mega-menu-close');
+    const menuCategories = document.querySelectorAll('.menu-category');
+    const menuPanels = document.querySelectorAll('.menu-panel');
+    
+    // Дополнительные элементы
+    const anchorLinks = document.querySelectorAll('.mega-menu a[href*="#"]');
+    const actionButtons = document.querySelectorAll('.highlight-btn, .mm-cta-btn');
+    
+    // === СОСТОЯНИЕ ===
+    let isMegaMenuOpen = false;
+    let isAnimating = false;
+    
+    // === ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ===
+    // Анимация с проверкой на поддержку
+    function animateElement(element, isOpening, callback) {
+        if (!element) return;
+        
+        isAnimating = true;
+        
+        // Сбрасываем предыдущие анимации
+        element.style.animation = '';
+        
+        // Применяем анимацию
+        setTimeout(() => {
+            element.style.animation = isOpening 
+                ? 'fadeIn 300ms forwards' 
+                : 'fadeOut 250ms forwards';
+            
+            // Ждем завершения анимации
+            setTimeout(() => {
+                isAnimating = false;
+                if (callback) callback();
+            }, isOpening ? 300 : 250);
+        }, 10);
+    }
+    
+    // Добавление стилей анимации
+    function addAnimationStyles() {
+        if (document.getElementById('mega-menu-animations')) return;
+        
+        const style = document.createElement('style');
+        style.id = 'mega-menu-animations';
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            @keyframes fadeOut {
+                from { opacity: 1; transform: translateY(0); }
+                to { opacity: 0; transform: translateY(10px); }
+            }
+            .btn-pressed {
+                transform: scale(0.95) !important;
+                transition: transform 0.2s !important;
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    
+    // === ОСНОВНЫЕ ФУНКЦИИ ===
+    // Переключатель мега-меню
+    function toggleMegaMenu(forceState) {
+        if (!megaMenu || isAnimating) return;
+        
+        // Определяем новое состояние
+        const willOpen = forceState !== undefined ? forceState : !isMegaMenuOpen;
+        
+        console.log('Toggle mega menu:', willOpen ? 'opening' : 'closing'); // отладка
+        
+        if (willOpen) {
+            // Открываем меню
+            megaMenu.classList.add('active');
+            document.body.classList.add('mega-menu-open');
+            
+            if (servicesToggle) {
+                servicesToggle.setAttribute('aria-expanded', 'true');
+            }
+            
+            animateElement(megaMenu, true, function() {
+                // Фокус на первую категорию для доступности
+                const activeCategory = document.querySelector('.menu-category.active');
+                if (activeCategory) activeCategory.focus();
+            });
+            
+            // Закрываем мобильное меню если оно открыто
+            if (mobileMenu && mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+                menuToggle.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        } else {
+            // Закрываем меню
+            animateElement(megaMenu, false, function() {
+                megaMenu.classList.remove('active');
+                document.body.classList.remove('mega-menu-open');
+                
+                if (servicesToggle) {
+                    servicesToggle.setAttribute('aria-expanded', 'false');
+                    servicesToggle.focus();
+                }
+            });
+        }
+        
+        // Устанавливаем новое состояние
+        isMegaMenuOpen = willOpen;
+    }
+    
+    // Создание кнопки закрытия
+    function createCloseButton() {
+        if (megaMenu && !megaMenuClose) {
+            const closeButton = document.createElement('button');
+            closeButton.className = 'mega-menu-close';
+            closeButton.setAttribute('aria-label', 'Закрыть меню');
+            closeButton.innerHTML = '<i class="fas fa-times"></i>';
+            megaMenu.prepend(closeButton);
+            
+            // Обновляем ссылку
+            megaMenuClose = closeButton;
+            
+            // Добавляем обработчик
+            megaMenuClose.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                toggleMegaMenu(false);
+            });
+        }
+    }
+    
+    // Обработка скролла
+    function setupScrollHandler() {
+        if (!header) return;
+        
+        function handleScroll() {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }
+        
+        // Инициализация
+        handleScroll();
+        
+        // Оптимизированный обработчик
+        let scrollTimeout;
+        window.addEventListener('scroll', function() {
+            if (!scrollTimeout) {
+                scrollTimeout = setTimeout(function() {
+                    handleScroll();
+                    scrollTimeout = null;
+                }, 100);
+            }
+        }, { passive: true });
+    }
+    
+    // === ИНИЦИАЛИЗАЦИЯ ===
+    // Добавляем стили анимаций
+    addAnimationStyles();
+    
+    // Настраиваем хедер
+    setupScrollHandler();
+    
+    // Создаем кнопку закрытия для мега-меню
+    createCloseButton();
+    
+    // === ОБРАБОТЧИКИ СОБЫТИЙ ===
+    // Обработчик кнопки "Услуги" для открытия/закрытия мега-меню
+    if (servicesToggle && megaMenu) {
+        servicesToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleMegaMenu(); // Переключаем состояние
+        });
+        
+        // Устанавливаем начальные атрибуты для доступности
+        servicesToggle.setAttribute('aria-haspopup', 'true');
+        servicesToggle.setAttribute('aria-expanded', 'false');
+    }
+    
+    // Закрытие мега-меню при клике вне
+    document.addEventListener('click', function(e) {
+        if (isMegaMenuOpen && 
+            megaMenu && 
+            !megaMenu.contains(e.target) && 
+            !servicesToggle.contains(e.target)) {
+            toggleMegaMenu(false);
+        }
     });
     
-    // Закрытие мобильного меню
-    if (mobileMenuClose) {
-      mobileMenuClose.addEventListener('click', function() {
-        menuToggle.classList.remove('active');
-        mobileMenu.classList.remove('active');
-        document.body.classList.remove('menu-open');
-      });
-    }
-  }
-  
-  // Мобильные выпадающие списки
-  dropdowns.forEach(function(dropdown) {
-    const link = dropdown.querySelector('a');
+    // Закрытие по Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && isMegaMenuOpen) {
+            toggleMegaMenu(false);
+        }
+    });
     
-    if (link) {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        dropdown.classList.toggle('active');
-      });
+    // Обработка кнопок внутри мега-меню
+    actionButtons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            // Эффект нажатия
+            btn.classList.add('btn-pressed');
+            
+            setTimeout(function() {
+                btn.classList.remove('btn-pressed');
+                
+                // Закрываем мега-меню
+                if (isMegaMenuOpen) {
+                    setTimeout(function() {
+                        toggleMegaMenu(false);
+                    }, 100);
+                }
+            }, 200);
+        });
+    });
+    
+    // Обработка ссылок с якорями
+    anchorLinks.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (!href) return;
+            
+            const isAnchor = href.indexOf('#') === 0 || href.indexOf('/#') !== -1;
+            
+            if (isAnchor) {
+                // Закрываем мега-меню после клика на якорную ссылку
+                toggleMegaMenu(false);
+            }
+        });
+    });
+    
+    // Обработка мобильного меню
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Закрываем мега-меню, если оно открыто
+            if (isMegaMenuOpen) {
+                toggleMegaMenu(false);
+            }
+            
+            // Переключаем мобильное меню
+            menuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+        
+        // Закрытие мобильного меню
+        if (mobileMenuClose) {
+            mobileMenuClose.addEventListener('click', function(e) {
+                e.preventDefault();
+                menuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            });
+        }
+        
+        // Закрытие при клике вне меню
+        document.addEventListener('click', function(e) {
+            if (mobileMenu.classList.contains('active') && 
+                !mobileMenu.contains(e.target) && 
+                !menuToggle.contains(e.target)) {
+                menuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        });
     }
-  });
+    
+    // Обработка выпадающих списков
+    dropdowns.forEach(function(dropdown) {
+        const link = dropdown.querySelector('a');
+        
+        if (link) {
+            link.addEventListener('click', function(e) {
+                // Предотвращаем переход для выпадающих меню
+                e.preventDefault();
+                
+                // Закрываем другие открытые дропдауны
+                dropdowns.forEach(function(otherDropdown) {
+                    if (otherDropdown !== dropdown && otherDropdown.classList.contains('active')) {
+                        otherDropdown.classList.remove('active');
+                    }
+                });
+                
+                // Переключаем текущий дропдаун
+                dropdown.classList.toggle('active');
+            });
+        }
+    });
+    
+    // Обработка категорий в мега-меню
+    if (menuCategories.length > 0 && menuPanels.length > 0) {
+        menuCategories.forEach(function(category) {
+            category.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Пропускаем если категория уже активна
+                if (category.classList.contains('active')) return;
+                
+                const targetPanel = category.getAttribute('data-category');
+                
+                // Активация категории
+                menuCategories.forEach(function(cat) {
+                    cat.classList.remove('active');
+                });
+                category.classList.add('active');
+                
+                // Активация панели
+                menuPanels.forEach(function(panel) {
+                    panel.classList.remove('active');
+                    if (panel.getAttribute('data-panel') === targetPanel) {
+                        panel.classList.add('active');
+                        // Анимация новой панели
+                        panel.style.animation = 'fadeIn 300ms forwards';
+                    }
+                });
+            });
+            
+            // Навигация с клавиатуры
+            category.addEventListener('keydown', function(e) {
+                const index = Array.from(menuCategories).indexOf(category);
+                let nextIndex;
+                
+                switch(e.key) {
+                    case 'ArrowRight':
+                        e.preventDefault();
+                        nextIndex = index + 1 >= menuCategories.length ? 0 : index + 1;
+                        menuCategories[nextIndex].focus();
+                        menuCategories[nextIndex].click();
+                        break;
+                    case 'ArrowLeft':
+                        e.preventDefault();
+                        nextIndex = index - 1 < 0 ? menuCategories.length - 1 : index - 1;
+                        menuCategories[nextIndex].focus();
+                        menuCategories[nextIndex].click();
+                        break;
+                }
+            });
+        });
+        
+        // Активация первой панели и категории по умолчанию
+        if (!document.querySelector('.menu-panel.active')) {
+            const firstCategory = menuCategories[0];
+            const firstPanel = menuPanels[0];
+            
+            if (firstCategory && firstPanel) {
+                firstCategory.classList.add('active');
+                firstPanel.classList.add('active');
+            }
+        }
+    }
+    
+    // Обработка якорей в URL
+    if (window.location.hash) {
+        const targetElement = document.querySelector(window.location.hash);
+        if (targetElement) {
+            setTimeout(function() {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }, 500);
+        }
+    }
 });
-</script>
+    </script>
+    
   
   </div>
   <section class="content news-full">
@@ -704,168 +1555,182 @@ document.addEventListener('DOMContentLoaded', function() {
     	<!-- ============================================= -->
     <!-- CONTACT SECTION                               -->
     <!-- ============================================= -->
-    <section class="contact-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-8 offset-lg-6 offset-md-4">
-                    <div class="contact-form-container">
-                        <div class="contact-form-header">
-                            <div class="form-icon">
-                                <i class="fa fa-envelope"></i>
-                            </div>
-                            <h3>Остались вопросы?</h3>
-                            <p>Задайте их нашему менеджеру, и мы свяжемся с вами в ближайшее время</p>
-                        </div>
-                        
-                        <form action="req/bottg.php" class="contact-form form1" autocomplete="off" method='post'>
-                            <div class="form-group">
-                                <div class="form-field">
-                                    <input type="text" name="named" placeholder="Ваше имя" required="required">
-                                    <i class="fa fa-user"></i>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <div class="form-field">
-                                    <input type="email" name="mail" placeholder="E-mail" required="required">
-                                    <i class="fa fa-envelope"></i>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <div class="form-field">
-                                    <input type="text" name="tel" placeholder="Ваш телефон" class="tel-input" required="required">
-                                    <i class="fa fa-phone"></i>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <div class="form-field">
-                                    <textarea rows="3" cols="50" placeholder="Ваш вопрос" name="message"></textarea>
-                                    <i class="fa fa-comment"></i>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group check">
-                                <label class="checkbox-container">
-                                    <input type="checkbox" required="required">
-                                    <span class="checkmark"></span>
-                                    <span class="checkbox-text">Согласен на обработку персональных данных</span>
-                                </label>
-                            </div>
-                            
-                            <div class="form-group">
-                                <div class="g-recaptcha" data-sitekey="6Ld_cIgUAAAAAFef3iod62k40VsXS18VAp7pYNXh"></div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <button class="btn btn-primary btn-block btn33" type='submit'>
-                                    <span>Отправить</span>
-                                    <i class="fa fa-paper-plane"></i>
-                                </button>
-                            </div>
-                            
-                            <div class="text-danger" id="recaptchaError"></div>
-                        </form>
+    <section class="ind-contact-section">
+      <div class="ind-contact-overlay"></div>
+      <div class="ind-contact-main">
+          <div class="ind-contact-container">
+              <div class="ind-contact-form">
+                  <h2 class="ind-contact-form-title">Наши контакты</h2>
+                  <p class="ind-contact-form-description">Остались вопросы? Задайте их нашему менеджеру, и мы свяжемся с вами в ближайшее время</p>
+                  <form id="telegramForm"> <!-- Добавляем тег form с id -->
+                    <div class="ind-contact-inputs">
+                        <input type="text" id="userName" placeholder="Ваше имя" required>
+                        <input type="email" id="userEmail" placeholder="E-mail" required>
+                        <input type="tel" id="userPhone" placeholder="Телефон" required>
+                        <textarea id="userMessage" placeholder="Ваш вопрос" required></textarea>
+                        <!-- Блок reCAPTCHA временно удален -->
+                        <button type="submit" class="ind-contact-submit">Отправить</button>
                     </div>
+                  </form>
+                  <div class="ind-contact-social-links" itemscope itemtype="http://schema.org/Organization">
+                    <link itemprop="url" href="https://gigsys.ru">
+                    <a href="https://t.me/GigSys" class="ind-contact-social-link" itemprop="sameAs" title="Связаться с нами в Telegram" aria-label="Наш Telegram" rel="noopener noreferrer">
+                        <i class="fab fa-telegram" aria-hidden="true"></i>
+                        <span class="sr-only">Telegram: GigSys</span>
+                    </a>
+                    <a href="https://vk.com/gigsys" class="ind-contact-social-link" itemprop="sameAs" title="Наша страница ВКонтакте" aria-label="GigSys ВКонтакте" rel="noopener noreferrer">
+                        <i class="fab fa-vk" aria-hidden="true"></i>
+                        <span class="sr-only">ВКонтакте: gigsys</span>
+                    </a>
+                    <a href="https://wa.me/79255853075" class="ind-contact-social-link" itemprop="sameAs" title="Написать в WhatsApp" aria-label="WhatsApp контакт" rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        <span class="sr-only">WhatsApp: +7 925 585-30-75</span>
+                    </a>
+                    <a href="mailto:it@gigsys.ru" class="ind-contact-social-link" itemprop="email" title="Отправить email" aria-label="Написать на электронную почту">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <span class="sr-only">Email: it@gigsys.ru</span>
+                    </a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="contact-overlay"></div>
+                <style>.sr-only {
+                    position: absolute;
+                    width: 1px;
+                    height: 1px;
+                    padding: 0;
+                    margin: -1px;
+                    overflow: hidden;
+                    clip: rect(0, 0, 0, 0);
+                    white-space: nowrap;
+                    border: 0;
+                  }
+                  </style>
+              </div>
+              <div class="ind-contact-map">
+                  <iframe
+                      src="https://yandex.ru/map-widget/v1/?ll=37.653694%2C55.819090&z=16&mode=search&oid=1252968732&ol=biz&source=main_page"
+                      width="560"
+                      height="400"
+                      frameborder="1"
+                      allowfullscreen="true">
+                  </iframe>
+              </div>
+          </div>
+      </div>
     </section>
 
-    <!-- ============================================= -->
-    <!-- FOOTER SECTION                                -->
-    <!-- ============================================= -->
-    <footer class="site-footer">
-        <div class="footer-widgets">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="footer-widget about-widget">
-                            <div class="footer-logo">
-                                <img src="assets/templates/img/logo.png" alt="GigSys">
-                            </div>
-                            <p>Комплексное ИТ-обслуживание для бизнеса любого масштаба. Предоставляем полный спектр услуг по внедрению и поддержке ИТ-инфраструктуры.</p>
-                            <div class="footer-social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-2 col-md-6">
-                        <div class="footer-widget links-widget">
-                            <h4 class="widget-title">Компания</h4>
-                            <ul>
-                                <li><a href="index.htm">Главная</a></li>
-                                <li><a href="o-kompanii.html">О компании</a></li>
-                                <li><a href="novosti/index.htm">Новости</a></li>
-                                <li><a href="kontaktyi.html">Контакты</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-widget services-widget">
-                            <h4 class="widget-title">Услуги</h4>
-                            <ul>
-                                <li><a href="it-support.html">IT-поддержка</a></li>
-                                <li><a href="it-podderzhka.html">IT-аутсорсинг</a></li>
-                                <li><a href="virtual-office.html">Защищенный офис</a></li>
-                                <li><a href="obsluzhivanie-serverov.html">Серверы</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-widget contact-widget">
-                            <h4 class="widget-title">Контакты</h4>
-                            <ul class="contact-list">
-                                <li>
-                                    <i class="fa fa-map-marker-alt"></i>
-                                    <span>г. Москва, Ракетный бульвар, д.15, оф.31</span>
-                                </li>
-                                <li>
-                                    <i class="fas fa-phone-alt"></i>
-                                    <a href="tel:88003501160">8 (800) 350-11-60</a>
-                                </li>
-                                <li>
-                                    <i class="fa fa-envelope"></i>
-                                    <a href="mailto:it@gigsys.ru">it@gigsys.ru</a>
-                                </li>
-                                <li>
-                                    <i class="fa fa-clock-o"></i>
-                                    <span>Пн-Пт: 9:00 - 18:00</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="copyright">
-                            <p>© 2025 GigSys IT-solutions. Все права защищены</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="footer-bottom-links text-lg-right">
-                            <a href="#">Политика конфиденциальности</a>
-                            <a href="#">Пользовательское соглашение</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+   <!-- ============================================= -->
+<!-- FOOTER SECTION (SEO OPTIMIZED)                -->
+<!-- ============================================= -->
+<footer class="site-footer" itemscope itemtype="http://schema.org/Organization">
+  <div class="footer-widgets">
+      <div class="container">
+          <div class="row">
+              
+              <!-- ========== БЛОК О КОМПАНИИ ========== -->
+              <div class="col-lg-4 col-md-6">
+                  <div class="footer-widget about-widget">
+                      <div class="footer-logo" itemprop="logo">
+                          <img src="assets/templates/img/logo.png" 
+                               alt="GigSys - IT аутсорсинг и поддержка бизнеса" 
+                               width="180" 
+                               height="50"
+                               loading="lazy">
+                      </div>
+                      <p itemprop="description">Комплексное ИТ-обслуживание для бизнеса любого масштаба. 
+                      Предоставляем полный спектр услуг по внедрению и поддержке ИТ-инфраструктуры.</p>
+                      
+                      <!-- СОЦИАЛЬНЫЕ СЕТИ С MICRODATA -->
+                      <div class="footer-social" aria-label="Социальные сети">
+                          <a href="https://t.me/GigSys" itemprop="sameAs" aria-label="Telegram">
+                              <i class="fab fa-telegram"></i>
+                          </a>
+                          <a href="https://vk.com/gigsys" itemprop="sameAs" aria-label="ВКонтакте">
+                              <i class="fab fa-vk"></i>
+                          </a>
+                          <a href="https://wa.me/79255853075" itemprop="sameAs" aria-label="WhatsApp">
+                              <i class="fab fa-whatsapp"></i>
+                          </a>
+                          <a href="mailto:it@gigsys.ru" itemprop="sameAs" aria-label="Email">
+                              <i class="fas fa-envelope"></i>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- ========== НАВИГАЦИОННЫЕ ССЫЛКИ ========== -->
+              <div class="col-lg-2 col-md-6">
+                  <nav class="footer-widget links-widget" aria-label="Дополнительная навигация">
+                      <h4 class="widget-title">Компания</h4>
+                      <ul>
+                          <li><a href="index.html" itemprop="url">Главная</a></li>
+                          <li><a href="o-kompanii.html">О компании</a></li>
+                          <li><a href="novosti/index.html">Новости</a></li>
+                          <li><a href="kontaktyi.html">Контакты</a></li>
+                      </ul>
+                  </nav>
+              </div>
+
+              <!-- ========== СПИСОК УСЛУГ ========== -->
+              <div class="col-lg-3 col-md-6">
+                  <div class="footer-widget services-widget">
+                      <h4 class="widget-title">Услуги</h4>
+                      <ul>
+                          <li><a href="it-support.html">IT-поддержка</a></li>
+                          <li><a href="it-autsorsing.html">IT-аутсорсинг</a></li>
+                          <li><a href="virtual-office.html">Защищенный офис</a></li>
+                          <li><a href="obsluzhivanie-serverov.html">Серверы</a></li>
+                      </ul>
+                  </div>
+              </div>
+
+              <!-- ========== КОНТАКТЫ С MICRODATA ========== -->
+              <div class="col-lg-3 col-md-6">
+                  <div class="footer-widget contact-widget" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                      <h4 class="widget-title">Контакты</h4>
+                      <ul class="contact-list">
+                          <li>
+                              <i class="fa fa-map-marker-alt"></i>
+                              <span itemprop="streetAddress">Ракетный бульвар, д.15, оф.31</span>, 
+                              <span itemprop="addressLocality">Москва</span>
+                          </li>
+                          <li>
+                              <i class="fas fa-phone-alt"></i>
+                              <a href="tel:88003501160" itemprop="telephone">8(499)350-11-60</a>
+                          </li>
+                          <li>
+                              <i class="fa fa-envelope"></i>
+                              <a href="mailto:it@gigsys.ru" itemprop="email">it@gigsys.ru</a>
+                          </li>
+                          <li>
+                              <i class="fa fa-clock"></i>
+                              <span itemprop="openingHours">Пн-Пт: 9:00 - 18:00</span>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- ========== КОПИРАЙТ И ЮРИДИЧЕСКИЕ ССЫЛКИ ========== -->
+  <div class="footer-bottom">
+      <div class="container">
+          <div class="row align-items-center">
+              <div class="col-lg-6">
+                  <div class="copyright">
+                      <p>&copy; <span itemprop="copyrightYear">2025</span> 
+                      <span itemprop="name">GigSys IT-solutions</span>. Все права защищены</p>
+                  </div>
+              </div>
+              <div class="col-lg-6">
+                  <nav class="footer-bottom-links text-lg-right" aria-label="Юридическая информация">
+                      <a href="privacy-policy.html">Политика конфиденциальности</a>
+                      <a href="terms.html">Пользовательское соглашение</a>
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>
 
     <!-- Кнопка "Наверх" -->
     <a href="#" class="back-to-top">
@@ -875,134 +1740,135 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- ============================================= -->
     <!-- MODALS AND POPUPS                             -->
     <!-- ============================================= -->
-    <!-- ПРОСТОЕ МОДАЛЬНОЕ ОКНО БЕЗ СЛОЖНОЙ ВЛОЖЕННОСТИ -->
-<div class="simple-modal-overlay" id="simple-modal-overlay"></div>
+    <!-- Упрощенное модальное окно -->
+    <div class="simple-modal-overlay" id="simple-modal-overlay"></div>
 
-<!-- Модальное окно обратного звонка с минимальной структурой -->
-<div class="simple-modal" id="simple-callback">
-    <div class="simple-modal-content">
-        <!-- Кнопка закрытия -->
-        <button class="simple-modal-close" onclick="closeSimpleModal()">×</button>
-        
-        <!-- Заголовок -->
-        <div class="simple-modal-header">
-            <div class="simple-modal-icon">
-                <i class="fa fa-headset"></i>
+    <!-- Модальное окно обратного звонка с минимальной структурой -->
+    <div class="simple-modal" id="simple-callback">
+        <div class="simple-modal-content">
+            <!-- Кнопка закрытия -->
+            <button class="simple-modal-close" onclick="closeSimpleModal()" aria-label="Закрыть">×</button>
+            
+            <!-- Заголовок -->
+            <div class="simple-modal-header">
+                <div class="simple-modal-icon">
+                    <i class="fa fa-headset"></i>
+                </div>
+                <h3>ЗАКАЗАТЬ ЗВОНОК</h3>
+                <p>Оставьте свои контактные данные, и мы свяжемся с вами в ближайшее время</p>
             </div>
-            <h3>ЗАКАЗАТЬ ЗВОНОК</h3>
-            <p>Оставьте свои контактные данные, и мы свяжемся с вами в ближайшее время</p>
+            
+            <!-- Форма -->
+            <form id="simple-callback-form" onsubmit="event.preventDefault(); submitSimpleForm(this);">
+                <input type="hidden" name="project_name" value="GigSys.ru">
+                <input type="hidden" name="admin_email" value="it@gigsys.ru">
+                <input type="hidden" name="form_subject" value="Форма - Заказать звонок">
+                
+                <!-- Имя -->
+                <div class="simple-form-group">
+                    <div class="simple-input-wrapper">
+                        <i class="fa fa-user simple-input-icon"></i>
+                        <input 
+                            type="text" 
+                            name="Имя" 
+                            placeholder="Ваше имя" 
+                            required 
+                            aria-label="Имя"
+                        >
+                    </div>
+                </div>
+                
+                <!-- Телефон -->
+                <div class="simple-form-group">
+                    <div class="simple-input-wrapper">
+                        <i class="fa fa-phone simple-input-icon"></i>
+                        <input 
+                            type="tel" 
+                            name="Телефон" 
+                            placeholder="Номер телефона" 
+                            required 
+                            aria-label="Телефон"
+                        >
+                    </div>
+                </div>
+                
+                <!-- Email -->
+                <div class="simple-form-group">
+                    <div class="simple-input-wrapper">
+                        <i class="fa fa-envelope simple-input-icon"></i>
+                        <input 
+                            type="email" 
+                            name="Email" 
+                            placeholder="Ваш e-mail" 
+                            required 
+                            aria-label="Email"
+                        >
+                    </div>
+                </div>
+                
+                <!-- Сообщение -->
+                <div class="simple-form-group">
+                    <div class="simple-input-wrapper">
+                        <i class="fa fa-comment simple-input-icon"></i>
+                        <textarea 
+                            name="Комментарий" 
+                            placeholder="Ваш комментарий" 
+                            rows="3"
+                            aria-label="Комментарий"
+                        ></textarea>
+                    </div>
+                </div>
+                
+                <!-- Согласие -->
+                <div class="simple-form-group">
+                    <label class="simple-checkbox">
+                        <input 
+                            type="checkbox" 
+                            required 
+                            aria-label="Согласие на обработку данных"
+                        >
+                        <span class="simple-checkbox-text">Согласен на обработку персональных данных</span>
+                    </label>
+                </div>
+                
+                <!-- Кнопка отправки -->
+                <div class="simple-form-group">
+                    <button 
+                        type="submit" 
+                        class="simple-submit-button"
+                    >
+                        <span>Отправить</span>
+                        <i class="fa fa-paper-plane"></i>
+                    </button>
+                </div>
+            </form>
         </div>
-        
-        <!-- Форма -->
-        <form id="simple-callback-form" onsubmit="event.preventDefault(); submitSimpleForm(this);">
-            <input type="hidden" name="project_name" value="GigSys.ru">
-            <input type="hidden" name="admin_email" value="it@gigsys.ru">
-            <input type="hidden" name="form_subject" value="Форма - Заказать звонок">
-            
-            <!-- Имя -->
-            <div class="simple-form-group">
-                <div class="simple-input-wrapper">
-                    <i class="fa fa-user simple-input-icon"></i>
-                    <input 
-                        type="text" 
-                        name="Имя" 
-                        placeholder="Ваше имя" 
-                        required 
-                        style="display: block; width: 100%; height: auto; min-height: 45px; padding: 10px 10px 10px 40px; background-color: #ffffff; color: #252525; border: 1px solid #BCBCBC; border-radius: 4px; font-size: 16px; visibility: visible; opacity: 1; position: relative; z-index: 2;"
-                    >
-                </div>
-            </div>
-            
-            <!-- Телефон -->
-            <div class="simple-form-group">
-                <div class="simple-input-wrapper">
-                    <i class="fa fa-phone simple-input-icon"></i>
-                    <input 
-                        type="tel" 
-                        name="Телефон" 
-                        placeholder="Номер телефона" 
-                        required 
-                        style="display: block; width: 100%; height: auto; min-height: 45px; padding: 10px 10px 10px 40px; background-color: #ffffff; color: #252525; border: 1px solid #BCBCBC; border-radius: 4px; font-size: 16px; visibility: visible; opacity: 1; position: relative; z-index: 2;"
-                    >
-                </div>
-            </div>
-            
-            <!-- Email -->
-            <div class="simple-form-group">
-                <div class="simple-input-wrapper">
-                    <i class="fa fa-envelope simple-input-icon"></i>
-                    <input 
-                        type="email" 
-                        name="Email" 
-                        placeholder="Ваш e-mail" 
-                        required 
-                        style="display: block; width: 100%; height: auto; min-height: 45px; padding: 10px 10px 10px 40px; background-color: #ffffff; color: #252525; border: 1px solid #BCBCBC; border-radius: 4px; font-size: 16px; visibility: visible; opacity: 1; position: relative; z-index: 2;"
-                    >
-                </div>
-            </div>
-            
-            <!-- Сообщение -->
-            <div class="simple-form-group">
-                <div class="simple-input-wrapper">
-                    <i class="fa fa-comment simple-input-icon" style="top: 13px;"></i>
-                    <textarea 
-                        name="Комментарий" 
-                        placeholder="Ваш комментарий" 
-                        rows="3" 
-                        style="display: block; width: 100%; min-height: 90px; padding: 10px 10px 10px 40px; background-color: #ffffff; color: #252525; border: 1px solid #BCBCBC; border-radius: 4px; font-size: 16px; visibility: visible; opacity: 1; position: relative; z-index: 2; resize: vertical;"
-                    ></textarea>
-                </div>
-            </div>
-            
-            <!-- Согласие -->
-            <div class="simple-form-group">
-                <label class="simple-checkbox">
-                    <input 
-                        type="checkbox" 
-                        required 
-                        style="display: inline-block; opacity: 1; visibility: visible; position: relative; z-index: 2;"
-                    >
-                    <span class="simple-checkbox-text">Согласен на обработку персональных данных</span>
-                </label>
-            </div>
-            
-            <!-- Кнопка отправки -->
-            <div class="simple-form-group">
-                <button 
-                    type="submit" 
-                    class="simple-submit-button"
-                    style="display: block; width: 100%; padding: 12px 20px; background-color: #fd7921; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 16px; text-transform: uppercase;"
-                >
-                    <span>Отправить</span>
-                    <i class="fa fa-paper-plane"></i>
-                </button>
-            </div>
-        </form>
     </div>
-</div>
 
-<!-- Модальное окно успешной отправки -->
-<div class="simple-modal" id="simple-success">
-    <div class="simple-modal-content" style="text-align: center; padding: 30px;">
-        <button class="simple-modal-close" onclick="closeSimpleModal()">×</button>
-        
-        <div class="simple-success-icon">
-            <i class="fa fa-check"></i>
+    <!-- Модальное окно успешной отправки -->
+    <div class="simple-modal" id="simple-success">
+        <div class="simple-modal-content">
+            <button class="simple-modal-close" onclick="closeSimpleModal()" aria-label="Закрыть">×</button>
+            
+            <div class="simple-success-icon">
+                <i class="fa fa-check"></i>
+            </div>
+            
+            <h3>Спасибо за заявку</h3>
+            <p>Ожидайте нашего звонка в ближайшее время</p>
+            
+            <button 
+                onclick="closeSimpleModal()" 
+                class="simple-submit-button"
+            >
+                <span>Закрыть</span>
+            </button>
         </div>
-        
-        <h3>Спасибо за заявку</h3>
-        <p>Ожидайте нашего звонка в ближайшее время</p>
-        
-        <button 
-            onclick="closeSimpleModal()" 
-            class="simple-submit-button"
-            style="display: inline-block; padding: 12px 20px; background-color: #fd7921; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 16px; margin-top: 20px; text-transform: uppercase;"
-        >
-            <span>Закрыть</span>
-        </button>
     </div>
-</div>
-	
+
+
+
+    
 
 
 	<!--[if lt IE 9]>
@@ -1058,6 +1924,152 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <noscript><div><img src="watch/49048088" style="position:absolute; left:-9999px;" alt=""></div></noscript>
 <!-- /Yandex.Metrika counter -->
-
+<script>// Основные функции для модальных окон
+  function closeSimpleModal() {
+    const modal = document.getElementById('simple-callback');
+    const successModal = document.getElementById('simple-success');
+    const overlay = document.getElementById('simple-modal-overlay');
+    
+    if (modal) modal.style.display = 'none';
+    if (successModal) successModal.style.display = 'none';
+    if (overlay) overlay.style.display = 'none';
+    document.body.style.overflow = ''; // Восстанавливаем прокрутку
+  }
+  
+  function openSimpleModal() {
+    // Безопасно закрываем другие окна
+    if (typeof closePriceModal === 'function') {
+      try {
+        closePriceModal();
+      } catch (e) {
+        console.error('Ошибка при закрытии окна цен:', e);
+      }
+    }
+    
+    const modal = document.getElementById('simple-callback');
+    const overlay = document.getElementById('simple-modal-overlay');
+    
+    if (modal) modal.style.display = 'block';
+    if (overlay) overlay.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Блокируем прокрутку
+  }
+  
+  // Безопасная функция закрытия модального окна цен
+  function closePriceModal() {
+    const priceModal = document.getElementById('price-modal');
+    const priceModalOverlay = document.getElementById('price-modal-overlay');
+    
+    if (priceModal) priceModal.style.display = 'none';
+    if (priceModalOverlay) priceModalOverlay.style.display = 'none';
+    document.body.style.overflow = ''; // Восстанавливаем прокрутку
+  }
+  
+  // Единый обработчик отправки формы
+  document.addEventListener('DOMContentLoaded', function() {
+    // Инициализация кнопок открытия модальных окон
+    document.querySelectorAll('.popup-with-form, a[href="#callback"]').forEach(function(button) {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        openSimpleModal();
+      });
+    });
+    
+    // Инициализация кнопки с классом giguslugi-cta-button
+    document.querySelectorAll('.giguslugi-cta-button').forEach(function(button) {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Сохраняем функциональность gtag
+        if (typeof gtag === 'function') {
+          gtag('event', 'click', {'event_category': 'button', 'event_label': 'consult_button'});
+        }
+        
+        openSimpleModal();
+      });
+    });
+    
+    // Обработчик для клика по оверлею
+    const overlay = document.getElementById('simple-modal-overlay');
+    if (overlay) {
+      overlay.addEventListener('click', closeSimpleModal);
+    }
+    
+    // Закрытие по клавише Escape
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeSimpleModal();
+        if (typeof closePriceModal === 'function') {
+          try { closePriceModal(); } catch (e) {}
+        }
+      }
+    });
+    
+    // Находим форму обратного звонка
+    const form = document.getElementById('simple-callback-form');
+    
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Получаем значения полей формы
+        const name = this.querySelector('input[name="Имя"]').value.trim();
+        const email = this.querySelector('input[name="Email"]').value.trim();
+        const phone = this.querySelector('input[name="Телефон"]').value.trim();
+        const message = this.querySelector('textarea[name="Комментарий"]').value.trim();
+        
+        // Проверка заполнения обязательных полей
+        if (!name || !phone) {
+          alert('Пожалуйста, заполните обязательные поля (имя и телефон)');
+          return;
+        }
+        
+        // Изменяем состояние кнопки на время отправки
+        const submitButton = this.querySelector('.simple-submit-button');
+        const originalButtonText = submitButton.innerHTML;
+        submitButton.disabled = true;
+        submitButton.innerHTML = '<span>Отправка...</span><i class="fa fa-spinner fa-spin"></i>';
+        
+        // Подготовка данных для отправки на сервер
+        const formData = new FormData();
+        formData.append('Имя', name);
+        formData.append('Email', email);
+        formData.append('Телефон', phone);
+        formData.append('Комментарий', message);
+        formData.append('form_subject', 'Заказать звонок');
+        
+        // Отправляем данные на сервер
+        fetch('send_telegram.php', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Ответ сервера:', data);
+          if (data.success) {
+            // Успешная отправка
+            this.reset();
+            alert('Сообщение успешно отправлено! Мы свяжемся с вами в ближайшее время.');
+            closeSimpleModal();
+          } else {
+            // Обработка ошибок
+            alert(data.error || 'Произошла ошибка при отправке сообщения.');
+          }
+        })
+        .catch(error => {
+          console.error('Ошибка:', error);
+          alert('Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте позже.');
+        })
+        .finally(() => {
+          // Восстанавливаем кнопку в любом случае
+          submitButton.disabled = false;
+          submitButton.innerHTML = originalButtonText;
+        });
+      });
+    } else {
+      console.error('Форма с ID "simple-callback-form" не найдена на странице');
+    }
+  });
+  
+  </script>
 </body>
 </html>

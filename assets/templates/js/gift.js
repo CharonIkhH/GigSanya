@@ -1,0 +1,221 @@
+// Ждем полной загрузки страницы
+document.addEventListener('DOMContentLoaded', function() {
+    // Не показываем на странице анкеты
+    if (window.location.pathname.includes('bezopasniy-office.html')) return;
+    
+    // Проверяем, закрывал ли пользователь недавно
+    const lastClosed = localStorage.getItem('giftPopupClosed');
+    if (lastClosed && (Date.now() - parseInt(lastClosed) < 86400000)) return;
+    
+    // Создаем HTML баннера
+    const popupHTML = `
+      <div id="gift-popup" class="gift-popup">
+        <div class="gift-popup-content">
+          <button class="gift-popup-close">×</button>
+          <div class="gift-popup-header">
+            <div class="gift-popup-icon">
+              <i class="fas fa-gift"></i>
+            </div>
+            <h3>Заполните анкету и получите подарок!</h3>
+            <p>Комплект материалов по цифровой безопасности <span>бесплатно</span></p>
+          </div>
+          <div class="gift-popup-items">
+            <div class="gift-popup-item">
+              <i class="fas fa-shield-alt"></i>
+              <span>Чек-лист безопасности</span>
+            </div>
+            <div class="gift-popup-item">
+              <i class="fas fa-file-pdf"></i>
+              <span>PDF-гид по защите данных</span>
+            </div>
+            <div class="gift-popup-item">
+              <i class="fas fa-laptop-house"></i>
+              <span>Руководство по удалённой работе</span>
+            </div>
+          </div>
+          <a href="bezopasniy-office.html" class="gift-popup-button">
+            Получить материалы
+          </a>
+        </div>
+      </div>
+    `;
+    
+    // Добавляем баннер в конец body
+    document.body.insertAdjacentHTML('beforeend', popupHTML);
+    
+    // Добавляем стили
+    const popupStyles = document.createElement('style');
+    popupStyles.textContent = `
+      .gift-popup {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 350px;
+        max-width: calc(100% - 60px);
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px);
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+        border-top: 4px solid #fd7921;
+      }
+      
+      .gift-popup.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      
+      .gift-popup-content {
+        padding: 25px;
+        position: relative;
+      }
+      
+      .gift-popup-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        background: #f5f5f5;
+        border: none;
+        border-radius: 50%;
+        font-size: 20px;
+        line-height: 30px;
+        text-align: center;
+        cursor: pointer;
+        color: #333;
+        transition: background 0.3s ease, color 0.3s ease;
+      }
+      
+      .gift-popup-close:hover {
+        background: #fd7921;
+        color: #fff;
+      }
+      
+      .gift-popup-header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      
+      .gift-popup-icon {
+        width: 60px;
+        height: 60px;
+        background-color: rgba(253, 121, 33, 0.1);
+        color: #fd7921;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 15px;
+        font-size: 24px;
+      }
+      
+      .gift-popup-header h3 {
+        margin: 0 0 10px;
+        font-size: 18px;
+        font-weight: 700;
+        color: #333;
+      }
+      
+      .gift-popup-header p {
+        margin: 0;
+        font-size: 14px;
+        color: #666;
+      }
+      
+      .gift-popup-header span {
+        color: #fd7921;
+        font-weight: 600;
+      }
+      
+      .gift-popup-items {
+        margin-bottom: 20px;
+      }
+      
+      .gift-popup-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        padding: 8px 12px;
+        background-color: #f9f9f9;
+        border-radius: 6px;
+      }
+      
+      .gift-popup-item:last-child {
+        margin-bottom: 0;
+      }
+      
+      .gift-popup-item i {
+        color: #fd7921;
+        margin-right: 10px;
+        font-size: 16px;
+      }
+      
+      .gift-popup-item span {
+        font-size: 14px;
+        color: #333;
+      }
+      
+      .gift-popup-button {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        background: linear-gradient(to right, #fd7921, #d35e0f);
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 16px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      
+      .gift-popup-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(253, 121, 33, 0.3);
+      }
+      
+      @media (max-width: 480px) {
+        .gift-popup {
+          bottom: 15px;
+          right: 15px;
+          left: 15px;
+          width: auto;
+        }
+        
+        .gift-popup-content {
+          padding: 20px;
+        }
+        
+        .gift-popup-icon {
+          width: 50px;
+          height: 50px;
+          font-size: 20px;
+        }
+        
+        .gift-popup-header h3 {
+          font-size: 16px;
+        }
+      }
+    `;
+    document.head.appendChild(popupStyles);
+    
+    // Получаем элементы
+    const popup = document.getElementById('gift-popup');
+    const closeBtn = popup.querySelector('.gift-popup-close');
+    
+    // Показываем баннер через 3 секунды
+    setTimeout(function() {
+      popup.classList.add('active');
+    }, 3000);
+    
+    // Обработчик закрытия
+    closeBtn.addEventListener('click', function() {
+      popup.classList.remove('active');
+      localStorage.setItem('giftPopupClosed', Date.now().toString());
+    });
+  });

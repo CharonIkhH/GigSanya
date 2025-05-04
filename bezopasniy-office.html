@@ -1,0 +1,2568 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Защищённый офис | GigSys - IT-решения для бизнеса</title>
+    <meta name="description" content="Получите комплект материалов по цифровой безопасности для руководителей бизнеса. Защищённый офис - современное решение для безопасной работы из любой точки мира.">
+    
+    <!-- Стили -->
+    <link rel="stylesheet" href="assets/templates/css/fonts.css" media="all">
+    <link rel="stylesheet" href="assets/templates/css/bezoffice.css" media="all">
+    <link rel="stylesheet" href="assets/templates/css/main.css" media="all">
+    <link rel="stylesheet" href="assets/templates/css/root.css" media="all">
+    <link rel="stylesheet" href="assets/templates/css/header.css" media="all">
+
+    <link rel="stylesheet" href="assets/templates/libs/bootstrap4/bootstrap-grid.min.css" media="all">
+    <link rel="stylesheet" href="assets/templates/libs/bootstrap4/bootstrap-reboot.min.css" media="all">
+    <link rel="stylesheet" href="assets/templates/libs/magnific/magnific-popup.css" media="all">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" 
+          integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer">
+    
+    <!-- Собственные стили для анкеты -->
+    <link rel="stylesheet" href="assets/templates/css/questionnaire.css" media="all">
+    
+    <!-- Скрипты -->
+    <script src="assets/templates/js/index.js" defer></script>
+</head>
+<body>
+<!-- Структура хедера с улучшенной семантикой и микроразметкой -->
+<div class="container">
+    <header class="header-modern" id="main-header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-wrapper">
+        <!-- Логотип с улучшенными атрибутами -->
+        <div class="logo-box" itemscope itemtype="http://schema.org/Organization">
+          <a href="index.htm" class="logo-link" title="GigSys - IT аутсорсинг и поддержка бизнеса">
+            <img src="assets/templates/img/logo2.webp" alt="GigSys - IT-аутсорсинг и поддержка" width="180" height="50" itemprop="logo" loading="eager">
+            <meta itemprop="name" content="GigSys">
+            <meta itemprop="url" content="https://gigsys.ru">
+          </a>
+        </div>
+        
+        <!-- Главная навигация (десктоп) с микроразметкой -->
+        <nav class="desktop-nav" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="Основная навигация">
+          <ul class="main-menu" role="menubar">
+            <li class="active" role="menuitem"><a href="index.html" itemprop="url"><span itemprop="name">Главная</span></a></li>
+            <li role="menuitem"><a href="o-kompanii.html" itemprop="url"><span itemprop="name">О компании</span></a></li>
+            <li role="menuitem"><a href="landing.html" itemprop="url"><span itemprop="name">Мероприятия</span></a></li>
+            <li class="menu-item-has-children" role="menuitem">
+              <a href="#" class="services-toggle" 
+                 aria-haspopup="true" 
+                 aria-expanded="false"
+                 aria-controls="mega-menu-services"
+                 itemprop="url">
+                <span class="toggle-icon"><i class="fas fa-th-large" aria-hidden="true"></i></span>
+                <span class="toggle-text" itemprop="name">Услуги</span>
+                <span class="toggle-arrow"><i class="fas fa-chevron-down" aria-hidden="true"></i></span>
+              </a>
+              
+              <!-- Мега-меню с улучшенной семантикой -->
+              <div class="mega-menu" id="mega-menu-services" role="region" aria-label="Меню услуг">
+                <!-- Мобильная кнопка закрытия -->
+                <button class="mega-menu-close d-md-none" aria-label="Закрыть меню">
+                  <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+                
+                <!-- Верхняя навигация по меню с микроразметкой и улучшенной доступностью -->
+                <div class="mega-menu-header">
+                  <div class="container">
+                    <div class="menu-categories" role="tablist" aria-label="Категории услуг">
+                      <button class="menu-category active" 
+                              data-category="it" 
+                              role="tab" 
+                              id="tab-it" 
+                              aria-selected="true" 
+                              aria-controls="panel-it">ИТ-услуги</button>
+                      <button class="menu-category" 
+                              data-category="infra" 
+                              role="tab" 
+                              id="tab-infra" 
+                              aria-selected="false" 
+                              aria-controls="panel-infra">Инфраструктура</button>
+                      <button class="menu-category" 
+                              data-category="security" 
+                              role="tab" 
+                              id="tab-security" 
+                              aria-selected="false" 
+                              aria-controls="panel-security">Безопасность</button>
+                      <button class="menu-category" 
+                              data-category="software" 
+                              role="tab" 
+                              id="tab-software" 
+                              aria-selected="false" 
+                              aria-controls="panel-software">ПО и сервисы</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Основной контент меню с микроразметкой для каждой услуги -->
+                <div class="mega-menu-content">
+                  <div class="container">
+                    <!-- ИТ-услуги -->
+                    <div class="menu-panel active" 
+                         data-panel="it" 
+                         role="tabpanel" 
+                         id="panel-it" 
+                         aria-labelledby="tab-it">
+                      <div class="menu-panel-grid">
+                        <div class="menu-column">
+                          <div class="menu-group">
+                            <h4 class="menu-group-title">
+                              <i class="fas fa-headset" aria-hidden="true"></i>
+                              Поддержка и аутсорсинг
+                            </h4>
+                            <ul class="menu-list" role="menu">
+                              <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                                <a href="it-support.html">
+                                  <span class="link-icon"><i class="fas fa-user-headset" aria-hidden="true"></i></span>
+                                  <span class="link-content">
+                                    <span class="link-title" itemprop="name">IT-поддержка</span>
+                                    <span class="link-desc" itemprop="description">Профессиональная поддержка вашего бизнеса</span>
+                                    <meta itemprop="serviceType" content="IT Support">
+                                  </span>
+                                </a>
+                              </li>
+                              <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                                <a href="it-podderzhka.html">
+                                  <span class="link-icon"><i class="fas fa-users-cog" aria-hidden="true"></i></span>
+                                  <span class="link-content">
+                                    <span class="link-title" itemprop="name">IT-аутсорсинг</span>
+                                    <span class="link-desc" itemprop="description">Комплексное обслуживание инфраструктуры</span>
+                                    <meta itemprop="serviceType" content="IT Outsourcing">
+                                  </span>
+                                </a>
+                              </li>
+                              <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                                <a href="virtual-office.html">
+                                  <span class="link-icon"><i class="fas fa-laptop-house" aria-hidden="true"></i></span>
+                                  <span class="link-content">
+                                    <span class="link-title" itemprop="name">Виртуальный офис</span>
+                                    <span class="link-desc" itemprop="description">Защищенное рабочее пространство</span>
+                                    <meta itemprop="serviceType" content="Virtual Office">
+                                  </span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        
+                        <div class="menu-column">
+                          <div class="menu-group">
+                            <h4 class="menu-group-title">
+                              <i class="fas fa-info-circle" aria-hidden="true"></i>
+                              О компании
+                            </h4>
+                            <ul class="menu-list" role="menu">
+                              <li role="menuitem">
+                                <a href="o-kompanii.html">
+                                  <span class="link-icon"><i class="fas fa-building" aria-hidden="true"></i></span>
+                                  <span class="link-content">
+                                    <span class="link-title">О нас</span>
+                                    <span class="link-desc">История и ценности компании</span>
+                                  </span>
+                                </a>
+                              </li>
+                              <li role="menuitem">
+                                <a href="kontaktyi.html">
+                                  <span class="link-icon"><i class="fas fa-address-card" aria-hidden="true"></i></span>
+                                  <span class="link-content">
+                                    <span class="link-title">Контакты</span>
+                                    <span class="link-desc">Свяжитесь с нашими специалистами</span>
+                                  </span>
+                                </a>
+                              </li>
+                              <li role="menuitem">
+                                <a href="landing.html">
+                                  <span class="link-icon"><i class="fas fa-newspaper" aria-hidden="true"></i></span>
+                                  <span class="link-content">
+                                    <span class="link-title">Мероприятия</span>
+                                    <span class="link-desc">Актуальные события</span>
+                                  </span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        
+                        <!-- Выделенное предложение с микроразметкой -->
+                        <div class="menu-panel-highlight" itemscope itemtype="http://schema.org/Offer">
+                          <div class="highlight-content">
+                            <div class="highlight-badge">Популярное</div>
+                            <h3 itemprop="name">Выгодный IT-аутсорсинг</h3>
+                            <p itemprop="description">Альтернатива штатным специалистам. Экономия до 30% на IT-затратах.</p>
+                            <a href="it-poddergka.html" class="highlight-btn" itemprop="url">
+                              Подробнее
+                              <i class="fas fa-long-arrow-right" aria-hidden="true"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Инфраструктура -->
+                    <div class="menu-panel" 
+                         data-panel="infra" 
+                         role="tabpanel" 
+                         id="panel-infra" 
+                         aria-labelledby="tab-infra">
+                      <div class="menu-panel-grid">
+                        <div class="menu-column">
+                          <div class="menu-group">
+                            <h4 class="menu-group-title">
+                              <i class="fas fa-server" aria-hidden="true"></i>
+                              Серверы и сети
+                            </h4>
+                            <ul class="menu-list" role="menu">
+                              <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                                <a href="obsluzhivanie-serverov.html">
+                                  <span class="link-icon"><i class="fas fa-wrench" aria-hidden="true"></i></span>
+                                  <span class="link-content">
+                                    <span class="link-title" itemprop="name">Обслуживание серверов</span>
+                                    <span class="link-desc" itemprop="description">Техническая поддержка и мониторинг</span>
+                                    <meta itemprop="serviceType" content="Server Maintenance">
+                                  </span>
+                                </a>
+                              </li>
+                              <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                                <a href="montazh-kompyuternykh-setey.html">
+                                  <span class="link-icon"><i class="fas fa-network-wired" aria-hidden="true"></i></span>
+                                  <span class="link-content">
+                                    <span class="link-title" itemprop="name">Монтаж компьютерных сетей</span>
+                                    <span class="link-desc" itemprop="description">Проектирование и развертывание сетей</span>
+                                    <meta itemprop="serviceType" content="Network Installation">
+                                  </span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        
+                        <div class="menu-column">
+                          <div class="menu-group">
+                            <h4 class="menu-group-title">
+                              <i class="fas fa-cloud" aria-hidden="true"></i>
+                              Облачные решения
+                            </h4>
+                            <ul class="menu-list" role="menu">
+                              <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                                <a href="hosting.html">
+                                  <span class="link-icon"><i class="fas fa-server" aria-hidden="true"></i></span>
+                                  <span class="link-content">
+                                    <span class="link-title" itemprop="name">Хостинг</span>
+                                    <span class="link-desc" itemprop="description">Надежный хостинг для ваших проектов</span>
+                                    <meta itemprop="serviceType" content="Hosting">
+                                  </span>
+                                </a>
+                              </li>
+                              <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                                <a href="virtual-office.html">
+                                  <span class="link-icon"><i class="fas fa-desktop" aria-hidden="true"></i></span>
+                                  <span class="link-content">
+                                    <span class="link-title" itemprop="name">Виртуальный офис</span>
+                                    <span class="link-desc" itemprop="description">Работа из любой точки мира</span>
+                                    <meta itemprop="serviceType" content="Virtual Office">
+                                  </span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        
+                        <!-- Выделенное предложение с микроразметкой -->
+                        <div class="menu-panel-highlight infra-highlight" itemscope itemtype="http://schema.org/Offer">
+                          <div class="highlight-content">
+                            <div class="highlight-badge">Выгодно</div>
+                            <h3 itemprop="name">Обслуживание серверов</h3>
+                            <p itemprop="description">Профессиональное администрирование и мониторинг с гарантией 99.9% работоспособности</p>
+                            <a href="obsluzhivanie-serverov.html" class="highlight-btn" itemprop="url">
+                              Подробнее
+                              <i class="fas fa-long-arrow-right" aria-hidden="true"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Безопасность -->
+                    <div class="menu-panel" 
+                         data-panel="security" 
+                         role="tabpanel" 
+                         id="panel-security" 
+                         aria-labelledby="tab-security">
+                      <div class="menu-panel-grid">
+                        <div class="menu-column">
+                          <div class="menu-group">
+                            <h4 class="menu-group-title">
+                              <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                              Кибербезопасность
+                            </h4>
+                            <ul class="menu-list" role="menu">
+                              <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                                <a href="it-podderzhka.html#security">
+                                  <span class="link-icon"><i class="fas fa-lock" aria-hidden="true"></i></span>
+                                  <span class="link-content">
+                                    <span class="link-title" itemprop="name">Информационная безопасность</span>
+                                    <span class="link-desc" itemprop="description">Комплексная защита IT-систем</span>
+                                    <meta itemprop="serviceType" content="Information Security">
+                                  </span>
+                                </a>
+                              </li>
+                              <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                                <a href="virtual-office.html">
+                                  <span class="link-icon"><i class="fas fa-virus-slash" aria-hidden="true"></i></span>
+                                  <span class="link-content">
+                                    <span class="link-title" itemprop="name">Защищенный офис</span>
+                                    <span class="link-desc" itemprop="description">Безопасное рабочее пространство</span>
+                                    <meta itemprop="serviceType" content="Secure Office">
+                                  </span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        
+                        <div class="menu-column">
+                          <div class="menu-group">
+                            <h4 class="menu-group-title">
+                              <i class="fas fa-video" aria-hidden="true"></i>
+                              Физическая безопасность
+                            </h4>
+                            <ul class="menu-list" role="menu">
+                              <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                                <a href="ustanovka-videonablyudeniya.html">
+                                  <span class="link-icon"><i class="fas fa-camera" aria-hidden="true"></i></span>
+                                  <span class="link-content">
+                                    <span class="link-title" itemprop="name">Видеонаблюдение</span>
+                                    <span class="link-desc" itemprop="description">Установка камер в офисы</span>
+                                    <meta itemprop="serviceType" content="Video Surveillance">
+                                  </span>
+                                </a>
+                              </li>
+                              <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                                <a href="montazh-kompyuternykh-setey.html#security">
+                                  <span class="link-icon"><i class="fas fa-key" aria-hidden="true"></i></span>
+                                  <span class="link-content">
+                                    <span class="link-title" itemprop="name">Защита сетей</span>
+                                    <span class="link-desc" itemprop="description">Безопасность сетевой инфраструктуры</span>
+                                    <meta itemprop="serviceType" content="Network Security">
+                                  </span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        
+                        <!-- Выделенное предложение с микроразметкой -->
+                        <div class="menu-panel-highlight security-highlight" itemscope itemtype="http://schema.org/Offer">
+                          <div class="highlight-content">
+                            <div class="highlight-badge">Рекомендуем</div>
+                            <h3 itemprop="name">Установка видеонаблюдения</h3>
+                            <p itemprop="description">Современные системы видеонаблюдения для вашего офиса с удаленным доступом</p>
+                            <a href="ustanovka-videonablyudeniya.html" class="highlight-btn" itemprop="url">
+                              Подробнее
+                              <i class="fas fa-long-arrow-right" aria-hidden="true"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- ПО и сервисы -->
+                    <div class="menu-panel" 
+                         data-panel="software" 
+                         role="tabpanel" 
+                         id="panel-software" 
+                         aria-labelledby="tab-software">
+                      <div class="menu-panel-grid">
+                        <div class="menu-column">
+                          <div class="menu-group">
+                            <h4 class="menu-group-title">
+                              <i class="fas fa-laptop-code" aria-hidden="true"></i>
+                              Разработка
+                            </h4>
+                            <ul class="menu-list" role="menu">
+                              <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                                <a href="landing.html">
+                                  <span class="link-icon"><i class="fas fa-globe" aria-hidden="true"></i></span>
+                                  <span class="link-content">
+                                    <span class="link-title" itemprop="name">Разработка лендингов</span>
+                                    <span class="link-desc" itemprop="description">Создание продающих страниц</span>
+                                    <meta itemprop="serviceType" content="Landing Page Development">
+                                  </span>
+                                </a>
+                              </li>
+                              <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                                <a href="virtual-office.html#solutions">
+                                  <span class="link-icon"><i class="fas fa-code" aria-hidden="true"></i></span>
+                                  <span class="link-content">
+                                    <span class="link-title" itemprop="name">Облачные решения</span>
+                                    <span class="link-desc" itemprop="description">Программные продукты для бизнеса</span>
+                                    <meta itemprop="serviceType" content="Cloud Solutions">
+                                  </span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        
+                        <div class="menu-column">
+                          <div class="menu-group">
+                            <h4 class="menu-group-title">
+                              <i class="fas fa-calculator" aria-hidden="true"></i>
+                              Бизнес-приложения
+                            </h4>
+                            <ul class="menu-list" role="menu">
+                              <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                                <a href="uslugi-1c.html">
+                                  <span class="link-icon"><i class="fas fa-calculator" aria-hidden="true"></i></span>
+                                  <span class="link-content">
+                                    <span class="link-title" itemprop="name">Услуги 1С</span>
+                                    <span class="link-desc" itemprop="description">Внедрение и поддержка 1С</span>
+                                    <meta itemprop="serviceType" content="1C Services">
+                                  </span>
+                                </a>
+                              </li>
+                              <li role="menuitem" itemscope itemtype="http://schema.org/Service">
+                                <a href="prostoe-reshenie-slozhnyix-zadach.html">
+                                  <span class="link-icon"><i class="fas fa-cloud-download-alt" aria-hidden="true"></i></span>
+                                  <span class="link-content">
+                                    <span class="link-title" itemprop="name">1С ФРЕШ</span>
+                                    <span class="link-desc" itemprop="description">Преимущества облачной 1С</span>
+                                    <meta itemprop="serviceType" content="1C Fresh">
+                                  </span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        
+                        <!-- Выделенное предложение с микроразметкой -->
+                        <div class="menu-panel-highlight software-highlight" itemscope itemtype="http://schema.org/Offer">
+                          <div class="highlight-content">
+                            <div class="highlight-badge">Акция</div>
+                            <h3 itemprop="name">1С ФРЕШ в облаке</h3>
+                            <p itemprop="description">Простое решение сложных задач. Преимущества облачной версии 1С.</p>
+                            <a href="prostoe-reshenie-slozhnyix-zadach.html" class="highlight-btn" itemprop="url">
+                              Подробнее
+                              <i class="fas fa-long-arrow-right" aria-hidden="true"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Футер меню с микроразметкой -->
+                <div class="mega-menu-footer">
+                  <div class="container">
+                    <div class="mm-footer-content">
+                      <div class="mm-footer-cta">
+                        <p>Нужна консультация специалиста?</p>
+                        <a href="kontaktyi.html" class="mm-cta-btn" itemscope itemtype="http://schema.org/ContactPoint">
+                          <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                          <span itemprop="name">Получить консультацию</span>
+                          <meta itemprop="contactType" content="customer support">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li role="menuitem"><a href="kontaktyi.html" itemprop="url"><span itemprop="name">Контакты</span></a></li>
+          </ul>
+        </nav>
+        
+        <!-- Контактная информация с микроразметкой -->
+        <div class="header-contacts" itemscope itemtype="http://schema.org/Organization">
+          <meta itemprop="name" content="GigSys">
+          <div class="contact-item">
+            <a href="#map-modal" class="popup-with-form contact-link">
+              <div class="contact-icon">
+                <i class="fa fa-map-marker-alt" aria-hidden="true"></i>
+              </div>
+              <div class="contact-text">
+                <div class="contact-label">Адрес офиса</div>
+                <div class="contact-info" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                  <span itemprop="addressLocality">г. Москва</span>, 
+                  <span itemprop="streetAddress">Ракетный бульвар, д.15, оф.31</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          <div class="contact-item">
+            <a href="tel:88003501160" class="contact-link" itemprop="telephone">
+              <div class="contact-icon">
+                <i class="fa fa-phone-alt" aria-hidden="true"></i>
+              </div>
+              <div class="contact-text">
+                <div class="contact-label">Телефон</div>
+                <div class="contact-info">8 (499) 350-11-60</div>
+              </div>
+            </a>
+          </div>
+          
+          <!-- Добавление скрытых полей для SEO -->
+          <meta itemprop="email" content="it@gigsys.ru">
+          <meta itemprop="url" content="https://gigsys.ru">
+          <meta itemprop="foundingDate" content="2010">
+        </div>
+        
+        <!-- CTA Buttons с вертикальным расположением -->
+        <div class="header-actions vertical">
+          <a href="#callback" class="btn btn-primary popup-with-form" rel="nofollow">
+            <i class="fas fa-headset" aria-hidden="true"></i>
+            <span>Заказать звонок</span>
+          </a>
+          
+          <a href="http://lk.gigsys.ru/hd/customer.pl" target="_blank" class="btn btn-outline" rel="noopener">
+            <i class="fas fa-user-circle" aria-hidden="true"></i>
+            <span>Личный кабинет</span>
+          </a>
+        </div>
+        
+        <!-- Мобильное меню (бургер) -->
+        <button class="mobile-menu-toggle" 
+                aria-label="Открыть меню" 
+                aria-expanded="false" 
+                aria-controls="mobile-menu">
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+      </div>
+      
+      <!-- Мобильное меню (выпадающее) с улучшенной доступностью -->
+      <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu-header">
+          <div class="mobile-logo">
+            <a href="index.htm">
+              <img src="assets/templates/img/logo.png" alt="GigSys - IT аутсорсинг" width="140" height="35" loading="lazy">
+            </a>
+          </div>
+          <button class="mobile-menu-close" aria-label="Закрыть меню">
+            <i class="fas fa-times" aria-hidden="true"></i>
+          </button>
+        </div>
+        
+        <div class="mobile-menu-content">
+          <div class="mobile-search">
+            <form action="search.html" method="get" role="search">
+              <input type="text" name="q" placeholder="Поиск..." aria-label="Поиск">
+              <button type="submit" aria-label="Искать"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </form>
+          </div>
+          
+          <!-- Мобильная навигация с микроразметкой -->
+          <nav class="mobile-nav" itemscope itemtype="http://schema.org/SiteNavigationElement">
+            <ul>
+              <li class="active"><a href="index.html" itemprop="url"><span itemprop="name">Главная</span></a></li>
+              <li><a href="o-kompanii.html" itemprop="url"><span itemprop="name">О компании</span></a></li>
+              <li><a href="landing.html" itemprop="url"><span itemprop="name">Мероприятия</span></a></li>
+              <li class="has-dropdown">
+                <a href="#" aria-expanded="false" aria-haspopup="true">
+                  <span itemprop="name">Услуги</span> <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </a>
+                <ul class="mobile-submenu">
+                  <li itemscope itemtype="http://schema.org/Service">
+                    <a href="it-support.html" itemprop="url">
+                      <i class="fas fa-headset" aria-hidden="true"></i> 
+                      <span itemprop="name">IT-поддержка</span>
+                    </a>
+                  </li>
+                  <li itemscope itemtype="http://schema.org/Service">
+                    <a href="it-autsorsing.html" itemprop="url">
+                      <i class="fas fa-tasks" aria-hidden="true"></i> 
+                      <span itemprop="name">IT-аутсорсинг</span>
+                    </a>
+                  </li>
+                  <li itemscope itemtype="http://schema.org/Service">
+                    <a href="virtual-office.html" itemprop="url">
+                      <i class="fas fa-shield-alt" aria-hidden="true"></i> 
+                      <span itemprop="name">Защищенный офис</span>
+                    </a>
+                  </li>
+                  <li itemscope itemtype="http://schema.org/Service">
+                    <a href="obsluzhivanie-serverov.html" itemprop="url">
+                      <i class="fas fa-server" aria-hidden="true"></i> 
+                      <span itemprop="name">Серверы</span>
+                    </a>
+                  </li>
+                  <li itemscope itemtype="http://schema.org/Service">
+                    <a href="montazh-kompyuternykh-setey.html" itemprop="url">
+                      <i class="fas fa-network-wired" aria-hidden="true"></i> 
+                      <span itemprop="name">Офисные сети</span>
+                    </a>
+                  </li>
+                  <li itemscope itemtype="http://schema.org/Service">
+                    <a href="ustanovka-videonablyudeniya.html" itemprop="url">
+                      <i class="fas fa-video" aria-hidden="true"></i> 
+                      <span itemprop="name">Видеонаблюдение</span>
+                    </a>
+                  </li>
+                  <li itemscope itemtype="http://schema.org/Service">
+                    <a href="uslugi-1c.html" itemprop="url">
+                      <i class="fas fa-calculator" aria-hidden="true"></i> 
+                      <span itemprop="name">Услуги 1С</span>
+                    </a>
+                  </li>
+                  <li itemscope itemtype="http://schema.org/Service">
+                    <a href="hosting.html" itemprop="url">
+                      <i class="fas fa-cloud" aria-hidden="true"></i> 
+                      <span itemprop="name">Хостинг</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="kontaktyi.html" itemprop="url"><span itemprop="name">Контакты</span></a></li>
+            </ul>
+          </nav>
+          
+          <!-- Контактная информация для мобильного меню с микроразметкой -->
+          <div class="mobile-contacts" itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop="name" content="GigSys">
+            <div class="mobile-contact-item">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <a href="tel:88003501160" itemprop="telephone">8(499)350-11-60</a>
+            </div>
+            <div class="mobile-contact-item">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <a href="mailto:it@gigsys.ru" itemprop="email">it@gigsys.ru</a>
+            </div>
+            <div class="mobile-contact-item">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                <span itemprop="addressLocality">г. Москва</span>, 
+                <span itemprop="streetAddress">Ракетный бульвар, д.15, оф.31</span>
+              </address>
+            </div>
+          </div>
+          
+          <!-- Кнопки действий в мобильном меню -->
+          <div class="mobile-actions">
+            <a href="#callback" class="btn btn-primary popup-with-form" rel="nofollow">
+              <i class="fas fa-headset" aria-hidden="true"></i>
+              <span>Заказать звонок</span>
+            </a>
+            
+            <a href="http://lk.gigsys.ru/hd/customer.pl" target="_blank" class="btn btn-outline" rel="noopener">
+              <i class="fas fa-user-circle" aria-hidden="true"></i>
+              <span>Личный кабинет</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Roistat script с async и defer для ускорения загрузки -->
+      <script src="https://widget.roistat.com/widget/s8xWAIxVHJ" async defer></script>
+    </header>
+  </div>
+  
+  <!-- Добавлены JSON-LD данные для поисковых систем -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "GigSys",
+    "url": "https://gigsys.ru",
+    "logo": "https://gigsys.ru/assets/templates/img/logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+84993501160",
+      "contactType": "customer service",
+      "areaServed": "RU",
+      "availableLanguage": "Russian"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Москва",
+      "addressRegion": "Москва",
+      "streetAddress": "Ракетный бульвар, д.15, оф.31",
+      "addressCountry": "RU"
+    },
+    "sameAs": [
+      "https://vk.com/gigsys",
+      "https://www.facebook.com/gigsys"
+    ]
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://gigsys.ru/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://gigsys.ru/search.html?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+    <!-- JavaScript для хедера - Оптимизирован -->
+    <script>
+    /**
+ * Оптимизированный JavaScript для хедера и мега-меню
+ * - Исправлено открытие/закрытие меню по клику на кнопку
+ * - Улучшена производительность
+ * - Убраны все ховеры, активация строго по клику
+ */
+
+document.addEventListener('DOMContentLoaded', function() {
+    // === БАЗОВЫЕ ЭЛЕМЕНТЫ ===
+    // Хедер и мобильное меню
+    const header = document.getElementById('main-header');
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileMenuClose = document.querySelector('.mobile-menu-close');
+    const dropdowns = document.querySelectorAll('.has-dropdown');
+    
+    // Мега-меню
+    const servicesToggle = document.querySelector('.services-toggle');
+    const megaMenu = document.querySelector('.mega-menu');
+    let megaMenuClose = document.querySelector('.mega-menu-close');
+    const menuCategories = document.querySelectorAll('.menu-category');
+    const menuPanels = document.querySelectorAll('.menu-panel');
+    
+    // Дополнительные элементы
+    const anchorLinks = document.querySelectorAll('.mega-menu a[href*="#"]');
+    const actionButtons = document.querySelectorAll('.highlight-btn, .mm-cta-btn');
+    
+    // === СОСТОЯНИЕ ===
+    let isMegaMenuOpen = false;
+    let isAnimating = false;
+    
+    // === ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ===
+    // Анимация с проверкой на поддержку
+    function animateElement(element, isOpening, callback) {
+        if (!element) return;
+        
+        isAnimating = true;
+        
+        // Сбрасываем предыдущие анимации
+        element.style.animation = '';
+        
+        // Применяем анимацию
+        setTimeout(() => {
+            element.style.animation = isOpening 
+                ? 'fadeIn 300ms forwards' 
+                : 'fadeOut 250ms forwards';
+            
+            // Ждем завершения анимации
+            setTimeout(() => {
+                isAnimating = false;
+                if (callback) callback();
+            }, isOpening ? 300 : 250);
+        }, 10);
+    }
+    
+    // Добавление стилей анимации
+    function addAnimationStyles() {
+        if (document.getElementById('mega-menu-animations')) return;
+        
+        const style = document.createElement('style');
+        style.id = 'mega-menu-animations';
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            @keyframes fadeOut {
+                from { opacity: 1; transform: translateY(0); }
+                to { opacity: 0; transform: translateY(10px); }
+            }
+            .btn-pressed {
+                transform: scale(0.95) !important;
+                transition: transform 0.2s !important;
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    
+    // === ОСНОВНЫЕ ФУНКЦИИ ===
+    // Переключатель мега-меню
+    function toggleMegaMenu(forceState) {
+        if (!megaMenu || isAnimating) return;
+        
+        // Определяем новое состояние
+        const willOpen = forceState !== undefined ? forceState : !isMegaMenuOpen;
+        
+        console.log('Toggle mega menu:', willOpen ? 'opening' : 'closing'); // отладка
+        
+        if (willOpen) {
+            // Открываем меню
+            megaMenu.classList.add('active');
+            document.body.classList.add('mega-menu-open');
+            
+            if (servicesToggle) {
+                servicesToggle.setAttribute('aria-expanded', 'true');
+            }
+            
+            animateElement(megaMenu, true, function() {
+                // Фокус на первую категорию для доступности
+                const activeCategory = document.querySelector('.menu-category.active');
+                if (activeCategory) activeCategory.focus();
+            });
+            
+            // Закрываем мобильное меню если оно открыто
+            if (mobileMenu && mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+                menuToggle.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        } else {
+            // Закрываем меню
+            animateElement(megaMenu, false, function() {
+                megaMenu.classList.remove('active');
+                document.body.classList.remove('mega-menu-open');
+                
+                if (servicesToggle) {
+                    servicesToggle.setAttribute('aria-expanded', 'false');
+                    servicesToggle.focus();
+                }
+            });
+        }
+        
+        // Устанавливаем новое состояние
+        isMegaMenuOpen = willOpen;
+    }
+    
+    // Создание кнопки закрытия
+    function createCloseButton() {
+        if (megaMenu && !megaMenuClose) {
+            const closeButton = document.createElement('button');
+            closeButton.className = 'mega-menu-close';
+            closeButton.setAttribute('aria-label', 'Закрыть меню');
+            closeButton.innerHTML = '<i class="fas fa-times"></i>';
+            megaMenu.prepend(closeButton);
+            
+            // Обновляем ссылку
+            megaMenuClose = closeButton;
+            
+            // Добавляем обработчик
+            megaMenuClose.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                toggleMegaMenu(false);
+            });
+        }
+    }
+    
+    // Обработка скролла
+    function setupScrollHandler() {
+        if (!header) return;
+        
+        function handleScroll() {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }
+        
+        // Инициализация
+        handleScroll();
+        
+        // Оптимизированный обработчик
+        let scrollTimeout;
+        window.addEventListener('scroll', function() {
+            if (!scrollTimeout) {
+                scrollTimeout = setTimeout(function() {
+                    handleScroll();
+                    scrollTimeout = null;
+                }, 100);
+            }
+        }, { passive: true });
+    }
+    
+    // === ИНИЦИАЛИЗАЦИЯ ===
+    // Добавляем стили анимаций
+    addAnimationStyles();
+    
+    // Настраиваем хедер
+    setupScrollHandler();
+    
+    // Создаем кнопку закрытия для мега-меню
+    createCloseButton();
+    
+    // === ОБРАБОТЧИКИ СОБЫТИЙ ===
+    // Обработчик кнопки "Услуги" для открытия/закрытия мега-меню
+    if (servicesToggle && megaMenu) {
+        servicesToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleMegaMenu(); // Переключаем состояние
+        });
+        
+        // Устанавливаем начальные атрибуты для доступности
+        servicesToggle.setAttribute('aria-haspopup', 'true');
+        servicesToggle.setAttribute('aria-expanded', 'false');
+    }
+    
+    // Закрытие мега-меню при клике вне
+    document.addEventListener('click', function(e) {
+        if (isMegaMenuOpen && 
+            megaMenu && 
+            !megaMenu.contains(e.target) && 
+            !servicesToggle.contains(e.target)) {
+            toggleMegaMenu(false);
+        }
+    });
+    
+    // Закрытие по Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && isMegaMenuOpen) {
+            toggleMegaMenu(false);
+        }
+    });
+    
+    // Обработка кнопок внутри мега-меню
+    actionButtons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            // Эффект нажатия
+            btn.classList.add('btn-pressed');
+            
+            setTimeout(function() {
+                btn.classList.remove('btn-pressed');
+                
+                // Закрываем мега-меню
+                if (isMegaMenuOpen) {
+                    setTimeout(function() {
+                        toggleMegaMenu(false);
+                    }, 100);
+                }
+            }, 200);
+        });
+    });
+    
+    // Обработка ссылок с якорями
+    anchorLinks.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (!href) return;
+            
+            const isAnchor = href.indexOf('#') === 0 || href.indexOf('/#') !== -1;
+            
+            if (isAnchor) {
+                // Закрываем мега-меню после клика на якорную ссылку
+                toggleMegaMenu(false);
+            }
+        });
+    });
+    
+    // Обработка мобильного меню
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Закрываем мега-меню, если оно открыто
+            if (isMegaMenuOpen) {
+                toggleMegaMenu(false);
+            }
+            
+            // Переключаем мобильное меню
+            menuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+        
+        // Закрытие мобильного меню
+        if (mobileMenuClose) {
+            mobileMenuClose.addEventListener('click', function(e) {
+                e.preventDefault();
+                menuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            });
+        }
+        
+        // Закрытие при клике вне меню
+        document.addEventListener('click', function(e) {
+            if (mobileMenu.classList.contains('active') && 
+                !mobileMenu.contains(e.target) && 
+                !menuToggle.contains(e.target)) {
+                menuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        });
+    }
+    
+    // Обработка выпадающих списков
+    dropdowns.forEach(function(dropdown) {
+        const link = dropdown.querySelector('a');
+        
+        if (link) {
+            link.addEventListener('click', function(e) {
+                // Предотвращаем переход для выпадающих меню
+                e.preventDefault();
+                
+                // Закрываем другие открытые дропдауны
+                dropdowns.forEach(function(otherDropdown) {
+                    if (otherDropdown !== dropdown && otherDropdown.classList.contains('active')) {
+                        otherDropdown.classList.remove('active');
+                    }
+                });
+                
+                // Переключаем текущий дропдаун
+                dropdown.classList.toggle('active');
+            });
+        }
+    });
+    
+    // Обработка категорий в мега-меню
+    if (menuCategories.length > 0 && menuPanels.length > 0) {
+        menuCategories.forEach(function(category) {
+            category.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Пропускаем если категория уже активна
+                if (category.classList.contains('active')) return;
+                
+                const targetPanel = category.getAttribute('data-category');
+                
+                // Активация категории
+                menuCategories.forEach(function(cat) {
+                    cat.classList.remove('active');
+                });
+                category.classList.add('active');
+                
+                // Активация панели
+                menuPanels.forEach(function(panel) {
+                    panel.classList.remove('active');
+                    if (panel.getAttribute('data-panel') === targetPanel) {
+                        panel.classList.add('active');
+                        // Анимация новой панели
+                        panel.style.animation = 'fadeIn 300ms forwards';
+                    }
+                });
+            });
+            
+            // Навигация с клавиатуры
+            category.addEventListener('keydown', function(e) {
+                const index = Array.from(menuCategories).indexOf(category);
+                let nextIndex;
+                
+                switch(e.key) {
+                    case 'ArrowRight':
+                        e.preventDefault();
+                        nextIndex = index + 1 >= menuCategories.length ? 0 : index + 1;
+                        menuCategories[nextIndex].focus();
+                        menuCategories[nextIndex].click();
+                        break;
+                    case 'ArrowLeft':
+                        e.preventDefault();
+                        nextIndex = index - 1 < 0 ? menuCategories.length - 1 : index - 1;
+                        menuCategories[nextIndex].focus();
+                        menuCategories[nextIndex].click();
+                        break;
+                }
+            });
+        });
+        
+        // Активация первой панели и категории по умолчанию
+        if (!document.querySelector('.menu-panel.active')) {
+            const firstCategory = menuCategories[0];
+            const firstPanel = menuPanels[0];
+            
+            if (firstCategory && firstPanel) {
+                firstCategory.classList.add('active');
+                firstPanel.classList.add('active');
+            }
+        }
+    }
+    
+    // Обработка якорей в URL
+    if (window.location.hash) {
+        const targetElement = document.querySelector(window.location.hash);
+        if (targetElement) {
+            setTimeout(function() {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }, 500);
+        }
+    }
+});
+    </script>
+
+     <!-- Основное содержимое страницы -->
+     <main>
+        <section class="quest-main">
+            <div class="container">
+                <div class="quest-wrapper">
+                    <div class="quest-title-section">
+                        Цифровая безопасность для <span class="quest-title-section-accent">современного бизнеса</span>
+                    </div>
+                    
+                    <div class="quest-description-section">
+                        Заполните анкету и получите комплект материалов по защите вашего бизнеса от цифровых угроз,
+                        включая рекомендации экспертов и готовые решения для безопасного удалённого доступа
+                    </div>
+                    
+                    <div class="quest-card-row">
+                        <div class="quest-info-card">
+                            <div class="quest-info-card-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="quest-info-card-title">Комплексная защита</div>
+                            <div class="quest-info-card-text">Системы предотвращения утечек данных и защиты от внешних угроз</div>
+                        </div>
+                        
+                        <div class="quest-info-card">
+                            <div class="quest-info-card-icon">
+                                <i class="fas fa-laptop-house"></i>
+                            </div>
+                            <div class="quest-info-card-title">Удалённый доступ</div>
+                            <div class="quest-info-card-text">Безопасная работа из любой точки мира на любом устройстве</div>
+                        </div>
+                        
+                        <div class="quest-info-card">
+                            <div class="quest-info-card-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <div class="quest-info-card-title">Шифрование данных</div>
+                            <div class="quest-info-card-text">Защита конфиденциальной информации компании от перехвата</div>
+                        </div>
+                    </div>
+        
+                    <div class="quest-form-card">
+                        <div class="quest-progress">
+                            <div class="quest-progress-step active" data-step="1">
+                                1
+                            </div>
+                            <div class="quest-progress-step" data-step="2">
+                                2
+                            </div>
+                            <div class="quest-progress-step" data-step="3">
+                                3
+                            </div>
+                            <div class="quest-progress-step" data-step="4">
+                                4
+                            </div>
+                        </div>
+                        
+                        <form id="securityQuestionnaireForm">
+                           <!-- Шаг 1: Информация о компании (переименовано) -->
+<div class="quest-form-step active" data-step="1">
+    <div class="quest-section-block">
+        <div class="quest-section-title">
+            <i class="fas fa-building"></i>
+            Ответьте на несколько вопросов
+        </div>
+        
+        <div class="quest-field-group">
+            <label for="fullName" class="quest-label quest-required">Имя, фамилия</label>
+            <input type="text" id="fullName" class="quest-input" required placeholder="Иванов Иван Иванович">
+        </div>
+        
+        <div class="quest-field-group">
+            <label for="companyName" class="quest-label">Название компании</label>
+            <input type="text" id="companyName" class="quest-input" placeholder="ООО «Компания»">
+            <!-- Сделано необязательным (убран атрибут required) -->
+        </div>
+        
+        <div class="quest-field-group">
+            <label for="companyField" class="quest-label quest-required">Сфера деятельности компании</label>
+            <select id="companyField" class="quest-select" required>
+                <option value="" disabled selected>Выберите сферу деятельности</option>
+                <option value="retail">Торговля</option>
+                <option value="construction">Строительство и недвижимость</option>
+                <option value="services">Услуги B2B, B2C, медицина</option>
+                <option value="law_accounting">Право и бухучет</option>
+                <option value="manufacturing">Производство</option>
+                <option value="finance">Финансы, финтех, банки</option>
+                <option value="it">ИТ, связь</option>
+                <option value="education">Образование, медиа, реклама</option>
+                <option value="hospitality">Гостиницы и рестораны</option>
+                <option value="transportation">Транспорт и логистика</option>
+            </select>
+        </div>
+        
+        <div class="quest-field-group">
+            <label for="position" class="quest-label">Ваша должность</label>
+            <input type="text" id="position" class="quest-input" placeholder="Генеральный директор">
+            <!-- Сделано необязательным (убран атрибут required) -->
+        </div>
+        
+        <div class="quest-field-group">
+            <label class="quest-label quest-required">Количество рабочих мест</label>
+            <div class="quest-radio-group">
+                <div class="quest-radio-item">
+                    <label class="quest-radio-label">
+                        <input type="radio" name="workplaces" value="1-10" required>
+                        <span class="quest-radio-text">1–10 мест</span>
+                    </label>
+                </div>
+                <div class="quest-radio-item">
+                    <label class="quest-radio-label">
+                        <input type="radio" name="workplaces" value="11-20">
+                        <span class="quest-radio-text">11–20 мест</span>
+                    </label>
+                </div>
+                <div class="quest-radio-item">
+                    <label class="quest-radio-label">
+                        <input type="radio" name="workplaces" value="21-50">
+                        <span class="quest-radio-text">21–50 мест</span>
+                    </label>
+                </div>
+                <div class="quest-radio-item">
+                    <label class="quest-radio-label">
+                        <input type="radio" name="workplaces" value="51-100">
+                        <span class="quest-radio-text">50–100 мест</span>
+                    </label>
+                </div>
+                <div class="quest-radio-item">
+                    <label class="quest-radio-label">
+                        <input type="radio" name="workplaces" value="100+">
+                        <span class="quest-radio-text">Более 100 мест</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="quest-navigation">
+        <div></div> <!-- Пустой блок для выравнивания -->
+        <button type="button" class="quest-next-button" data-next="2">
+            Продолжить <i class="fas fa-arrow-right"></i>
+        </button>
+    </div>
+</div>
+
+                            
+                           <!-- Шаг 2: IT-инфраструктура (убран Linux) -->
+<div class="quest-form-step" data-step="2">
+    <div class="quest-section-block">
+        <div class="quest-section-title">
+            <i class="fas fa-network-wired"></i>
+            Текущая IT-инфраструктура
+        </div>
+        
+        <div class="quest-field-group">
+            <label class="quest-label quest-required">Кто обслуживает IT-инфраструктуру</label>
+            <div class="quest-radio-group">
+                <div class="quest-radio-item">
+                    <label class="quest-radio-label">
+                        <input type="radio" name="it-support" value="nobody" required>
+                        <span class="quest-radio-text">Никто (сами сотрудники)</span>
+                    </label>
+                </div>
+                <div class="quest-radio-item">
+                    <label class="quest-radio-label">
+                        <input type="radio" name="it-support" value="external">
+                        <span class="quest-radio-text">Приходящий специалист</span>
+                    </label>
+                </div>
+                <div class="quest-radio-item">
+                    <label class="quest-radio-label">
+                        <input type="radio" name="it-support" value="inhouse">
+                        <span class="quest-radio-text">Штатный IT-специалист</span>
+                    </label>
+                </div>
+                <div class="quest-radio-item">
+                    <label class="quest-radio-label">
+                        <input type="radio" name="it-support" value="department">
+                        <span class="quest-radio-text">IT-отдел</span>
+                    </label>
+                </div>
+                <div class="quest-radio-item">
+                    <label class="quest-radio-label">
+                        <input type="radio" name="it-support" value="outsource">
+                        <span class="quest-radio-text">IT-аутсорсинг (сторонняя компания)</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="quest-field-group">
+            <label class="quest-label quest-required">Какие операционные системы используются</label>
+            <div class="quest-checkbox-group">
+                <div class="quest-checkbox-item">
+                    <label class="quest-checkbox-label">
+                        <input type="checkbox" name="os[]" value="windows">
+                        <span class="quest-checkbox-text">Windows</span>
+                    </label>
+                </div>
+                <div class="quest-checkbox-item">
+                    <label class="quest-checkbox-label">
+                        <input type="checkbox" name="os[]" value="macos">
+                        <span class="quest-checkbox-text">macOS</span>
+                    </label>
+                </div>
+                <div class="quest-checkbox-item">
+                    <label class="quest-checkbox-label">
+                        <input type="checkbox" name="os[]" value="other">
+                        <span class="quest-checkbox-text">Другие</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="quest-field-group">
+            <label class="quest-label quest-required">Имеется ли серверная инфраструктура</label>
+            <div class="quest-radio-group">
+                <div class="quest-radio-item">
+                    <label class="quest-radio-label">
+                        <input type="radio" name="server-infra" value="no" required>
+                        <span class="quest-radio-text">Нет</span>
+                    </label>
+                </div>
+                <div class="quest-radio-item">
+                    <label class="quest-radio-label">
+                        <input type="radio" name="server-infra" value="local">
+                        <span class="quest-radio-text">Локальный сервер</span>
+                    </label>
+                </div>
+                <div class="quest-radio-item">
+                    <label class="quest-radio-label">
+                        <input type="radio" name="server-infra" value="cloud">
+                        <span class="quest-radio-text">Облачная инфраструктура</span>
+                    </label>
+                </div>
+                <div class="quest-radio-item">
+                    <label class="quest-radio-label">
+                        <input type="radio" name="server-infra" value="hybrid">
+                        <span class="quest-radio-text">Гибридное решение</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="quest-navigation">
+        <button type="button" class="quest-back-button" data-prev="1">
+            <i class="fas fa-arrow-left"></i> Назад
+        </button>
+        <button type="button" class="quest-next-button" data-next="3">
+            Продолжить <i class="fas fa-arrow-right"></i>
+        </button>
+    </div>
+</div>
+                            
+                            <!-- Шаг 3: Вопросы безопасности (чекбоксы вместо радио) -->
+<div class="quest-form-step" data-step="3">
+    <div class="quest-section-block">
+        <div class="quest-section-title">
+            <i class="fas fa-shield-virus"></i>
+            Вопросы безопасности
+        </div>
+        
+        <div class="quest-field-group">
+            <label class="quest-label quest-required">Какие системы защиты используете</label>
+            <div class="quest-checkbox-group">
+                <div class="quest-checkbox-item">
+                    <label class="quest-checkbox-label">
+                        <input type="checkbox" name="security[]" value="antivirus">
+                        <span class="quest-checkbox-text">Антивирус</span>
+                    </label>
+                </div>
+                <div class="quest-checkbox-item">
+                    <label class="quest-checkbox-label">
+                        <input type="checkbox" name="security[]" value="firewall">
+                        <span class="quest-checkbox-text">Файервол</span>
+                    </label>
+                </div>
+                <div class="quest-checkbox-item">
+                    <label class="quest-checkbox-label">
+                        <input type="checkbox" name="security[]" value="vpn">
+                        <span class="quest-checkbox-text">VPN-решения</span>
+                    </label>
+                </div>
+                <div class="quest-checkbox-item">
+                    <label class="quest-checkbox-label">
+                        <input type="checkbox" name="security[]" value="backup">
+                        <span class="quest-checkbox-text">Системы резервного копирования</span>
+                    </label>
+                </div>
+                <div class="quest-checkbox-item">
+                    <label class="quest-checkbox-label">
+                        <input type="checkbox" name="security[]" value="encryption">
+                        <span class="quest-checkbox-text">Шифрование данных</span>
+                    </label>
+                </div>
+                <div class="quest-checkbox-item">
+                    <label class="quest-checkbox-label">
+                        <input type="checkbox" name="security[]" value="2fa">
+                        <span class="quest-checkbox-text">Двухфакторная аутентификация</span>
+                    </label>
+                </div>
+                <div class="quest-checkbox-item">
+                    <label class="quest-checkbox-label">
+                        <input type="checkbox" name="security[]" value="none">
+                        <span class="quest-checkbox-text">Не используем</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="quest-field-group">
+            <label class="quest-label quest-required">Проводятся ли инструктажи по кибербезопасности для сотрудников</label>
+            <div class="quest-radio-group">
+                <div class="quest-radio-item">
+                    <label class="quest-radio-label">
+                        <input type="radio" name="security-training" value="never" required>
+                        <span class="quest-radio-text">Никогда не проводились</span>
+                    </label>
+                </div>
+                <div class="quest-radio-item">
+                    <label class="quest-radio-label">
+                        <input type="radio" name="security-training" value="rare">
+                        <span class="quest-radio-text">Редко (раз в год или реже)</span>
+                    </label>
+                </div>
+                <div class="quest-radio-item">
+                    <label class="quest-radio-label">
+                        <input type="radio" name="security-training" value="regular">
+                        <span class="quest-radio-text">Регулярно (несколько раз в год)</span>
+                    </label>
+                </div>
+                <div class="quest-radio-item">
+                    <label class="quest-radio-label">
+                        <input type="radio" name="security-training" value="automated">
+                        <span class="quest-radio-text">Есть система автоматизированного обучения</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="quest-field-group">
+            <label class="quest-label">Какие вопросы безопасности вас интересуют</label>
+            <div class="quest-checkbox-group security-concerns-group">
+                <div class="quest-checkbox-item">
+                    <label class="quest-checkbox-label">
+                        <input type="checkbox" name="concerns[]" value="ip-regions">
+                        <span class="quest-checkbox-text">IP-адреса в льготных регионах</span>
+                    </label>
+                </div>
+                <div class="quest-checkbox-item">
+                    <label class="quest-checkbox-label">
+                        <input type="checkbox" name="concerns[]" value="emergency-button">
+                        <span class="quest-checkbox-text">Кнопка экстренного отключения</span>
+                    </label>
+                </div>
+                <div class="quest-checkbox-item">
+                    <label class="quest-checkbox-label">
+                        <input type="checkbox" name="concerns[]" value="hide-server">
+                        <span class="quest-checkbox-text">Скрыть расположение сервера</span>
+                    </label>
+                </div>
+                <div class="quest-checkbox-item">
+                    <label class="quest-checkbox-label">
+                        <input type="checkbox" name="concerns[]" value="remove-data">
+                        <span class="quest-checkbox-text">Убрать информацию с компьютеров</span>
+                    </label>
+                </div>
+                <div class="quest-checkbox-item">
+                    <label class="quest-checkbox-label">
+                        <input type="checkbox" name="concerns[]" value="affiliation">
+                        <span class="quest-checkbox-text">Купировать аффилированность юрлиц</span>
+                    </label>
+                </div>
+                <div class="quest-checkbox-item">
+                    <label class="quest-checkbox-label">
+                        <input type="checkbox" name="concerns[]" value="employee-control">
+                        <span class="quest-checkbox-text">Контролировать сотрудников</span>
+                    </label>
+                </div>
+                <div class="quest-checkbox-item">
+                    <label class="quest-checkbox-label">
+                        <input type="checkbox" name="concerns[]" value="remote-work">
+                        <span class="quest-checkbox-text">Организовать дистанционную работу</span>
+                    </label>
+                </div>
+                <div class="quest-checkbox-item">
+                    <label class="quest-checkbox-label">
+                        <input type="checkbox" name="concerns[]" value="speed-1c">
+                        <span class="quest-checkbox-text">Ускорить работу 1С и компьютеров</span>
+                    </label>
+                </div>
+                <div class="quest-checkbox-item">
+                    <label class="quest-checkbox-label">
+                        <input type="checkbox" name="concerns[]" value="sysadmin-issues">
+                        <span class="quest-checkbox-text">Не устраивает работа сисадмина</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="quest-navigation">
+        <button type="button" class="quest-back-button" data-prev="2">
+            <i class="fas fa-arrow-left"></i> Назад
+        </button>
+        <button type="button" class="quest-next-button" data-next="4">
+            Продолжить <i class="fas fa-arrow-right"></i>
+        </button>
+    </div>
+</div>
+                            
+                           <!-- Шаг 4: Контактная информация (обновлен раздел интересов) -->
+<div class="quest-form-step" data-step="4">
+    <div class="quest-section-block">
+        <div class="quest-section-title">
+            <i class="fas fa-address-card"></i>
+            Контактная информация
+        </div>
+        
+        <div class="quest-field-group">
+            <label for="email" class="quest-label quest-required">Email для получения материалов</label>
+            <input type="email" id="email" class="quest-input" required placeholder="email@company.ru">
+            <p class="quest-help-text">На этот адрес будут отправлены материалы по кибербезопасности</p>
+        </div>
+        
+        <div class="quest-field-group">
+            <label for="phone" class="quest-label quest-required">Контактный телефон</label>
+            <input type="tel" id="phone" class="quest-input" required placeholder="+7 (___) ___-__-__">
+        </div>
+        
+        <div class="quest-field-group">
+            <label class="quest-label">Предпочитаемый способ связи</label>
+            <div class="quest-radio-group">
+                <div class="quest-radio-item">
+                    <label class="quest-radio-label">
+                        <input type="radio" name="contact-method" value="email" checked>
+                        <span class="quest-radio-text">Email</span>
+                    </label>
+                </div>
+                <div class="quest-radio-item">
+                    <label class="quest-radio-label">
+                        <input type="radio" name="contact-method" value="phone">
+                        <span class="quest-radio-text">Телефон</span>
+                    </label>
+                </div>
+                <div class="quest-radio-item">
+                    <label class="quest-radio-label">
+                        <input type="radio" name="contact-method" value="messenger">
+                        <span class="quest-radio-text">Telegram / WhatsApp</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="quest-field-group">
+            <label class="quest-label quest-required">Что далее для вас наиболее актуально?</label>
+            <div class="quest-radio-group">
+                <div class="quest-radio-item">
+                    <label class="quest-radio-label">
+                        <input type="radio" name="next-steps" value="demo" required>
+                        <span class="quest-radio-text">Провести онлайн-демонстрацию и рассчитать стоимость</span>
+                    </label>
+                </div>
+                <div class="quest-radio-item">
+                    <label class="quest-radio-label">
+                        <input type="radio" name="next-steps" value="consultation">
+                        <span class="quest-radio-text">Бесплатная онлайн-консультация специалиста</span>
+                    </label>
+                </div>
+                <div class="quest-radio-item">
+                    <label class="quest-radio-label">
+                        <input type="radio" name="next-steps" value="audit">
+                        <span class="quest-radio-text">Аудит организации на предмет проблем безопасности</span>
+                    </label>
+                </div>
+                <div class="quest-radio-item">
+                    <label class="quest-radio-label">
+                        <input type="radio" name="next-steps" value="sysadmin-audit">
+                        <span class="quest-radio-text">Оценить качество работы сисадмина и реалистичности смет</span>
+                    </label>
+                </div>
+                <div class="quest-radio-item">
+                    <label class="quest-radio-label">
+                        <input type="radio" name="next-steps" value="partnership">
+                        <span class="quest-radio-text">Партнерская программа</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="quest-benefits">
+        <div class="quest-benefits-title">Что вы получите после заполнения анкеты</div>
+        <ul class="quest-benefits-list">
+            <li>Комплект материалов по кибербезопасности для вашего бизнеса</li>
+            <li>Чек-лист для проверки защищенности вашей IT-инфраструктуры</li>
+            <li>PDF-гид по настройке защищенного удаленного рабочего места</li>
+            <li>Консультацию эксперта по цифровой безопасности</li>
+            <li>Специальное предложение на комплексный IT-аудит</li>
+        </ul>
+    </div>
+    
+    <div class="quest-navigation">
+        <button type="button" class="quest-back-button" data-prev="3">
+            <i class="fas fa-arrow-left"></i> Назад
+        </button>
+        <div class="quest-submit-wrapper">
+            <button type="submit" class="quest-submit-button">
+                <i class="fas fa-paper-plane"></i> Заполните анкету
+            </button>
+        </div>
+    </div>
+</div>
+                        </form>
+                    </main>
+
+    <!-- ============================================= -->
+<!-- FOOTER SECTION (SEO OPTIMIZED)                -->
+<!-- ============================================= -->
+<footer class="site-footer" itemscope itemtype="http://schema.org/Organization">
+    <div class="footer-widgets">
+        <div class="container">
+            <div class="row">
+                
+                <!-- ========== БЛОК О КОМПАНИИ ========== -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-widget about-widget">
+                        <div class="footer-logo" itemprop="logo">
+                            <img src="assets/templates/img/logo.png" 
+                                 alt="GigSys - IT аутсорсинг и поддержка бизнеса" 
+                                 width="180" 
+                                 height="50"
+                                 loading="lazy">
+                        </div>
+                        <p itemprop="description">Комплексное ИТ-обслуживание для бизнеса любого масштаба. 
+                        Предоставляем полный спектр услуг по внедрению и поддержке ИТ-инфраструктуры.</p>
+                        
+                        <!-- СОЦИАЛЬНЫЕ СЕТИ С MICRODATA -->
+                        <div class="footer-social" aria-label="Социальные сети">
+                            <a href="https://t.me/GigSys" itemprop="sameAs" aria-label="Telegram">
+                                <i class="fab fa-telegram"></i>
+                            </a>
+                            <a href="https://vk.com/gigsys" itemprop="sameAs" aria-label="ВКонтакте">
+                                <i class="fab fa-vk"></i>
+                            </a>
+                            <a href="https://wa.me/79255853075" itemprop="sameAs" aria-label="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="mailto:it@gigsys.ru" itemprop="sameAs" aria-label="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== НАВИГАЦИОННЫЕ ССЫЛКИ ========== -->
+                <div class="col-lg-2 col-md-6">
+                    <nav class="footer-widget links-widget" aria-label="Дополнительная навигация">
+                        <h4 class="widget-title">Компания</h4>
+                        <ul>
+                            <li><a href="index.html" itemprop="url">Главная</a></li>
+                            <li><a href="o-kompanii.html">О компании</a></li>
+                            <li><a href="novosti/index.html">Новости</a></li>
+                            <li><a href="kontaktyi.html">Контакты</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- ========== СПИСОК УСЛУГ ========== -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget services-widget">
+                        <h4 class="widget-title">Услуги</h4>
+                        <ul>
+                            <li><a href="it-support.html">IT-поддержка</a></li>
+                            <li><a href="it-autsorsing.html">IT-аутсорсинг</a></li>
+                            <li><a href="virtual-office.html">Защищенный офис</a></li>
+                            <li><a href="obsluzhivanie-serverov.html">Серверы</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- ========== КОНТАКТЫ С MICRODATA ========== -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget contact-widget" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                        <h4 class="widget-title">Контакты</h4>
+                        <ul class="contact-list">
+                            <li>
+                                <i class="fa fa-map-marker-alt"></i>
+                                <span itemprop="streetAddress">Ракетный бульвар, д.15, оф.31</span>, 
+                                <span itemprop="addressLocality">Москва</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <a href="tel:88003501160" itemprop="telephone">8(499)350-11-60</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-envelope"></i>
+                                <a href="mailto:it@gigsys.ru" itemprop="email">it@gigsys.ru</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-clock"></i>
+                                <span itemprop="openingHours">Пн-Пт: 9:00 - 18:00</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== КОПИРАЙТ И ЮРИДИЧЕСКИЕ ССЫЛКИ ========== -->
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="copyright">
+                        <p>&copy; <span itemprop="copyrightYear">2025</span> 
+                        <span itemprop="name">GigSys IT-solutions</span>. Все права защищены</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <nav class="footer-bottom-links text-lg-right" aria-label="Юридическая информация">
+                        <a href="privacy-policy.html">Политика конфиденциальности</a>
+                        <a href="terms.html">Пользовательское соглашение</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- Кнопка "Наверх" -->
+    <a href="#" class="back-to-top" aria-label="Наверх">
+        <i class="fa fa-angle-up"></i>
+    </a>
+    
+    <!-- Модальные окна и попапы -->
+    <!-- Они уже должны быть подключены в глобальных скриптах -->
+    
+    <!-- Скрипт для управления анкетой -->
+    <script>
+/**
+ * Скрипт для управления многошаговой анкетой "Защищённый офис"
+ */
+ /**
+ * Скрипт для управления многошаговой анкетой "Защищённый офис"
+ */
+document.addEventListener('DOMContentLoaded', function() {
+    // Основные элементы формы
+    const form = document.getElementById('securityQuestionnaireForm');
+    const formSteps = document.querySelectorAll('.quest-form-step');
+    const progressSteps = document.querySelectorAll('.quest-progress-step');
+    
+    // Навигационные кнопки
+    const nextButtons = document.querySelectorAll('.quest-next-button');
+    const backButtons = document.querySelectorAll('.quest-back-button');
+    
+    // Сохраняем позицию прокрутки для каждого шага
+    const scrollPositions = {};
+    
+    // Маска для телефона
+    const phoneInput = document.getElementById('phone');
+    if (phoneInput) {
+        phoneInput.addEventListener('input', function(e) {
+            let x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
+            e.target.value = !x[2] ? x[1] : '+' + x[1] + ' (' + x[2] + ') ' + (x[3] ? x[3] + '-' + x[4] : (x[3] ? x[3] : '')) + (x[5] ? '-' + x[5] : '');
+        });
+    }
+    
+    // Инициализация первого шага
+    updateFormProgress(1);
+    
+    // Инициализация кастомных чекбоксов и радио кнопок
+    initCustomInputs();
+    
+    // Обработчик кнопок "Далее"
+    nextButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const currentStep = parseInt(button.getAttribute('data-next'));
+            const prevStep = currentStep - 1;
+            const currentFormStep = document.querySelector(`.quest-form-step[data-step="${prevStep}"]`);
+            
+            // Сохраняем текущую позицию прокрутки перед переходом
+            scrollPositions[prevStep] = window.scrollY;
+            
+            // Валидация текущего шага перед переходом
+            if (validateStep(currentFormStep)) {
+                goToStep(currentStep);
+                
+                // После перехода на новый шаг не прокручиваем страницу вверх
+                // Эта строка была закомментирована:
+                // window.scrollTo({ top: form.offsetTop - 50, behavior: 'smooth' });
+            }
+        });
+    });
+    
+    // Обработчик кнопок "Назад"
+    backButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const currentStep = parseInt(button.closest('.quest-form-step').getAttribute('data-step'));
+            const prevStep = parseInt(button.getAttribute('data-prev'));
+            
+            // Сохраняем текущую позицию прокрутки перед переходом
+            scrollPositions[currentStep] = window.scrollY;
+            
+            goToStep(prevStep);
+        });
+    });
+    
+    /**
+     * Инициализация кастомных чекбоксов и радио кнопок
+     * Добавляет визуальные элементы и обработчики событий
+     */
+    function initCustomInputs() {
+        // Добавляем кастомные элементы для чекбоксов
+        document.querySelectorAll('.quest-checkbox-label input[type="checkbox"]').forEach(checkbox => {
+            // Проверяем, есть ли уже кастомный элемент
+            if (!checkbox.nextElementSibling || !checkbox.nextElementSibling.classList.contains('custom-checkbox')) {
+                const customCheckbox = document.createElement('span');
+                customCheckbox.className = 'custom-checkbox';
+                checkbox.parentNode.insertBefore(customCheckbox, checkbox.nextSibling);
+            }
+            
+            // Устанавливаем начальное состояние active
+            if (checkbox.checked) {
+                checkbox.parentNode.classList.add('active');
+            } else {
+                checkbox.parentNode.classList.remove('active');
+            }
+            
+            // Добавляем обработчик изменения (если его ещё нет)
+            if (!checkbox.hasAttribute('data-has-change-handler')) {
+                checkbox.addEventListener('change', function() {
+                    if (this.checked) {
+                        this.parentNode.classList.add('active');
+                    } else {
+                        this.parentNode.classList.remove('active');
+                    }
+                });
+                checkbox.setAttribute('data-has-change-handler', 'true');
+            }
+        });
+        
+        // Добавляем кастомные элементы для радио кнопок
+        document.querySelectorAll('.quest-radio-label input[type="radio"]').forEach(radio => {
+            // Проверяем, есть ли уже кастомный элемент
+            if (!radio.nextElementSibling || !radio.nextElementSibling.classList.contains('custom-radio')) {
+                const customRadio = document.createElement('span');
+                customRadio.className = 'custom-radio';
+                radio.parentNode.insertBefore(customRadio, radio.nextSibling);
+            }
+            
+            // Устанавливаем начальное состояние active
+            if (radio.checked) {
+                radio.parentNode.classList.add('active');
+            } else {
+                radio.parentNode.classList.remove('active');
+            }
+            
+            // Добавляем обработчик изменения (если его ещё нет)
+            if (!radio.hasAttribute('data-has-change-handler')) {
+                radio.addEventListener('change', function() {
+                    // Снимаем active со всех радио в группе
+                    const name = this.getAttribute('name');
+                    document.querySelectorAll(`input[name="${name}"]`).forEach(r => {
+                        r.parentNode.classList.remove('active');
+                    });
+                    
+                    // Добавляем active к выбранной
+                    if (this.checked) {
+                        this.parentNode.classList.add('active');
+                    }
+                });
+                radio.setAttribute('data-has-change-handler', 'true');
+            }
+        });
+    }
+    
+    // Обработчик переключения опций "Не используем" в блоке безопасности
+    const noneSecurityOption = document.querySelector('input[name="security[]"][value="none"]');
+    if (noneSecurityOption) {
+        const otherSecurityOptions = document.querySelectorAll('input[name="security[]"]:not([value="none"])');
+        
+        noneSecurityOption.addEventListener('change', function() {
+            if (this.checked) {
+                otherSecurityOptions.forEach(option => {
+                    option.checked = false;
+                    option.disabled = true;
+                    option.parentNode.classList.remove('active');
+                });
+            } else {
+                otherSecurityOptions.forEach(option => {
+                    option.disabled = false;
+                });
+            }
+        });
+        
+        otherSecurityOptions.forEach(option => {
+            option.addEventListener('change', function() {
+                let anyChecked = false;
+                otherSecurityOptions.forEach(o => {
+                    if (o.checked) anyChecked = true;
+                });
+                
+                if (anyChecked) {
+                    noneSecurityOption.checked = false;
+                    noneSecurityOption.disabled = true;
+                    noneSecurityOption.parentNode.classList.remove('active');
+                } else {
+                    noneSecurityOption.disabled = false;
+                }
+            });
+        });
+    }
+    
+    // Обработчик отправки формы
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Показываем анимацию загрузки на кнопке отправки
+        const submitButton = document.querySelector('.quest-submit-button');
+        const originalButtonText = submitButton.innerHTML;
+        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
+        submitButton.disabled = true;
+        
+        // Имитация отправки данных (в реальном проекте здесь был бы AJAX-запрос)
+        setTimeout(function() {
+            // Скрываем шаги и показываем сообщение об успехе
+            formSteps.forEach(step => {
+                step.style.display = 'none';
+            });
+            
+            // Скрываем индикатор прогресса
+            document.querySelector('.quest-progress').style.display = 'none';
+            
+            // Создаем и показываем сообщение об успехе
+            const successMessage = document.createElement('div');
+            successMessage.className = 'quest-success-message';
+            successMessage.innerHTML = `
+                <div class="quest-success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3>Спасибо за заполнение анкеты!</h3>
+                <p>Комплект материалов по цифровой безопасности был отправлен на указанный вами email.</p>
+                <p>Наш специалист свяжется с вами в ближайшее время для консультации.</p>
+                <div class="quest-success-actions">
+                    <a href="index.html" class="quest-back-to-home">
+                        <i class="fas fa-home"></i> Вернуться на главную
+                    </a>
+                </div>
+            `;
+            
+            form.parentNode.appendChild(successMessage);
+            
+            // Добавляем CSS для сообщения об успехе
+            const successCSS = document.createElement('style');
+            successCSS.textContent = `
+                .quest-success-message {
+                    text-align: center;
+                    padding: 40px 20px;
+                    animation: fadeIn 0.5s ease;
+                }
+                
+                .quest-success-icon {
+                    font-size: 72px;
+                    color: var(--color-green);
+                    margin-bottom: 20px;
+                }
+                
+                .quest-success-message h3 {
+                    font-size: 24px;
+                    color: var(--color-dark-gray);
+                    margin-bottom: 15px;
+                }
+                
+                .quest-success-message p {
+                    font-size: 16px;
+                    color: var(--color-gray);
+                    margin-bottom: 10px;
+                }
+                
+                .quest-success-actions {
+                    margin-top: 30px;
+                }
+                
+                .quest-back-to-home {
+                    display: inline-block;
+                    padding: 12px 25px;
+                    background-color: var(--color-orange-primary);
+                    color: white;
+                    border-radius: 6px;
+                    text-decoration: none;
+                    font-weight: 500;
+                    transition: all 0.3s ease;
+                }
+                
+                .quest-back-to-home:hover {
+                    background-color: var(--color-orange-dark);
+                    transform: translateY(-2px);
+                    box-shadow: 0 6px 15px rgba(253, 121, 33, 0.3);
+                }
+            `;
+            document.head.appendChild(successCSS);
+            
+            // Сбрасываем форму и прокручиваем страницу вверх
+            form.reset();
+            window.scrollTo({
+                top: form.offsetTop - 100,
+                behavior: 'smooth'
+            });
+        }, 1500);
+    });
+    
+    /**
+     * Переход к указанному шагу формы
+     * @param {number} stepNumber - номер шага
+     */
+    function goToStep(stepNumber) {
+        // Получаем текущий шаг
+        const currentStep = document.querySelector('.quest-form-step.active');
+        const currentStepNumber = currentStep ? parseInt(currentStep.getAttribute('data-step')) : 1;
+        
+        // Скрываем все шаги
+        formSteps.forEach(step => {
+            step.classList.remove('active');
+        });
+        
+        // Показываем нужный шаг
+        const targetStep = document.querySelector(`.quest-form-step[data-step="${stepNumber}"]`);
+        if (targetStep) {
+            targetStep.classList.add('active');
+            
+            // Обновляем индикатор прогресса
+            updateFormProgress(stepNumber);
+            
+            // Инициализируем кастомные элементы на новом шаге
+            setTimeout(() => {
+                initCustomInputs();
+            }, 100);
+            
+            // Восстанавливаем позицию прокрутки для этого шага, если она была сохранена
+            if (scrollPositions[stepNumber]) {
+                setTimeout(() => {
+                    window.scrollTo({
+                        top: scrollPositions[stepNumber],
+                        behavior: 'auto'
+                    });
+                }, 10);
+            }
+        }
+    }
+    
+    /**
+     * Обновляет визуальный индикатор прогресса
+     * @param {number} currentStep - текущий активный шаг
+     */
+    function updateFormProgress(currentStep) {
+        progressSteps.forEach(step => {
+            const stepNumber = parseInt(step.getAttribute('data-step'));
+            
+            // Сбрасываем все классы
+            step.classList.remove('active', 'completed');
+            
+            // Отмечаем текущий шаг как активный
+            if (stepNumber === currentStep) {
+                step.classList.add('active');
+            }
+            // Отмечаем предыдущие шаги как завершенные
+            else if (stepNumber < currentStep) {
+                step.classList.add('completed');
+            }
+        });
+    }
+    
+    /**
+     * Валидация полей текущего шага
+     * @param {HTMLElement} step - DOM-элемент текущего шага
+     * @returns {boolean} - результат валидации
+     */
+    function validateStep(step) {
+        if (!step) return true;
+        
+        // Получаем все обязательные поля на текущем шаге
+        const requiredInputs = step.querySelectorAll('input[required], select[required], textarea[required]');
+        const radioGroups = new Set();
+        
+        // Проверяем все поля на заполненность
+        let isValid = true;
+        let firstInvalidElement = null;
+        
+        requiredInputs.forEach(input => {
+            // Для радиокнопок обрабатываем группу целиком
+            if (input.type === 'radio') {
+                radioGroups.add(input.name);
+                return;
+            }
+            
+            // Для обычных полей проверяем на пустоту
+            if (!input.value.trim()) {
+                markAsInvalid(input);
+                isValid = false;
+                if (!firstInvalidElement) firstInvalidElement = input;
+            } else {
+                markAsValid(input);
+            }
+        });
+        
+        // Проверяем группы радиокнопок
+        radioGroups.forEach(groupName => {
+            const radioButtons = step.querySelectorAll(`input[name="${groupName}"]`);
+            const isRadioSelected = Array.from(radioButtons).some(radio => radio.checked);
+            
+            if (!isRadioSelected) {
+                radioButtons.forEach(radio => {
+                    const label = radio.closest('.quest-radio-label');
+                    if (label) markAsInvalid(label);
+                });
+                isValid = false;
+                if (!firstInvalidElement) firstInvalidElement = radioButtons[0];
+            } else {
+                radioButtons.forEach(radio => {
+                    const label = radio.closest('.quest-radio-label');
+                    if (label) markAsValid(label);
+                });
+            }
+        });
+        
+        // Если есть невалидные поля, прокручиваем к первому из них
+        if (firstInvalidElement) {
+            firstInvalidElement.focus();
+            
+            // Сохраняем текущую позицию прокрутки
+            const currentScroll = window.scrollY;
+            
+            // Прокручиваем к первому невалидному полю
+            firstInvalidElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+            
+            // Сохраняем новую позицию прокрутки после валидации
+            setTimeout(() => {
+                scrollPositions[step.getAttribute('data-step')] = window.scrollY;
+            }, 500);
+            
+            // Показываем общее сообщение об ошибке
+            showValidationError(step);
+        }
+        
+        return isValid;
+    }
+    
+    /**
+     * Отмечает поле как невалидное и добавляет стили ошибки
+     * @param {HTMLElement} element - валидируемый элемент
+     */
+    function markAsInvalid(element) {
+        element.classList.add('quest-input-error');
+        
+        // Для полей ввода добавляем сообщение об ошибке
+        if (element.tagName === 'INPUT' || element.tagName === 'SELECT' || element.tagName === 'TEXTAREA') {
+            // Удаляем предыдущее сообщение об ошибке, если оно есть
+            const existingError = element.parentNode.querySelector('.quest-error-message');
+            if (existingError) existingError.remove();
+            
+            // Добавляем новое сообщение
+            const errorMessage = document.createElement('p');
+            errorMessage.className = 'quest-error-message';
+            errorMessage.textContent = 'Пожалуйста, заполните это поле';
+            element.parentNode.appendChild(errorMessage);
+            
+            // Добавляем обработчик для удаления ошибки при фокусе
+            element.addEventListener('focus', function() {
+                element.classList.remove('quest-input-error');
+                const error = element.parentNode.querySelector('.quest-error-message');
+                if (error) error.remove();
+            }, { once: true });
+        }
+    }
+    
+    /**
+     * Отмечает поле как валидное и удаляет стили ошибки
+     * @param {HTMLElement} element - валидируемый элемент
+     */
+    function markAsValid(element) {
+        element.classList.remove('quest-input-error');
+        
+        // Удаляем сообщение об ошибке, если оно есть
+        if (element.parentNode) {
+            const error = element.parentNode.querySelector('.quest-error-message');
+            if (error) error.remove();
+        }
+    }
+    
+    /**
+     * Показывает общее сообщение об ошибках валидации
+     * @param {HTMLElement} step - текущий шаг формы
+     */
+    function showValidationError(step) {
+        // Удаляем предыдущее сообщение, если оно есть
+        const existingAlert = step.querySelector('.quest-validation-alert');
+        if (existingAlert) existingAlert.remove();
+        
+        // Создаем и показываем новое сообщение
+        const validationAlert = document.createElement('div');
+        validationAlert.className = 'quest-validation-alert';
+        validationAlert.innerHTML = `
+            <i class="fas fa-exclamation-circle"></i>
+            Пожалуйста, заполните все обязательные поля перед продолжением
+        `;
+        
+        // Добавляем перед навигационными кнопками
+        const navigation = step.querySelector('.quest-navigation');
+        if (navigation) {
+            step.insertBefore(validationAlert, navigation);
+        } else {
+            step.appendChild(validationAlert);
+        }
+        
+        // Автоматически скрываем сообщение через 5 секунд
+        setTimeout(() => {
+            if (validationAlert.parentNode) {
+                validationAlert.classList.add('quest-fade-out');
+                setTimeout(() => {
+                    if (validationAlert.parentNode) {
+                        validationAlert.remove();
+                    }
+                }, 300);
+            }
+        }, 5000);
+        
+        // Добавляем CSS для сообщения об ошибке
+        if (!document.getElementById('quest-validation-styles')) {
+            const validationStyles = document.createElement('style');
+            validationStyles.id = 'quest-validation-styles';
+            validationStyles.textContent = `
+                .quest-validation-alert {
+                    background-color: var(--color-error-bg);
+                    color: var(--color-error);
+                    border-left: 4px solid var(--color-error);
+                    padding: 12px 15px;
+                    margin: 20px 0;
+                    border-radius: 4px;
+                    display: flex;
+                    align-items: center;
+                    font-size: 14px;
+                    animation: fadeIn 0.3s ease;
+                }
+                
+                .quest-validation-alert i {
+                    margin-right: 10px;
+                    font-size: 18px;
+                }
+                
+                .quest-fade-out {
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                }
+                
+                .quest-input-error {
+                    border-color: var(--color-error) !important;
+                    background-color: var(--color-error-bg) !important;
+                }
+                
+                .quest-error-message {
+                    color: var(--color-error);
+                    font-size: 12px;
+                    margin-top: 5px;
+                    font-style: italic;
+                    animation: fadeIn 0.3s ease;
+                }
+                
+                @keyframes fadeIn {
+                    from { opacity: 0; transform: translateY(-10px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+                
+                .quest-progress-step.completed {
+                    background-color: var(--color-green);
+                    color: white;
+                }
+                
+                .quest-progress-step.completed::after {
+                    background-color: var(--color-green-light);
+                }
+            `;
+            document.head.appendChild(validationStyles);
+        }
+    }
+});
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <script>
+      // Основной обработчик формы для анкеты безопасности
+      document.addEventListener('DOMContentLoaded', function() {
+          const form = document.getElementById('securityQuestionnaireForm');
+          const botToken = '7813140158:AAHm1-JG4KDjHTb83zNieLAyqy8-MEu6FwY';
+          const chatId = '-1001940374630';
+          
+          if (form) {
+              // Заменяем стандартный обработчик отправки формы
+              form.addEventListener('submit', async function(e) {
+                  e.preventDefault();
+                  
+                  // Показываем анимацию загрузки на кнопке отправки
+                  const submitButton = document.querySelector('.quest-submit-button');
+                  const originalButtonText = submitButton.innerHTML;
+                  submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
+                  submitButton.disabled = true;
+                  
+                  try {
+                      // 1. Загружаем библиотеку html2pdf, если она не загружена
+                      if (typeof html2pdf === 'undefined') {
+                          await loadHTML2PDF();
+                      }
+                      
+                      // 2. Создаем PDF из формы
+                      const pdfBlob = await generatePDF(document.querySelector('.quest-form-card'));
+                      
+                      // 3. Отправляем PDF в Telegram
+                      const formData = collectFormData(form);
+                      const success = await sendPDFToTelegram(pdfBlob, formData);
+                      
+                      if (success) {
+                          // 4. Показываем сообщение об успехе
+                          showSuccessMessage(form);
+                          form.reset();
+                      } else {
+                          throw new Error('Не удалось отправить документ в Telegram');
+                      }
+                  } catch (error) {
+                      console.error('Ошибка при обработке формы:', error);
+                      showErrorMessage(form, 'Произошла ошибка при отправке анкеты. Пожалуйста, попробуйте еще раз.');
+                      submitButton.innerHTML = originalButtonText;
+                      submitButton.disabled = false;
+                  }
+              });
+          }
+      
+          // Функция для загрузки библиотеки html2pdf.js
+          function loadHTML2PDF() {
+              return new Promise((resolve, reject) => {
+                  const script = document.createElement('script');
+                  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js';
+                  script.onload = resolve;
+                  script.onerror = reject;
+                  document.head.appendChild(script);
+              });
+          }
+      
+          // Функция для генерации PDF из элемента формы
+          async function generatePDF(element) {
+              // Создаем клон элемента для модификации
+              const clone = element.cloneNode(true);
+              
+              // Скрываем навигационные кнопки и кнопки отправки в PDF
+              const navigationButtons = clone.querySelectorAll('.quest-navigation');
+              navigationButtons.forEach(nav => nav.style.display = 'none');
+              
+              // Показываем все шаги формы
+              const formSteps = clone.querySelectorAll('.quest-form-step');
+              formSteps.forEach(step => {
+                  step.classList.add('active');
+                  step.style.display = 'block';
+              });
+              
+              // Добавляем заголовок и текущую дату
+              const header = document.createElement('div');
+              header.style.textAlign = 'center';
+              header.style.margin = '20px 0';
+              header.innerHTML = `
+                  <h2>Анкета по цифровой безопасности</h2>
+                  <p>Дата: ${new Date().toLocaleDateString()}</p>
+              `;
+              clone.prepend(header);
+              
+              // Временно добавляем клон в невидимый контейнер
+              const container = document.createElement('div');
+              container.style.position = 'absolute';
+              container.style.left = '-9999px';
+              container.appendChild(clone);
+              document.body.appendChild(container);
+              
+              // Настройки PDF
+              const options = {
+                  margin: 10,
+                  filename: 'anketa_bezopasnosti.pdf',
+                  image: { type: 'jpeg', quality: 0.98 },
+                  html2canvas: { scale: 2, useCORS: true },
+                  jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+              };
+              
+              try {
+                  // Генерируем PDF
+                  const pdfBlob = await html2pdf()
+                      .from(clone)
+                      .set(options)
+                      .outputPdf('blob');
+                  
+                  // Удаляем временный контейнер
+                  document.body.removeChild(container);
+                  
+                  return pdfBlob;
+              } catch (error) {
+                  // Удаляем временный контейнер при ошибке
+                  document.body.removeChild(container);
+                  throw error;
+              }
+          }
+      
+          // Функция для отправки PDF в Telegram
+          async function sendPDFToTelegram(pdfBlob, formData) {
+              // Получаем данные из формы для формирования имени файла и описания
+              const fullName = document.getElementById('fullName').value || 'Неизвестный пользователь';
+              const email = document.getElementById('email').value || 'Не указан';
+              const companyName = document.getElementById('companyName').value || 'Не указана';
+              
+              // Создаем FormData для отправки файла
+              const telegramFormData = new FormData();
+              
+              // Формируем имя файла
+              const fileName = `anketa_${fullName.replace(/\s+/g, '_')}_${Date.now()}.pdf`;
+              
+              // Добавляем PDF с именем файла
+              telegramFormData.append('document', pdfBlob, fileName);
+              
+              // Добавляем chat_id и caption (описание)
+              telegramFormData.append('chat_id', chatId);
+              telegramFormData.append('caption', `Новая заполненная анкета\nИмя: ${fullName}\nEmail: ${email}\nКомпания: ${companyName}`);
+              
+              try {
+                  // Отправляем запрос в Telegram Bot API
+                  const response = await fetch(`https://api.telegram.org/bot${botToken}/sendDocument`, {
+                      method: 'POST',
+                      body: telegramFormData
+                  });
+                  
+                  const result = await response.json();
+                  
+                  if (!result.ok) {
+                      console.error('Ошибка при отправке в Telegram:', result);
+                      return false;
+                  }
+                  
+                  return true;
+              } catch (error) {
+                  console.error('Ошибка при отправке в Telegram:', error);
+                  return false;
+              }
+          }
+      
+          // Функция для сбора данных формы
+          function collectFormData(form) {
+              const formData = new FormData();
+              
+              // Добавляем все текстовые поля и выпадающие списки
+              const textInputs = form.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], select');
+              textInputs.forEach(input => {
+                  formData.append(input.id || input.name, input.value);
+              });
+              
+              // Добавляем радио-кнопки (только выбранные)
+              const radioGroups = new Set();
+              form.querySelectorAll('input[type="radio"]').forEach(radio => {
+                  radioGroups.add(radio.name);
+              });
+              
+              radioGroups.forEach(groupName => {
+                  const checkedRadio = form.querySelector(`input[name="${groupName}"]:checked`);
+                  if (checkedRadio) {
+                      formData.append(groupName, checkedRadio.value);
+                  }
+              });
+              
+              // Добавляем чекбоксы (все выбранные)
+              const checkboxGroups = new Set();
+              form.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                  if (checkbox.name.endsWith('[]')) {
+                      checkboxGroups.add(checkbox.name);
+                  } else if (checkbox.checked) {
+                      formData.append(checkbox.name, checkbox.value);
+                  }
+              });
+              
+              return formData;
+          }
+      
+          // Функция для отображения сообщения об успехе
+          function showSuccessMessage(form) {
+              // Скрываем шаги формы
+              const formSteps = document.querySelectorAll('.quest-form-step');
+              formSteps.forEach(step => {
+                  step.style.display = 'none';
+              });
+              
+              // Скрываем индикатор прогресса
+              const progressIndicator = document.querySelector('.quest-progress');
+              if (progressIndicator) {
+                  progressIndicator.style.display = 'none';
+              }
+              
+              // Создаем и показываем сообщение об успехе
+              const successMessage = document.createElement('div');
+              successMessage.className = 'quest-success-message';
+              successMessage.innerHTML = `
+                  <div class="quest-success-icon">
+                      <i class="fas fa-check-circle"></i>
+                  </div>
+                  <h3>Спасибо за заполнение анкеты!</h3>
+                  <p>Ваша анкета была успешно отправлена и сохранена в формате PDF.</p>
+                  <p>Комплект материалов по цифровой безопасности отправлен на указанный вами email.</p>
+                  <p>Наш специалист свяжется с вами в ближайшее время для консультации.</p>
+                  <div class="quest-success-actions">
+                      <a href="index.html" class="quest-back-to-home">
+                          <i class="fas fa-home"></i> Вернуться на главную
+                      </a>
+                  </div>
+              `;
+              
+              form.parentNode.appendChild(successMessage);
+              
+              // Прокручиваем страницу вверх к сообщению
+              window.scrollTo({
+                  top: form.offsetTop - 100,
+                  behavior: 'smooth'
+              });
+          }
+      
+          // Функция для отображения ошибки отправки
+          function showErrorMessage(form, error) {
+              const errorMessage = document.createElement('div');
+              errorMessage.className = 'quest-error-message';
+              errorMessage.style.textAlign = 'center';
+              errorMessage.style.padding = '20px';
+              errorMessage.style.color = 'var(--color-error, #e74c3c)';
+              errorMessage.innerHTML = `
+                  <div class="quest-error-icon" style="font-size: 48px; margin-bottom: 15px;">
+                      <i class="fas fa-exclamation-circle"></i>
+                  </div>
+                  <h3 style="margin-bottom: 10px;">Ошибка при отправке анкеты</h3>
+                  <p style="margin-bottom: 20px;">${error}</p>
+                  <div class="quest-error-actions">
+                      <button class="quest-try-again" style="background-color: var(--color-orange-primary, #fd7921); 
+                                                           color: white; 
+                                                           border: none; 
+                                                           border-radius: 4px; 
+                                                           padding: 10px 20px; 
+                                                           cursor: pointer;">
+                          <i class="fas fa-redo"></i> Попробовать снова
+                      </button>
+                  </div>
+              `;
+              
+              // Вставляем сообщение после формы
+              form.parentNode.appendChild(errorMessage);
+              
+              // Добавляем обработчик для кнопки "Попробовать снова"
+              const retryButton = errorMessage.querySelector('.quest-try-again');
+              if (retryButton) {
+                  retryButton.addEventListener('click', () => {
+                      errorMessage.remove();
+                      const submitButton = form.querySelector('.quest-submit-button');
+                      if (submitButton) {
+                          submitButton.disabled = false;
+                          submitButton.innerHTML = '<i class="fas fa-paper-plane"></i> Заполните анкету';
+                      }
+                  });
+              }
+          }
+      });
+      </script>
+      
+</body>
+</html>

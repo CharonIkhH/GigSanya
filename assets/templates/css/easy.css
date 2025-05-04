@@ -52,6 +52,7 @@
     background: linear-gradient(135deg, var(--color-white), var(--color-white-soft));
     position: relative;
     overflow: hidden;
+    margin-top: 10%;
     z-index: 1;
 
   }

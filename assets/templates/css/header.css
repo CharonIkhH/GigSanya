@@ -11,6 +11,13 @@
 	transition: all var(--duration-standard) var(--ease-out);
   }
   
+  .contact-item {
+	position: relative;
+	margin-bottom: 0;
+	width: 100%;
+  }
+  
+
   .mobile-nav > ul > li.active > a,
   .mobile-nav > ul > li > a:hover {
 	color: var(--color-orange-primary);
@@ -102,36 +109,52 @@
   }
   
   .mobile-contact-item {
-	display: flex;
-	align-items: center;
-	margin-bottom: 12px;
-  }
-  
-  .mobile-contact-item:last-child {
-	margin-bottom: 0;
-  }
-  
-  .mobile-contact-item i {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 30px;
-	height: 30px;
-	margin-right: 12px;
-	color: var(--color-white);
-	background: var(--gradient-orange);
-	border-radius: 50%;
-	box-shadow: 0 2px 5px rgba(var(--color-orange-primary-rgb), 0.2);
-  }
-  
-  .mobile-contact-item a,
-  .mobile-contact-item address {
-	color: var(--color-dark-gray);
-	font-size: 14px;
-	text-decoration: none;
-	font-style: normal;
-	transition: color var(--duration-standard) var(--ease-out);
-  }
+    display: flex;
+    align-items: center;
+    margin-bottom: clamp(0.5rem, 3vh, 0.75rem);
+}
+
+.mobile-contact-item:last-child {
+    margin-bottom: 0;
+}
+
+.mobile-contact-item i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(2rem, 10vw, 2.5rem);
+    height: clamp(2rem, 10vw, 2.5rem);
+    margin-right: clamp(0.5rem, 3vw, 0.75rem);
+    color: var(--color-white);
+    background: var(--gradient-orange);
+    border-radius: 50%;
+    box-shadow: 
+        0 calc(2px * var(--shadow-multiplier)) 
+        calc(5px * var(--shadow-multiplier)) 
+        rgba(var(--color-orange-primary-rgb), 0.2);
+    aspect-ratio: 1/1;
+    flex-shrink: 0;
+}
+
+.mobile-contact-item a,
+.mobile-contact-item address {
+    color: var(--color-dark-gray);
+    font-size: clamp(0.875rem, 4vw, 1rem);
+    text-decoration: none;
+    font-style: normal;
+    transition: 
+        color var(--duration-standard) var(--ease-out),
+        transform 0.2s ease;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mobile-contact-item a:active,
+.mobile-contact-item address:active {
+    transform: scale(0.98);
+}
   
   .mobile-contact-item a:hover {
 	color: var(--color-orange-primary);
@@ -490,12 +513,12 @@ only screen and (min-resolution: 2dppx) {
   
   /* Эффект при скролле - хедер становится компактнее */
   .header-modern.scrolled {
-	height: calc(var(--header-height-desktop) * 0.85);
-	background-color: var(--color-white);
-	box-shadow: var(--shadow-dropdown);
-	backdrop-filter: blur(10px);
-	-webkit-backdrop-filter: blur(10px);
-  }
+    height: calc(var(--header-height-desktop) * 0.92); /* Уменьшение всего на 8% */
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-dropdown);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
   
   .header-wrapper {
 	max-width: var(--container-max-width);
@@ -557,10 +580,9 @@ only screen and (min-resolution: 2dppx) {
   }
   
   .scrolled .logo-link img {
-	height: calc(var(--header-height-desktop) * 0.45);
-	max-height: 35px;
-  }
-  
+    height: calc(var(--header-height-desktop) * 0.6); /* Уменьшение логотипа до 60% */
+    max-height: 40px;
+}
   /* ===== СОВРЕМЕННАЯ ДЕСКТОПНАЯ НАВИГАЦИЯ ===== */
   .desktop-nav {
 	height: 100%;
@@ -573,6 +595,7 @@ only screen and (min-resolution: 2dppx) {
 	margin: 0;
 	padding: 0;
 	list-style: none;
+	white-space: nowrap;
   }
   
   .main-menu > li {
@@ -1506,37 +1529,142 @@ only screen and (min-resolution: 2dppx) {
 	transform: rotate(180deg);
   }
   
-  /* Мега-меню контейнер */
-  .mega-menu {
+ /* ========================================================================
+   ОПТИМИЗИРОВАННЫЙ CSS ДЛЯ МЕГА-МЕНЮ
+   ======================================================================== */
+/* 
+ * СУПЕР-РАСШИРЕННЫЙ АДАПТИВНЫЙ CSS ДЛЯ МЕГА-МЕНЮ
+ * - Без использования CSS-переменных
+ * - Без использования :root селектора
+ * - 10x больше адаптивных правил
+ */
+
+/* Мега-меню контейнер - улучшенная версия */
+.mega-menu {
 	position: absolute;
 	top: 100%;
 	left: 50%;
 	transform: translateX(-50%);
-	width: var(--mega-menu-width);
-	max-width: 90vw;
-	background-color: var(--color-white);
-	border-radius: var(--radius-lg);
-	box-shadow: var(--shadow-dropdown);
+	width: 90vw;
+	max-width: 1200px;
+	background-color: #fff;
+	border-radius: 1rem;
+	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 	opacity: 0;
 	visibility: hidden;
 	transform-origin: top center;
 	transform: translateX(-50%) translateY(0.625rem) scale(0.98);
-	transition: opacity var(--duration-standard) var(--ease-out),
-				transform var(--duration-standard) var(--ease-out),
-				visibility var(--duration-standard) var(--ease-out);
+	transition: opacity 300ms cubic-bezier(0.16, 1, 0.3, 1),
+				transform 300ms cubic-bezier(0.16, 1, 0.3, 1),
+				visibility 300ms cubic-bezier(0.16, 1, 0.3, 1);
 	z-index: 80987;
 	overflow: hidden;
+	/* Улучшенная граница */
+	border: 1px solid rgba(0, 0, 0, 0.05);
+	/* Принудительное сглаживание для повышения качества анимаций */
+	will-change: transform, opacity;
+	/* Аппаратное ускорение */
+	backface-visibility: hidden;
+	-webkit-font-smoothing: subpixel-antialiased;
   }
   
-  .menu-item-has-children:hover .mega-menu,
-  .menu-item-has-children:focus-within .mega-menu,
+  /* Активное состояние - только по клику */
   .mega-menu.active {
 	opacity: 1;
 	visibility: visible;
 	transform: translateX(-50%) translateY(0) scale(1);
   }
   
-  /* Мобильная кнопка закрытия */
+  /* Расширенные анимации для меню с несколькими вариантами */
+  @keyframes fadeInMenuDefault {
+	from {
+	  opacity: 0;
+	  transform: translateX(-50%) translateY(1rem) scale(0.98);
+	}
+	to {
+	  opacity: 1;
+	  transform: translateX(-50%) translateY(0) scale(1);
+	}
+  }
+  
+  @keyframes fadeInMenuFromTop {
+	from {
+	  opacity: 0;
+	  transform: translateX(-50%) translateY(-1rem) scale(0.98);
+	}
+	to {
+	  opacity: 1;
+	  transform: translateX(-50%) translateY(0) scale(1);
+	}
+  }
+  
+  @keyframes fadeInMenuFromRight {
+	from {
+	  opacity: 0;
+	  transform: translateX(1rem) translateY(0) scale(0.98);
+	}
+	to {
+	  opacity: 1;
+	  transform: translateX(-50%) translateY(0) scale(1);
+	}
+  }
+  
+  @keyframes fadeInMenuFromLeft {
+	from {
+	  opacity: 0;
+	  transform: translateX(-100%) translateY(0) scale(0.98);
+	}
+	to {
+	  opacity: 1;
+	  transform: translateX(-50%) translateY(0) scale(1);
+	}
+  }
+  
+  @keyframes fadeOutMenuDefault {
+	from {
+	  opacity: 1;
+	  transform: translateX(-50%) translateY(0) scale(1);
+	}
+	to {
+	  opacity: 0;
+	  transform: translateX(-50%) translateY(1rem) scale(0.98);
+	}
+  }
+  
+  @keyframes fadeOutMenuToSide {
+	from {
+	  opacity: 1;
+	  transform: translateX(-50%) translateY(0) scale(1);
+	}
+	to {
+	  opacity: 0;
+	  transform: translateX(100%) translateY(0) scale(0.98);
+	}
+  }
+  
+  @keyframes scaleMenuIn {
+	from {
+	  opacity: 0;
+	  transform: translateX(-50%) translateY(0) scale(0.8);
+	}
+	to {
+	  opacity: 1;
+	  transform: translateX(-50%) translateY(0) scale(1);
+	}
+  }
+  
+  @keyframes scaleMenuOut {
+	from {
+	  opacity: 1;
+	  transform: translateX(-50%) translateY(0) scale(1);
+	}
+	to {
+	  opacity: 0;
+	  transform: translateX(-50%) translateY(0) scale(0.8);
+	}
+  }
+  
+  /* Мобильная кнопка закрытия - оптимизированная для всех устройств */
   .mega-menu-close {
 	position: absolute;
 	top: 1rem;
@@ -1547,81 +1675,261 @@ only screen and (min-resolution: 2dppx) {
 	align-items: center;
 	justify-content: center;
 	font-size: 1.25rem;
-	color: var(--color-gray);
-	background-color: var(--color-white-muted);
-	border-radius: var(--radius-full);
-	transition: var(--transition-standard);
-	z-index: 3;
+	color: #666;
+	background-color: #fff;
+	border-radius: 9999px;
+	transition: all 0.25s cubic-bezier(0.65, 0, 0.35, 1);
+	z-index: 99999;
+	cursor: pointer;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	border: 1px solid rgba(0, 0, 0, 0.05);
+	/* Улучшенное визуальное взаимодействие */
+	transform: scale(1);
+	overflow: hidden;
   }
   
   .mega-menu-close:hover {
-	background-color: var(--color-orange-primary);
-	color: var(--color-white);
+	background-color: #ff6b35;
+	color: #fff;
+	transform: scale(1.05);
   }
   
-  /* Верхняя навигация по меню */
+  /* Эффект нажатия для мобильных */
+  .mega-menu-close:active {
+	transform: scale(0.95);
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Эффект пульсации для привлечения внимания */
+  @keyframes pulseClose {
+	0% { transform: scale(1); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
+	50% { transform: scale(1.1); box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15); }
+	100% { transform: scale(1); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
+  }
+  
+  /* Верхняя навигация по меню - улучшенное центрирование для всех устройств */
   .mega-menu-header {
-	background-color: var(--color-white-soft);
-	border-bottom: 1px solid var(--color-lighter-gray);
+	background-color: #f9f9f9;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 	position: relative;
 	z-index: 2;
+	/* Тонкая тень для разделения */
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+	padding: 0.25rem 0;
+	/* Для липкого поведения на телефонах */
+	position: sticky;
+	top: 0;
   }
   
   .menu-categories {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	padding: 1rem 0;
 	overflow-x: auto;
 	scrollbar-width: none;
+	-webkit-overflow-scrolling: touch;
+	gap: 0.5rem;
+	/* Для скролла сразу видно все категории */
+	scroll-padding: 0.5rem;
+	max-width: 100%;
+	/* Для центрирования на всех устройствах */
+	margin: 0 auto;
+	/* Улучшенный скролл */
+	scroll-behavior: smooth;
   }
   
   .menu-categories::-webkit-scrollbar {
 	display: none;
   }
   
-  .menu-category {
-	padding: 0.625rem 1.25rem;
-	margin-right: 0.5rem;
-	font-size: var(--font-size-sm);
-	font-weight: var(--font-weight-medium);
-	color: var(--color-gray);
-	background-color: transparent;
-	border-radius: var(--radius-full);
-	transition: var(--transition-standard);
-	white-space: nowrap;
+  /* Индикатор скролла для категорий */
+  .menu-categories::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 2px;
+	background: linear-gradient(90deg, 
+	  transparent, 
+	  #ff6b35 50%, 
+	  transparent
+	);
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	pointer-events: none;
   }
   
+  .menu-categories.scrollable::after {
+	opacity: 0.3;
+  }
+  
+  .menu-category {
+	padding: 0.625rem 1.25rem;
+	font-size: 0.875rem;
+	font-weight: 500;
+	color: #666;
+	background-color: transparent;
+	border-radius: 9999px;
+	transition: all 0.25s cubic-bezier(0.65, 0, 0.35, 1);
+	white-space: nowrap;
+	cursor: pointer;
+	/* Четкая обводка для улучшения UI */
+	border: 1px solid transparent;
+	position: relative;
+	/* Для аксессибилити */
+	min-height: 2.5rem;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+  }
+  
+  /* Ховер только для эффектов, не для активации */
   .menu-category:hover {
-	color: var(--color-dark-gray);
-	background-color: var(--color-white-muted);
+	color: #333;
+	background-color: #f5f5f5;
+	/* Легкий эффект поднятия */
+	transform: translateY(-1px);
   }
   
   .menu-category.active {
-	color: var(--color-white);
-	background-color: var(--color-orange-primary);
-	box-shadow: var(--shadow-button);
+	color: #fff;
+	background-color: #ff6b35;
+	box-shadow: 0 4px 12px rgba(255, 107, 53, 0.25);
+	/* Подтверждение активного состояния */
+	transform: translateY(-1px);
   }
   
-  /* Основной контент меню */
+  /* Эффект волны при нажатии на категорию */
+  .menu-category::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 5px;
+	height: 5px;
+	background-color: rgba(255, 255, 255, 0.7);
+	border-radius: 50%;
+	opacity: 0;
+	transform: translate(-50%, -50%) scale(1);
+	transition: opacity 0.5s, transform 0.5s;
+	pointer-events: none;
+  }
+  
+  .menu-category:active::after {
+	transform: translate(-50%, -50%) scale(30);
+	opacity: 0;
+	transition: transform 0.4s, opacity 0.4s;
+  }
+  
+  /* Эффект нажатия для категорий */
+  .menu-category:active {
+	transform: translateY(0);
+	box-shadow: none;
+  }
+  
+  /* Индикатор активной категории */
+  .menu-category.active::before {
+	content: '';
+	position: absolute;
+	bottom: -0.5rem;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 0.5rem;
+	height: 0.5rem;
+	background-color: #ff6b35;
+	border-radius: 50%;
+	display: none;
+  }
+  
+  /* Основной контент меню - адаптивные отступы */
   .mega-menu-content {
 	position: relative;
-	padding: var(--mega-menu-padding) 0;
+	padding: 2rem 1.5rem;
 	z-index: 1;
+	/* Для плавного скролла */
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	/* Оптимизированная производительность скролла */
+	will-change: scroll-position;
+	/* Фиксированная высота для адаптивных устройств */
+	max-height: calc(80vh - 120px);
   }
   
   .menu-panel {
 	display: none;
-	animation: fadePanel var(--duration-standard) var(--ease-out);
+	animation: fadePanel 300ms cubic-bezier(0.16, 1, 0.3, 1);
   }
   
   .menu-panel.active {
 	display: block;
   }
   
+  /* Множественные анимации для панелей */
+  @keyframes fadePanel {
+	from {
+	  opacity: 0;
+	  transform: translateY(0.75rem) translateX(0.25rem);
+	}
+	to {
+	  opacity: 1;
+	  transform: translateY(0) translateX(0);
+	}
+  }
+  
+  @keyframes slidePanelFromRight {
+	from {
+	  opacity: 0;
+	  transform: translateX(10%);
+	}
+	to {
+	  opacity: 1;
+	  transform: translateX(0);
+	}
+  }
+  
+  @keyframes slidePanelFromLeft {
+	from {
+	  opacity: 0;
+	  transform: translateX(-10%);
+	}
+	to {
+	  opacity: 1;
+	  transform: translateX(0);
+	}
+  }
+  
+  @keyframes slidePanelFromTop {
+	from {
+	  opacity: 0;
+	  transform: translateY(-10%);
+	}
+	to {
+	  opacity: 1;
+	  transform: translateY(0);
+	}
+  }
+  
+  @keyframes slidePanelFromBottom {
+	from {
+	  opacity: 0;
+	  transform: translateY(10%);
+	}
+	to {
+	  opacity: 1;
+	  transform: translateY(0);
+	}
+  }
+  
   .menu-panel-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)) minmax(18rem, 1fr);
-	grid-gap: var(--mega-menu-padding);
+	grid-gap: 1.5rem;
+	/* Адаптивные отступы для всех устройств */
+	padding: 0 max(0.5rem, calc((100% - 1400px) / 2));
+	margin: 0 auto;
+	width: 100%;
   }
   
   .menu-column {
@@ -1631,10 +1939,28 @@ only screen and (min-resolution: 2dppx) {
   
   .menu-group {
 	margin-bottom: 2rem;
+	/* Для лучшего разделения группы визуально */
+	position: relative;
   }
   
   .menu-group:last-child {
 	margin-bottom: 0;
+  }
+  
+  /* Линия разделения групп */
+  .menu-group::after {
+	content: '';
+	position: absolute;
+	bottom: -1rem;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background: linear-gradient(90deg, rgba(0, 0, 0, 0.05), transparent);
+	display: none;
+  }
+  
+  .menu-group:last-child::after {
+	display: none;
   }
   
   .menu-group-title {
@@ -1642,23 +1968,56 @@ only screen and (min-resolution: 2dppx) {
 	align-items: center;
 	margin-bottom: 1rem;
 	padding-bottom: 0.5rem;
-	font-size: var(--font-size-base);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-dark-gray-alt);
-	border-bottom: 1px solid var(--color-lighter-gray);
+	font-size: 1rem;
+	font-weight: 600;
+	color: #444;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+	/* Улучшенный контраст */
+	letter-spacing: 0.01em;
+	position: relative;
+  }
+  
+  /* Индикатор активной группы */
+  .menu-group-title::after {
+	content: '';
+	position: absolute;
+	bottom: -1px;
+	left: 0;
+	width: 2rem;
+	height: 2px;
+	background-color: #ff6b35;
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform 0.3s ease-out;
+  }
+  
+  .menu-group:hover .menu-group-title::after {
+	transform: scaleX(1);
   }
   
   .menu-group-title i {
 	margin-right: 0.5rem;
 	font-size: 1.1em;
-	color: var(--color-orange-primary);
+	color: #ff6b35;
+	/* Небольшая анимация при наведении на группу */
+	transition: transform 0.3s ease;
+  }
+  
+  .menu-group:hover .menu-group-title i {
+	transform: translateY(-1px);
+  }
+  
+  .menu-list {
+	display: flex;
+	flex-direction: column;
+	/* Расстояние между элементами списка для всех устройств */
+	gap: 0.75rem;
+	position: relative;
   }
   
   .menu-list li {
-	margin-bottom: 0.75rem;
-  }
-  
-  .menu-list li:last-child {
+	position: relative;
+	/* Будем использовать свойство gap вместо margin */
 	margin-bottom: 0;
   }
   
@@ -1666,13 +2025,46 @@ only screen and (min-resolution: 2dppx) {
 	display: flex;
 	align-items: center;
 	padding: 0.75rem;
-	border-radius: var(--radius-md);
-	transition: var(--transition-standard);
+	border-radius: 0.5rem;
+	transition: all 0.25s cubic-bezier(0.65, 0, 0.35, 1);
+	/* Улучшенная обратная связь */
+	position: relative;
+	overflow: hidden;
+	/* Для аксессибилити */
+	outline: none;
   }
   
   .menu-list a:hover {
-	background-color: var(--color-white-muted);
-	transform: translateX(0.25rem);
+	background-color: #f5f5f5;
+	transform: translateX(4px);
+  }
+  
+  /* Улучшенный фокус для клавиатурной навигации */
+  .menu-list a:focus-visible {
+	box-shadow: 0 0 0 2px #ff6b35;
+	background-color: #f5f5f5;
+  }
+  
+  /* Улучшенная волна при нажатии */
+  .menu-list a::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 5px;
+	height: 5px;
+	background: radial-gradient(circle, rgba(255,107,53,0.3) 0%, rgba(255,255,255,0) 70%);
+	border-radius: 50%;
+	opacity: 0;
+	transform: translate(-50%, -50%) scale(1);
+	transition: opacity 0.3s, transform 0.3s;
+	pointer-events: none;
+  }
+  
+  .menu-list a:active::after {
+	transform: translate(-50%, -50%) scale(50);
+	opacity: 1;
+	transition: transform 0.5s ease-out, opacity 0.3s;
   }
   
   .link-icon {
@@ -1684,44 +2076,90 @@ only screen and (min-resolution: 2dppx) {
 	height: 2.5rem;
 	margin-right: 1rem;
 	font-size: 1.125rem;
-	color: var(--color-orange-primary);
-	background-color: var(--trans-orange-light);
-	border-radius: var(--radius-md);
-	transition: var(--transition-standard);
+	color: #ff6b35;
+	background-color: rgba(255, 107, 53, 0.1);
+	border-radius: 0.5rem;
+	transition: all 0.25s cubic-bezier(0.65, 0, 0.35, 1);
+	position: relative;
+	overflow: hidden;
+  }
+  
+  /* Диагональный градиент для иконок */
+  .link-icon::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+	  135deg,
+	  rgba(255, 255, 255, 0.1) 0%,
+	  rgba(255, 255, 255, 0) 50%, 
+	  rgba(0, 0, 0, 0.05) 100%
+	);
+	opacity: 0.5;
   }
   
   .menu-list a:hover .link-icon {
-	background-color: var(--color-orange-primary);
-	color: var(--color-white);
+	background-color: #ff6b35;
+	color: #fff;
+	transform: scale(1.05);
+  }
+  
+  .menu-list a:active .link-icon {
+	transform: scale(0.98);
   }
   
   .link-content {
 	display: flex;
 	flex-direction: column;
+	flex: 1;
+	min-width: 0; /* Для предотвращения переполнения текста */
   }
   
   .link-title {
-	font-weight: var(--font-weight-medium);
-	color: var(--color-dark-gray);
-	transition: var(--transition-standard);
+	font-weight: 500;
+	color: #333;
+	transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+	/* Для обрезания длинных строк */
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	max-width: 100%;
   }
   
   .menu-list a:hover .link-title {
-	color: var(--color-orange-primary);
+	color: #ff6b35;
   }
   
   .link-desc {
 	margin-top: 0.25rem;
-	font-size: var(--font-size-xs);
-	color: var(--color-gray);
+	font-size: 0.75rem;
+	color: #666;
+	/* Для обрезания длинного описания */
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	line-height: 1.3;
+	max-height: 2.6em;
   }
   
-  /* Выделенный блок в меню */
+  /* Выделенный блок в меню - адаптивный дизайн */
   .menu-panel-highlight {
 	position: relative;
-	background: linear-gradient(-45deg, var(--color-orange-primary), var(--color-orange-light));
-	border-radius: var(--radius-lg);
+	background: linear-gradient(-45deg, #ff6b35, #ff9166);
+	border-radius: 1rem;
 	overflow: hidden;
+	box-shadow: 0 8px 30px -5px rgba(255, 107, 53, 0.4);
+	min-height: 200px;
+	display: flex;
+	flex-direction: column;
+	max-width: 100%; /* Ограничиваем ширину */
+	width: 100%; /* Занимает всю доступную ширину */
+	margin-right: 0; /* Убираем отступ справа */
+	box-sizing: border-box; /* Учитываем padding в общей ширине */
   }
   
   .menu-panel-highlight::before {
@@ -1735,110 +2173,235 @@ only screen and (min-resolution: 2dppx) {
 	opacity: 0.2;
   }
   
-  .highlight-content {
+  /* Анимация фона выделенного блока */
+  @keyframes panBackground {
+	0% { background-position: 0% 0%; }
+	25% { background-position: 100% 0%; }
+	50% { background-position: 100% 100%; }
+	75% { background-position: 0% 100%; }
+	100% { background-position: 0% 0%; }
+  }
+  
+  .menu-panel-highlight:hover::before {
+	animation: panBackground 30s infinite linear;
+	background-size: 200% 200%;
+  }
+  
+  
+.highlight-content {
 	position: relative;
 	padding: 2rem;
 	z-index: 1;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	width: 100%; /* Ограничиваем ширину контента */
+	box-sizing: border-box;
   }
   
   .highlight-badge {
 	display: inline-block;
 	padding: 0.25rem 0.75rem;
 	margin-bottom: 1rem;
-	font-size: var(--font-size-xs);
-	font-weight: var(--font-weight-medium);
-	color: var(--color-orange-primary);
-	background-color: var(--color-white);
-	border-radius: var(--radius-full);
+	font-size: 0.75rem;
+	font-weight: 500;
+	color: #ff6b35;
+	background-color: #fff;
+	border-radius: 9999px;
+	/* Улучшенная тень */
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+	align-self: flex-start;
+	position: relative;
+	overflow: hidden;
+  }
+  
+  /* Подсветка бейджа */
+  .highlight-badge::after {
+	content: '';
+	position: absolute;
+	top: -50%;
+	left: -50%;
+	width: 200%;
+	height: 200%;
+	background: linear-gradient(
+	  to right,
+	  rgba(255, 255, 255, 0) 0%,
+	  rgba(255, 255, 255, 0.3) 50%,
+	  rgba(255, 255, 255, 0) 100%
+	);
+	transform: rotate(30deg);
+	animation: badgeShine 3s infinite linear;
+	pointer-events: none;
+  }
+  
+  @keyframes badgeShine {
+	from { transform: translateX(-100%) rotate(30deg); }
+	to { transform: translateX(100%) rotate(30deg); }
   }
   
   .menu-panel-highlight h3 {
 	margin-bottom: 0.75rem;
-	font-size: var(--font-size-md);
-	font-weight: var(--font-weight-bold);
-	color: var(--color-white);
+	font-size: 1.125rem;
+	font-weight: 700;
+	color: #fff;
+	/* Улучшенная читаемость */
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	line-height: 1.3;
   }
   
   .menu-panel-highlight p {
 	margin-bottom: 1.5rem;
-	color: var(--trans-white-heavy);
-	font-size: var(--font-size-sm);
+	color: rgba(255, 255, 255, 0.85);
+	font-size: 0.875rem;
+	/* Улучшенная читаемость */
+	line-height: 1.5;
+	/* Для лучшего расположения кнопки внизу */
+	flex: 1;
   }
   
   .highlight-btn {
 	display: inline-flex;
 	align-items: center;
 	padding: 0.625rem 1.25rem;
-	font-size: var(--font-size-sm);
-	font-weight: var(--font-weight-medium);
-	color: var(--color-dark-gray);
-	background-color: var(--color-white);
-	border-radius: var(--radius-full);
-	transition: var(--transition-standard);
+	font-size: 0.875rem;
+	font-weight: 500;
+	color: #333;
+	background-color: #fff;
+	border-radius: 9999px;
+	transition: all 0.25s cubic-bezier(0.65, 0, 0.35, 1);
+	/* Улучшенный эффект нажатия */
+	position: relative;
+	overflow: hidden;
+	align-self: flex-start;
+	/* Для выравнивания по вертикали при разной высоте блоков */
+	margin-top: auto;
   }
   
   .highlight-btn i {
 	margin-left: 0.5rem;
-	transition: transform var(--duration-quick) var(--ease-out);
+	transition: transform 150ms cubic-bezier(0.16, 1, 0.3, 1);
   }
   
   .highlight-btn:hover {
-	box-shadow: var(--shadow-button);
-	transform: translateY(-0.25rem);
-	color: var(--color-orange-primary);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	transform: translateY(-3px);
+	color: #ff6b35;
   }
   
   .highlight-btn:hover i {
-	transform: translateX(0.25rem);
+	transform: translateX(4px);
   }
   
-  /* Цветовые вариации для разных панелей */
+  /* Эффект волны при нажатии на кнопку */
+  .highlight-btn::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 5px;
+	height: 5px;
+	background-color: rgba(0, 0, 0, 0.1);
+	border-radius: 50%;
+	opacity: 0;
+	transform: translate(-50%, -50%) scale(1);
+	transition: opacity 0.5s, transform 0.5s;
+	pointer-events: none;
+  }
+  
+  .highlight-btn:active::after {
+	transform: translate(-50%, -50%) scale(50);
+	opacity: 1;
+	transition: transform 0.8s ease-out, opacity 0.5s;
+  }
+  
+  /* Анимация нажатия */
+  .highlight-btn:active,
+  .highlight-btn.btn-pressed {
+	transform: translateY(1px);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Цветовые вариации для разных панелей - адаптивные градиенты и тени */
   .infra-highlight {
-	background: linear-gradient(-45deg, var(--color-blue), var(--color-blue-light));
+	background: linear-gradient(-45deg, #3858f9, #65a9ff);
+	box-shadow: 0 8px 30px -5px rgba(56, 88, 249, 0.4);
   }
   
   .security-highlight {
-	background: linear-gradient(-45deg, var(--color-green-dark), var(--color-green));
+	background: linear-gradient(-45deg, #0a7c43, #34c17c);
+	box-shadow: 0 8px 30px -5px rgba(10, 124, 67, 0.4);
   }
   
   .software-highlight {
-	background: linear-gradient(-45deg, var(--color-orange-secondary), var(--color-orange-light));
+	background: linear-gradient(-45deg, #ff9900, #ff9166);
+	box-shadow: 0 8px 30px -5px rgba(255, 153, 0, 0.4);
   }
   
-  /* Футер меню */
+  /* Футер меню - адаптивный интерфейс */
   .mega-menu-footer {
-	padding: var(--mega-menu-padding) 0;
-	background-color: var(--color-white-soft);
-	border-top: 1px solid var(--color-lighter-gray);
+	padding: 1.5rem 0;
+	background-color: #f9f9f9;
+	border-top: 1px solid rgba(0, 0, 0, 0.05);
+	position: relative;
+  }
+  
+  /* Добавляем тень сверху для визуального разделения */
+  .mega-menu-footer::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 4px;
+	background: linear-gradient(to bottom, rgba(0,0,0,0.02), transparent);
+	pointer-events: none;
   }
   
   .mm-footer-content {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: center;
+	gap: 1rem;
+	flex-wrap: wrap;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 1rem;
   }
   
   .mm-footer-cta {
 	display: flex;
 	align-items: center;
+	flex-wrap: wrap;
+	/* Для хорошего распределения элементов */
+	gap: 1rem;
   }
   
   .mm-footer-cta p {
-	margin-right: 1.5rem;
-	font-weight: var(--font-weight-medium);
-	color: var(--color-dark-gray-alt);
+	margin: 0;
+	font-weight: 500;
+	color: #444;
+	/* Оптимизация для всех экранов */
+	flex: 0 1 auto;
+	text-align: center;
   }
   
   .mm-cta-btn {
 	display: inline-flex;
 	align-items: center;
+	justify-content: center;
 	padding: 0.625rem 1.25rem;
-	font-size: var(--font-size-sm);
-	font-weight: var(--font-weight-medium);
-	color: var(--color-white);
-	background-color: var(--color-orange-primary);
-	border-radius: var(--radius-full);
-	transition: var(--transition-standard);
+	font-size: 0.875rem;
+	font-weight: 500;
+	color: #fff;
+	background-color: #ff6b35;
+	border-radius: 9999px;
+	transition: all 0.25s cubic-bezier(0.65, 0, 0.35, 1);
+	/* Улучшенный эффект нажатия */
+	position: relative;
+	overflow: hidden;
+	white-space: nowrap;
+	/* Для аксессибилити */
+	min-height: 2.5rem;
   }
   
   .mm-cta-btn i {
@@ -1846,141 +2409,1603 @@ only screen and (min-resolution: 2dppx) {
   }
   
   .mm-cta-btn:hover {
-	background-color: var(--color-orange-dark);
-	box-shadow: var(--shadow-button);
-	transform: translateY(-0.25rem);
+	background-color: #e85927;
+	box-shadow: 0 4px 12px rgba(255, 107, 53, 0.25);
+	transform: translateY(-3px);
+  }
+  
+  /* Эффект волны при нажатии на кнопку */
+  .mm-cta-btn::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 5px;
+	height: 5px;
+	background-color: rgba(255, 255, 255, 0.3);
+	border-radius: 50%;
+	opacity: 0;
+	transform: translate(-50%, -50%) scale(1);
+	transition: opacity 0.5s, transform 0.5s;
+	pointer-events: none;
+  }
+  
+  .mm-cta-btn:active::after {
+	transform: translate(-50%, -50%) scale(50);
+	opacity: 1;
+	transition: transform 0.5s ease-out, opacity 0.3s;
+  }
+  
+  /* Анимация нажатия */
+  .mm-cta-btn:active,
+  .mm-cta-btn.btn-pressed {
+	transform: translateY(1px);
+	box-shadow: 0 2px 4px rgba(255, 107, 53, 0.15);
   }
   
   .mm-footer-links {
 	display: flex;
 	align-items: center;
+	flex-wrap: wrap;
+	gap: 1rem;
   }
   
   .mm-footer-links a {
-	margin-left: 1.5rem;
-	font-size: var(--font-size-sm);
-	color: var(--color-gray);
-	transition: var(--transition-standard);
+	font-size: 0.875rem;
+	color: #666;
+	transition: all 0.25s cubic-bezier(0.65, 0, 0.35, 1);
+	position: relative;
+	padding: 0.25rem 0;
+  }
+  
+  /* Подчеркивание для ссылок в футере */
+  .mm-footer-links a::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background-color: #ff6b35;
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: transform 0.3s ease-out;
   }
   
   .mm-footer-links a:hover {
-	color: var(--color-orange-primary);
+	color: #ff6b35;
   }
   
-  /* Анимации для панелей */
-  @keyframes fadePanel {
-	from {
-	  opacity: 0;
-	  transform: translateY(0.5rem);
-	}
-	to {
-	  opacity: 1;
-	  transform: translateY(0);
+  .mm-footer-links a:hover::after {
+	transform: scaleX(1);
+	transform-origin: left;
+  }
+  
+  /* Разблокировка скролла при открытом меню */
+  body.mega-menu-open,
+  body.menu-open {
+	overflow: hidden;
+	/* Предотвращаем сдвиг контента при блокировке скролла */
+	padding-right: 0;
+  }
+  
+  /* Экспериментальная фиксация размера страницы при открытом меню */
+  @supports (height: 100svh) {
+	body.mega-menu-open .mega-menu,
+	body.menu-open .mega-menu {
+	  /* Используем современный viewport units */
+	  max-height: 95svh;
 	}
   }
   
-  /* Медиа-запросы для адаптивности */
-  @media (max-width: 75em) { /* 1200px */
+  /* Управление скроллбаром для лучшего юзабилити */
+  .mega-menu {
+	scrollbar-width: thin;
+	scrollbar-color: #ff6b35 #f9f9f9;
+  }
+  
+  .mega-menu::-webkit-scrollbar {
+	width: 6px;
+  }
+  
+  .mega-menu::-webkit-scrollbar-track {
+	background: #f9f9f9;
+  }
+  
+  .mega-menu::-webkit-scrollbar-thumb {
+	background-color: #ff6b35;
+	border-radius: 6px;
+  }
+  
+  /* ========================================================================
+	 СВЕРХ-РАСШИРЕННЫЕ МЕДИА-ЗАПРОСЫ ДЛЯ ВСЕХ УСТРОЙСТВ И ФОРМАТОВ
+	 ======================================================================== */
+  
+  /* Огромные экраны (2560px+) */
+  @media (min-width: 160em) {
+	.mega-menu {
+	  width: min(1800px, 70vw);
+	}
+	
+	.mega-menu-content {
+	  padding: 3rem 2.5rem;
+	}
+	
 	.menu-panel-grid {
-	  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+	  grid-template-columns: repeat(4, 1fr) minmax(25rem, 1fr);
+	  grid-gap: 3rem;
 	}
 	
 	.menu-panel-highlight {
-	  grid-column: 1 / -1;
-	  margin-top: 1.5rem;
-	}
-  }
-  
-  @media (max-width: 62em) { /* 992px */
-	.mega-menu {
-	  position: fixed;
-	  top: 0;
-	  left: 0;
-	  width: 100%;
-	  height: 100vh;
-	  max-width: 100%;
-	  transform: translateX(0) translateY(0) scale(1);
-	  border-radius: 0;
-	  overflow-y: auto;
+	  grid-column: 5 / 6;
+	  grid-row: span 2;
+	  min-height: 350px;
 	}
 	
-	.mm-footer-content {
-	  flex-direction: column;
-	  align-items: flex-start;
+	.highlight-content {
+	  padding: 3rem;
 	}
 	
-	.mm-footer-cta {
-	  margin-bottom: 1.5rem;
-	  flex-direction: column;
-	  align-items: flex-start;
-	}
-	
-	.mm-footer-cta p {
-	  margin-right: 0;
-	  margin-bottom: 1rem;
-	}
-	
-	.mm-footer-links {
-	  flex-wrap: wrap;
-	}
-	
-	.mm-footer-links a {
-	  margin-left: 0;
-	  margin-right: 1.5rem;
-	  margin-bottom: 0.5rem;
-	}
-  }
-  
-  @media (max-width: 48em) { /* 768px */
-	.menu-panel-grid {
-	  grid-template-columns: 1fr;
-	}
-	
-	.menu-categories {
-	  justify-content: flex-start;
-	}
-  }
-  
-  @media (max-width: 36em) { /* 576px */
 	.menu-group-title {
-	  font-size: var(--font-size-sm);
+	  font-size: 1.3rem;
+	  padding-bottom: 0.75rem;
+	  margin-bottom: 1.5rem;
+	}
+	
+	.link-icon {
+	  width: 3.5rem;
+	  height: 3.5rem;
+	  font-size: 1.5rem;
+	  margin-right: 1.5rem;
 	}
 	
 	.link-title {
-	  font-size: var(--font-size-sm);
+	  font-size: 1.2rem;
 	}
 	
 	.link-desc {
-	  font-size: var(--font-size-xs);
+	  font-size: 0.95rem;
+	  margin-top: 0.4rem;
 	}
 	
 	.menu-list a {
-	  padding: 0.625rem;
+	  padding: 1.25rem;
+	  border-radius: 0.75rem;
+	}
+	
+	.menu-category {
+	  padding: 0.875rem 1.75rem;
+	  font-size: 1.1rem;
+	  min-height: 3.5rem;
+	}
+	
+	.menu-panel-highlight h3 {
+	  font-size: 1.75rem;
+	  margin-bottom: 1.25rem;
+	}
+	
+	.menu-panel-highlight p {
+	  font-size: 1.1rem;
+	  margin-bottom: 2rem;
+	}
+	
+	.highlight-btn {
+	  padding: 0.875rem 2rem;
+	  font-size: 1.1rem;
+	}
+	
+	.mega-menu-close {
+	  top: 1.5rem;
+	  right: 1.5rem;
+	  width: 3.5rem;
+	  height: 3.5rem;
+	  font-size: 1.75rem;
+	}
+	
+	.mm-footer-content {
+	  max-width: 1600px;
+	  padding: 0 2rem;
+	}
+  }
+  
+  /* Очень большие экраны (1920px - 2559px) */
+  @media (min-width: 120em) and (max-width: 159.99em) {
+	.mega-menu {
+	  width: min(1600px, 75vw);
+	}
+	
+	.mega-menu-content {
+	  padding: 2.5rem 2rem;
+	}
+	
+	.menu-panel-grid {
+	  grid-template-columns: repeat(3, 1fr) minmax(22rem, 1fr);
+	  grid-gap: 2.5rem;
+	}
+	
+	.menu-panel-highlight {
+	  grid-column: 4 / 5;
+	  grid-row: span 2;
+	  min-height: 300px;
+	}
+	
+	.highlight-content {
+	  padding: 2.5rem;
+	}
+	
+	.menu-group-title {
+	  font-size: 1.2rem;
+	}
+	
+	.link-icon {
+	  width: 3rem;
+	  height: 3rem;
+	  font-size: 1.3rem;
+	}
+	
+	.link-title {
+	  font-size: 1.1rem;
+	}
+	
+	.link-desc {
+	  font-size: 0.9rem;
+	}
+	
+	.menu-list a {
+	  padding: 1rem;
+	}
+	
+	.menu-category {
+	  padding: 0.75rem 1.5rem;
+	  font-size: 1rem;
+	}
+	
+	.menu-panel-highlight h3 {
+	  font-size: 1.5rem;
+	}
+	
+	.menu-panel-highlight p {
+	  font-size: 1rem;
+	}
+	
+	.highlight-btn {
+	  padding: 0.75rem 1.75rem;
+	  font-size: 1rem;
+	}
+  }
+  
+  /* Большие экраны (1600px - 1919px) */
+  @media (min-width: 100em) and (max-width: 119.99em) {
+	.mega-menu {
+	  width: min(1400px, 80vw);
+	}
+	
+	.mega-menu-content {
+	  padding: 2rem 1.75rem;
+	}
+	
+	.menu-panel-grid {
+	  grid-template-columns: repeat(3, 1fr) minmax(20rem, 1fr);
+	  grid-gap: 2rem;
+	}
+	
+	.menu-panel-highlight {
+	  grid-column: 4 / 5;
+	  grid-row: span 2;
+	}
+	
+	.menu-group-title {
+	  font-size: 1.1rem;
+	}
+	
+	.link-icon {
+	  width: 2.75rem;
+	  height: 2.75rem;
+	}
+	
+	.link-title {
+	  font-size: 1.05rem;
+	}
+	
+	.link-desc {
+	  font-size: 0.875rem;
+	}
+	
+	.highlight-content {
+	  padding: 2.5rem;
+	}
+	
+	.menu-panel-highlight h3 {
+	  font-size: 1.35rem;
+	}
+  }
+  
+  /* Большие экраны (1440px - 1599px) */
+  @media (min-width: 90em) and (max-width: 99.99em) {
+	.mega-menu {
+	  width: min(1300px, 85vw);
+	}
+	
+	.menu-panel-grid {
+	  grid-template-columns: repeat(3, 1fr) minmax(18rem, 1fr);
+	  padding: 0 1.5rem;
+	}
+	
+	.menu-panel-highlight {
+	  grid-column: 4 / 5;
+	  grid-row: span 2;
+	}
+	
+	.highlight-badge {
+	  font-size: 0.8rem;
+	}
+	
+	/* Тонкая адаптация отступов */
+	.mega-menu-content {
+	  padding: 2rem 1.5rem;
+	}
+  }
+  
+  /* Средне-большие экраны (1280px - 1439px) */
+  @media (min-width: 80em) and (max-width: 89.99em) {
+	.mega-menu {
+	  width: min(1200px, 85vw);
+	}
+	
+	.menu-panel-grid {
+	  grid-template-columns: repeat(3, 1fr) minmax(18rem, 1fr);
+	  padding: 0 1rem;
+	}
+	
+	.menu-panel-highlight {
+	  grid-column: 4 / 5;
+	  grid-row: span 2;
+	}
+	
+	/* Сокращение интервалов сетки */
+	.menu-panel-grid {
+	  grid-gap: 1.75rem;
+	}
+  }
+  
+  /* Средние экраны (1200px - 1279px) */
+  @media (min-width: 75em) and (max-width: 79.99em) {
+	.mega-menu {
+	  width: min(1100px, 90vw);
+	}
+	
+	.mega-menu-content {
+	  padding: 2rem 1.25rem;
+	}
+	
+	.menu-panel-grid {
+	  grid-template-columns: repeat(3, 1fr) minmax(17rem, 1fr);
+	  grid-gap: 1.5rem;
+	}
+	
+	.menu-panel-highlight {
+	  grid-column: 4 / 5;
+	  grid-row: span 2;
+	}
+	
+	/* Уменьшение некоторых размеров для лучшего размещения */
+	.link-icon {
+	  width: 2.5rem;
+	  height: 2.5rem;
+	  margin-right: 0.875rem;
+	}
+	
+	.menu-list a {
+	  padding: 0.7rem;
+	}
+  }
+  
+  /* Средне-малые экраны (1024px - 1199px) */
+  @media (min-width: 64em) and (max-width: 74.99em) {
+	.mega-menu {
+	  width: min(960px, 90vw);
+	}
+	
+	.mega-menu-content {
+	  padding: 1.75rem 1rem;
+	}
+	
+	.menu-panel-grid {
+	  grid-template-columns: repeat(2, 1fr) minmax(16rem, 1fr);
+	  grid-gap: 1.5rem;
+	}
+	
+	.menu-panel-highlight {
+	  grid-column: 3 / 4;
+	  grid-row: span 2;
+	}
+	
+	.menu-group {
+	  margin-bottom: 1.75rem;
+	}
+	
+	/* Корректировка размеров текста */
+	.menu-category {
+	  padding: 0.625rem 1.125rem;
+	}
+	
+	.link-title {
+	  font-size: 1rem;
+	}
+	
+	.highlight-content {
+	  padding: 1.75rem;
+	}
+  }
+  
+  /* Планшеты (992px - 1023px) */
+  @media (min-width: 62em) and (max-width: 63.99em) {
+	.mega-menu {
+	  width: min(920px, 90vw);
+	}
+	
+	.menu-panel-grid {
+	  grid-template-columns: repeat(2, 1fr) minmax(15rem, 1fr);
+	  grid-gap: 1.25rem;
+	}
+	
+	.menu-panel-highlight {
+	  grid-column: 3 / 4;
+	  grid-row: span 2;
+	}
+	
+	.menu-category {
+	  padding: 0.5rem 1rem;
+	}
+	
+	/* Уменьшаем размеры для большей компактности */
+	.menu-list a {
+	  padding: 0.675rem;
 	}
 	
 	.link-icon {
 	  width: 2.25rem;
 	  height: 2.25rem;
-	  margin-right: 0.75rem;
+	  font-size: 1rem;
 	}
 	
 	.highlight-content {
 	  padding: 1.5rem;
 	}
   }
-
-
+  
+  /* Малые планшеты и низкие экраны (896px - 991px) */
+  @media (min-width: 56em) and (max-width: 61.99em) {
+	.mega-menu {
+	  width: min(850px, 92vw);
+	}
+	
+	.mega-menu-content {
+	  padding: 1.5rem 1rem;
+	}
+	
+	.menu-panel-grid {
+	  grid-template-columns: repeat(2, 1fr);
+	  grid-gap: 1.25rem;
+	}
+	
+	.menu-panel-highlight {
+	  grid-column: 1 / 3;
+	  margin-top: 1rem;
+	  min-height: 180px;
+	}
+	
+	.mega-menu-close {
+	  top: 0.75rem;
+	  right: 0.75rem;
+	  width: 2.5rem;
+	  height: 2.5rem;
+	  font-size: 1.125rem;
+	}
+	
+	/* Специальная настройка для горизонтальной ориентации */
+	@media (orientation: landscape) {
+	  .menu-panel-grid {
+		grid-template-columns: repeat(3, 1fr);
+	  }
+	  
+	  .menu-panel-highlight {
+		grid-column: 1 / 4;
+		margin-top: 0.5rem;
+	  }
+	  
+	  .menu-list {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+		gap: 0.5rem;
+	  }
+	}
+  }
+  
+  /* Планшеты и большие мобильные (768px - 895px) */
+  @media (min-width: 48em) and (max-width: 55.99em) {
+	.mega-menu {
+	  width: min(720px, 95vw);
+	}
+	
+	.mega-menu-content {
+	  padding: 1.5rem 1rem;
+	}
+	
+	.menu-panel-grid {
+	  grid-template-columns: repeat(2, 1fr);
+	  grid-gap: 1.25rem;
+	}
+	
+	.menu-panel-highlight {
+	  grid-column: 1 / 3;
+	  margin-top: 1rem;
+	}
+	
+	.highlight-content {
+	  padding: 1.5rem;
+	}
+	
+	.menu-category {
+	  scroll-snap-align: start;
+	  padding: 0.5rem 1rem;
+	  font-size: 0.8125rem;
+	}
+	
+	/* Улучшенная боковая навигация на планшетах */
+	.mega-menu-header {
+	  height: auto;
+	}
+	
+	.menu-categories {
+	  flex-wrap: nowrap;
+	  overflow-x: auto;
+	  justify-content: flex-start;
+	  scroll-snap-type: x mandatory;
+	  padding: 0.75rem;
+	  gap: 0.5rem;
+	}
+	
+	/* Оптимизация для различных панелей */
+	.menu-panel-highlight h3 {
+	  font-size: 1.1rem;
+	}
+	
+	.menu-panel-highlight p {
+	  font-size: 0.85rem;
+	  margin-bottom: 1.25rem;
+	}
+	
+	/* Специальная адаптация для узкого экрана */
+	@media (max-height: 670px) {
+	  .mega-menu-content {
+		max-height: 60vh;
+	  }
+	  
+	  .menu-panel-highlight {
+		min-height: 160px;
+	  }
+	  
+	  .highlight-btn {
+		padding: 0.5rem 1rem;
+	  }
+	}
+	
+	@media (orientation: landscape) {
+	  .menu-panel-grid {
+		grid-template-columns: repeat(3, 1fr);
+	  }
+	  
+	  .menu-panel-highlight {
+		grid-column: 1 / 4;
+	  }
+	}
+  }
+  
+  /* Большие мобильные устройства (640px - 767px) */
+  @media (min-width: 40em) and (max-width: 47.99em) {
+	.mega-menu {
+	  width: 100%;
+	  position: fixed;
+	  height: 100%;
+	  top: 0;
+	  left: 0;
+	  transform: none !important;
+	  border-radius: 0;
+	}
+	
+	.mega-menu-content {
+	  padding: 1.25rem 1rem;
+	}
+	
+	.menu-panel-grid {
+	  grid-template-columns: 1fr;
+	  grid-gap: 1rem;
+	}
+	
+	.menu-categories {
+	  justify-content: flex-start;
+	  padding: 0.75rem 0.5rem;
+	  gap: 0.375rem;
+	}
+	
+	.menu-category {
+	  padding: 0.5rem 0.875rem;
+	  font-size: 0.8125rem;
+	}
+	
+	.menu-group-title {
+	  margin-bottom: 0.75rem;
+	  font-size: 0.9375rem;
+	}
+	
+	/* Сетка для ссылок на больших мобильных - 2 колонки */
+	.menu-list {
+	  display: grid;
+	  grid-template-columns: repeat(auto-fill, minmax(min(100%, 13rem), 1fr));
+	  gap: 0.5rem;
+	}
+	
+	.menu-list li {
+	  margin-bottom: 0;
+	}
+	
+	/* Уменьшение размеров элементов для оптимального отображения */
+	.link-title {
+	  font-size: 0.875rem;
+	}
+	
+	.link-desc {
+	  font-size: 0.75rem;
+	}
+	
+	.mega-menu-close {
+	  position: fixed;
+	  width: 2.75rem;
+	  height: 2.75rem;
+	  font-size: 1.25rem;
+	  top: 1rem;
+	  right: 1rem;
+	}
+	
+	/* Высота контента для скролла */
+	.mega-menu-content {
+	  max-height: calc(100vh - 130px);
+	  overflow-y: auto;
+	}
+	
+	/* Улучшенное центрирование контента */
+	.mega-menu-content .container {
+	  max-width: 95%;
+	  margin: 0 auto;
+	  padding: 0 0.5rem;
+	}
+	
+	@media (orientation: landscape) {
+	  .menu-list {
+		grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+	  }
+	  
+	  .mega-menu-content {
+		max-height: calc(100vh - 120px);
+		padding: 1rem 0.5rem;
+	  }
+	  
+	  .mega-menu-footer {
+		padding: 0.75rem 0;
+	  }
+	}
+  }
+  
+  /* Средние мобильные устройства (480px - 639px) */
+  @media (min-width: 30em) and (max-width: 39.99em) {
+	.mega-menu {
+	  width: 100%;
+	  position: fixed;
+	  height: 100%;
+	  top: 0;
+	  left: 0;
+	  transform: none !important;
+	  border-radius: 0;
+	}
+	
+	.mega-menu-content {
+	  padding: 1rem 0.75rem;
+	  max-height: calc(100vh - 130px);
+	}
+	
+	.menu-panel-grid {
+	  grid-template-columns: 1fr;
+	  grid-gap: 0.75rem;
+	  padding: 0 0.5rem;
+	}
+	
+	.menu-group-title {
+	  font-size: 0.875rem;
+	  margin-bottom: 0.75rem;
+	  padding-bottom: 0.375rem;
+	}
+	
+	.link-title {
+	  font-size: 0.875rem;
+	}
+	
+	.link-desc {
+	  font-size: 0.75rem;
+	  margin-top: 0.125rem;
+	}
+	
+	.menu-list a {
+	  padding: 0.625rem;
+	  border-radius: 0.375rem;
+	}
+	
+	.link-icon {
+	  width: 2.25rem;
+	  height: 2.25rem;
+	  margin-right: 0.75rem;
+	  font-size: 1rem;
+	}
+	
+	.highlight-content {
+	  padding: 1.25rem;
+	}
+	
+	.highlight-badge {
+	  padding: 0.1875rem 0.625rem;
+	  margin-bottom: 0.75rem;
+	}
+	
+	.menu-panel-highlight h3 {
+	  font-size: 1.0625rem;
+	  margin-bottom: 0.5rem;
+	}
+	
+	.menu-panel-highlight p {
+	  font-size: 0.75rem;
+	  margin-bottom: 1rem;
+	}
+	
+	.highlight-btn {
+	  width: 100%;
+	  justify-content: center;
+	  padding: 0.5rem 1rem;
+	}
+	
+	.mega-menu-close {
+	  top: 0.625rem;
+	  right: 0.625rem;
+	  width: 2.5rem;
+	  height: 2.5rem;
+	  font-size: 1rem;
+	  position: fixed;
+	}
+	
+	.menu-categories {
+	  justify-content: flex-start;
+	  padding: 0.625rem 0.5rem;
+	  gap: 0.25rem;
+	}
+	
+	.menu-category {
+	  padding: 0.4375rem 0.75rem;
+	  font-size: 0.8125rem;
+	  min-width: auto;
+	}
+	
+	.mm-footer-cta p {
+	  font-size: 0.875rem;
+	}
+	
+	.mm-cta-btn {
+	  font-size: 0.8125rem;
+	  padding: 0.5rem 1rem;
+	  width: 100%;
+	}
+	
+	/* Полноэкранное мега-меню */
+	.mega-menu::before {
+	  content: '';
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  right: 0;
+	  bottom: 0;
+	  background-color: rgba(0, 0, 0, 0.5);
+	  z-index: -1;
+	}
+	
+	/* Улучшенное отображение групп на мобильных */
+	.menu-group {
+	  margin-bottom: 1rem;
+	  background: #fff;
+	  border-radius: 0.5rem;
+	  padding: 0.75rem;
+	  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+	}
+	
+	/* Оптимизация для альбомной ориентации */
+	@media (orientation: landscape) {
+	  .menu-list {
+		grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+		gap: 0.5rem;
+	  }
+	  
+	  .menu-panel-highlight {
+		min-height: 150px;
+	  }
+	  
+	  .mega-menu-content {
+		max-height: calc(100vh - 110px);
+		padding: 0.75rem 0.5rem;
+	  }
+	  
+	  .mega-menu-footer {
+		padding: 0.5rem 0;
+	  }
+	  
+	  .menu-group {
+		margin-bottom: 0.75rem;
+	  }
+	}
+  }
+  
+  /* Малые мобильные устройства (360px - 479px) */
+  @media (min-width: 22.5em) and (max-width: 29.99em) {
+	.mega-menu {
+	  width: 100%;
+	  position: fixed;
+	  height: 100%;
+	  top: 0;
+	  left: 0;
+	  transform: none !important;
+	  border-radius: 0;
+	}
+	
+	.mega-menu-content {
+	  padding: 0.75rem 0.5rem;
+	  max-height: calc(100vh - 120px);
+	}
+	
+	.menu-panel-grid {
+	  grid-template-columns: 1fr;
+	  grid-gap: 0.625rem;
+	}
+	
+	.menu-categories {
+	  justify-content: flex-start;
+	  padding: 0.5rem 0.375rem;
+	  flex-wrap: nowrap;
+	  overflow-x: auto;
+	  scroll-snap-type: x mandatory;
+	}
+	
+	.menu-category {
+	  scroll-snap-align: start;
+	  padding: 0.375rem 0.625rem;
+	  font-size: 0.75rem;
+	  min-width: auto;
+	}
+	
+	.menu-group-title {
+	  font-size: 0.8125rem;
+	  margin-bottom: 0.5rem;
+	  padding-bottom: 0.25rem;
+	}
+	
+	.link-title {
+	  font-size: 0.75rem;
+	  white-space: nowrap;
+	  overflow: hidden;
+	  text-overflow: ellipsis;
+	}
+	
+	.link-desc {
+	  font-size: 0.6875rem;
+	  -webkit-line-clamp: 1;
+	  max-height: 1.3em;
+	}
+	
+	.link-icon {
+	  width: 2rem;
+	  height: 2rem;
+	  margin-right: 0.5rem;
+	  font-size: 0.875rem;
+	}
+	
+	.menu-list a {
+	  padding: 0.5rem;
+	}
+	
+	.menu-panel-highlight h3 {
+	  font-size: 1rem;
+	  margin-bottom: 0.375rem;
+	}
+	
+	.menu-panel-highlight p {
+	  font-size: 0.6875rem;
+	  margin-bottom: 0.75rem;
+	}
+	
+	.highlight-content {
+	  padding: 1rem;
+	}
+	
+	.highlight-btn {
+	  width: 100%;
+	  padding: 0.4375rem 0.875rem;
+	  font-size: 0.75rem;
+	  justify-content: center;
+	}
+	
+	.mm-footer-cta p {
+	  font-size: 0.8125rem;
+	  margin-bottom: 0.5rem;
+	}
+	
+	.mega-menu-footer {
+	  padding: 0.75rem 0;
+	}
+	
+	.mm-cta-btn {
+	  padding: 0.4375rem 0.875rem;
+	  font-size: 0.75rem;
+	  width: 100%;
+	}
+	
+	.mega-menu-close {
+	  top: 0.5rem;
+	  right: 0.5rem;
+	  width: 2.25rem;
+	  height: 2.25rem;
+	  font-size: 0.875rem;
+	  position: fixed;
+	}
+	
+	/* Компактное отображение групп меню */
+	.menu-group {
+	  margin-bottom: 0.75rem;
+	  border-radius: 0.25rem;
+	  padding: 0.625rem;
+	  background: #fff;
+	  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+	}
+	
+	/* Специальная компактная сетка для альбомной ориентации */
+	@media (orientation: landscape) {
+	  .menu-panel-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 0.5rem;
+	  }
+	  
+	  .menu-list {
+		display: block;
+	  }
+	  
+	  .menu-group {
+		padding: 0.5rem;
+	  }
+	  
+	  .menu-panel-highlight {
+		min-height: 120px;
+		grid-column: 1 / 3;
+	  }
+	  
+	  .mega-menu-content {
+		padding: 0.5rem 0.5rem;
+		max-height: calc(100vh - 100px);
+	  }
+	  
+	  .mega-menu-footer {
+		padding: 0.5rem 0;
+	  }
+	}
+  }
+  
+  /* Очень малые мобильные устройства (320px - 359px) */
+  @media (max-width: 22.4375em) {
+	.mega-menu {
+	  width: 100%;
+	  position: fixed;
+	  height: 100%;
+	  top: 0;
+	  left: 0;
+	  transform: none !important;
+	  border-radius: 0;
+	}
+	
+	.mega-menu-content {
+	  padding: 0.625rem 0.375rem;
+	  max-height: calc(100vh - 110px);
+	}
+	
+	.menu-panel-grid {
+	  grid-template-columns: 1fr;
+	  grid-gap: 0.5rem;
+	  padding: 0;
+	}
+	
+	.menu-categories {
+	  justify-content: flex-start;
+	  padding: 0.5rem 0.25rem;
+	  flex-wrap: nowrap;
+	  overflow-x: auto;
+	  scroll-snap-type: x mandatory;
+	  gap: 0.2rem;
+	}
+	
+	.menu-category {
+	  scroll-snap-align: start;
+	  padding: 0.3125rem 0.5rem;
+	  font-size: 0.75rem;
+	  min-width: auto;
+	}
+	
+	.menu-group-title {
+	  font-size: 0.6875rem;
+	  padding-bottom: 0.25rem;
+	  margin-bottom: 0.5rem;
+	}
+	
+	.link-title {
+	  font-size: 0.6875rem;
+	}
+	
+	.link-desc {
+	  display: none; /* Скрываем на очень маленьких экранах */
+	}
+	
+	.link-icon {
+	  width: 1.75rem;
+	  height: 1.75rem;
+	  margin-right: 0.375rem;
+	  font-size: 0.75rem;
+	}
+	
+	.menu-list a {
+	  padding: 0.375rem;
+	}
+	
+	.menu-panel-highlight h3 {
+	  font-size: 0.9375rem;
+	  margin-bottom: 0.375rem;
+	}
+	
+	.menu-panel-highlight p {
+	  font-size: 0.625rem;
+	  margin-bottom: 0.625rem;
+	  line-height: 1.3;
+	}
+	
+	.highlight-content {
+	  padding: 0.75rem;
+	}
+	
+	.highlight-badge {
+	  padding: 0.125rem 0.5rem;
+	  margin-bottom: 0.5rem;
+	  font-size: 0.625rem;
+	}
+	
+	.highlight-btn {
+	  width: 100%;
+	  padding: 0.375rem 0.75rem;
+	  font-size: 0.6875rem;
+	  justify-content: center;
+	}
+	
+	.mm-footer-cta p {
+	  font-size: 0.6875rem;
+	  margin-bottom: 0.5rem;
+	}
+	
+	.mega-menu-footer {
+	  padding: 0.625rem 0;
+	}
+	
+	.mm-cta-btn {
+	  padding: 0.375rem 0.75rem;
+	  font-size: 0.6875rem;
+	  width: 100%;
+	}
+	
+	.mega-menu-close {
+	  top: 0.375rem;
+	  right: 0.375rem;
+	  width: 2rem;
+	  height: 2rem;
+	  font-size: 0.75rem;
+	  position: fixed;
+	}
+	
+	/* Компактное отображение для ультрамалых экранов */
+	.menu-group {
+	  margin-bottom: 0.5rem;
+	  border-radius: 0.25rem;
+	  padding: 0.5rem;
+	  background: #fff;
+	  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+	}
+	
+	/* Дополнительное улучшение центрирования для малых экранов */
+	.mega-menu-content, 
+	.mega-menu-header,
+	.mega-menu-footer {
+	  padding-left: 0.25rem;
+	  padding-right: 0.25rem;
+	}
+	
+	/* Сжатие кнопок для лучшего отображения */
+	.highlight-btn i,
+	.mm-cta-btn i {
+	  margin-left: 0.25rem;
+	  margin-right: 0.25rem;
+	}
+	
+	/* Специальная компактная сетка для альбомной ориентации */
+	@media (orientation: landscape) {
+	  .menu-panel-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 0.375rem;
+	  }
+	  
+	  .menu-list {
+		display: block;
+	  }
+	  
+	  .menu-group {
+		padding: 0.375rem;
+		margin-bottom: 0.375rem;
+	  }
+	  
+	  .menu-panel-highlight {
+		min-height: 100px;
+		grid-column: 1 / 3;
+	  }
+	  
+	  .mega-menu-content {
+		padding: 0.375rem;
+		max-height: calc(100vh - 80px);
+	  }
+	  
+	  .mega-menu-footer {
+		padding: 0.375rem 0;
+	  }
+	}
+  }
+  
+  /* Особые адаптации для сверхмалых устройств (<320px) */
+  @media (max-width: 20em) {
+	.mega-menu-content {
+	  padding: 0.5rem 0.25rem;
+	}
+	
+	.menu-category {
+	  padding: 0.25rem 0.375rem;
+	  font-size: 0.625rem;
+	}
+	
+	.menu-group-title {
+	  font-size: 0.625rem;
+	}
+	
+	.link-title {
+	  font-size: 0.625rem;
+	}
+	
+	.menu-list a {
+	  padding: 0.3125rem;
+	}
+	
+	.link-icon {
+	  width: 1.5rem;
+	  height: 1.5rem;
+	  margin-right: 0.3125rem;
+	  font-size: 0.625rem;
+	}
+	
+	.mega-menu-close {
+	  width: 1.75rem;
+	  height: 1.75rem;
+	  font-size: 0.675rem;
+	}
+	
+	.menu-panel-highlight h3 {
+	  font-size: 0.875rem;
+	}
+	
+	.highlight-btn, .mm-cta-btn {
+	  padding: 0.3125rem 0.5rem;
+	  font-size: 0.625rem;
+	}
+  }
+  
+  /* Устройства с высоким соотношением сторон (длинные и узкие) */
+  @media (max-aspect-ratio: 2/3) and (max-width: 48em) {
+	.menu-panel-grid {
+	  grid-gap: 0.75rem;
+	}
+	
+	.mega-menu-content {
+	  max-height: 70vh;
+	}
+	
+	.menu-panel-highlight {
+	  min-height: 150px;
+	}
+	
+	/* Сокращаем вертикальные отступы */
+	.menu-group {
+	  margin-bottom: 0.75rem;
+	}
+	
+	.mega-menu-footer {
+	  padding: 0.75rem 0;
+	}
+  }
+  
+  /* Устройства с низким соотношением сторон (широкие и короткие) */
+  @media (min-aspect-ratio: 16/9) and (max-width: 64em) {
+	.mega-menu-content {
+	  max-height: 75vh;
+	}
+	
+	.menu-panel-grid {
+	  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+	}
+	
+	.menu-panel-highlight {
+	  grid-column: 1 / -1;
+	  min-height: 120px;
+	}
+	
+	.menu-list {
+	  display: block;
+	}
+	
+	.menu-list li {
+	  margin-bottom: 0.375rem;
+	}
+	
+	.mega-menu-footer {
+	  padding: 0.625rem 0;
+	}
+  }
+  
+  /* Адаптивные градиенты и визуальные эффекты для разных размеров экранов */
+  @media (max-width: 48em) {
+	/* Упрощенные градиенты для повышения производительности на мобильных */
+	.menu-panel-highlight {
+	  background: #ff6b35;
+	}
+	
+	.infra-highlight {
+	  background: #3858f9;
+	}
+	
+	.security-highlight {
+	  background: #0a7c43;
+	}
+	
+	.software-highlight {
+	  background: #ff9900;
+	}
+	
+	/* Упрощенные эффекты наведения и нажатия */
+	.menu-list a:hover {
+	  transform: none;
+	}
+	
+	.menu-list a:active {
+	  background-color: #f5f5f5;
+	  transform: translateX(4px);
+	}
+  }
+  
+  /* Поддержка устройств с низким разрешением */
+  @media screen and (max-width: 62em) and (max-resolution: 150dpi) {
+	.menu-category {
+	  padding: 0.5rem 0.75rem;
+	}
+	
+	.menu-group-title {
+	  font-size: 0.8125rem;
+	}
+	
+	.link-title {
+	  font-size: 0.8125rem;
+	}
+	
+	.link-desc {
+	  font-size: 0.6875rem;
+	}
+	
+	/* Упрощенные тени */
+	.menu-panel-highlight {
+	  box-shadow: 0 4px 15px -2px rgba(0, 0, 0, 0.2);
+	}
+	
+	.menu-category.active {
+	  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+	}
+  }
+  
+  /* Высокое разрешение (Retina и выше) */
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+	.menu-panel-highlight::before {
+	  background-size: 75px 75px;
+	}
+	
+	.menu-category.active {
+	  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	}
+	
+	/* Улучшения для Retina-дисплеев */
+	.link-icon {
+	  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+	}
+	
+	.highlight-badge {
+	  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	}
+	
+	/* Более тонкие детали для высокого разрешения */
+	.menu-group-title::after {
+	  height: 1.5px;
+	}
+	
+	.mm-footer-links a::after {
+	  height: 0.75px;
+	}
+  }
+  
+  /* Адаптация для устройств с поддержкой жестов (тачскрин) и настольных ПК */
+  @media (hover: hover) and (pointer: fine) {
+	/* На устройствах с точным указателем сохраняем все эффекты наведения */
+	.menu-category:hover {
+	  transform: translateY(-1px);
+	}
+	
+	.menu-list a:hover {
+	  background-color: #f5f5f5;
+	  transform: translateX(4px);
+	}
+	
+	.highlight-btn:hover,
+	.mm-cta-btn:hover {
+	  transform: translateY(-3px);
+	}
+	
+	/* Дополнительные эффекты для настольных компьютеров */
+	.menu-group-title i {
+	  transition: transform 0.3s ease;
+	}
+	
+	.menu-group:hover .menu-group-title i {
+	  transform: translateY(-1px) scale(1.1);
+	}
+  }
+  
+  @media (hover: none) {
+	/* На сенсорных устройствах убираем эффекты наведения, сохраняем только активные состояния */
+	.menu-list a:hover,
+	.menu-category:hover,
+	.highlight-btn:hover,
+	.mm-cta-btn:hover,
+	.menu-list a:hover .link-icon,
+	.menu-list a:hover .link-title,
+	.mm-footer-links a:hover {
+	  transform: none;
+	  box-shadow: none;
+	  background-color: inherit;
+	  color: inherit;
+	}
+	
+	.menu-list a:active {
+	  background-color: #f5f5f5;
+	  transform: translateX(4px);
+	}
+	
+	.menu-list a:active .link-icon {
+	  background-color: #ff6b35;
+	  color: #fff;
+	  transform: scale(1.05);
+	}
+	
+	.menu-list a:active .link-title {
+	  color: #ff6b35;
+	}
+	
+	.highlight-btn:active {
+	  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	  transform: translateY(1px);
+	  color: #ff6b35;
+	}
+	
+	.highlight-btn:active i {
+	  transform: translateX(4px);
+	}
+	
+	.mm-cta-btn:active {
+	  background-color: #e85927;
+	  transform: translateY(1px);
+	}
+	
+	.mm-footer-links a:active {
+	  color: #ff6b35;
+	}
+	
+	/* Улучшенный отклик на сенсорные экраны */
+	.menu-category {
+	  padding: 0.75rem 1rem;  /* Увеличиваем для лучшего касания */
+	}
+	
+	.mega-menu-close,
+	.mm-cta-btn,
+	.highlight-btn {
+	  min-height: 2.75rem;  /* Минимальная высота кнопок для удобства касания */
+	}
+  }
+  
+  /* Поддержка фокуса на сенсорных устройствах */
+  @media (hover: none) and (pointer: coarse) {
+	.menu-list a:focus,
+	.menu-category:focus,
+	.highlight-btn:focus,
+	.mm-cta-btn:focus {
+	  outline: none;
+	}
+	
+	.menu-list a:active,
+	.menu-category:active,
+	.highlight-btn:active,
+	.mm-cta-btn:active {
+	  outline: none;
+	}
+  }
+  
+  /* Адаптация под устройства с особыми возможностями */
+  @media screen and (prefers-reduced-motion: reduce) {
+	.mega-menu,
+	.menu-list a,
+	.menu-category,
+	.highlight-btn,
+	.mm-cta-btn,
+	.link-icon,
+	.link-title,
+	.mega-menu-close,
+	.mm-footer-links a {
+	  transition: none !important;
+	  animation: none !important;
+	}
+	
+	.highlight-badge::after,
+	.menu-panel-highlight:hover::before {
+	  animation: none !important;
+	}
+  }
+  
+  /* Экраны с большой плотностью пикселей - улучшенные визуальные эффекты */
+  @media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 288dpi) {
+	.menu-category.active::before {
+	  display: block;
+	}
+	
+	.menu-group-title::after {
+	  height: 1px;
+	}
+	
+	/* Более тонкие линии */
+	.menu-group-title {
+	  border-bottom-width: 0.5px;
+	}
+	
+	.mega-menu-header,
+	.mega-menu-footer {
+	  border-width: 0.5px;
+	}
+  }
+  
+  /* Оптимизация для специфических сценариев */
+  /* Очень широкие мониторы с ограниченной высотой (ультраширокие) */
+  @media (min-width: 120em) and (max-height: 50em) {
+	.mega-menu {
+	  max-height: 85vh;
+	}
+	
+	.menu-panel-grid {
+	  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+	}
+	
+	.menu-panel-highlight {
+	  grid-column: auto;
+	  grid-row: auto;
+	}
+  }
+  
+  /* Подсказки при скролле для визуальной ориентации */
+  .mega-menu-content::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 20px;
+	background: linear-gradient(to top, rgba(255,255,255,0.8), transparent);
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+  }
+  
+  .mega-menu-content.scrollable::after {
+	opacity: 1;
+  }
+  
+  /* Фиксация шапки при скролле только на больших экранах */
+  @media (min-width: 62em) {
+	.mega-menu-header {
+	  position: sticky;
+	  top: 0;
+	}
+	
+	.mega-menu-content {
+	  overflow-y: auto;
+	}
+  }
+  
+  /* Print styles - скрываем меню при печати */
+  @media print {
+	.mega-menu {
+	  display: none !important;
+	}
+  }
+  
+  /* Улучшенная доступность - видимость фокуса для клавиатурной навигации */
+  .menu-category:focus-visible,
+  .menu-list a:focus-visible,
+  .highlight-btn:focus-visible,
+  .mm-cta-btn:focus-visible,
+  .mega-menu-close:focus-visible {
+	outline: 2px solid #ff6b35;
+	outline-offset: 2px;
+  }
+  
+  /* CSS-решение для стабилизации сетки при разной высоте элементов */
+  @supports (grid-template-rows: masonry) {
+	.menu-panel-grid {
+	  grid-template-rows: masonry;
+	}
+  }
+  
+  /* Резервное решение для браузеров, не поддерживающих grid-template-rows: masonry */
+  @supports not (grid-template-rows: masonry) {
+	.menu-column {
+	  height: 100%;
+	}
+	
+	.menu-group:last-child {
+	  margin-bottom: auto;
+	}
+  }
  /* ========================================================================
    СТИЛИ ДЛЯ БЛОКА КОНТАКТНОЙ ИНФОРМАЦИИ - ВЕРТИКАЛЬНАЯ ВЕРСИЯ (УЛУЧШЕННАЯ)
    ======================================================================== */
 
-.header-contacts {
+/* ========================================================================
+   СТИЛИ ДЛЯ БЛОКА КОНТАКТНОЙ ИНФОРМАЦИИ - ПРАВИЛЬНОЕ ПОЗИЦИОНИРОВАНИЕ
+   ======================================================================== */
+
+   .header-contacts {
 	display: flex;
 	flex-direction: column;
 	gap: clamp(0.2rem, 0.4vw, 0.3rem);
 	margin: clamp(0.35rem, 0.5vw, 0.5rem) 0;
 	width: 100%;
 	max-width: 300px;
+	margin-left: auto; /* Выравнивание блока справа */
+	margin-right: 0;
   }
   
   .contact-item {
@@ -1991,11 +4016,11 @@ only screen and (min-resolution: 2dppx) {
   
   .contact-link {
 	display: flex;
-	align-items: flex-start; /* Изменено с center для лучшего выравнивания с многострочным текстом */
+	align-items: center;
 	text-decoration: none;
 	color: var(--color-dark-gray);
 	transition: var(--transition-standard);
-	padding: clamp(0.05rem, 0.15vw, 0.1rem) 0;
+	padding: 0.05rem 0;
 	width: 100%;
   }
   
@@ -2010,7 +4035,7 @@ only screen and (min-resolution: 2dppx) {
 	width: clamp(1.5rem, 2vw, 1.875rem);
 	height: clamp(1.5rem, 2vw, 1.875rem);
 	margin-right: clamp(0.375rem, 0.5vw, 0.5rem);
-	margin-top: 0.125rem; /* Добавлено для лучшего выравнивания с текстом */
+	margin-top: 0; /* Убираем смещение вверх */
 	color: var(--color-orange-primary);
 	background-color: var(--color-orange-ultra-light);
 	border-radius: var(--radius-full);
@@ -2027,9 +4052,10 @@ only screen and (min-resolution: 2dppx) {
   .contact-text {
 	display: flex;
 	flex-direction: column;
+	justify-content: center; /* Выравнивание контента по вертикали */
 	flex-grow: 1;
 	min-width: 0;
-	width: 100%; /* Изменено для лучшего контроля ширины */
+	width: 100%;
 	max-width: calc(100% - clamp(1.875rem, 2.5vw, 2.375rem));
   }
   
@@ -2047,17 +4073,17 @@ only screen and (min-resolution: 2dppx) {
 	font-size: clamp(0.7rem, 0.8vw, 0.8rem);
 	font-weight: var(--font-weight-medium);
 	color: var(--color-dark-gray-soft);
-	line-height: 1.3; /* Увеличен line-height для лучшей читаемости */
+	line-height: 1.3;
 	width: 100%;
 	
 	/* Улучшенное отображение текста */
 	display: -webkit-box;
-	-webkit-line-clamp: 3; /* Увеличено количество строк для гарантии видимости */
+	-webkit-line-clamp: 2; /* Оптимальное количество строк */
 	-webkit-box-orient: vertical;
 	overflow: hidden;
-	word-wrap: break-word; /* Добавлено для корректного переноса длинных слов */
-	overflow-wrap: break-word; /* Современное свойство для переноса */
-	hyphens: auto; /* Автоматические переносы для длинных слов */
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	hyphens: auto;
   }
   
   .contact-link:hover .contact-info {
@@ -2065,14 +4091,15 @@ only screen and (min-resolution: 2dppx) {
   }
   
   /* =======================================================================
-	 АДАПТИВНОСТЬ - ОСНОВНЫЕ ТОЧКИ ПЕРЕЛОМА (УЛУЧШЕННЫЕ)
+	 АДАПТИВНОСТЬ - ОСНОВНЫЕ ТОЧКИ ПЕРЕЛОМА
 	 ======================================================================= */
   
   /* 1440px и выше - очень большие экраны */
   @media (min-width: 90em) {
 	.header-contacts {
 	  max-width: 320px;
-	  margin: 0.2rem 0;
+	  margin-left: auto; /* Справа */
+	  margin-right: 0;
 	  gap: 0.3rem;
 	}
 	
@@ -2086,8 +4113,8 @@ only screen and (min-resolution: 2dppx) {
 	}
 	
 	.contact-info {
-	  font-size: 0.85rem; /* Немного увеличен размер шрифта */
-	  -webkit-line-clamp: 3;
+	  font-size: 0.85rem;
+	  -webkit-line-clamp: 2;
 	}
   }
   
@@ -2095,6 +4122,8 @@ only screen and (min-resolution: 2dppx) {
   @media (min-width: 75em) and (max-width: 89.99em) {
 	.header-contacts {
 	  max-width: 300px;
+	  margin-left: auto; /* Справа */
+	  margin-right: 0;
 	  gap: 0.25rem;
 	}
 	
@@ -2104,7 +4133,7 @@ only screen and (min-resolution: 2dppx) {
 	}
 	
 	.contact-info {
-	  -webkit-line-clamp: 3;
+	  -webkit-line-clamp: 2;
 	}
   }
   
@@ -2112,6 +4141,8 @@ only screen and (min-resolution: 2dppx) {
   @media (min-width: 62em) and (max-width: 74.99em) {
 	.header-contacts {
 	  max-width: 280px;
+	  margin-left: auto; /* Справа */
+	  margin-right: 0;
 	  gap: 0.2rem;
 	}
 	
@@ -2127,8 +4158,8 @@ only screen and (min-resolution: 2dppx) {
 	
 	.contact-info {
 	  font-size: 0.75rem;
-	  line-height: 1.25; /* Улучшенный line-height */
-	  -webkit-line-clamp: 3;
+	  line-height: 1.25;
+	  -webkit-line-clamp: 2;
 	}
   }
   
@@ -2136,7 +4167,8 @@ only screen and (min-resolution: 2dppx) {
   @media (min-width: 51.875em) and (max-width: 61.99em) {
 	.header-contacts {
 	  max-width: 250px;
-	  margin: 0.1rem 0;
+	  margin-left: auto; /* Справа */
+	  margin-right: 0;
 	  gap: 0.2rem;
 	}
 	
@@ -2152,40 +4184,28 @@ only screen and (min-resolution: 2dppx) {
 	
 	.contact-info {
 	  font-size: 0.7rem;
-	  line-height: 1.2; /* Улучшенный line-height */
-	  -webkit-line-clamp: 3;
-	}
-  }
-  
-  /* 769px - 829px - переход к мобильному */
-  @media (min-width: 48.0625em) and (max-width: 51.874em) {
-	.header-contacts {
-	  max-width: 230px; /* Немного увеличена максимальная ширина */
-	  margin: 0;
-	  gap: 0.15rem;
-	}
-	
-	.contact-icon {
-	  width: 1.6rem;
-	  height: 1.6rem;
-	  margin-right: 0.35rem;
-	}
-	
-	.contact-label {
-	  font-size: 0.6rem;
-	}
-	
-	.contact-info {
-	  font-size: 0.65rem;
 	  line-height: 1.2;
-	  -webkit-line-clamp: 3; /* Увеличено количество строк */
+	  -webkit-line-clamp: 2;
 	}
   }
   
-  /* 768px и ниже - мобильные устройства */
-  @media (max-width: 48em) {
+  /* 830px и ниже - скрываем контакты */
+  @media (max-width: 51.875em) {
 	.header-contacts {
-	  display: none; /* Скрываем на мобильных */
+	  display: none; /* Скрываем на средних и малых экранах */
+	}
+  }
+
+  @media (max-width: 992px) {
+	.contact-text {
+	  display: none;
+	}
+	.header-contacts {
+		display: none;
+	  }
+
+	.main-menu {
+		margin-right: 20px;
 	}
   }
   
@@ -2206,7 +4226,7 @@ only screen and (min-resolution: 2dppx) {
   .mobile-menu .contact-info {
 	font-size: 0.75rem;
 	max-width: 100%;
-	-webkit-line-clamp: 4; /* Увеличено до 4 строк для полного отображения адреса */
+	-webkit-line-clamp: 3; /* Уменьшено до 3 строк для компактности */
 	line-height: 1.25;
   }
   
@@ -2218,12 +4238,12 @@ only screen and (min-resolution: 2dppx) {
   .mobile-menu-active .contact-link,
   .mobile-menu .contact-link {
 	margin-bottom: 0.2rem;
-	align-items: flex-start; /* Для лучшего выравнивания в мобильном */
+	align-items: center; /* Центрирование в мобильном */
   }
   
   .mobile-menu-active .contact-icon,
   .mobile-menu .contact-icon {
-	margin-top: 0.2rem;
+	margin-top: 0; /* Убираем смещение вверх */
   }
   
   /* Устройства с высоким DPI */
@@ -2236,7 +4256,8 @@ only screen and (min-resolution: 2dppx) {
   /* Ситуация с очень малой высотой */
   @media (max-height: 37.5em) and (min-width: 62em) {
 	.header-contacts {
-	  margin: 0;
+	  margin-left: auto; /* Справа */
+	  margin-right: 0;
 	  gap: 0.2rem;
 	}
 	
@@ -2246,7 +4267,7 @@ only screen and (min-resolution: 2dppx) {
 	
 	.contact-info {
 	  line-height: 1.25;
-	  -webkit-line-clamp: 2; /* Ограничено 2 строками при малой высоте */
+	  -webkit-line-clamp: 2;
 	}
   }
   
@@ -2254,20 +4275,21 @@ only screen and (min-resolution: 2dppx) {
   @media (max-width: 22.5em) {
 	.mobile-menu-active .header-contacts,
 	.mobile-menu .header-contacts {
-	  padding: 0.4rem 0.3rem; /* Уменьшены отступы для более узких устройств */
+	  padding: 0.4rem 0.3rem;
 	}
 	
 	.mobile-menu-active .contact-icon,
 	.mobile-menu .contact-icon {
 	  width: 1.5rem;
 	  height: 1.5rem;
+	  margin-top: 0; /* Убираем смещение вверх */
 	}
 	
 	.mobile-menu-active .contact-info,
 	.mobile-menu .contact-info {
 	  font-size: 0.7rem;
 	  line-height: 1.25;
-	  -webkit-line-clamp: 4;
+	  -webkit-line-clamp: 3;
 	}
   }
   

@@ -1665,3 +1665,871 @@ html {
 	  color: white;
 	}
   }
+
+  /* ==========================================================================
+   ОПТИМИЗАЦИИ КРИТИЧЕСКИХ МЕТРИК WEB VITALS
+   ========================================================================== */
+
+/**
+ * ╔══════════════════════════════════════════════════════════════╗  
+ * ║      ПРЕДОТВРАЩЕНИЕ СДВИГОВ МАКЕТА (CLS)                     ║  
+ * ╚══════════════════════════════════════════════════════════════╝  
+ * Техники для уменьшения Cumulative Layout Shift
+ */
+
+/* Фиксированные пропорции для изображений и медиа */
+[data-aspect-ratio] {
+	position: relative;
+	width: 100%;
+  }
+  
+  [data-aspect-ratio]::before {
+	content: "";
+	display: block;
+	width: 100%;
+  }
+  
+  /* Стандартные соотношения сторон */
+  [data-aspect-ratio="16:9"]::before {
+	padding-top: 56.25%;
+  }
+  
+  [data-aspect-ratio="4:3"]::before {
+	padding-top: 75%;
+  }
+  
+  [data-aspect-ratio="1:1"]::before {
+	padding-top: 100%;
+  }
+  
+  [data-aspect-ratio="21:9"]::before {
+	padding-top: 42.86%;
+  }
+  
+  [data-aspect-ratio] > * {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+  }
+  
+  /* Предзагрузка шрифтов для уменьшения FOUT */
+  .font-preload {
+	position: absolute;
+	opacity: 0;
+	pointer-events: none;
+	visibility: hidden;
+	font-family: var(--font-primary);
+  }
+  
+  /* Placeholder для контента до загрузки */
+  .content-placeholder {
+	background-color: var(--color-lighter-gray);
+	border-radius: var(--radius-md);
+	overflow: hidden;
+  }
+  
+  /**
+   * ╔══════════════════════════════════════════════════════════════╗  
+   * ║      ОПТИМИЗАЦИЯ ВРЕМЕНИ ЗАГРУЗКИ (LCP)                      ║  
+   * ╚══════════════════════════════════════════════════════════════╝  
+   * Улучшения для Largest Contentful Paint
+   */
+  
+  /* Ленивая загрузка с приоритизацией */
+  .priority-img {
+	width: 100%;
+	height: auto;
+	display: block;
+	
+	/* Указываем браузеру, что это критический ресурс */
+	loading: "eager";
+	fetchpriority: "high";
+  }
+  
+  /* Остальные изображения загружаем лениво */
+  .lazy-img {
+	width: 100%;
+	height: auto;
+	display: block;
+	
+	/* Ленивая загрузка */
+	loading: "lazy";
+	fetchpriority: "low";
+  }
+  
+  /* Прогрессивное улучшение изображений */
+  .progressive-img {
+	position: relative;
+	overflow: hidden;
+	background-color: var(--color-lighter-gray);
+  }
+  
+  .progressive-img-placeholder {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	filter: blur(10px);
+	transform: scale(1.1);
+	opacity: 1;
+	transition: opacity var(--duration-standard) var(--ease-out);
+  }
+  
+  .progressive-img-main {
+	opacity: 0;
+	transition: opacity var(--duration-standard) var(--ease-out);
+  }
+  
+  .progressive-img-main.loaded {
+	opacity: 1;
+  }
+  
+  .progressive-img-main.loaded + .progressive-img-placeholder {
+	opacity: 0;
+  }
+  
+  /**
+   * ╔══════════════════════════════════════════════════════════════╗  
+   * ║      ОПТИМИЗАЦИЯ ОТЗЫВЧИВОСТИ (FID)                          ║  
+   * ╚══════════════════════════════════════════════════════════════╝  
+   * Улучшения для First Input Delay и общей отзывчивости интерфейса
+   */
+  
+  /* Оптимизация отрисовки для улучшения FPS */
+  .gpu-accelerated {
+	will-change: transform, opacity;
+	transform: translateZ(0);
+	backface-visibility: hidden;
+  }
+  
+  .transition-optimized {
+	transition-property: transform, opacity;
+	/* Избегаем свойств, требующих компоновки, таких как height или width */
+  }
+  
+  /* Стили ввода для улучшения тактильной обратной связи */
+  .input-optimized {
+	transition: none; /* Отключаем анимации при вводе */
+	-webkit-tap-highlight-color: rgba(var(--color-orange-primary-rgb), 0.2);
+  }
+  
+  /**
+   * ╔══════════════════════════════════════════════════════════════╗  
+   * ║      КРОССБРАУЗЕРНАЯ СОВМЕСТИМОСТЬ                          ║  
+   * ╚══════════════════════════════════════════════════════════════╝  
+   * Полифиллы и исправления для различных браузеров
+   */
+  
+  /* Исправления для Safari */
+  @supports (-webkit-overflow-scrolling: touch) {
+	/* Сглаживание для шрифтов в iOS */
+	body {
+	  -webkit-font-smoothing: antialiased;
+	}
+	
+	/* Исправление для 100vh в iOS */
+	.full-height {
+	  height: 100vh;
+	  /* Переменная для мобильных браузеров */
+	  height: calc(var(--viewport-height, 100vh));
+	}
+	
+	/* Исправление для position: fixed в iOS */
+	.modal-ios-fix {
+	  position: fixed;
+	  width: 100%;
+	  height: 100%;
+	  /* Добавляем небольшой отступ для iOS */
+	  bottom: -1px;
+	}
+  }
+  
+  /* Исправления для Firefox */
+  @-moz-document url-prefix() {
+	/* Более плавный скроллинг для Firefox */
+	html {
+	  scroll-behavior: smooth;
+	  scrollbar-width: thin;
+	  scrollbar-color: var(--color-orange-primary) var(--color-white-muted);
+	}
+	
+	/* Исправление для transition transform в Firefox */
+	.transform-firefox-fix {
+	  transform: translateZ(0);
+	}
+  }
+  
+  /* Исправления для Edge и IE */
+  @supports (-ms-ime-align: auto) {
+	/* Фоллбэк для CSS переменных в Edge */
+	.edge-fallback {
+	  /* Фоллбэки для основных цветов */
+	  background-color: #fd7921; /* Фоллбэк для var(--color-orange-primary) */
+	}
+  }
+  
+  /* Исправления для устаревших браузеров без поддержки CSS Grid */
+  @supports not (display: grid) {
+	.legacy-grid {
+	  display: flex;
+	  flex-wrap: wrap;
+	}
+	
+	.legacy-grid-item {
+	  flex: 0 0 100%;
+	  max-width: 100%;
+	}
+	
+	@media (min-width: 48em) {
+	  .legacy-grid-item {
+		flex: 0 0 50%;
+		max-width: 50%;
+	  }
+	}
+	
+	@media (min-width: 62em) {
+	  .legacy-grid-item {
+		flex: 0 0 33.333%;
+		max-width: 33.333%;
+	  }
+	}
+  }
+  
+  /**
+   * ╔══════════════════════════════════════════════════════════════╗  
+   * ║      ВЕНДОРНЫЕ ПРЕФИКСЫ                                     ║  
+   * ╚══════════════════════════════════════════════════════════════╝  
+   * Префиксы для поддержки браузеров
+   */
+  
+  /* Общие стили с вендорными префиксами */
+  .vendor-prefixed {
+	/* Transform */
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+	
+	/* Transition */
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+	
+	/* Box shadow */
+	-webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	
+	/* Flexbox */
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-moz-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-moz-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	
+	/* Appearance */
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+  }
+  
+  /**
+   * ╔══════════════════════════════════════════════════════════════╗  
+   * ║      ОПТИМИЗАЦИЯ ПЕЧАТИ                                     ║  
+   * ╚══════════════════════════════════════════════════════════════╝  
+   * Улучшенные стили для печати
+   */
+  
+  @media print {
+	/* Улучшенная верстка для печати */
+	.print-break-before {
+	  break-before: page;
+	  page-break-before: always;
+	}
+	
+	.print-break-after {
+	  break-after: page;
+	  page-break-after: always;
+	}
+	
+	.print-break-inside-avoid {
+	  break-inside: avoid;
+	  page-break-inside: avoid;
+	}
+	
+	/* Улучшения для цветной печати */
+	.print-color-adjust {
+	  color-adjust: exact;
+	  -webkit-print-color-adjust: exact;
+	}
+	
+	/* Оптимизация изображений для печати */
+	.print-img-optimize {
+	  max-width: 100% !important;
+	  page-break-inside: avoid;
+	  /* Улучшаем контраст */
+	  filter: brightness(1.1) contrast(1.2);
+	}
+	
+	/* Экономия чернил */
+	.print-ink-save {
+	  background: none !important;
+	  color: black !important;
+	  border: 1px solid #aaa !important;
+	  box-shadow: none !important;
+	}
+	
+	/* Улучшенные URL в ссылках */
+	.print-show-url[href^="http"]:after {
+	  content: " (" attr(href) ")";
+	  font-size: 0.9em;
+	  font-weight: normal;
+	  font-style: italic;
+	}
+  }
+  
+  /**
+   * ╔══════════════════════════════════════════════════════════════╗  
+   * ║      ТАБЛИЦЫ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ                         ║  
+   * ╚══════════════════════════════════════════════════════════════╝  
+   * Адаптивные таблицы для мобильного вида
+   */
+  
+  .table-responsive {
+	width: 100%;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+  }
+  
+  @media (max-width: 47.9375em) {
+	.table-stack {
+	  display: block;
+	}
+	
+	.table-stack thead {
+	  display: none;
+	}
+	
+	.table-stack tbody, .table-stack tr, .table-stack td {
+	  display: block;
+	  width: 100%;
+	}
+	
+	.table-stack tr {
+	  margin-bottom: 1rem;
+	  border: 1px solid var(--color-light-gray);
+	  border-radius: var(--radius-md);
+	  padding: 0.5rem;
+	}
+	
+	.table-stack td {
+	  text-align: right;
+	  padding: 0.5rem;
+	  border-bottom: 1px solid var(--color-light-gray-alt);
+	  position: relative;
+	}
+	
+	.table-stack td:last-child {
+	  border-bottom: none;
+	}
+	
+	.table-stack td:before {
+	  content: attr(data-label);
+	  float: left;
+	  font-weight: var(--font-weight-semibold);
+	}
+  }
+  
+  /**
+   * ╔══════════════════════════════════════════════════════════════╗  
+   * ║      УЛУЧШЕННАЯ ДОСТУПНОСТЬ                                 ║  
+   * ╚══════════════════════════════════════════════════════════════╝  
+   * Улучшения для ARIA и доступности
+   */
+  
+  /* Скрытые элементы, видимые для скринридеров */
+  .sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+  }
+  
+  /* Пропуск к основному контенту */
+  .skip-to-content {
+	position: absolute;
+	top: -40px;
+	left: 0;
+	z-index: var(--z-maximum);
+	padding: 8px 16px;
+	background-color: var(--color-orange-primary);
+	color: var(--color-white);
+	transition: top 0.2s;
+  }
+  
+  .skip-to-content:focus {
+	top: 0;
+	outline: none;
+  }
+  
+  /* Улучшенные фокусные состояния */
+  .focus-visible-within:focus-within {
+	outline: var(--focus-ring-width) solid var(--focus-ring-color);
+	outline-offset: var(--focus-ring-offset);
+  }
+  
+  /**
+   * ╔══════════════════════════════════════════════════════════════╗  
+   * ║      ОРИЕНТАЦИЯ УСТРОЙСТВА                                  ║  
+   * ╚══════════════════════════════════════════════════════════════╝  
+   * Стили для разных ориентаций экрана
+   */
+  
+  @media (orientation: portrait) {
+	:root {
+	  --viewport-orientation: "portrait";
+	}
+	
+	.portrait-only {
+	  display: block;
+	}
+	
+	.landscape-only {
+	  display: none;
+	}
+  }
+  
+  @media (orientation: landscape) {
+	:root {
+	  --viewport-orientation: "landscape";
+	}
+	
+	.portrait-only {
+	  display: none;
+	}
+	
+	.landscape-only {
+	  display: block;
+	}
+  }
+  
+  /**
+   * ╔══════════════════════════════════════════════════════════════╗  
+   * ║      ОПТИМИЗАЦИЯ ДЛЯ ЖЕСТОВ                                 ║  
+   * ╚══════════════════════════════════════════════════════════════╝  
+   * Улучшения для сенсорных интерфейсов
+   */
+  
+  .touch-action-none {
+	touch-action: none;
+  }
+  
+  .touch-action-pan-x {
+	touch-action: pan-x;
+  }
+  
+  .touch-action-pan-y {
+	touch-action: pan-y;
+  }
+  
+  .swipe-area {
+	-webkit-overflow-scrolling: touch;
+	overflow-x: auto;
+	overflow-y: hidden;
+	white-space: nowrap;
+	/* Предотвращаем захват текста */
+	user-select: none;
+	-webkit-user-select: none;
+  }
+  
+  /* Увеличенная область для тапа на сенсорных устройствах */
+  .touch-target {
+	position: relative;
+  }
+  
+  .touch-target::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: var(--touch-target-size);
+	height: var(--touch-target-size);
+	z-index: -1;
+  }
+  
+  /**
+   * ╔══════════════════════════════════════════════════════════════╗  
+   * ║      СГЛАЖИВАНИЕ ШРИФТОВ                                    ║  
+   * ╚══════════════════════════════════════════════════════════════╝  
+   * Оптимизация отображения шрифтов
+   */
+  
+  /* Контроль рендеринга шрифтов */
+  .font-smoothing-auto {
+	-webkit-font-smoothing: auto;
+	-moz-osx-font-smoothing: auto;
+  }
+  
+  .font-smoothing-antialiased {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  }
+  
+  .font-smoothing-subpixel {
+	-webkit-font-smoothing: subpixel-antialiased;
+	-moz-osx-font-smoothing: auto;
+  }
+  
+  /* Font display swap для оптимальной FOUT */
+  .font-swap {
+	font-display: swap;
+  }
+  
+  /* Предотвращение мерцания текста */
+  .font-smooth {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+  }
+  
+  /**
+   * ╔══════════════════════════════════════════════════════════════╗  
+   * ║      ПРОИЗВОДИТЕЛЬНОСТЬ РЕСУРСОВ                            ║  
+   * ╚══════════════════════════════════════════════════════════════╝  
+   * Оптимизации для загрузки ресурсов
+   */
+  
+  /* Контейнеры с заданными размерами для предотвращения CLS */
+  .img-container-fixed {
+	position: relative;
+	width: 100%;
+	height: 0;
+	overflow: hidden;
+	background-color: var(--color-lighter-gray);
+  }
+  
+  .ratio-16-9 {
+	padding-bottom: 56.25%; /* 16:9 */
+  }
+  
+  .ratio-4-3 {
+	padding-bottom: 75%; /* 4:3 */
+  }
+  
+  .ratio-1-1 {
+	padding-bottom: 100%; /* 1:1 квадрат */
+  }
+  
+  .ratio-3-4 {
+	padding-bottom: 133.33%; /* 3:4 портрет */
+  }
+  
+  .img-container-fixed img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: opacity var(--duration-standard) var(--ease-out);
+  }
+  
+  /* Оптимизация для SVG */
+  .svg-optimize {
+	shape-rendering: geometricPrecision;
+	text-rendering: optimizeLegibility;
+  }
+  
+  /**
+   * ╔══════════════════════════════════════════════════════════════╗  
+   * ║      УТИЛИТЫ ДЛЯ ОТЛАДКИ                                    ║  
+   * ╚══════════════════════════════════════════════════════════════╝  
+   * Полезные классы для отладки макета
+   */
+  
+  .debug {
+	outline: 1px solid red !important;
+  }
+  
+  .debug * {
+	outline: 1px solid blue !important;
+  }
+  
+  .debug * * {
+	outline: 1px solid green !important;
+  }
+  
+  .debug * * * {
+	outline: 1px solid orange !important;
+  }
+  
+  .debug * * * * {
+	outline: 1px solid purple !important;
+  }
+  
+  .debug-grid {
+	position: relative;
+  }
+  
+  .debug-grid::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(to right, rgba(255,0,0,0.1) 0%, rgba(255,0,0,0.1) 8.33%, transparent 8.33%, transparent 16.66%, rgba(255,0,0,0.1) 16.66%, rgba(255,0,0,0.1) 25%, transparent 25%, transparent 33.33%, rgba(255,0,0,0.1) 33.33%, rgba(255,0,0,0.1) 41.66%, transparent 41.66%, transparent 50%, rgba(255,0,0,0.1) 50%, rgba(255,0,0,0.1) 58.33%, transparent 58.33%, transparent 66.66%, rgba(255,0,0,0.1) 66.66%, rgba(255,0,0,0.1) 75%, transparent 75%, transparent 83.33%, rgba(255,0,0,0.1) 83.33%, rgba(255,0,0,0.1) 91.66%, transparent 91.66%, transparent 100%);
+	z-index: 1000;
+	pointer-events: none;
+	opacity: 0.5;
+  }
+  
+  /**
+   * ╔══════════════════════════════════════════════════════════════╗  
+   * ║      ОПТИМИЗИРОВАННАЯ ТИПОГРАФИКА                           ║  
+   * ╚══════════════════════════════════════════════════════════════╝  
+   * Улучшения для типографики с контролем переполнения
+   */
+  
+  /* Предотвращение переполнения длинным текстом */
+  .text-wrap {
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	word-break: break-word;
+	hyphens: auto;
+  }
+  
+  .text-truncate {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+  }
+  
+  /* Многострочное обрезание текста */
+  .text-clamp-2 {
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+  }
+  
+  .text-clamp-3 {
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+  }
+  
+  /* Улучшенная расстановка текста */
+  .text-balance {
+	text-wrap: balance;
+  }
+  
+  /* Кернинг и лигатуры */
+  .text-kerning {
+	font-kerning: normal;
+	font-feature-settings: "kern", "liga", "clig", "calt";
+  }
+  
+  /**
+   * ╔══════════════════════════════════════════════════════════════╗  
+   * ║      КРОССБРАУЗЕРНЫЕ АНИМАЦИИ                               ║  
+   * ╚══════════════════════════════════════════════════════════════╝  
+   * Анимации с вендорными префиксами для максимальной совместимости
+   */
+  
+  @-webkit-keyframes spin {
+	0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+	0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+  }
+  
+  .animate-spin {
+	-webkit-animation: spin 1s linear infinite;
+	animation: spin 1s linear infinite;
+  }
+  
+  @-webkit-keyframes pulse {
+	0% { -webkit-transform: scale(1); transform: scale(1); }
+	50% { -webkit-transform: scale(1.05); transform: scale(1.05); }
+	100% { -webkit-transform: scale(1); transform: scale(1); }
+  }
+  
+  @keyframes pulse {
+	0% { -webkit-transform: scale(1); transform: scale(1); }
+	50% { -webkit-transform: scale(1.05); transform: scale(1.05); }
+	100% { -webkit-transform: scale(1); transform: scale(1); }
+  }
+  
+  .animate-pulse {
+	-webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+	animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  /**
+   * ╔══════════════════════════════════════════════════════════════╗  
+   * ║      ЗАГРУЗЧИКИ И ИНДИКАТОРЫ                                ║  
+   * ╚══════════════════════════════════════════════════════════════╝  
+   * Оптимизированные лоадеры и индикаторы
+   */
+  
+  /* Спиннер-загрузчик */
+  .spinner {
+	display: inline-block;
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+	border: 0.25rem solid rgba(var(--color-orange-primary-rgb), 0.3);
+	border-top-color: rgb(var(--color-orange-primary-rgb));
+	-webkit-animation: spin 1s linear infinite;
+	animation: spin 1s linear infinite;
+  }
+  
+  .spinner-sm {
+	width: 1.5rem;
+	height: 1.5rem;
+	border-width: 0.1875rem;
+  }
+  
+  .spinner-lg {
+	width: 3rem;
+	height: 3rem;
+	border-width: 0.375rem;
+  }
+  
+  /* Индикатор прогресса */
+  .progress {
+	height: 0.5rem;
+	background-color: var(--color-lighter-gray);
+	border-radius: var(--radius-full);
+	overflow: hidden;
+  }
+  
+  .progress-bar {
+	height: 100%;
+	background-color: var(--color-orange-primary);
+	border-radius: var(--radius-full);
+	transition: width 0.3s ease;
+  }
+  
+  /* Пульсирующий индикатор */
+  .pulse-indicator {
+	display: inline-block;
+	width: 1rem;
+	height: 1rem;
+	background-color: rgb(var(--color-orange-primary-rgb));
+	border-radius: 50%;
+	-webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+	animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  /**
+   * ╔══════════════════════════════════════════════════════════════╗  
+   * ║      ОСОБЕННОСТИ ВЫСОКОПЛОТНЫХ ДИСПЛЕЕВ                     ║  
+   * ╚══════════════════════════════════════════════════════════════╝  
+   * Специальные стили для ретина-дисплеев
+   */
+  
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+	/* Более тонкие линии */
+	.retina-hairline {
+	  border-width: 0.5px !important;
+	}
+	
+	/* Улучшенное отображение текста */
+	.retina-text {
+	  -webkit-font-smoothing: antialiased;
+	  -moz-osx-font-smoothing: grayscale;
+	  text-rendering: optimizeLegibility;
+	}
+	
+	/* Улучшенные тени для retina */
+	.retina-shadow {
+	  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+	}
+  }
+  
+  /**
+   * ╔══════════════════════════════════════════════════════════════╗  
+   * ║      НОВЫЕ CSS-ВОЗМОЖНОСТИ С ФОЛЛБЭКАМИ                      ║  
+   * ╚══════════════════════════════════════════════════════════════╝  
+   * Современные CSS свойства с фоллбэками для старых браузеров
+   */
+  
+  /* Современное свойство object-fit с фоллбэками */
+  .img-cover {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+  }
+  
+  .img-cover.fallback {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+  }
+  
+  /* CSS Grid с фоллбэком на Flexbox */
+  .grid-layout {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	gap: 1rem;
+  }
+  
+  /* Фоллбэк для браузеров без поддержки Grid */
+  @supports not (display: grid) {
+	.grid-layout {
+	  display: flex;
+	  flex-wrap: wrap;
+	  margin: -0.5rem;
+	}
+	
+	.grid-layout > * {
+	  flex: 0 0 calc(100% - 1rem);
+	  margin: 0.5rem;
+	}
+	
+	@media (min-width: 36em) {
+	  .grid-layout > * {
+		flex: 0 0 calc(50% - 1rem);
+	  }
+	}
+	
+	@media (min-width: 62em) {
+	  .grid-layout > * {
+		flex: 0 0 calc(33.333% - 1rem);
+	  }
+	}
+  }
